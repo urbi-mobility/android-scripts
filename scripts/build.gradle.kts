@@ -5,7 +5,13 @@ import kotlin.collections.*
 
 tasks.register("uploadlib") {
     doLast {
-        val mapChangelog: LinkedHashMap<String, String> = getChangelogMap()
+        val appId = System.getProperty("args")
+
+        var mapChangelog: LinkedHashMap<String, String>;
+        if(appId == "tpay")
+            mapChangelog = getChangelogTpayMap()
+        else
+            mapChangelog = getChangelogMap()
 
         // Read Version on Gradle file
         val mapVersion: HashMap<String, String> = createMapVersion()
@@ -23,7 +29,12 @@ tasks.register("uploadlib") {
 tasks.register("commitversions") {
     doLast {
         val tpaylib = "tpaylib"
-        val mapChangelog: LinkedHashMap<String, String> = getChangelogMap()
+        val appId = System.getProperty("args")
+        var mapChangelog: LinkedHashMap<String, String>;
+        if(appId == "tpay")
+            mapChangelog = getChangelogTpayMap()
+        else
+            mapChangelog = getChangelogMap()
         // Read Version on Gradle file
         val mapVersion: HashMap<String, String> = createMapVersion()
         // Read Version on Gradle file
@@ -103,6 +114,9 @@ fun getChangelogMap(): LinkedHashMap<String, String> = linkedMapOf(
     "transpo" to "TRA_",
     "tripo" to "Tripo_",
     "mobilitylib" to "ML_",
+)
+
+fun getChangelogTpayMap(): LinkedHashMap<String, String> = linkedMapOf(
     "telepasspaymodel" to "telepasspaymodel_",
     "telepasspaynetwork" to "telepasspaynetwork_",
     "tpaylib" to "TPL_"
@@ -112,7 +126,7 @@ fun createMapVersion(): HashMap<String, String> {
     val tpaylib = "tpaylib"
     // Read Version on Gradle file
     val mapVersion: HashMap<String, String> = hashMapOf()
-    val gradle = File("gradle/depend.gradle")
+    val gradle = File("android-scripts/gradle/depend.gradle")
     var readVersion = false
     println("Reading /gradle/depend.gradle file for version ......")
     gradle.forEachLine { line ->
