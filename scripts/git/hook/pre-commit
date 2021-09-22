@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+##### KOTLINTER HOOK START #####
+GRADLEW=$PWD/gradlew
+$GRADLEW lintKotlin
+
+status=$?
+if [ "$status" != 0 ] ; then
+    echo 1>&2 "\nlintKotlin found problems, running formatKotlin; commit the result and re-push"
+    $GRADLEW formatKotlin
+    exit 1
+fi
+##### KOTLINTER HOOK END #####

@@ -1,0 +1,499 @@
+//Version
+def legacy_support_version = '1.0.0'
+def android_places_version = '2.0.0'
+def tempo_version = '0.1.2'
+def security_crypto_version = '1.1.0-alpha02'
+def jackson_databind_version = '2.4.2'
+def gson_version = '2.7'
+def jsonwebtoken_version = '0.8.0'
+def materialdatetimepicker_version = '4.2.3'
+def flow_layout_version = '1.2.4'
+def viewpagerindicator_version = '2.4.2@aar'
+def adapterdelegates4_version = '4.3.0'
+def subsamplingimage_version= '3.10.0'
+def target_tooltip_version = '1.3.15'
+def leakcanary_android_version = '1.6.1'
+def pinentryedittext_version = '1.3.1'
+def simplerangeview_version = '0.2.0'
+def marketingcloudsdk_version = '7.1.0'
+def recycleradapter_version = '2.10.0'
+// ANDROID VERSION
+def material_version = '1.3.0'
+def maps_utils_version = '2.2.2'
+// ANDROID X VERSION
+def biometric_version = '1.0.1'
+def preference_version = '1.1.0'
+def lifecycle_extension_version = '2.2.0'
+def lifecycle_version = '2.3.1'
+def appcompat_version = "1.2.0"
+def activityx_version = "1.2.0-rc01"
+def fragmentx_version = "1.3.0-rc01"
+def constraintlayout_version = '2.0.4'
+def gridlayout_version = '1.0.0'
+def recyclerview_version = '1.1.0'
+def cardview_version = '1.0.0'
+def navigation_fragment_ktx_version = '2.1.0'
+def navigation_ui_ktx_version = '2.1.0'
+def kotlinx_serialization_core_version = '1.0.0'
+def kotlinx_serialization_json_version = '1.0.0'
+// GMS_VERSION
+def play_services_maps_version = '17.0.0'
+def play_services_base_version = '17.0.0'
+def play_services_analytics_version = '17.0.0'
+def play_services_wallet_version = '18.1.1'
+def play_services_location_version = '17.0.0'
+// KOTLIN VERSION
+def kotlinx_coroutines_core_version = '1.3.9'
+def kotlinx_coroutines_android_version = '1.3.9'
+//  Stream Guava VERSION
+def guava_version = "27.0.1-android"
+// FIREBASE VERSION
+def firebase_auth_version = '17.0.0'
+def firebase_database_version = '17.0.0'
+def firebase_storage_version = '17.0.0'
+def firebase_config_version = '17.0.0'
+def firebase_analytics_version = '17.1.0'
+def firebase_messaging_version = '20.1.5'
+def firebase_crashlytics_version = '17.0.0'
+def firebase_core_version = '16.0.9'
+// ML KIT VERSIONS
+def mlkit_facedetection_version = '16.1.1'
+def mlkit_textrecognition_version = '16.1.1'
+def mlkit_barcodescanning_version = '16.2.0'
+// PICASSO VERSION
+def picasso_version = '2.5.2'
+// RX_VERSION
+def rxandroid_version = '2.1.1'
+//  Retrofit VERSION
+def retrofit_version = '2.9.0'
+def retrofit_converter_gson_version = '2.8.1'
+def retrofit_adapter_rxjava_version = '2.8.1'
+//  OK-HTTP3 VERSION
+def okhttp3_version = '4.9.1'
+//  DAGGER VERSION
+def dagger_version = '2.27'
+// PAYMENT_VERSION
+def stripe_android_version = '16.10.0'
+def satispay_version = '1.0.5'
+// RX REDUX
+def rxbinding_kotlin_version = '2.2.0'
+def rxredux_version = '1.0.1'
+def rxrelay_version = '2.1.0'
+def core_ktx_version = '1.3.2'
+//  LOTTIE VERSION
+def lottieVersion = "3.4.0"
+// APACHE VERSION
+def commons_codec_version = '1.11'
+def commons_lang_version = '3:3.5'
+// INSTABUG VERSION
+def instabug_version = '10.4.3'
+// JUMIO
+def jumio_version = '3.9.1'
+// ROOM
+def room_runtime_version = '2.2.6'
+//ATAC
+def atac_version = "2.0.5"
+def sql_cipher_version = "4.4.3"
+//ZXing
+def zxing_qr_code = "3.4.1"
+
+
+ext {
+//---Module Version---//
+    utilitylib = '2.4.1'
+    designsystem = '0.9.1'
+    urbimodel = '2.6.3'
+    urbicore = '2.8.7'
+    urbipay = '1.6.4'
+    ticketlib = '0.5.2'
+    urbisearch = '0.5.4'
+    urbitaxi = '0.4.3'
+    evcharging = '1.1.8'
+    transpo = '1.1.5'
+    tripo = '1.1.11'
+    urbiscan = '0.3.1'
+    mobilitylib = '2.9.7'
+    telepasspaymodel = '2.3.1'
+    telepasspaynetwork = '2.4.0'
+    tpaylib_code = '9'
+    tpaylib = '2.5.' + tpaylib_code
+    versionUrbi = '50505'
+//---End---//
+
+//  REALM
+    realm_version = '6.0.2'
+    android_plugin = '7.0.0'
+
+//  KOTLIN
+    kotlin_version = '1.4.32'
+    kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
+    kotlinx_coroutines = ["org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_core_version",
+                          "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_android_version",
+                          "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
+                          "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"]
+
+//  AndroidX
+    camerax_version = "1.0.0"
+    cameraxview_version = "1.0.0-alpha22"
+    activityx = "androidx.activity:activity-ktx:$activityx_version"
+    fragmentx = "androidx.fragment:fragment-ktx:$fragmentx_version"
+    androidx_view = [activityx, fragmentx]
+    appcompat = "androidx.appcompat:appcompat:$appcompat_version"
+    legacy = "androidx.legacy:legacy-support-v4:$legacy_support_version"
+    lifecycle = "androidx.lifecycle:lifecycle-extensions:$lifecycle_extension_version"
+    lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
+    lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+    legacy_appcompat = [legacy, appcompat]
+    lifecycle_appcompat = [lifecycle, appcompat]
+    legacy_appcompat_lifecycle = [legacy, appcompat, lifecycle]
+    constraintlayout = "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    biometric = "androidx.biometric:biometric:$biometric_version"
+    preference = "androidx.preference:preference:$preference_version"
+    core_ktx = "androidx.core:core-ktx:$core_ktx_version"
+    gridlayout = "androidx.gridlayout:gridlayout:$gridlayout_version"
+    recyclerview = "androidx.recyclerview:recyclerview:$recyclerview_version"
+    cardview = "androidx.cardview:cardview:$cardview_version"
+    serialization_core = "org.jetbrains.kotlinx:kotlinx-serialization-core:$kotlinx_serialization_core_version"
+    serialization_json = "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinx_serialization_json_version"
+
+    navigation_fragment_ktx = "androidx.navigation:navigation-fragment-ktx:$navigation_fragment_ktx_version"
+    navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:$navigation_ui_ktx_version"
+//  MARKETINGCLOUDSDK
+    marketingcloudsdk = "com.salesforce.marketingcloud:marketingcloudsdk:$marketingcloudsdk_version"
+//  JetPack
+    security_crypto = "androidx.security:security-crypto:$security_crypto_version"
+
+//  REDUX
+    rxbinding = "com.jakewharton.rxbinding2:rxbinding-kotlin:$rxbinding_kotlin_version"
+    rxredux = [rxbinding,
+               "com.freeletics.rxredux:rxredux:$rxredux_version",
+               "com.jakewharton.rxrelay2:rxrelay:$rxrelay_version"]
+
+    retrofit_okhttp = ["com.squareup.retrofit2:retrofit:$retrofit_version",
+                       dependencies.create("com.squareup.retrofit2:converter-gson:$retrofit_converter_gson_version", {
+                           exclude group: 'com.google.code.gson'
+                       }),
+                       dependencies.create("com.squareup.okhttp3:logging-interceptor:$okhttp3_version"),
+                       "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_rxjava_version"]
+
+//  RxJava & RxAndroid
+    rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
+
+//  Android
+    min_sdk_version = 21
+    compile_sdk_version = 30
+    target_sdk_version = 30
+    global_build_tools_version = "30.0.2"
+
+    maps_utils = "com.google.maps.android:android-maps-utils:$maps_utils_version"
+    material = "com.google.android.material:material:$material_version"
+    materialdatetimepicker = "com.wdullaer:materialdatetimepicker:$materialdatetimepicker_version"
+
+//  LOTTIE
+    lottie = dependencies.create("com.airbnb.android:lottie:$lottieVersion", {
+        exclude module: 'okio'
+    })
+
+//  PLACES
+    android_places = "com.google.android.libraries.places:places:$android_places_version"
+//  APACHE
+    commons_codec = "commons-codec:commons-codec:$commons_codec_version"
+    commons_lang = "org.apache.commons:commons-lang$commons_lang_version"
+
+//  TEMPO
+    tempo = dependencies.create("com.github.AllanHasegawa.Tempo:tempo:$tempo_version",
+            {
+                exclude group: 'org.jetbrains.kotlin'
+                exclude group: 'io.reactivex.rxjava2'
+            })
+
+//  JACKSON
+    jackson_databind = "com.fasterxml.jackson.core:jackson-databind:$jackson_databind_version"
+
+//  GSON
+    gson = "com.google.code.gson:gson:$gson_version"
+
+//  GMS
+    play_services_maps = dependencies.create("com.google.android.gms:play-services-maps:$play_services_maps_version",
+            {
+                exclude group: 'com.android.support'
+                exclude group: 'com.google.android.gms'
+            })
+    play_services_base = dependencies.create("com.google.android.gms:play-services-base:$play_services_base_version", {
+        exclude group: 'com.android.support'
+    })
+    play_services_analytics = [
+            dependencies.create("com.google.android.gms:play-services-analytics:$play_services_analytics_version",
+                    { exclude group: 'com.android.support' }
+            ),
+            dependencies.create("com.google.android.gms:play-services-analytics-impl:$play_services_analytics_version",
+                    { exclude group: 'com.android.support' }
+            )
+    ]
+
+    play_services_wallet = "com.google.android.gms:play-services-wallet:$play_services_wallet_version"
+    play_services_location = "com.google.android.gms:play-services-wallet:$play_services_location_version"
+
+//  Guava
+    guava = "com.google.guava:guava:$guava_version"
+
+//  FIREBASE
+    firebase_core = dependencies.create("com.google.firebase:firebase-core:$firebase_core_version", {
+        exclude module: 'play-services-stats'
+    })
+    firebase_analytics = "com.google.firebase:firebase-analytics:$firebase_analytics_version"
+    firebase_config = "com.google.firebase:firebase-config:$firebase_config_version"
+    firebase_messaging = "com.google.firebase:firebase-messaging:$firebase_messaging_version"
+    firebase_database = ["com.google.firebase:firebase-database:$firebase_database_version",
+                         "com.google.firebase:firebase-storage:$firebase_storage_version",
+                         firebase_core]
+    firebase_crashlytics = "com.google.firebase:firebase-crashlytics:$firebase_crashlytics_version"
+
+    // MLKIT
+    mlkit_facedetection = "com.google.android.gms:play-services-mlkit-face-detection:$mlkit_facedetection_version" //thin
+    mlkit_textrecognition = "com.google.android.gms:play-services-mlkit-text-recognition:$mlkit_textrecognition_version"    //thin
+    mlkit_barcodescanning = "com.google.mlkit:barcode-scanning:$mlkit_barcodescanning_version"    //bundled
+    mlkit_group = [
+            mlkit_facedetection,
+            mlkit_textrecognition,
+            mlkit_barcodescanning
+    ]
+//  Picasso
+    picasso = "com.squareup.picasso:picasso:$picasso_version"
+//  Dagger
+    dagger = "com.google.dagger:dagger:$dagger_version"
+    dagger_compile = "com.google.dagger:dagger-compiler:$dagger_version"
+//  JWT
+    jwt = dependencies.create("io.jsonwebtoken:jjwt:$jsonwebtoken_version", {
+        exclude group: 'com.fasterxml.jackson.core'
+    })
+//  Flow Layout
+    flow_layout = "com.nex3z:flow-layout:$flow_layout_version"
+//  VIEW PAGER INDICATOR
+    viewpagerindicator = "com.githang:viewpagerindicator:$viewpagerindicator_version"
+
+//  PAYMENTS
+    payments = [dependencies.create("com.stripe:stripe-android:$stripe_android_version", {
+        exclude group: 'com.google.code.gson'
+    }),
+                "com.satispay:satispayintent:$satispay_version"]
+//   DELEGATE
+    adapterdelegates4 = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterdelegates4_version"
+    adapterdelegates4Binding = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterdelegates4_version"
+
+//  SUBSAMPLING SCALED IMAGE
+    subsamplingimage = "com.davemorrissey.labs:subsampling-scale-image-view:$subsamplingimage_version"
+
+//  Tooltip
+    target_tooltip = "it.sephiroth.android.library.targettooltip:target-tooltip-library:$target_tooltip_version"
+
+//  LEAKCANARY
+    leakcanary = "com.squareup.leakcanary:leakcanary-android:$leakcanary_android_version"
+
+//  PINENTRYEDITTEXT
+    pinentryedittext = "com.alimuzaffar.lib:pinentryedittext:$pinentryedittext_version"
+
+//  SIMPLERANGEVIEW
+    simplerangeview = "me.bendik.simplerangeview:simplerangeview:$simplerangeview_version"
+
+//  RECYCLERADAPTER
+    recycleradapter = "net.gotev:recycleradapter:$recycleradapter_version"
+
+    // NFC scan related libraries
+    jmrtd = dependencies.create("org.jmrtd:jmrtd:0.7.18", {
+        exclude module: 'bcprov-jdk15on'
+    })
+    jj2000 = 'edu.ucar:jj2000:5.2'
+    jnbis = 'com.github.mhshams:jnbis:1.1.0'
+    scuba = 'net.sf.scuba:scuba-sc-android:0.0.20'
+    spongycastle = 'com.madgag.spongycastle:prov:1.58.0.0'
+
+
+    nfc_scan_tools = [
+            jmrtd,jj2000,jnbis,scuba,spongycastle
+    ]
+
+    // CAMERAX
+    // CameraX core library
+    camera_core = "androidx.camera:camera-core:$camerax_version"
+    // CameraX Camera2 extensions
+    camera_camera2 = "androidx.camera:camera-camera2:$camerax_version"
+    // CameraX Lifecycle library
+    camera_lifecycle = "androidx.camera:camera-lifecycle:$camerax_version"
+    // CameraX View class
+    camera_view = dependencies.create("androidx.camera:camera-view:$cameraxview_version",{
+        exclude module: 'appcompat'
+    })
+
+    camerax_group = [camera_core, camera_camera2, camera_lifecycle, camera_view]
+
+    // INSTABUG
+    instabug = "com.instabug.library:instabug-with-okhttp-interceptor:$instabug_version"
+
+    //ROOM
+    room_runtime = "androidx.room:room-runtime:$room_runtime_version"
+
+    //JUMIO
+    jumio_core = "com.jumio.android:core:$jumio_version@aar"
+    jumio_nv = "com.jumio.android:nv:$jumio_version@aar"
+    jumio_nv_ocr = "com.jumio.android:nv-ocr:$jumio_version@aar"
+    jumio_dv = "com.jumio.android:dv:$jumio_version@aar"
+    jumio_bam = "com.jumio.android:bam:$jumio_version@aar"
+    jumio_nv_barcode = "com.jumio.android:nv-barcode:$jumio_version@aar"
+    jumio_nv_barcode_vision = "com.jumio.android:nv-barcode-vision:$jumio_version@aar"
+    jumio_mandatory_dependencies = [jumio_core, jumio_nv, room_runtime, cardview, serialization_core, serialization_json]
+    jumio_optional_dependencies = [jumio_nv_ocr, jumio_bam, jumio_dv]
+
+    //ZXING
+    zxing = "com.google.zxing:core:$zxing_qr_code"
+
+    //ATAC
+    atac = "co.urbi.android.atac:ataclib:$atac_version@aar"
+    sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
+    atac_dep = [atac, sql_cipher]
+
+
+
+//  TEST
+    junit = 'junit:junit:4.12'
+    mockito = 'org.mockito:mockito-android:2.6.3'
+    junit_x = 'androidx.test.ext:junit:1.1.1'
+    espresso = 'androidx.test.espresso:espresso-core:3.2.0'
+    testimpl = [junit_x, espresso]
+    testimplapp = [junit_x, espresso, 'org.mockito:mockito-core:2.28.2', 'org.mockito:mockito-android:2.6.3'
+                   , 'androidx.annotation:annotation:1.1.0', dependencies.create('androidx.test.uiautomator:uiautomator:2.2.0', {
+        exclude group: 'com.android.support'
+    }), 'androidx.test:rules:1.2.0', 'androidx.test:runner:1.2.0']
+
+//  URBI
+    designsystemdep = "com.batsharing.android.designsystem:designsystem:$designsystem"
+    utilitylibdep = "com.batsharing.android.model.utility:utilitylib:$utilitylib"
+    urbimodeldep = "com.batsharing.android.model:urbimodel:$urbimodel"
+    urbimodeldep_exclude = dependencies.create(urbimodeldep, {
+        exclude module: 'utilitylib'
+    })
+    urbicoredep = "com.batsharing.android.core:urbicore:$urbicore"
+    urbicoredep_exclude = dependencies.create(urbicoredep, {
+        exclude group: 'com.android.support'
+        exclude group: 'com.google.dagger'
+        exclude group: 'androidx.appcompat'
+        exclude module: 'urbimodel'
+        exclude module: 'utilitylib'
+    })
+    ticketlibdep = "com.batsharing.android.ticketlib:ticketlib:$ticketlib"
+    ticketlibdep_exclude = dependencies.create(ticketlibdep, {
+        exclude group: 'com.google.dagger:dagger'
+        exclude module: 'urbicore'
+        exclude module: 'urbimodel'
+        exclude module: 'utilitylib'
+        exclude module: 'designsystem'
+    })
+    urbipaydep = "co.urbi.android.urbipay:urbipay:$urbipay"
+    urbipaydep_exclude = dependencies.create(urbipaydep, {
+        exclude group: 'com.google.dagger:dagger'
+        exclude module: 'urbicore'
+        exclude module: 'urbimodel'
+        exclude module: 'utilitylib'
+        exclude module: 'designsystem'
+    })
+    transpodep = "co.urbi.android.transpo:transpo:$transpo"
+    transpodep_exclude = dependencies.create(transpodep, {
+        exclude group: 'com.google.dagger:dagger'
+        exclude module: 'urbicore'
+        exclude module: 'urbimodel'
+        exclude module: 'utilitylib'
+        exclude module: 'designsystem'
+    })
+    tripodep = "co.urbi.android.tripo:tripo:$tripo"
+    tripodep_exclude = dependencies.create(tripodep, {
+        exclude group: 'com.google.dagger:dagger'
+        exclude module: 'urbicore'
+        exclude module: 'urbimodel'
+        exclude module: 'utilitylib'
+        exclude module: 'designsystem'
+        exclude module: 'ticketlib'
+    })
+    urbisearchdep = "co.urbi.android.urbisearch:urbisearch:$urbisearch"
+    urbisearchdep_exclude = dependencies.create(urbisearchdep, {
+        exclude module: 'urbicore'
+        exclude module: 'urbimodel'
+        exclude module: 'utilitylib'
+        exclude module: 'designsystem'
+    })
+    urbiscandep = "co.urbi.android.urbiscan:urbiscan:$urbiscan"
+    urbiscandep_exclude = dependencies.create(urbiscandep, {
+        exclude module: 'designsystem'
+    })
+
+    urbitaxidep = "co.urbi.android.urbitaxi:urbitaxi:$urbitaxi"
+    urbitaxidep_exclude = dependencies.create(urbitaxidep, {
+        exclude module: 'urbisearch'
+        exclude module: 'urbicore'
+        exclude module: 'urbimodel'
+        exclude module: 'utilitylib'
+        exclude module: 'designsystem'
+    })
+
+    evchargingdep = "co.urbi.android.evcharging:evcharging:$evcharging"
+    evchargingdep_exclude = dependencies.create(evchargingdep, {
+        exclude module: 'urbicore'
+        exclude module: 'urbimodel'
+        exclude module: 'utilitylib'
+        exclude module: 'designsystem'
+    })
+
+    mobilitylibdep = "com.batsharing.android.mobilitysharing:mobilitysharing:$mobilitylib"
+    mobilitylibdep_exclude = dependencies.create(mobilitylibdep, {
+        exclude module: 'urbicore'
+        exclude module: 'urbimodel'
+        exclude module: 'designsystem'
+        exclude module: 'urbisearch'
+        exclude module: 'tripo'
+        exclude module: 'transpo'
+        exclude module: 'evcharging'
+        exclude module: 'urbitaxi'
+        exclude module: 'ticketlib'
+        exclude module: 'urbiscan'
+        exclude module: 'utilitylib'
+    })
+
+    tpaylibdep = "it.telepass.prod.tpaylib:tpaylib:$tpaylib"
+    tpaylibdep_exclude = dependencies.create(tpaylibdep, {
+        exclude module: 'urbicore'
+        exclude module: 'urbimodel'
+        exclude module: 'designsystem'
+        exclude module: 'urbisearch'
+        exclude module: 'tripo'
+        exclude module: 'transpo'
+        exclude module: 'evcharging'
+        exclude module: 'urbitaxi'
+        exclude module: 'ticketlib'
+        exclude module: 'urbiscan'
+        exclude module: 'mobilitysharing'
+        exclude module: 'telepasspaymodel'
+        exclude module: 'telepasspaynetwork'
+        exclude module: 'utilitylib'
+    })
+
+    telepasspaymodeldep = "it.telepass.prod.TelepassPyng.model:telepasspaymodel:$telepasspaymodel"
+
+    telepasspaymodeldep_exclude = dependencies.create(telepasspaymodeldep , {
+        exclude module: 'utilitylib'
+    })
+
+    telepasspaynetworkdep = dependencies.create("it.telepass.prod.TelepassPyng.network:telepasspaynetwork:$telepasspaynetwork", {
+        exclude module: 'play-services-stats'
+        exclude module: 'firebase-measurement-connector-impl'
+    })
+
+    telepasspaynetworkdep_exclude = dependencies.create("it.telepass.prod.TelepassPyng.network:telepasspaynetwork:$telepasspaynetwork", {
+        exclude module: 'play-services-stats'
+        exclude module: 'firebase-measurement-connector-impl'
+        exclude module: 'utilitylib'
+        exclude module: 'telepasspaymodel'
+    })
+
+    nexusUser = 'telepass'
+    nexusPassword = 'telepass'
+    realmSchemaVersion = '11'
+}

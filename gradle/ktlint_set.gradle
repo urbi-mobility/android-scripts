@@ -1,0 +1,6 @@
+kotlinter {
+    ignoreFailures = false
+    reporters = ['checkstyle', 'plain','html']
+    experimentalRules = false
+    disabledRules = ['no-wildcard-imports','no-consecutive-blank-lines']
+}

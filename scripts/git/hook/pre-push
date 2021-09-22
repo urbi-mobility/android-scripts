@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+##### KOTLINTER HOOK START #####
+GRADLEW=$PWD/gradlew
+$GRADLEW lintDebug
+
+status=$?
+if [ "$status" != 0 ] ; then
+    echo 1>&2 "\nlintDebug  found problems, check on build/reports"
+    exit 1
+fi
+##### KOTLINTER HOOK END #####
