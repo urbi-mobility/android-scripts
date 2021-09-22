@@ -5,7 +5,6 @@ import kotlin.collections.*
 
 tasks.register("uploadlib") {
     doLast {
-        val tpaylib = "tpaylib"
         val mapChangelog: LinkedHashMap<String, String> = getChangelogMap()
 
         // Read Version on Gradle file
@@ -14,11 +13,9 @@ tasks.register("uploadlib") {
 
 ////         Read Changelog Utility on Gradle file
         mapChangelog.forEach { map ->
-            if (!map.key.equals("tpaylib", true))
-                writeChangelog(mapVersion, mapChangelog, map.key, "${map.key}/changelog.md")
+            writeChangelog(mapVersion, mapChangelog, map.key, "${map.key}/changelog.md")
         }
 
-        writeChangelog(mapVersion, mapChangelog, tpaylib, "changelog.md")
         println("UPLOAD TASK COMPLETED.......")
 
     }
@@ -89,69 +86,27 @@ tasks.register("commitversions") {
                 }
             }
         }
-        if(haveToPushTpayLib){
-            val key = "tpaylib"
-            val version = mapVersion[key]
-            println("Analyze ${key} ${version}..............")
-            ByteArrayOutputStream().use { os ->
-                exec {
-                    commandLine("./gradlew", "app::formatKotlin")
-                    standardOutput = os
-                }
-                println(os.toString())
-                exec {
-
-                    println("Adding $key's files to Git")
-                    commandLine("git", "add", "*")
-                    standardOutput = os
-                }
-                println(os.toString())
-                exec {
-                    println("Git commit $key $version.......")
-                    commandLine("git", "commit", "-m", "\"Version bump $key $version\"")
-                    standardOutput = os
-                }
-                println(os.toString())
-                exec {
-                    println("Git push $key $version.......")
-                    commandLine("git", "push")
-                    standardOutput = os
-                }
-                println(os.toString())
-                exec {
-                    println("Git tag ${mapChangelog[key]} $version.......")
-                    commandLine("git", "tag", "${mapChangelog[key]}$version")
-                    standardOutput = os
-                }
-                println(os.toString())
-                exec {
-                    println("Git push tags ${mapChangelog[key]} $version.......")
-                    commandLine("git", "push", "--tags")
-                    standardOutput = os
-                }
-                println(os.toString())
-            }
-        }
     }
 }
 
 fun getChangelogMap(): LinkedHashMap<String, String> = linkedMapOf(
-        "utilitylib" to "utilitylib_",
-        "urbimodel" to "URM_",
-        "urbicore" to "URC_",
-        "designsystem" to "DESL_",
-        "urbiscan" to "URS_",
-        "urbisearch" to "search_",
-        "urbipay" to "urbipay_",
-        "ticketlib" to "ticketlib_",
-        "urbitaxi" to "urbitaxi_",
-        "evcharging" to "EVC_",
-        "transpo" to "TRA_",
-        "tripo" to "Tripo_",
-        "mobilitylib" to "ML_",
-        "telepasspaymodel" to "telepasspaymodel_",
-        "telepasspaynetwork" to "telepasspaynetwork_",
-        "tpaylib" to "TPL_")
+    "utilitylib" to "utilitylib_",
+    "urbimodel" to "URM_",
+    "urbicore" to "URC_",
+    "designsystem" to "DESL_",
+    "urbiscan" to "URS_",
+    "urbisearch" to "search_",
+    "urbipay" to "urbipay_",
+    "ticketlib" to "ticketlib_",
+    "urbitaxi" to "urbitaxi_",
+    "evcharging" to "EVC_",
+    "transpo" to "TRA_",
+    "tripo" to "Tripo_",
+    "mobilitylib" to "ML_",
+    "telepasspaymodel" to "telepasspaymodel_",
+    "telepasspaynetwork" to "telepasspaynetwork_",
+    "tpaylib" to "TPL_"
+)
 
 fun createMapVersion(): HashMap<String, String> {
     val tpaylib = "tpaylib"
@@ -168,8 +123,11 @@ fun createMapVersion(): HashMap<String, String> {
             line.replace("\\s".toRegex(), "").let { lineW ->
                 lineW.split("=").let {
                     if (it[0].equals(tpaylib, true)) {
-                        mapVersion[it[0]] = it[1].replace("\'".toRegex(), "").replace("\\+".toRegex(), "").replace("tpaylib_code".toRegex(), mapVersion["tpaylib_code"]
-                                ?: "")
+                        mapVersion[it[0]] =
+                            it[1].replace("\'".toRegex(), "").replace("\\+".toRegex(), "").replace(
+                                "tpaylib_code".toRegex(), mapVersion["tpaylib_code"]
+                                    ?: ""
+                            )
                     } else mapVersion[it[0]] = it[1].replace("\'".toRegex(), "")
 
                 }
@@ -181,7 +139,12 @@ fun createMapVersion(): HashMap<String, String> {
     return mapVersion
 }
 
-fun writeChangelog(mapVersion: HashMap<String, String>, mapChangelog: HashMap<String, String>, key: String, pathFile: String) {
+fun writeChangelog(
+    mapVersion: HashMap<String, String>,
+    mapChangelog: HashMap<String, String>,
+    key: String,
+    pathFile: String
+) {
     println("Reading Changelog $pathFile........")
     val format = SimpleDateFormat("yyyy-MM-dd")
     val dataNow = format.format(Date())
@@ -207,10 +170,7 @@ fun writeChangelog(mapVersion: HashMap<String, String>, mapChangelog: HashMap<St
         println("Update lib $key..........")
         ByteArrayOutputStream().use { os ->
             val result = exec {
-                if (key.equals("tpaylib", true)) {
-                    commandLine("./gradlew", "app:clean", "app:publish")
-                } else
-                    commandLine("./gradlew", "$key:clean", "$key:publish")
+                commandLine("./gradlew", "$key:clean", "$key:publish")
                 standardOutput = os
             }
             println(os.toString())
