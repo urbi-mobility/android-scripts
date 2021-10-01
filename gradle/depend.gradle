@@ -111,7 +111,7 @@ ext {
     evcharging = '1.1.9'
     transpo = '1.1.5'
     tripo = '1.1.12'
-    urbiscan = '0.3.1'
+    urbiscan = '0.3.2'
     mobilitylib = '2.9.7'
     telepasspaymodel = '2.3.1'
     telepasspaynetwork = '2.4.0'
@@ -261,8 +261,8 @@ ext {
 //  Picasso
     picasso = "com.squareup.picasso:picasso:$picasso_version"
 //  Dagger
-    dagger = "com.google.dagger:hilt-android:2.39"
-    dagger_compile = "com.google.dagger:hilt-compiler:2.39"
+    dagger = "com.google.dagger:dagger:$dagger_version"
+    dagger_compile = "com.google.dagger:dagger-compiler:$dagger_version"
 //  JWT
     jwt = dependencies.create("io.jsonwebtoken:jjwt:$jsonwebtoken_version", {
         exclude group: 'com.fasterxml.jackson.core'
