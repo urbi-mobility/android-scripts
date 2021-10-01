@@ -261,8 +261,8 @@ ext {
 //  Picasso
     picasso = "com.squareup.picasso:picasso:$picasso_version"
 //  Dagger
-    dagger = "com.google.dagger:dagger:$dagger_version"
-    dagger_compile = "com.google.dagger:dagger-compiler:$dagger_version"
+    dagger = "com.google.dagger:hilt-android:2.39"
+    dagger_compile = "com.google.dagger:hilt-compiler:2.39"
 //  JWT
     jwt = dependencies.create("io.jsonwebtoken:jjwt:$jsonwebtoken_version", {
         exclude group: 'com.fasterxml.jackson.core'
