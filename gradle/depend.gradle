@@ -101,7 +101,7 @@ def zxing_qr_code = "3.4.1"
 ext {
 //---Module Version---//
     utilitylib = '2.4.2'
-    designsystem = '0.9.2'
+    designsystem = '0.9.3'
     urbimodel = '2.6.5'
     urbicore = '2.8.8'
     urbipay = '1.6.4'
