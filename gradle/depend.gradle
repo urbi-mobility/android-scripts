@@ -25,7 +25,7 @@ def biometric_version = '1.0.1'
 def preference_version = '1.1.0'
 def lifecycle_extension_version = '2.2.0'
 def lifecycle_version = '2.3.1'
-def appcompat_version = "1.2.0"
+def appcompat_version = "1.3.1"
 def activityx_version = "1.2.0-rc01"
 def fragmentx_version = "1.3.0-rc01"
 def constraintlayout_version = '2.0.4'
@@ -111,7 +111,7 @@ ext {
     evcharging = '1.1.9'
     transpo = '1.1.6'
     tripo = '1.1.13'
-    urbiscan = '0.3.1'
+    urbiscan = '0.3.2'
     mobilitylib = '2.9.8'
     telepasspaymodel = '2.3.1'
     telepasspaynetwork = '2.4.0'
