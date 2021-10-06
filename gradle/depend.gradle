@@ -101,7 +101,7 @@ def zxing_qr_code = "3.4.1"
 ext {
 //---Module Version---//
     utilitylib = '2.4.2'
-    designsystem = '0.9.3'
+    designsystem = '0.9.4'
     urbimodel = '2.6.5'
     urbicore = '2.8.8'
     urbipay = '1.6.5'
@@ -109,13 +109,13 @@ ext {
     urbisearch = '0.5.4'
     urbitaxi = '0.4.4'
     evcharging = '1.1.9'
-    transpo = '1.1.6'
+    transpo = '1.1.7'
     tripo = '1.1.14'
     urbiscan = '0.3.2'
-    mobilitylib = '2.9.8'
+    mobilitylib = '2.9.9'
     telepasspaymodel = '2.3.1'
-    telepasspaynetwork = '2.4.0'
-    tpaylib_code = '10'
+    telepasspaynetwork = '2.4.1'
+    tpaylib_code = '11'
     tpaylib = '2.5.' + tpaylib_code
     versionUrbi = '50505'
 //---End---//
