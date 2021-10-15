@@ -1,7 +1,7 @@
 //Version
 def legacy_support_version = '1.0.0'
 def android_places_version = '2.0.0'
-def tempo_version = '0.1.2'
+def tempo_version = '0.3.0'
 def security_crypto_version = '1.1.0-alpha02'
 def jackson_databind_version = '2.4.2'
 def gson_version = '2.7'
@@ -100,7 +100,7 @@ def zxing_qr_code = "3.4.1"
 
 ext {
 //---Module Version---//
-    utilitylib = '2.4.2'
+    utilitylib = '2.4.3'
     designsystem = '0.9.5'
     urbimodel = '2.6.8'
     urbicore = '2.8.9'
