@@ -1,7 +1,7 @@
 //Version
 def legacy_support_version = '1.0.0'
 def android_places_version = '2.0.0'
-def tempo_version = '0.1.2'
+def tempo_version = '0.3.0'
 def security_crypto_version = '1.1.0-alpha02'
 def jackson_databind_version = '2.4.2'
 def gson_version = '2.7'
@@ -71,7 +71,7 @@ def retrofit_adapter_rxjava_version = '2.8.1'
 //  OK-HTTP3 VERSION
 def okhttp3_version = '4.9.1'
 //  DAGGER VERSION
-def dagger_version = '2.27'
+def dagger_version = '2.38.1'
 // PAYMENT_VERSION
 def stripe_android_version = '16.10.0'
 def satispay_version = '1.0.5'
@@ -100,22 +100,22 @@ def zxing_qr_code = "3.4.1"
 
 ext {
 //---Module Version---//
-    utilitylib = '2.4.1'
-    designsystem = '0.9.1'
-    urbimodel = '2.6.4'
-    urbicore = '2.8.7'
-    urbipay = '1.6.4'
-    ticketlib = '0.5.2'
-    urbisearch = '0.5.4'
-    urbitaxi = '0.4.3'
-    evcharging = '1.1.9'
-    transpo = '1.1.5'
-    tripo = '1.1.12'
-    urbiscan = '0.3.2'
-    mobilitylib = '2.9.7'
+    utilitylib = '2.4.3'
+    designsystem = '0.9.6'
+    urbimodel = '2.6.10'
+    urbicore = '2.8.10'
+    urbipay = '1.6.5'
+    ticketlib = '0.5.4'
+    urbisearch = '0.5.6'
+    urbitaxi = '0.4.6'
+    evcharging = '1.1.13'
+    transpo = '1.1.16'
+    tripo = '1.1.16'
+    urbiscan = '0.3.4'
+    mobilitylib = '2.9.13'
     telepasspaymodel = '2.3.1'
-    telepasspaynetwork = '2.4.0'
-    tpaylib_code = '9'
+    telepasspaynetwork = '2.4.1'
+    tpaylib_code = '15'
     tpaylib = '2.5.' + tpaylib_code
     versionUrbi = '50505'
 //---End---//
@@ -125,7 +125,7 @@ ext {
     android_plugin = '7.0.0'
 
 //  KOTLIN
-    kotlin_version = '1.4.32'
+    kotlin_version = '1.5.30'
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     kotlinx_coroutines = ["org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_core_version",
                           "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_android_version",
