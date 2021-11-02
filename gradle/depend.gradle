@@ -100,23 +100,23 @@ def photo_view_version = "2.3.0"
 
 ext {
 //---Module Version---//
-    utilitylib = '2.4.7'
-    designsystem = '1.0.0'
-    urbimodel = '2.6.15'
-    urbicore = '2.8.14'
-    urbipay = '1.6.9'
+    utilitylib = '2.4.3'
+    designsystem = '0.9.7'
+    urbimodel = '2.6.10'
+    urbicore = '2.8.10'
+    urbipay = '1.6.7'
     ticketlib = '0.5.4'
-    urbisearch = '0.5.7'
-    urbitaxi = '0.4.16'
-    urbiscan = '0.3.5'
-    transpo = '1.1.31'
-    evcharging = '1.1.15'
-    tripo = '1.1.20'
-    mobilitylib = '2.10.1'
-    telepasspaymodel = '2.3.2'
-    telepasspaynetwork = '2.4.2'
-    tpaylib_code = '2'
-    tpaylib = '2.6.' + tpaylib_code
+    urbisearch = '0.5.6'
+    urbitaxi = '0.4.6'
+    evcharging = '1.1.13'
+    transpo = '1.1.21'
+    tripo = '1.1.17'
+    urbiscan = '0.3.4'
+    mobilitylib = '2.9.13'
+    telepasspaymodel = '2.3.1'
+    telepasspaynetwork = '2.4.1'
+    tpaylib_code = '15'
+    tpaylib = '2.5.' + tpaylib_code
     versionUrbi = '50505'
 //---End---//
 
