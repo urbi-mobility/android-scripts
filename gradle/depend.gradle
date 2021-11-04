@@ -96,7 +96,8 @@ def atac_version = "2.0.5"
 def sql_cipher_version = "4.4.3"
 //ZXing
 def zxing_qr_code = "3.4.1"
-
+//PhotoView
+def photo_view_version = "2.3.0"
 
 ext {
 //---Module Version---//
@@ -193,6 +194,8 @@ ext {
     lottie = dependencies.create("com.airbnb.android:lottie:$lottieVersion", {
         exclude module: 'okio'
     })
+
+    photho_view = "com.github.chrisbanes:PhotoView:$photo_view_version"
 
 //  PLACES
     android_places = "com.google.android.libraries.places:places:$android_places_version"
