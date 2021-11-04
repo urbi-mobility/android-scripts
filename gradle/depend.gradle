@@ -96,11 +96,12 @@ def atac_version = "2.0.5"
 def sql_cipher_version = "4.4.3"
 //ZXing
 def zxing_qr_code = "3.4.1"
-
+//PhotoView
+def photo_view_version = "2.3.0"
 
 ext {
 //---Module Version---//
-    utilitylib = '2.4.4'
+    utilitylib = '2.4.5'
     designsystem = '0.9.9'
     urbimodel = '2.6.12'
     urbicore = '2.8.11'
@@ -110,9 +111,9 @@ ext {
     urbitaxi = '0.4.10'
     evcharging = '1.1.13'
     transpo = '1.1.22'
-    tripo = '1.1.17'
+    tripo = '1.1.18'
     urbiscan = '0.3.4'
-    mobilitylib = '2.9.13'
+    mobilitylib = '2.9.14'
     telepasspaymodel = '2.3.1'
     telepasspaynetwork = '2.4.1'
     tpaylib_code = '15'
@@ -193,6 +194,8 @@ ext {
     lottie = dependencies.create("com.airbnb.android:lottie:$lottieVersion", {
         exclude module: 'okio'
     })
+
+    photho_view = "com.github.chrisbanes:PhotoView:$photo_view_version"
 
 //  PLACES
     android_places = "com.google.android.libraries.places:places:$android_places_version"
