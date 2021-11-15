@@ -103,7 +103,7 @@ ext {
 //---Module Version---//
     utilitylib = '2.4.5'
     designsystem = '0.9.10'
-    urbimodel = '2.6.12'
+    urbimodel = '2.6.13'
     urbicore = '2.8.11'
     urbipay = '1.6.7'
     ticketlib = '0.5.4'
@@ -111,12 +111,14 @@ ext {
     urbitaxi = '0.4.11'
     evcharging = '1.1.13'
     transpo = '1.1.25'
+    evcharging = '1.1.14'
+    transpo = '1.1.25'
     tripo = '1.1.18'
     urbiscan = '0.3.4'
     mobilitylib = '2.9.14'
     telepasspaymodel = '2.3.1'
     telepasspaynetwork = '2.4.1'
-    tpaylib_code = '15'
+    tpaylib_code = '17'
     tpaylib = '2.5.' + tpaylib_code
     versionUrbi = '50505'
 //---End---//
