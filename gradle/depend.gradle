@@ -71,7 +71,7 @@ def retrofit_adapter_rxjava_version = '2.8.1'
 //  OK-HTTP3 VERSION
 def okhttp3_version = '4.9.1'
 //  DAGGER VERSION
-def dagger_version = '2.38.1'
+def dagger_version = '2.39'
 // PAYMENT_VERSION
 def stripe_android_version = '16.10.0'
 def satispay_version = '1.0.5'
@@ -264,8 +264,8 @@ ext {
 //  Picasso
     picasso = "com.squareup.picasso:picasso:$picasso_version"
 //  Dagger
-    dagger = "com.google.dagger:hilt-android:2.39"
-    dagger_compile = "com.google.dagger:hilt-compiler:2.39"
+    dagger = "com.google.dagger:hilt-android:$dagger_version"
+    dagger_compile = "com.google.dagger:hilt-compiler:$dagger_version"
 //  JWT
     jwt = dependencies.create("io.jsonwebtoken:jjwt:$jsonwebtoken_version", {
         exclude group: 'com.fasterxml.jackson.core'
