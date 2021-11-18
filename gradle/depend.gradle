@@ -108,7 +108,7 @@ ext {
     urbipay = '1.6.7'
     ticketlib = '0.5.4'
     urbisearch = '0.5.6'
-    urbitaxi = '0.4.12'
+    urbitaxi = '0.4.13'
     transpo = '1.1.26'
     evcharging = '1.1.14'
     tripo = '1.1.18'
