@@ -91,7 +91,7 @@ def jumio_version = '3.9.1'
 // ROOM
 def room_runtime_version = '2.2.6'
 //ATAC
-def atac_version = "2.0.5"
+def atac_version = "2.0.5r"
 def sql_cipher_version = "4.4.3"
 //ZXing
 def zxing_qr_code = "3.4.1"
