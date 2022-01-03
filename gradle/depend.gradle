@@ -101,7 +101,7 @@ def photo_view_version = "2.3.0"
 ext {
 //---Module Version---//
     utilitylib = '2.4.6m1'
-    designsystem = '1.0.0m2'
+    designsystem = '1.0.0m3'
     urbimodel = '2.6.15m1'
     urbicore = '2.8.14m1'
     urbipay = '1.6.9'
@@ -110,7 +110,7 @@ ext {
     urbitaxi = '0.4.15m1'
     urbiscan = '0.3.6m1'
     transpo = '1.1.30m3'
-    evcharging = '1.1.15m1'
+    evcharging = '1.1.15m2'
     tripo = '1.1.19m1'
     mobilitylib = '2.10.0m1'
     telepasspaymodel = '2.3.2m1'
