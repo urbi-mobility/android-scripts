@@ -42,8 +42,8 @@ def play_services_analytics_version = '17.0.0'
 def play_services_wallet_version = '18.1.1'
 def play_services_location_version = '17.0.0'
 // KOTLIN VERSION
-def kotlinx_coroutines_core_version = '1.3.9'
-def kotlinx_coroutines_android_version = '1.3.9'
+def kotlinx_coroutines_core_version = '1.5.2'
+def kotlinx_coroutines_android_version = '1.5.2'
 //  Stream Guava VERSION
 def guava_version = "27.0.1-android"
 // FIREBASE VERSION
