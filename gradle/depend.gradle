@@ -111,7 +111,7 @@ ext {
     urbiscan = '0.3.5'
     transpo = '1.1.30'
     evcharging = '1.1.15'
-    tripo = '1.1.19'
+    tripo = '1.1.20'
     mobilitylib = '2.10.0'
     telepasspaymodel = '2.3.2'
     telepasspaynetwork = '2.4.2'
