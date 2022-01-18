@@ -42,8 +42,8 @@ def play_services_analytics_version = '17.0.0'
 def play_services_wallet_version = '18.1.1'
 def play_services_location_version = '17.0.0'
 // KOTLIN VERSION
-def kotlinx_coroutines_core_version = '1.3.9'
-def kotlinx_coroutines_android_version = '1.3.9'
+def kotlinx_coroutines_core_version = '1.5.2'
+def kotlinx_coroutines_android_version = '1.5.2'
 //  Stream Guava VERSION
 def guava_version = "27.0.1-android"
 // FIREBASE VERSION
@@ -100,7 +100,7 @@ def photo_view_version = "2.3.0"
 
 ext {
 //---Module Version---//
-    utilitylib = '2.4.6'
+    utilitylib = '2.4.7'
     designsystem = '1.0.0'
     urbimodel = '2.6.15'
     urbicore = '2.8.14'
@@ -109,10 +109,10 @@ ext {
     urbisearch = '0.5.7'
     urbitaxi = '0.4.16'
     urbiscan = '0.3.5'
-    transpo = '1.1.30'
+    transpo = '1.1.31'
     evcharging = '1.1.15'
-    tripo = '1.1.19'
-    mobilitylib = '2.10.0'
+    tripo = '1.1.20'
+    mobilitylib = '2.10.1'
     telepasspaymodel = '2.3.2'
     telepasspaynetwork = '2.4.2'
     tpaylib_code = '2'
