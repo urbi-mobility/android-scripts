@@ -112,7 +112,7 @@ ext {
     transpo = '1.1.31'
     evcharging = '1.1.15'
     tripo = '1.1.20'
-    mobilitylib = '2.10.1'
+    mobilitylib = '2.10.2'
     telepasspaymodel = '2.3.3'
     telepasspaynetwork = '2.4.2'
     tpaylib_code = '3'
