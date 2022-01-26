@@ -72,7 +72,7 @@ def okhttp3_version = '4.9.1'
 //  DAGGER VERSION
 def dagger_version = '2.38.1'
 // PAYMENT_VERSION
-def stripe_android_version = '16.10.0'
+def stripe_android_version = '19.1.0'
 def satispay_version = '1.0.6'
 // RX REDUX
 def rxbinding_kotlin_version = '2.2.0'
@@ -101,10 +101,10 @@ def photo_view_version = "2.3.0"
 ext {
 //---Module Version---//
     utilitylib = '2.4.7'
-    designsystem = '1.0.0'
+    designsystem = '1.0.1'
     urbimodel = '2.6.16'
     urbicore = '2.8.15'
-    urbipay = '1.6.9'
+    urbipay = '1.6.10'
     ticketlib = '0.5.4'
     urbisearch = '0.5.7'
     urbitaxi = '0.4.16'
@@ -112,10 +112,10 @@ ext {
     transpo = '1.1.31'
     evcharging = '1.1.15'
     tripo = '1.1.20'
-    mobilitylib = '2.10.2'
+    mobilitylib = '2.10.1'
     telepasspaymodel = '2.3.3'
     telepasspaynetwork = '2.4.2'
-    tpaylib_code = '3'
+    tpaylib_code = '2'
     tpaylib = '2.6.' + tpaylib_code
     versionUrbi = '50505'
 //---End---//
