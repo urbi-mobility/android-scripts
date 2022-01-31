@@ -115,7 +115,7 @@ ext {
     mobilitylib = '2.10.3'
     telepasspaymodel = '2.3.3'
     telepasspaynetwork = '2.4.2'
-    tpaylib_code = '3'
+    tpaylib_code = '4'
     tpaylib = '2.6.' + tpaylib_code
     versionUrbi = '50505'
 //---End---//
