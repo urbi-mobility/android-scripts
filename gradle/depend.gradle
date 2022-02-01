@@ -101,7 +101,7 @@ def photo_view_version = "2.3.0"
 ext {
 //---Module Version---//
     utilitylib = '2.4.8'
-    designsystem = '1.0.2'
+    designsystem = '1.0.3'
     urbimodel = '2.6.17'
     urbicore = '2.8.17'
     urbipay = '1.6.12'
