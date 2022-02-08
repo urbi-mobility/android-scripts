@@ -56,9 +56,9 @@ def firebase_messaging_version = '20.1.5'
 def firebase_crashlytics_version = '17.0.0'
 def firebase_core_version = '16.0.9'
 // ML KIT VERSIONS
-def mlkit_facedetection_version = '16.1.1'
-def mlkit_textrecognition_version = '16.1.1'
-def mlkit_barcodescanning_version = '16.2.0'
+def mlkit_facedetection_version = '17.0.0'
+def mlkit_textrecognition_version = '18.0.0'
+def mlkit_barcodescanning_version = '17.0.2'
 // PICASSO VERSION
 def picasso_version = '2.5.2'
 // RX_VERSION
