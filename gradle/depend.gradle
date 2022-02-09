@@ -56,9 +56,9 @@ def firebase_messaging_version = '20.1.5'
 def firebase_crashlytics_version = '17.0.0'
 def firebase_core_version = '16.0.9'
 // ML KIT VERSIONS
-def mlkit_facedetection_version = '16.1.1'
-def mlkit_textrecognition_version = '16.1.1'
-def mlkit_barcodescanning_version = '16.2.0'
+def mlkit_facedetection_version = '17.0.0'
+def mlkit_textrecognition_version = '18.0.0'
+def mlkit_barcodescanning_version = '17.0.2'
 // PICASSO VERSION
 def picasso_version = '2.5.2'
 // RX_VERSION
@@ -108,7 +108,7 @@ ext {
     ticketlib = '0.5.4'
     urbisearch = '0.5.7'
     urbitaxi = '0.4.17'
-    urbiscan = '0.3.6'
+    urbiscan = '0.3.7'
     transpo = '1.1.31'
     evcharging = '1.1.17'
     tripo = '1.1.22'
