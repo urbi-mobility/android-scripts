@@ -104,7 +104,7 @@ ext {
     designsystem = '1.0.3'
     urbimodel = '2.6.17'
     urbicore = '2.8.17'
-    urbipay = '1.6.13'
+    urbipay = '1.6.14'
     ticketlib = '0.5.4'
     urbisearch = '0.5.7'
     urbitaxi = '0.4.18'
