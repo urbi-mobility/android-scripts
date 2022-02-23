@@ -102,14 +102,14 @@ ext {
 //---Module Version---//
     utilitylib = '2.4.8'
     designsystem = '1.0.3'
-    urbimodel = '2.6.17'
-    urbicore = '2.8.17'
-    urbipay = '1.6.14'
+    urbimodel = '2.6.19'
+    urbicore = '2.8.19'
+    urbipay = '1.6.16'
     ticketlib = '0.5.4'
     urbisearch = '0.5.7'
     urbitaxi = '0.4.18'
     urbiscan = '0.3.7'
-    transpo = '1.1.31'
+    transpo = '1.1.33'
     evcharging = '1.1.17'
     tripo = '1.1.23'
     mobilitylib = '2.10.5'
@@ -125,7 +125,7 @@ ext {
     android_plugin = '7.0.0'
 
 //  KOTLIN
-    kotlin_version = '1.5.30'
+    kotlin_version = '1.5.31'
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     kotlinx_coroutines = ["org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_core_version",
                           "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_android_version",
