@@ -116,7 +116,7 @@ ext {
     telepasspaymodel = '2.3.3'
     telepasspaynetwork = '2.4.2'
     tpaylib_code = '6'
-    tpaylib = '2.6.' + tpaylib_code+"r"
+    tpaylib = '2.6.' + tpaylib_code+"r2"
     versionUrbi = '50505'
 //---End---//
 
