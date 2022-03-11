@@ -1,6 +1,6 @@
 //Version
 def legacy_support_version = '1.0.0'
-def android_places_version = '2.0.0'
+def android_places_version = '2.5.0'
 def tempo_version = '0.3.0'
 def security_crypto_version = '1.1.0-alpha02'
 def jackson_databind_version = '2.4.2'
@@ -36,11 +36,10 @@ def navigation_ui_ktx_version = '2.1.0'
 def kotlinx_serialization_core_version = '1.0.0'
 def kotlinx_serialization_json_version = '1.0.0'
 // GMS_VERSION
-def play_services_maps_version = '17.0.0'
-def play_services_base_version = '17.0.0'
-def play_services_analytics_version = '17.0.0'
+def play_services_maps_version = '18.0.2'
+def play_services_base_version = '18.0.1'
+def play_services_analytics_version = '18.0.1'
 def play_services_wallet_version = '18.1.1'
-def play_services_location_version = '17.0.0'
 // KOTLIN VERSION
 def kotlinx_coroutines_core_version = '1.5.2'
 def kotlinx_coroutines_android_version = '1.5.2'
@@ -236,7 +235,6 @@ ext {
     ]
 
     play_services_wallet = "com.google.android.gms:play-services-wallet:$play_services_wallet_version"
-    play_services_location = "com.google.android.gms:play-services-wallet:$play_services_location_version"
 
 //  Guava
     guava = "com.google.guava:guava:$guava_version"
