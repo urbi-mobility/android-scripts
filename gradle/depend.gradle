@@ -100,7 +100,7 @@ def photo_view_version = "2.3.0"
 ext {
 //---Module Version---//
     utilitylib = '2.4.9'
-    designsystem = '1.0.6'
+    designsystem = '1.0.7'
     urbimodel = '2.6.22'
     urbicore = '2.8.22'
     urbipay = '1.7.2'
@@ -111,7 +111,7 @@ ext {
     transpo = '1.1.35'
     evcharging = '1.2.2'
     tripo = '1.2.1'
-    mobilitylib = '2.10.9'
+    mobilitylib = '2.10.12'
     telepasspaymodel = '2.3.3'
     telepasspaynetwork = '2.4.2'
     tpaylib_code = '6'
