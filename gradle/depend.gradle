@@ -115,6 +115,13 @@ ext {
     telepasspaymodel = '2.3.4'
     telepasspaynetwork = '2.4.3'
     tpaylib_code = '7'
+    transpo = '1.1.35'
+    evcharging = '1.2.2'
+    tripo = '1.2.1'
+    mobilitylib = '2.10.12'
+    telepasspaymodel = '2.3.3'
+    telepasspaynetwork = '2.4.2'
+    tpaylib_code = '6'
     tpaylib = '2.6.' + tpaylib_code
     versionUrbi = '50505'
 //---End---//
