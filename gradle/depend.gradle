@@ -101,8 +101,8 @@ ext {
 //---Module Version---//
     utilitylib = '2.4.9'
     designsystem = '1.0.6'
-    urbimodel = '2.6.23'
-    urbicore = '2.8.23'
+    urbimodel = '2.6.22'
+    urbicore = '2.8.24'
     urbipay = '1.7.2'
     ticketlib = '0.5.5'
     urbisearch = '0.5.9'
