@@ -1,6 +1,6 @@
 //Version
 def legacy_support_version = '1.0.0'
-def android_places_version = '2.0.0'
+def android_places_version = '2.5.0'
 def tempo_version = '0.3.0'
 def security_crypto_version = '1.1.0-alpha02'
 def jackson_databind_version = '2.4.2'
@@ -36,11 +36,10 @@ def navigation_ui_ktx_version = '2.1.0'
 def kotlinx_serialization_core_version = '1.0.0'
 def kotlinx_serialization_json_version = '1.0.0'
 // GMS_VERSION
-def play_services_maps_version = '17.0.0'
-def play_services_base_version = '17.0.0'
-def play_services_analytics_version = '17.0.0'
+def play_services_maps_version = '18.0.2'
+def play_services_base_version = '18.0.1'
+def play_services_analytics_version = '18.0.1'
 def play_services_wallet_version = '18.1.1'
-def play_services_location_version = '17.0.0'
 // KOTLIN VERSION
 def kotlinx_coroutines_core_version = '1.5.2'
 def kotlinx_coroutines_android_version = '1.5.2'
@@ -100,23 +99,23 @@ def photo_view_version = "2.3.0"
 
 ext {
 //---Module Version---//
-    utilitylib = '2.4.8'
-    designsystem = '1.0.4'
-    urbimodel = '2.6.20r2'
-    urbicore = '2.8.20r'
-    urbipay = '1.6.17'
-    ticketlib = '0.5.4'
-    urbisearch = '0.5.8'
-    urbitaxi = '0.4.20'
-    urbiscan = '0.3.7'
-    transpo = '1.1.33'
-    evcharging = '1.2.0'
-    tripo = '1.1.23'
-    mobilitylib = '2.10.7'
-    telepasspaymodel = '2.3.3'
-    telepasspaynetwork = '2.4.2'
-    tpaylib_code = '6'
-    tpaylib = '2.6.' + tpaylib_code+"r3"
+    utilitylib = '2.4.9'
+    designsystem = '1.0.7'
+    urbimodel = '2.6.22'
+    urbicore = '2.8.24'
+    urbipay = '1.7.2'
+    ticketlib = '0.5.5'
+    urbisearch = '0.5.9'
+    urbitaxi = '0.4.23'
+    urbiscan = '0.3.8'
+    transpo = '1.1.36'
+    evcharging = '1.2.3'
+    tripo = '1.2.3'
+    mobilitylib = '2.10.12'
+    telepasspaymodel = '2.3.4'
+    telepasspaynetwork = '2.4.3'
+    tpaylib_code = '7'
+    tpaylib = '2.6.' + tpaylib_code
     versionUrbi = '50505'
 //---End---//
 
@@ -236,7 +235,6 @@ ext {
     ]
 
     play_services_wallet = "com.google.android.gms:play-services-wallet:$play_services_wallet_version"
-    play_services_location = "com.google.android.gms:play-services-wallet:$play_services_location_version"
 
 //  Guava
     guava = "com.google.guava:guava:$guava_version"
