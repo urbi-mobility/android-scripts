@@ -83,8 +83,6 @@ def lottieVersion = "3.4.0"
 // APACHE VERSION
 def commons_codec_version = '1.11'
 def commons_lang_version = '3:3.5'
-// INSTABUG VERSION
-def instabug_version = '10.4.3'
 // JUMIO
 def jumio_version = '3.9.1'
 // ROOM
@@ -113,7 +111,7 @@ ext {
     tripo = '1.2.4'
     mobilitylib = '2.10.12'
     telepasspaymodel = '2.3.4'
-    telepasspaynetwork = '2.4.3'
+    telepasspaynetwork = '2.4.4'
     tpaylib_code = '8'
     tpaylib = '2.6.' + tpaylib_code
     versionUrbi = '50505'
@@ -328,9 +326,6 @@ ext {
     })
 
     camerax_group = [camera_core, camera_camera2, camera_lifecycle, camera_view]
-
-    // INSTABUG
-    instabug = "com.instabug.library:instabug-with-okhttp-interceptor:$instabug_version"
 
     //ROOM
     room_runtime = "androidx.room:room-runtime:$room_runtime_version"
