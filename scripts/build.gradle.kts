@@ -119,6 +119,12 @@ fun getChangelogMap(): LinkedHashMap<String, String> = linkedMapOf(
     "mobilitylib" to "MBL_",
 )
 
+fun getChangelogTpayMap(): LinkedHashMap<String, String> = linkedMapOf(
+    "telepasspaymodel" to "TPM_",
+    "telepasspaynetwork" to "TPN_",
+    "tpaylib" to "TPL_"
+)
+
 fun getVersionKeyFromModule(): LinkedHashMap<String, String> = linkedMapOf(
     "utilitylib" to "utilityVersion",
     "urbimodel" to "modelVersion",
@@ -133,19 +139,13 @@ fun getVersionKeyFromModule(): LinkedHashMap<String, String> = linkedMapOf(
     "transpo" to "transpoVersion",
     "tripo" to "tripoVersion",
     "mobilitylib" to "mobilitySharingVersion",
-    "telepasspaymodel" to "telepasspaymodel",
-    "telepasspaynetwork" to "telepasspaynetwork",
-    "tpaylib" to "tpaylib",
-)
-
-fun getChangelogTpayMap(): LinkedHashMap<String, String> = linkedMapOf(
-    "telepasspaymodel" to "telepasspaymodel_",
-    "telepasspaynetwork" to "telepasspaynetwork_",
-    "tpaylib" to "TPL_"
+    "telepasspaymodel" to "telepassModelVersion",
+    "telepasspaynetwork" to "telepassNetworkVersion",
+    "tpaylib" to "telepassLibVersion",
 )
 
 fun createMapVersion(): HashMap<String, String> {
-    val tpaylib = "tpaylib"
+    val tpaylib = "telepassLibVersion"
     // Read Version on Gradle file
     val mapVersion: HashMap<String, String> = hashMapOf()
     val gradle = File("android-scripts/gradle/depend.gradle")
@@ -158,14 +158,16 @@ fun createMapVersion(): HashMap<String, String> {
         if (readVersion) {
             line.replace("\\s".toRegex(), "").let { lineW ->
                 lineW.split("=").let {
-                    if (it[0].equals(tpaylib, true)) {
-                        mapVersion[it[0]] =
-                            it[1].replace("\'".toRegex(), "").replace("\\+".toRegex(), "").replace(
-                                "tpaylib_code".toRegex(), mapVersion["tpaylib_code"]
-                                    ?: ""
-                            )
-                    } else mapVersion[it[0]] = it[1].replace("\'".toRegex(), "")
-
+                    if(it.size > 1) {
+                        if (it[0].equals(tpaylib, true)) {
+                            mapVersion[it[0]] =
+                                it[1].replace("\'".toRegex(), "").replace("\\+".toRegex(), "")
+                                    .replace(
+                                        "telepassLibCode".toRegex(), mapVersion["telepassLibCode"]
+                                            ?: ""
+                                    )
+                        } else mapVersion[it[0]] = it[1].replace("\'".toRegex(), "")
+                    }
                 }
             }
         }
