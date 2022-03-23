@@ -104,7 +104,7 @@ ext {
 // Github packages
     ghp_registry_name = 'GitHubPackages'
     urbiGroupId = 'co.urbi.android'
-    telepassGroupId = 'com.telepass'
+    telepassGroupId = 'com.telepass.urbi'
     urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-telepass-pay-framework'
     telepass_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-unica-framework'
 //Artifact ids
@@ -146,6 +146,7 @@ ext {
     telepassNetworkVersion = '2.5.0'
     telepassLibCode = '0'
     telepassLibVersion = '2.7.' + telepassLibCode
+
     versionUrbi = '50505'
     atacVersion = '2.0.5r'
 //---End---//
