@@ -107,6 +107,7 @@ ext {
     telepassGroupId = 'com.telepass.urbi'
     urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-telepass-pay-framework'
     telepass_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-unica-framework'
+    telepass_urbi_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-framework'
 //Artifact ids
     utilityId = 'utility'
     designsystemId = 'designsystem'
@@ -118,7 +119,7 @@ ext {
     taxiId = 'taxi'
     scanId = 'scan'
     transpoId = 'transpo'
-    atacId = 'atac'
+    atacId = 'atack'
     evchargingId = 'evcharging'
     tripoId = 'tripo'
     mobilitySharingId = 'mobilitysharing'
