@@ -119,7 +119,7 @@ ext {
     taxiId = 'taxi'
     scanId = 'scan'
     transpoId = 'transpo'
-    atacId = 'atack'
+    atacId = 'atac'
     evchargingId = 'evcharging'
     tripoId = 'tripo'
     mobilitySharingId = 'mobilitysharing'
