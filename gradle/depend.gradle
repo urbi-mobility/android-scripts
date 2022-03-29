@@ -110,10 +110,10 @@ ext {
     evcharging = '1.3.0'
     tripo = '1.3.0'
     mobilitylib = '2.11.0'
-    telepasspaymodel = '2.3.4'
-    telepasspaynetwork = '2.4.4'
-    tpaylib_code = '8'
-    tpaylib = '2.6.' + tpaylib_code
+    telepasspaymodel = '2.4.0'
+    telepasspaynetwork = '2.5.0'
+    tpaylib_code = '0'
+    tpaylib = '2.7.' + tpaylib_code
     versionUrbi = '50505'
 //---End---//
 
