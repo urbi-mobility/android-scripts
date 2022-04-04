@@ -94,6 +94,12 @@ def sql_cipher_version = "4.4.3"
 def zxing_qr_code = "3.4.1"
 //PhotoView
 def photo_view_version = "2.3.0"
+//mockk
+def mockk_version = "1.12.3"
+//core-testing
+def core_testing_version = "2.1.0"
+//
+def turbine_version = "0.7.0"
 
 ext {
 //---Module Version---//
@@ -352,6 +358,10 @@ ext {
 
 
 //  TEST
+    mockk_unit = "io.mockk:mockk:$mockk_version"
+    core_testing = "androidx.arch.core:core-testing:$core_testing_version"
+    coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
+    turbine = "app.cash.turbine:turbine:$turbine_version"
     junit = 'junit:junit:4.12'
     mockito = 'org.mockito:mockito-android:2.6.3'
     junit_x = 'androidx.test.ext:junit:1.1.1'
