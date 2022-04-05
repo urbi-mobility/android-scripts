@@ -47,12 +47,10 @@ def kotlinx_coroutines_android_version = '1.5.2'
 def guava_version = "27.0.1-android"
 // FIREBASE VERSION
 def firebase_auth_version = '17.0.0'
-def firebase_database_version = '17.0.0'
 def firebase_storage_version = '17.0.0'
 def firebase_config_version = '17.0.0'
 def firebase_analytics_version = '17.1.0'
-def firebase_messaging_version = '20.1.5'
-def firebase_crashlytics_version = '17.0.0'
+def firebase_messaging_version = '21.0.0'
 def firebase_core_version = '16.0.9'
 // ML KIT VERSIONS
 def mlkit_facedetection_version = '17.0.0'
@@ -279,10 +277,6 @@ ext {
     firebase_analytics = "com.google.firebase:firebase-analytics:$firebase_analytics_version"
     firebase_config = "com.google.firebase:firebase-config:$firebase_config_version"
     firebase_messaging = "com.google.firebase:firebase-messaging:$firebase_messaging_version"
-    firebase_database = ["com.google.firebase:firebase-database:$firebase_database_version",
-                         "com.google.firebase:firebase-storage:$firebase_storage_version",
-                         firebase_core]
-    firebase_crashlytics = "com.google.firebase:firebase-crashlytics:$firebase_crashlytics_version"
 
     // MLKIT
     mlkit_facedetection = "com.google.android.gms:play-services-mlkit-face-detection:$mlkit_facedetection_version" //thin
@@ -459,6 +453,7 @@ ext {
     urbiscandep = "$urbiGroupId:$scanId:$scanVersion"
     urbiscandep_exclude = dependencies.create(urbiscandep, {
         exclude module: 'designsystem'
+        exclude module: 'utilitylib'
     })
 
     urbitaxidep = "$urbiGroupId:$taxiId:$taxiVersion"
