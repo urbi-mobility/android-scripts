@@ -13,8 +13,9 @@ tasks.register("uploadlib") {
         else
             mapChangelog = getChangelogMap()
 
-        // Read Version on Gradle file
+        // Create map from versions in depend.gradle file
         val mapVersion: HashMap<String, String> = createMapVersion()
+
         println("Start to scan Changelog files.......")
 
 ////         Read Changelog Utility on Gradle file
@@ -35,10 +36,13 @@ tasks.register("commitversions") {
             mapChangelog = getChangelogTpayMap()
         else
             mapChangelog = getChangelogMap()
-        // Read Version on Gradle file
+        // Create map from versions in depend.gradle file
         val mapVersion: HashMap<String, String> = createMapVersion()
-        // Read Version on Gradle file
         val outputGit = ByteArrayOutputStream()
+
+        // Read module from name Version on Gradle file
+        val mapModuleName: HashMap<String, String> = getVersionKeyFromModule()
+
         exec {
             commandLine("git", "status")
             standardOutput = outputGit
@@ -49,10 +53,10 @@ tasks.register("commitversions") {
                 if (newLine.startsWith("modified:")) {
                     val clearLine = newLine.replace("modified:".toRegex(), "")
                     val arrayRow = clearLine.split("/")
-                    if (arrayRow.isNotEmpty() && mapVersion.containsKey(arrayRow[0])) {
+                    if (arrayRow.isNotEmpty() && mapVersion.containsKey(mapModuleName[arrayRow[0]])) {
                         val key = arrayRow[0]
-                        val version = mapVersion[key]
-                        println("Analyze ${key} ${version}..............")
+                        val tagVersionKey = mapVersion[mapModuleName[key]]
+                        println("Analyze ${key} version ${tagVersionKey}..............")
                         ByteArrayOutputStream().use { os ->
                             exec {
                                 commandLine("./gradlew", "$key::formatKotlin")
@@ -60,32 +64,31 @@ tasks.register("commitversions") {
                             }
                             println(os.toString())
                             exec {
-
                                 println("Adding $key's files to Git")
                                 commandLine("git", "add", "$key/*")
                                 standardOutput = os
                             }
                             println(os.toString())
                             exec {
-                                println("Git commit $key $version.......")
-                                commandLine("git", "commit", "-m", "\"Version bump $key $version\"")
+                                println("Git commit $key version $tagVersionKey.......")
+                                commandLine("git", "commit", "-m", "\"Version bump $key $tagVersionKey\"")
                                 standardOutput = os
                             }
                             println(os.toString())
                             exec {
-                                println("Git push $key $version.......")
+                                println("Git push $key version $tagVersionKey.......")
                                 commandLine("git", "push")
                                 standardOutput = os
                             }
                             println(os.toString())
                             exec {
-                                println("Git tag $${mapChangelog[key]} $version.......")
-                                commandLine("git", "tag", "${mapChangelog[key]}$version")
+                                println("Creating git tag $${mapChangelog[key]}$tagVersionKey.......")
+                                commandLine("git", "tag", "${mapChangelog[key]}$tagVersionKey")
                                 standardOutput = os
                             }
                             println(os.toString())
                             exec {
-                                println("Git push tags $${mapChangelog[key]} $version.......")
+                                println("Pushing git tag $${mapChangelog[key]}$tagVersionKey.......")
                                 commandLine("git", "push", "--tags")
                                 standardOutput = os
                             }
@@ -101,29 +104,48 @@ tasks.register("commitversions") {
 }
 
 fun getChangelogMap(): LinkedHashMap<String, String> = linkedMapOf(
-    "utilitylib" to "utilitylib_",
-    "urbimodel" to "URM_",
-    "urbicore" to "URC_",
-    "designsystem" to "DESL_",
-    "urbiscan" to "URS_",
-    "urbisearch" to "search_",
-    "urbipay" to "urbipay_",
-    "ticketlib" to "ticketlib_",
-    "urbitaxi" to "urbitaxi_",
+    "utilitylib" to "UTL_",
+    "urbimodel" to "MDL_",
+    "urbicore" to "CRE_",
+    "designsystem" to "DSG_",
+    "urbiscan" to "SCN_",
+    "urbisearch" to "SRC_",
+    "urbipay" to "PAY_",
+    "ticketlib" to "TCK_",
+    "urbitaxi" to "TXI_",
     "evcharging" to "EVC_",
-    "transpo" to "TRA_",
-    "tripo" to "Tripo_",
-    "mobilitylib" to "ML_",
+    "transpo" to "TRN_",
+    "tripo" to "TRP_",
+    "mobilitylib" to "MBL_",
 )
 
 fun getChangelogTpayMap(): LinkedHashMap<String, String> = linkedMapOf(
-    "telepasspaymodel" to "telepasspaymodel_",
-    "telepasspaynetwork" to "telepasspaynetwork_",
+    "telepasspaymodel" to "TPM_",
+    "telepasspaynetwork" to "TPN_",
     "tpaylib" to "TPL_"
 )
 
+fun getVersionKeyFromModule(): LinkedHashMap<String, String> = linkedMapOf(
+    "utilitylib" to "utilityVersion",
+    "urbimodel" to "modelVersion",
+    "urbicore" to "coreVersion",
+    "designsystem" to "designsystemVersion",
+    "urbiscan" to "scanVersion",
+    "urbisearch" to "searchVersion",
+    "urbipay" to "payVersion",
+    "ticketlib" to "ticketVersion",
+    "urbitaxi" to "taxiVersion",
+    "evcharging" to "evchargingVersion",
+    "transpo" to "transpoVersion",
+    "tripo" to "tripoVersion",
+    "mobilitylib" to "mobilitySharingVersion",
+    "telepasspaymodel" to "telepassModelVersion",
+    "telepasspaynetwork" to "telepassNetworkVersion",
+    "tpaylib" to "telepassLibVersion",
+)
+
 fun createMapVersion(): HashMap<String, String> {
-    val tpaylib = "tpaylib"
+    val tpaylib = "telepassLibVersion"
     // Read Version on Gradle file
     val mapVersion: HashMap<String, String> = hashMapOf()
     val gradle = File("android-scripts/gradle/depend.gradle")
@@ -136,14 +158,16 @@ fun createMapVersion(): HashMap<String, String> {
         if (readVersion) {
             line.replace("\\s".toRegex(), "").let { lineW ->
                 lineW.split("=").let {
-                    if (it[0].equals(tpaylib, true)) {
-                        mapVersion[it[0]] =
-                            it[1].replace("\'".toRegex(), "").replace("\\+".toRegex(), "").replace(
-                                "tpaylib_code".toRegex(), mapVersion["tpaylib_code"]
-                                    ?: ""
-                            )
-                    } else mapVersion[it[0]] = it[1].replace("\'".toRegex(), "")
-
+                    if(it.size > 1) {
+                        if (it[0].equals(tpaylib, true)) {
+                            mapVersion[it[0]] =
+                                it[1].replace("\'".toRegex(), "").replace("\\+".toRegex(), "")
+                                    .replace(
+                                        "telepassLibCode".toRegex(), mapVersion["telepassLibCode"]
+                                            ?: ""
+                                    )
+                        } else mapVersion[it[0]] = it[1].replace("\'".toRegex(), "")
+                    }
                 }
             }
         }
@@ -166,19 +190,22 @@ fun writeChangelog(
     var lastIsUnrelase = false
     var haveToWriteFile = false
     val newChangelog = arrayListOf<String>()
+    // Read module from name Version on Gradle file
+    val mapModuleName: HashMap<String, String> = getVersionKeyFromModule()
+    val tagVersionKey = mapVersion[mapModuleName[key]]
     changelog.readLines().forEach { line ->
-        if (line.startsWith("## [Unreleased]", true)) {
-            lastIsUnrelase = true
-            newChangelog.add(line)
-        } else if (lastIsUnrelase && line.startsWith("##")) {
-            return
-        } else if (lastIsUnrelase && line.startsWith("-")) {
-            newChangelog.add("## [${mapChangelog[key]}${mapVersion[key]}] $dataNow")
-            newChangelog.add(line)
-            lastIsUnrelase = false
-            haveToWriteFile = true
-        } else
-            newChangelog.add(line)
+    if (line.startsWith("## [Unreleased]", true)) {
+        lastIsUnrelase = true
+        newChangelog.add(line)
+    } else if (lastIsUnrelase && line.startsWith("##")) {
+        return
+    } else if (lastIsUnrelase && line.startsWith("-")) {
+        newChangelog.add("## [${mapChangelog[key]}${tagVersionKey}] $dataNow")
+        newChangelog.add(line)
+        lastIsUnrelase = false
+        haveToWriteFile = true
+    } else
+        newChangelog.add(line)
     }
     if (haveToWriteFile) {
         println("Update lib $key..........")

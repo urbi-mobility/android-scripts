@@ -47,12 +47,10 @@ def kotlinx_coroutines_android_version = '1.5.2'
 def guava_version = "27.0.1-android"
 // FIREBASE VERSION
 def firebase_auth_version = '17.0.0'
-def firebase_database_version = '17.0.0'
 def firebase_storage_version = '17.0.0'
 def firebase_config_version = '17.0.0'
 def firebase_analytics_version = '17.1.0'
-def firebase_messaging_version = '20.1.5'
-def firebase_crashlytics_version = '17.0.0'
+def firebase_messaging_version = '21.0.0'
 def firebase_core_version = '16.0.9'
 // ML KIT VERSIONS
 def mlkit_facedetection_version = '17.0.0'
@@ -87,8 +85,7 @@ def commons_lang_version = '3:3.5'
 def jumio_version = '3.9.1'
 // ROOM
 def room_runtime_version = '2.2.6'
-//ATAC
-def atac_version = "2.0.5r"
+//ATAC dependencies
 def sql_cipher_version = "4.4.3"
 //ZXing
 def zxing_qr_code = "3.4.1"
@@ -102,25 +99,55 @@ def core_testing_version = "2.1.0"
 def turbine_version = "0.7.0"
 
 ext {
+// Github packages
+    ghp_registry_name = 'GitHubPackages'
+    urbiGroupId = 'co.urbi.android'
+    telepassGroupId = 'com.telepass.urbi'
+    urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-telepass-pay-framework'
+    telepass_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-unica-framework'
+    telepass_urbi_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-framework'
+//Artifact ids
+    utilityId = 'utility'
+    designsystemId = 'designsystem'
+    modelId = 'model'
+    coreId = 'core'
+    payId = 'pay'
+    ticketId = 'ticket'
+    searchId = 'search'
+    taxiId = 'taxi'
+    scanId = 'scan'
+    transpoId = 'transpo'
+    atacId = 'atac'
+    evchargingId = 'evcharging'
+    tripoId = 'tripo'
+    mobilitySharingId = 'mobilitysharing'
+
+    telepassModelId = 'telepassmodel'
+    telepassNetworkId = 'telepassnetwork'
+    telepassLibId = 'telepasslib'
+
 //---Module Version---//
-    utilitylib = '2.5.0'
-    designsystem = '1.0.7'
-    urbimodel = '2.7.0'
-    urbicore = '2.9.0'
-    urbipay = '1.8.0'
-    ticketlib = '0.6.0'
-    urbisearch = '0.6.0'
-    urbitaxi = '0.5.0'
-    urbiscan = '0.4.0'
-    transpo = '1.2.1'
-    evcharging = '1.3.1'
-    tripo = '1.3.0'
-    mobilitylib = '2.11.2'
-    telepasspaymodel = '2.4.0'
-    telepasspaynetwork = '2.5.0'
-    tpaylib_code = '0'
-    tpaylib = '2.7.' + tpaylib_code
+    utilityVersion = '2.5.0'
+    designsystemVersion = '1.1.0'
+    modelVersion = '2.7.0'
+    coreVersion = '2.9.0'
+    payVersion = '1.8.0'
+    ticketVersion = '0.6.0'
+    searchVersion = '0.6.0'
+    taxiVersion = '0.5.0'
+    scanVersion = '0.4.0'
+    transpoVersion = '1.3.0'
+    evchargingVersion = '1.4.0'
+    tripoVersion = '1.3.0'
+    mobilitySharingVersion = '2.12.0'
+
+    telepassModelVersion = '2.4.0'
+    telepassNetworkVersion = '2.5.0'
+    telepassLibCode = '0'
+    telepassLibVersion = '2.7.' + telepassLibCode
+
     versionUrbi = '50505'
+    atacVersion = '2.0.5r'
 //---End---//
 
 //  REALM
@@ -250,10 +277,6 @@ ext {
     firebase_analytics = "com.google.firebase:firebase-analytics:$firebase_analytics_version"
     firebase_config = "com.google.firebase:firebase-config:$firebase_config_version"
     firebase_messaging = "com.google.firebase:firebase-messaging:$firebase_messaging_version"
-    firebase_database = ["com.google.firebase:firebase-database:$firebase_database_version",
-                         "com.google.firebase:firebase-storage:$firebase_storage_version",
-                         firebase_core]
-    firebase_crashlytics = "com.google.firebase:firebase-crashlytics:$firebase_crashlytics_version"
 
     // MLKIT
     mlkit_facedetection = "com.google.android.gms:play-services-mlkit-face-detection:$mlkit_facedetection_version" //thin
@@ -351,7 +374,7 @@ ext {
     zxing = "com.google.zxing:core:$zxing_qr_code"
 
     //ATAC
-    atac = "co.urbi.android.atac:ataclib:$atac_version@aar"
+    atac = "$urbiGroupId:$atacId:$atacVersion@aar"
     sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
     atac_dep = [atac, sql_cipher]
 
@@ -373,13 +396,13 @@ ext {
     }), 'androidx.test:rules:1.2.0', 'androidx.test:runner:1.2.0']
 
 //  URBI
-    designsystemdep = "com.batsharing.android.designsystem:designsystem:$designsystem"
-    utilitylibdep = "com.batsharing.android.model.utility:utilitylib:$utilitylib"
-    urbimodeldep = "com.batsharing.android.model:urbimodel:$urbimodel"
+    designsystemdep = "$urbiGroupId:$designsystemId:$designsystemVersion"
+    utilitylibdep = "$urbiGroupId:$utilityId:$utilityVersion"
+    urbimodeldep = "$urbiGroupId:$modelId:$modelVersion"
     urbimodeldep_exclude = dependencies.create(urbimodeldep, {
         exclude module: 'utilitylib'
     })
-    urbicoredep = "com.batsharing.android.core:urbicore:$urbicore"
+    urbicoredep = "$urbiGroupId:$coreId:$coreVersion"
     urbicoredep_exclude = dependencies.create(urbicoredep, {
         exclude group: 'com.android.support'
         exclude group: 'com.google.dagger'
@@ -387,7 +410,7 @@ ext {
         exclude module: 'urbimodel'
         exclude module: 'utilitylib'
     })
-    ticketlibdep = "com.batsharing.android.ticketlib:ticketlib:$ticketlib"
+    ticketlibdep = "$urbiGroupId:$ticketId:$ticketVersion"
     ticketlibdep_exclude = dependencies.create(ticketlibdep, {
         exclude group: 'com.google.dagger:dagger'
         exclude module: 'urbicore'
@@ -395,7 +418,7 @@ ext {
         exclude module: 'utilitylib'
         exclude module: 'designsystem'
     })
-    urbipaydep = "co.urbi.android.urbipay:urbipay:$urbipay"
+    urbipaydep = "$urbiGroupId:$payId:$payVersion"
     urbipaydep_exclude = dependencies.create(urbipaydep, {
         exclude group: 'com.google.dagger:dagger'
         exclude module: 'urbicore'
@@ -403,7 +426,7 @@ ext {
         exclude module: 'utilitylib'
         exclude module: 'designsystem'
     })
-    transpodep = "co.urbi.android.transpo:transpo:$transpo"
+    transpodep = "$urbiGroupId:$transpoId:$transpoVersion"
     transpodep_exclude = dependencies.create(transpodep, {
         exclude group: 'com.google.dagger:dagger'
         exclude module: 'urbicore'
@@ -411,7 +434,7 @@ ext {
         exclude module: 'utilitylib'
         exclude module: 'designsystem'
     })
-    tripodep = "co.urbi.android.tripo:tripo:$tripo"
+    tripodep = "$urbiGroupId:$tripoId:$tripoVersion"
     tripodep_exclude = dependencies.create(tripodep, {
         exclude group: 'com.google.dagger:dagger'
         exclude module: 'urbicore'
@@ -420,19 +443,20 @@ ext {
         exclude module: 'designsystem'
         exclude module: 'ticketlib'
     })
-    urbisearchdep = "co.urbi.android.urbisearch:urbisearch:$urbisearch"
+    urbisearchdep = "$urbiGroupId:$searchId:$searchVersion"
     urbisearchdep_exclude = dependencies.create(urbisearchdep, {
         exclude module: 'urbicore'
         exclude module: 'urbimodel'
         exclude module: 'utilitylib'
         exclude module: 'designsystem'
     })
-    urbiscandep = "co.urbi.android.urbiscan:urbiscan:$urbiscan"
+    urbiscandep = "$urbiGroupId:$scanId:$scanVersion"
     urbiscandep_exclude = dependencies.create(urbiscandep, {
         exclude module: 'designsystem'
+        exclude module: 'utilitylib'
     })
 
-    urbitaxidep = "co.urbi.android.urbitaxi:urbitaxi:$urbitaxi"
+    urbitaxidep = "$urbiGroupId:$taxiId:$taxiVersion"
     urbitaxidep_exclude = dependencies.create(urbitaxidep, {
         exclude module: 'urbisearch'
         exclude module: 'urbicore'
@@ -441,7 +465,7 @@ ext {
         exclude module: 'designsystem'
     })
 
-    evchargingdep = "co.urbi.android.evcharging:evcharging:$evcharging"
+    evchargingdep = "$urbiGroupId:$evchargingId:$evchargingVersion"
     evchargingdep_exclude = dependencies.create(evchargingdep, {
         exclude module: 'urbicore'
         exclude module: 'urbimodel'
@@ -449,7 +473,7 @@ ext {
         exclude module: 'designsystem'
     })
 
-    mobilitylibdep = "com.batsharing.android.mobilitysharing:mobilitysharing:$mobilitylib"
+    mobilitylibdep = "$urbiGroupId:$mobilitySharingId:$mobilitySharingVersion"
     mobilitylibdep_exclude = dependencies.create(mobilitylibdep, {
         exclude module: 'urbicore'
         exclude module: 'urbimodel'
@@ -464,7 +488,7 @@ ext {
         exclude module: 'utilitylib'
     })
 
-    tpaylibdep = "it.telepass.prod.tpaylib:tpaylib:$tpaylib"
+    tpaylibdep = "$telepassGroupId:$telepassLibId:$telepassLibVersion"
     tpaylibdep_exclude = dependencies.create(tpaylibdep, {
         exclude module: 'urbicore'
         exclude module: 'urbimodel'
@@ -482,18 +506,18 @@ ext {
         exclude module: 'utilitylib'
     })
 
-    telepasspaymodeldep = "it.telepass.prod.TelepassPyng.model:telepasspaymodel:$telepasspaymodel"
+    telepasspaymodeldep = "$telepassGroupId:$telepassModelId:$telepassModelVersion"
 
     telepasspaymodeldep_exclude = dependencies.create(telepasspaymodeldep , {
         exclude module: 'utilitylib'
     })
 
-    telepasspaynetworkdep = dependencies.create("it.telepass.prod.TelepassPyng.network:telepasspaynetwork:$telepasspaynetwork", {
+    telepasspaynetworkdep = dependencies.create("$telepassGroupId:$telepassNetworkId:$telepassNetworkVersion", {
         exclude module: 'play-services-stats'
         exclude module: 'firebase-measurement-connector-impl'
     })
 
-    telepasspaynetworkdep_exclude = dependencies.create("it.telepass.prod.TelepassPyng.network:telepasspaynetwork:$telepasspaynetwork", {
+    telepasspaynetworkdep_exclude = dependencies.create(telepasspaynetworkdep, {
         exclude module: 'play-services-stats'
         exclude module: 'firebase-measurement-connector-impl'
         exclude module: 'utilitylib'
