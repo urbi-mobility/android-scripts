@@ -30,6 +30,7 @@ def fragmentx_version = "1.3.6"
 def constraintlayout_version = '2.0.4'
 def gridlayout_version = '1.0.0'
 def recyclerview_version = '1.1.0'
+def swiperefresh_version = '1.1.0'
 def cardview_version = '1.0.0'
 def navigation_fragment_ktx_version = '2.1.0'
 def navigation_ui_ktx_version = '2.1.0'
@@ -183,6 +184,7 @@ ext {
     core_ktx = "androidx.core:core-ktx:$core_ktx_version"
     gridlayout = "androidx.gridlayout:gridlayout:$gridlayout_version"
     recyclerview = "androidx.recyclerview:recyclerview:$recyclerview_version"
+    swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefresh_version"
     cardview = "androidx.cardview:cardview:$cardview_version"
     serialization_core = "org.jetbrains.kotlinx:kotlinx-serialization-core:$kotlinx_serialization_core_version"
     serialization_json = "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinx_serialization_json_version"
