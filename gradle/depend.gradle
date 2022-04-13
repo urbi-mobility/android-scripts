@@ -142,8 +142,8 @@ ext {
     mobilitySharingVersion = '2.12.1'
 
     telepassModelVersion = '2.4.0'
-    telepassNetworkVersion = '2.5.0'
-    telepassLibCode = '2'
+    telepassNetworkVersion = '2.5.1'
+    telepassLibCode = '3'
     telepassLibVersion = '2.7.' + telepassLibCode
 
     versionUrbi = '50505'
