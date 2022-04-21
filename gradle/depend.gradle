@@ -69,7 +69,7 @@ def okhttp3_version = '4.9.1'
 //  DAGGER VERSION
 def dagger_version = '2.39'
 // HIL
-def hilt_compose = '1.0.0'
+def hilt_compose_version = '1.0.0'
 // PAYMENT_VERSION
 def stripe_android_version = '19.1.0'
 def satispay_version = '1.0.6'
@@ -217,7 +217,7 @@ ext {
     compose_ui = ["androidx.compose.ui:ui:$compose_version", "androidx.compose.ui:ui-tooling-preview:$compose_version"]
     compose_material = "androidx.compose.material:material:$compose_version"
     //HILT
-    hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose"
+    hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose_version"
     //Navigation
     compose_navigation = "androidx.navigation:navigation-compose:$nav_version"
 
