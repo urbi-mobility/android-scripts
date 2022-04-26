@@ -214,7 +214,7 @@ ext {
                        dependencies.create("com.squareup.okhttp3:logging-interceptor:$okhttp3_version"),
                        "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_rxjava_version"]
 // Compose
-    compose_ui = ["androidx.compose.ui:ui:$compose_version", "androidx.compose.ui:ui-tooling-preview:$compose_version"]
+    compose_ui = ["androidx.compose.ui:ui:$compose_version","androidx.compose.ui:ui-tooling:$compose_version", "androidx.compose.ui:ui-tooling-preview:$compose_version"]
     compose_material = "androidx.compose.material:material:$compose_version"
     //HILT
     hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose_version"
