@@ -99,6 +99,8 @@ def mockk_version = "1.12.3"
 def core_testing_version = "2.1.0"
 //
 def turbine_version = "0.7.0"
+//
+def compose_constaint_version = "1.0.0"
 
 ext {
 // Github packages
@@ -220,6 +222,8 @@ ext {
     hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose_version"
     //Navigation
     compose_navigation = "androidx.navigation:navigation-compose:$nav_version"
+
+    compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:$compose_constaint_version"
 
     // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
     compose_foundation = "androidx.compose.foundation:foundation:$compose_version"
