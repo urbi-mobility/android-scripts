@@ -216,7 +216,11 @@ ext {
                        dependencies.create("com.squareup.okhttp3:logging-interceptor:$okhttp3_version"),
                        "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_rxjava_version"]
 // Compose
-    compose_ui = ["androidx.compose.ui:ui:$compose_version","androidx.compose.ui:ui-tooling:$compose_version", "androidx.compose.ui:ui-tooling-preview:$compose_version"]
+    compose_ui = [
+        "androidx.compose.ui:ui:$compose_version",
+        "androidx.compose.ui:ui-tooling:$compose_version",
+        "androidx.compose.ui:ui-tooling-preview:$compose_version"
+    ]
     compose_material = "androidx.compose.material:material:$compose_version"
     //HILT
     hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose_version"
@@ -230,14 +234,26 @@ ext {
     compose_activity = "androidx.activity:activity-compose:$compose_activity"
 
     // Material design icons
-    material_icon = ["androidx.compose.material:material-icons-core:$compose_version",
-                     "androidx.compose.material:material-icons-extended:$compose_version"]
+    material_icon = [
+            "androidx.compose.material:material-icons-core:$compose_version",
+            "androidx.compose.material:material-icons-extended:$compose_version"
+    ]
     // Integration with ViewModels
     view_model_compose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
     // Integration with observables
     runtime_livedata = "androidx.compose.runtime:runtime-livedata:$compose_version"
     runtime_rxjava = "androidx.compose.runtime:runtime-rxjava2:$compose_version"
-    compose_deep = [core_ktx, appcompat, compose_ui, compose_material, compose_navigation, compose_foundation, compose_activity, runtime_livedata, runtime_rxjava]
+    compose_dep = [
+            core_ktx,
+            appcompat,
+            compose_ui,
+            compose_material,
+            compose_navigation,
+            compose_foundation,
+            compose_activity,
+            runtime_livedata,
+            runtime_rxjava
+    ]
 //  RxJava & RxAndroid
     rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
 
