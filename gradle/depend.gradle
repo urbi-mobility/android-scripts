@@ -131,7 +131,7 @@ ext {
     designsystemVersion = '1.1.5'
     modelVersion = '2.7.3'
     coreVersion = '2.9.4'
-    payVersion = '1.8.2'
+    payVersion = '1.8.3'
     ticketVersion = '0.6.1'
     searchVersion = '0.6.1'
     taxiVersion = '0.5.5'
@@ -143,7 +143,7 @@ ext {
 
     telepassModelVersion = '2.4.0'
     telepassNetworkVersion = '2.5.1'
-    telepassLibCode = '6'
+    telepassLibCode = '8'
     telepassLibVersion = '2.7.' + telepassLibCode
 
     versionUrbi = '50505'
