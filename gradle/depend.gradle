@@ -103,7 +103,7 @@ def turbine_version = "0.7.0"
 def compose_constaint_version = "1.0.0"
 
 ext {
-// Github packages
+// Github-packages
     ghp_registry_name = 'GitHubPackages'
     urbiGroupId = 'co.urbi.android'
     telepassGroupId = 'com.telepass.urbi'
