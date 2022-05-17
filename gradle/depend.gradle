@@ -143,11 +143,11 @@ ext {
     transpoVersion = '1.3.2'
     evchargingVersion = '1.4.7'
     tripoVersion = '1.3.6'
-    mobilitySharingVersion = '2.12.3'
+    mobilitySharingVersion = '2.12.4'
 
     telepassModelVersion = '2.4.0'
     telepassNetworkVersion = '2.5.1'
-    telepassLibCode = '9'
+    telepassLibCode = '10'
     telepassLibVersion = '2.7.' + telepassLibCode
 
     versionUrbi = '50505'
