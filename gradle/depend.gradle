@@ -171,7 +171,7 @@ ext {
 
 //  AndroidX
     camerax_version = "1.0.0"
-    cameraxview_version = "1.0.0-alpha22"searchtrips
+    cameraxview_version = "1.0.0-alpha22"
     activityx = "androidx.activity:activity-ktx:$activityx_version"
     fragmentx = "androidx.fragment:fragment-ktx:$fragmentx_version"
     androidx_view = [activityx, fragmentx]
