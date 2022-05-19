@@ -133,7 +133,7 @@ ext {
 //---Module Version---//
     utilityVersion = '2.5.2'
     designsystemVersion = '1.1.5'
-    modelVersion = '2.7.4'
+    modelVersion = '2.7.5'
     coreVersion = '2.9.4'
     payVersion = '1.8.3'
     ticketVersion = '0.6.1'
@@ -162,7 +162,7 @@ ext {
     compose_activity = '1.4.0'
     nav_version = '2.4.2'
 //  KOTLIN
-    kotlin_version = '1.6.10'
+    kotlin_version = '1.6.21'
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     kotlinx_coroutines = ["org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_core_version",
                           "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_android_version",
