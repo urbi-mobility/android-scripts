@@ -18,16 +18,16 @@ def simplerangeview_version = '0.2.0'
 def marketingcloudsdk_version = '7.1.0'
 def recycleradapter_version = '2.10.0'
 // ANDROID VERSION
-def material_version = '1.5.0'
+def material_version = '1.3.0'
 def maps_utils_version = '2.2.2'
 // ANDROID X VERSION
 def biometric_version = '1.0.1'
 def preference_version = '1.1.0'
-def lifecycle_version = '2.4.1'
-def appcompat_version = "1.4.1"
+def lifecycle_version = '2.4.0'
+def appcompat_version = "1.3.1"
 def activityx_version = "1.3.1"
 def fragmentx_version = "1.3.6"
-def constraintlayout_version = '2.1.3'
+def constraintlayout_version = '2.0.4'
 def gridlayout_version = '1.0.0'
 def recyclerview_version = '1.1.0'
 def swiperefresh_version = '1.1.0'
@@ -68,8 +68,7 @@ def retrofit_adapter_rxjava_version = '2.8.1'
 def okhttp3_version = '4.9.1'
 //  DAGGER VERSION
 def dagger_version = '2.39'
-// HIL
-def hilt_compose_version = '1.0.0'
+
 // PAYMENT_VERSION
 def stripe_android_version = '19.1.0'
 def satispay_version = '1.0.6'
@@ -77,7 +76,7 @@ def satispay_version = '1.0.6'
 def rxbinding_kotlin_version = '2.2.0'
 def rxredux_version = '1.0.1'
 def rxrelay_version = '2.1.0'
-def core_ktx_version = '1.7.0'
+def core_ktx_version = '1.3.2'
 //  LOTTIE VERSION
 def lottieVersion = "3.4.0"
 // APACHE VERSION
@@ -131,19 +130,19 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.5.2'
-    designsystemVersion = '1.1.6'
-    modelVersion = '2.7.6'
-    coreVersion = '2.9.4'
-    payVersion = '1.8.3'
+    utilityVersion = '2.5.3'
+    designsystemVersion = '1.1.7'
+    modelVersion = '2.7.7'
+    coreVersion = '2.9.5'
+    payVersion = '1.8.4'
     ticketVersion = '0.6.1'
     searchVersion = '0.6.1'
-    taxiVersion = '0.5.9'
+    taxiVersion = '0.5.10'
     scanVersion = '0.4.0'
     transpoVersion = '1.3.2'
-    evchargingVersion = '1.4.7'
-    tripoVersion = '1.3.7'
-    mobilitySharingVersion = '2.12.4'
+    evchargingVersion = '1.4.8'
+    tripoVersion = '1.3.8'
+    mobilitySharingVersion = '2.12.5'
 
     telepassModelVersion = '2.4.0'
     telepassNetworkVersion = '2.5.1'
@@ -156,11 +155,8 @@ ext {
 
 //  REALM
     realm_version = '6.0.2'
-    android_plugin = '7.1.2'
-//  Compose
-    compose_version = '1.1.1'
-    compose_activity = '1.4.0'
-    nav_version = '2.4.2'
+    android_plugin = '7.0.0'
+
 //  KOTLIN
     kotlin_version = '1.6.10'
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
@@ -191,7 +187,6 @@ ext {
     core_ktx = "androidx.core:core-ktx:$core_ktx_version"
     gridlayout = "androidx.gridlayout:gridlayout:$gridlayout_version"
     recyclerview = "androidx.recyclerview:recyclerview:$recyclerview_version"
-    swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefresh_version"
     cardview = "androidx.cardview:cardview:$cardview_version"
     serialization_core = "org.jetbrains.kotlinx:kotlinx-serialization-core:$kotlinx_serialization_core_version"
     serialization_json = "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinx_serialization_json_version"
@@ -215,45 +210,7 @@ ext {
                        }),
                        dependencies.create("com.squareup.okhttp3:logging-interceptor:$okhttp3_version"),
                        "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_rxjava_version"]
-// Compose
-    compose_ui = [
-        "androidx.compose.ui:ui:$compose_version",
-        "androidx.compose.ui:ui-tooling:$compose_version",
-        "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    ]
-    compose_material = "androidx.compose.material:material:$compose_version"
-    //HILT
-    hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose_version"
-    //Navigation
-    compose_navigation = "androidx.navigation:navigation-compose:$nav_version"
 
-    compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:$compose_constaint_version"
-
-    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
-    compose_foundation = "androidx.compose.foundation:foundation:$compose_version"
-    compose_activity = "androidx.activity:activity-compose:$compose_activity"
-
-    // Material design icons
-    material_icon = [
-            "androidx.compose.material:material-icons-core:$compose_version",
-            "androidx.compose.material:material-icons-extended:$compose_version"
-    ]
-    // Integration with ViewModels
-    view_model_compose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
-    // Integration with observables
-    runtime_livedata = "androidx.compose.runtime:runtime-livedata:$compose_version"
-    runtime_rxjava = "androidx.compose.runtime:runtime-rxjava2:$compose_version"
-    compose_dep = [
-            core_ktx,
-            appcompat,
-            compose_ui,
-            compose_material,
-            compose_navigation,
-            compose_foundation,
-            compose_activity,
-            runtime_livedata,
-            runtime_rxjava
-    ]
 //  RxJava & RxAndroid
     rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
 
