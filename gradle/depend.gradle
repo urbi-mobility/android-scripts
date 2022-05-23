@@ -68,8 +68,6 @@ def retrofit_adapter_rxjava_version = '2.8.1'
 def okhttp3_version = '4.9.1'
 //  DAGGER VERSION
 def dagger_version = '2.39'
-// HIL
-def hilt_compose_version = '1.0.0'
 // PAYMENT_VERSION
 def stripe_android_version = '19.1.0'
 def satispay_version = '1.0.6'
@@ -99,8 +97,6 @@ def mockk_version = "1.12.3"
 def core_testing_version = "2.1.0"
 //
 def turbine_version = "0.7.0"
-//
-def compose_constaint_version = "1.0.0"
 
 ext {
 // Github-packages
@@ -148,7 +144,7 @@ ext {
     telepassModelVersion = '2.4.0'
     telepassNetworkVersion = '2.5.1'
     telepassLibCode = '9'
-    telepassLibVersion = '2.7.' + telepassLibCode
+    telepassLibVersion = '2.7.' + telepassLibCode+'.h'
 
     versionUrbi = '50505'
     atacVersion = '2.0.5r'
@@ -157,10 +153,6 @@ ext {
 //  REALM
     realm_version = '6.0.2'
     android_plugin = '7.1.2'
-//  Compose
-    compose_version = '1.1.1'
-    compose_activity = '1.4.0'
-    nav_version = '2.4.2'
 //  KOTLIN
     kotlin_version = '1.6.10'
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
@@ -215,45 +207,7 @@ ext {
                        }),
                        dependencies.create("com.squareup.okhttp3:logging-interceptor:$okhttp3_version"),
                        "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_rxjava_version"]
-// Compose
-    compose_ui = [
-        "androidx.compose.ui:ui:$compose_version",
-        "androidx.compose.ui:ui-tooling:$compose_version",
-        "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    ]
-    compose_material = "androidx.compose.material:material:$compose_version"
-    //HILT
-    hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose_version"
-    //Navigation
-    compose_navigation = "androidx.navigation:navigation-compose:$nav_version"
 
-    compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:$compose_constaint_version"
-
-    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
-    compose_foundation = "androidx.compose.foundation:foundation:$compose_version"
-    compose_activity = "androidx.activity:activity-compose:$compose_activity"
-
-    // Material design icons
-    material_icon = [
-            "androidx.compose.material:material-icons-core:$compose_version",
-            "androidx.compose.material:material-icons-extended:$compose_version"
-    ]
-    // Integration with ViewModels
-    view_model_compose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
-    // Integration with observables
-    runtime_livedata = "androidx.compose.runtime:runtime-livedata:$compose_version"
-    runtime_rxjava = "androidx.compose.runtime:runtime-rxjava2:$compose_version"
-    compose_dep = [
-            core_ktx,
-            appcompat,
-            compose_ui,
-            compose_material,
-            compose_navigation,
-            compose_foundation,
-            compose_activity,
-            runtime_livedata,
-            runtime_rxjava
-    ]
 //  RxJava & RxAndroid
     rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
 
