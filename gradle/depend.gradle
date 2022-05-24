@@ -134,7 +134,7 @@ ext {
     designsystemVersion = '1.1.7'
     modelVersion = '2.7.7'
     coreVersion = '2.9.5'
-    payVersion = '1.8.4'
+    payVersion = '1.8.5'
     ticketVersion = '0.6.1'
     searchVersion = '0.6.1'
     taxiVersion = '0.5.10'
