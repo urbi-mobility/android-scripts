@@ -41,7 +41,6 @@ def play_services_maps_version = '18.0.2'
 def play_services_base_version = '18.0.1'
 def play_services_analytics_version = '18.0.1'
 def play_services_wallet_version = '18.1.1'
-def play_services_location_version = '17.0.0'
 def play_services_google_pay_passes_version = '16.0.3'
 // KOTLIN VERSION
 def kotlinx_coroutines_core_version = '1.6.0'
@@ -271,7 +270,6 @@ ext {
     ]
 
     play_services_wallet = "com.google.android.gms:play-services-wallet:$play_services_wallet_version"
-    play_services_location = "com.google.android.gms:play-services-wallet:$play_services_location_version"
     play_services_google_pay_passes = "com.google.android.gms:play-services-pay:$play_services_google_pay_passes_version"
 
 //  Guava
