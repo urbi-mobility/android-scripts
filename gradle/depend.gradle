@@ -41,6 +41,7 @@ def play_services_maps_version = '18.0.2'
 def play_services_base_version = '18.0.1'
 def play_services_analytics_version = '18.0.1'
 def play_services_wallet_version = '18.1.1'
+def play_services_google_pay_passes_version = '16.0.3'
 // KOTLIN VERSION
 def kotlinx_coroutines_core_version = '1.6.0'
 def kotlinx_coroutines_android_version = '1.6.0'
@@ -132,8 +133,8 @@ ext {
 //---Module Version---//
     utilityVersion = '2.5.3'
     designsystemVersion = '1.1.9'
-    modelVersion = '2.7.8'
-    coreVersion = '2.9.7'
+    modelVersion = '2.7.9'
+    coreVersion = '2.9.8'
     payVersion = '1.8.6'
     ticketVersion = '0.6.1'
     searchVersion = '0.6.2'
@@ -141,7 +142,7 @@ ext {
     scanVersion = '0.4.0'
     transpoVersion = '1.3.2'
     evchargingVersion = '1.4.9'
-    tripoVersion = '1.3.8'
+    tripoVersion = '1.3.9'
     mobilitySharingVersion = '2.12.6'
 
     telepassModelVersion = '2.4.0'
@@ -269,6 +270,7 @@ ext {
     ]
 
     play_services_wallet = "com.google.android.gms:play-services-wallet:$play_services_wallet_version"
+    play_services_google_pay_passes = "com.google.android.gms:play-services-pay:$play_services_google_pay_passes_version"
 
 //  Guava
     guava = "com.google.guava:guava:$guava_version"
