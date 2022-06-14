@@ -101,6 +101,8 @@ def core_testing_version = "2.1.0"
 def turbine_version = "0.7.0"
 //
 def compose_constaint_version = "1.0.0"
+//Accompanist compose
+def accompanist_compose_version = "0.23.1"
 
 ext {
 // Github packages
@@ -228,6 +230,10 @@ ext {
     // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
     compose_foundation = "androidx.compose.foundation:foundation:$compose_version"
     compose_activity = "androidx.activity:activity-compose:$compose_activity"
+
+    accompanist_compose = ["com.google.accompanist:accompanist-swiperefresh:$accompanist_compose_version", "com.google.accompanist:accompanist-webview:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version", "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version" ]
 
     // Material design icons
     material_icon = ["androidx.compose.material:material-icons-core:$compose_version",
