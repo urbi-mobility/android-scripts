@@ -231,7 +231,8 @@ ext {
     compose_foundation = "androidx.compose.foundation:foundation:$compose_version"
     compose_activity = "androidx.activity:activity-compose:$compose_activity"
 
-    accompanist_compose = ["com.google.accompanist:accompanist-swiperefresh:$accompanist_compose_version","com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version", "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
+    accompanist_compose = ["com.google.accompanist:accompanist-swiperefresh:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version", "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version" ]
 
     // Material design icons
