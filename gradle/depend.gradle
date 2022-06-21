@@ -148,7 +148,7 @@ ext {
     telepassModelVersion = '2.4.0'
     telepassNetworkVersion = '2.5.1'
     telepassLibCode = '16'
-    telepassLibVersion = '2.7.' + telepassLibCode+"r2"
+    telepassLibVersion = '2.7.' + telepassLibCode+"r3"
 
     versionUrbi = '50505'
     atacVersion = '2.0.5r'
