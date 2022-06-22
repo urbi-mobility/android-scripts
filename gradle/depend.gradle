@@ -152,6 +152,7 @@ ext {
 
     versionUrbi = '50505'
     atacVersion = '2.0.5r'
+    atacJitpackVersion = '2.0.6-atac'
 //---End---//
 
 //  REALM
@@ -385,6 +386,7 @@ ext {
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
     sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
     atac_dep = [atac, sql_cipher]
+    atac_jitpack_dep = "org.bitbucket.eo-mobile:eo-mobile-android-sdk-artifacts:$atacJitpackVersion"
 
 
 //  TEST
