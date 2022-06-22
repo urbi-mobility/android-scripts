@@ -145,10 +145,10 @@ ext {
     tripoVersion = '1.3.12'
     mobilitySharingVersion = '2.12.8'
 
-    telepassModelVersion = '2.4.0'
-    telepassNetworkVersion = '2.5.1'
-    telepassLibCode = '16'
-    telepassLibVersion = '2.7.' + telepassLibCode
+    telepassModelVersion = '2.5.0'
+    telepassNetworkVersion = '2.6.0'
+    telepassLibCode = '0'
+    telepassLibVersion = '2.8.' + telepassLibCode
 
     versionUrbi = '50505'
     atacVersion = '2.0.5r'
