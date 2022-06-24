@@ -369,15 +369,15 @@ ext {
     room_runtime = "androidx.room:room-runtime:$room_runtime_version"
 
     //JUMIO
-    jumio_core = "com.jumio.android:core:$jumio_version@aar"
-    jumio_defaultui = "com.jumio.android:defaultui:$jumio_version@aar"
-    jumio_linefinder = "com.jumio.android:linefinder:$jumio_version@aar"
-    jumio_barcode = "com.jumio.android:barcode:$jumio_version@aar"
-    jumio_iproov = "com.jumio.android:iproov:$jumio_version@aar"
+    jumio_core = "com.jumio.android:core:$jumio_version"
+    jumio_defaultui = "com.jumio.android:defaultui:$jumio_version"
+    jumio_linefinder = "com.jumio.android:linefinder:$jumio_version"
+    jumio_barcode = "com.jumio.android:barcode:$jumio_version"
+    jumio_iproov = "com.jumio.android:iproov:$jumio_version"
     jumio_iproov_new = dependencies.create("com.iproov.sdk:iproov:$iproov_version", {
         exclude group: 'org.json', module:'json'
     })
-    jumio_dependencies = [jumio_core, jumio_defaultui, jumio_linefinder, jumio_barcode, jumio_iproov, jumio_iproov_new]
+    jumio_dependencies = [jumio_core, jumio_defaultui, jumio_linefinder, jumio_barcode, jumio_iproov]
 
     //ZXING
     zxing = "com.google.zxing:core:$zxing_qr_code"
