@@ -56,8 +56,9 @@ def firebase_core_version = '16.0.9'
 def mlkit_facedetection_version = '17.0.0'
 def mlkit_textrecognition_version = '18.0.0'
 def mlkit_barcodescanning_version = '17.0.2'
-// PICASSO VERSION
-def picasso_version = '2.5.2'
+// GLIDE VERSION
+def glide_version = '4.13.2'
+def landscapist_version = "1.5.2"
 // RX_VERSION
 def rxandroid_version = '2.1.1'
 //  Retrofit VERSION
@@ -234,8 +235,12 @@ ext {
     compose_activity = "androidx.activity:activity-compose:$compose_activity"
 
     accompanist_compose = ["com.google.accompanist:accompanist-swiperefresh:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version", "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version" ]
+                           "com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-pager:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-pager-indicators:$accompanist_compose_version"]
+
     maps_compose = "com.google.maps.android:maps-compose:$map_compose_version"
 
     // Material design icons
@@ -329,8 +334,10 @@ ext {
             mlkit_textrecognition,
             mlkit_barcodescanning
     ]
-//  Picasso
-    picasso = "com.squareup.picasso:picasso:$picasso_version"
+//  glide
+    glide = "com.github.bumptech.glide:glide:$glide_version"
+    glideCompiler = "com.github.bumptech.glide:compiler:$glide_version"
+    landscapist = "com.github.skydoves:landscapist-glide:${landscapist_version}"
 //  Dagger
     dagger = "com.google.dagger:hilt-android:$dagger_version"
     dagger_compile = "com.google.dagger:hilt-compiler:$dagger_version"
