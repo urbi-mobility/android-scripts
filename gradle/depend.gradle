@@ -103,6 +103,8 @@ def turbine_version = "0.7.0"
 def compose_constaint_version = "1.0.0"
 //Accompanist compose
 def accompanist_compose_version = "0.23.1"
+//
+def map_compose_version = "2.2.1"
 
 ext {
 // Github packages
@@ -234,6 +236,7 @@ ext {
     accompanist_compose = ["com.google.accompanist:accompanist-swiperefresh:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version", "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version" ]
+    maps_compose = "com.google.maps.android:maps-compose:$map_compose_version"
 
     // Material design icons
     material_icon = ["androidx.compose.material:material-icons-core:$compose_version",
