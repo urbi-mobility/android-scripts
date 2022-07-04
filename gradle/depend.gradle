@@ -377,7 +377,7 @@ ext {
     jumio_iproov_new = dependencies.create("com.iproov.sdk:iproov:$iproov_version", {
         exclude group: 'org.json', module:'json'
     })
-    jumio_dependencies = [jumio_core, jumio_defaultui, jumio_linefinder, jumio_barcode, jumio_iproov]
+    jumio_dependencies = [jumio_core, jumio_defaultui, jumio_linefinder, jumio_iproov, jumio_iproov_new]
 
     //ZXING
     zxing = "com.google.zxing:core:$zxing_qr_code"
