@@ -105,7 +105,7 @@ def compose_constaint_version = "1.0.0"
 //Accompanist compose
 def accompanist_compose_version = "0.23.1"
 //
-def map_compose_version = "2.2.1"
+def map_compose_version = "1.2.0"
 
 ext {
 // Github packages
