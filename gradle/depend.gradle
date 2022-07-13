@@ -431,7 +431,7 @@ ext {
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
     core_testing = "androidx.arch.core:core-testing:$core_testing_version"
-    coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
+    coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.3"
     turbine = "app.cash.turbine:turbine:$turbine_version"
     junit = 'junit:junit:4.12'
     mockito = 'org.mockito:mockito-android:2.6.3'
