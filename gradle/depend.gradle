@@ -442,6 +442,7 @@ ext {
                    , 'androidx.annotation:annotation:1.1.0', dependencies.create('androidx.test.uiautomator:uiautomator:2.2.0', {
         exclude group: 'com.android.support'
     }), 'androidx.test:rules:1.2.0', 'androidx.test:runner:1.2.0']
+    testJson = "org.json:json:20180813"
 
 //  URBI
     designsystemdep = "$urbiGroupId:$designsystemId:$designsystemVersion"
