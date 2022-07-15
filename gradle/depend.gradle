@@ -42,8 +42,8 @@ def play_services_base_version = '18.0.1'
 def play_services_analytics_version = '18.0.1'
 def play_services_wallet_version = '18.1.1'
 // KOTLIN VERSION
-def kotlinx_coroutines_core_version = '1.6.0'
-def kotlinx_coroutines_android_version = '1.6.0'
+def kotlinx_coroutines_core_version = '1.6.3'
+def kotlinx_coroutines_android_version = '1.6.3'
 
 //  Stream Guava VERSION
 def guava_version = "27.0.1-android"
@@ -431,7 +431,7 @@ ext {
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
     core_testing = "androidx.arch.core:core-testing:$core_testing_version"
-    coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.3"
+    coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinx_coroutines_core_version"
     turbine = "app.cash.turbine:turbine:$turbine_version"
     junit = 'junit:junit:4.12'
     mockito = 'org.mockito:mockito-android:2.6.3'
@@ -443,6 +443,8 @@ ext {
         exclude group: 'com.android.support'
     }), 'androidx.test:rules:1.2.0', 'androidx.test:runner:1.2.0']
     testJson = "org.json:json:20180813"
+    testHilt = "com.google.dagger:hilt-android-testing:$dagger_version"
+    testCompose = ["androidx.compose.ui:ui-test:$compose_version", "androidx.compose.ui:ui-test-junit4:$compose_version", "androidx.compose.ui:ui-test-manifest:$compose_version"]
 
 //  URBI
     designsystemdep = "$urbiGroupId:$designsystemId:$designsystemVersion"
