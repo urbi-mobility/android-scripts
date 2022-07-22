@@ -99,7 +99,7 @@ def mockk_version = "1.12.3"
 //core-testing
 def core_testing_version = "2.1.0"
 //
-def turbine_version = "0.7.0"
+def turbine_version = "0.8.0"
 //
 def compose_constaint_version = "1.0.0"
 //Accompanist compose
