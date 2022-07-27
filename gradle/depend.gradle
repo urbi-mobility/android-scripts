@@ -67,8 +67,6 @@ def retrofit_converter_gson_version = '2.8.1'
 def retrofit_adapter_rxjava_version = '2.8.1'
 //  OK-HTTP3 VERSION
 def okhttp3_version = '4.9.1'
-//  DAGGER VERSION
-def dagger_version = '2.43'
 
 // PAYMENT_VERSION
 def stripe_android_version = '19.1.0'
@@ -157,7 +155,8 @@ ext {
 //  REALM
     realm_version = '6.0.2'
     android_plugin = '7.0.0'
-
+    //  DAGGER VERSION
+    dagger_version = '2.43'
 //  KOTLIN
     kotlin_version = '1.7.10'
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
@@ -218,7 +217,7 @@ ext {
 //  Android
     min_sdk_version = 21
     compile_sdk_version = 33
-    target_sdk_version = 32
+    target_sdk_version = 30
     global_build_tools_version = "30.0.3"
 
     maps_utils = "com.google.maps.android:android-maps-utils:$maps_utils_version"
