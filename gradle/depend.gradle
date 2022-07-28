@@ -131,7 +131,7 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.5.3'
+    utilityVersion = '2.5.4'
     designsystemVersion = '1.1.10'
     modelVersion = '2.7.10'
     coreVersion = '2.9.8'
