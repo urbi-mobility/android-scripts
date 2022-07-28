@@ -151,7 +151,7 @@ ext {
     telepassLibVersion = '2.8.' + telepassLibCode
 
     versionUrbi = '50505'
-    atacVersion = '2.0.5r'
+    atacVersion = '2.0.6'
     atacJitpackVersion = '2.0.6-atac'
 //---End---//
 
