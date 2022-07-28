@@ -158,7 +158,7 @@ ext {
     //  DAGGER VERSION
     dagger_version = '2.43'
 //  KOTLIN
-    kotlin_version = '1.7.10'
+    kotlin_version = '1.7.0'
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     kotlinx_coroutines = ["org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_core_version",
                           "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_android_version",
