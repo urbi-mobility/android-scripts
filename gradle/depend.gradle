@@ -319,6 +319,7 @@ ext {
     firebase_config = "com.google.firebase:firebase-config:$firebase_config_version"
     firebase_messaging = "com.google.firebase:firebase-messaging:$firebase_messaging_version"
 
+    firebase_ui = "com.firebaseui:firebase-ui-auth:7.2.0"
     // MLKIT
     mlkit_facedetection = "com.google.android.gms:play-services-mlkit-face-detection:$mlkit_facedetection_version"
     //thin
