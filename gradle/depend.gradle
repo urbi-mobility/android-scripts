@@ -127,7 +127,7 @@ ext {
     utilityVersion = '2.6.0'
     designsystemVersion = '1.2.0r1'
     modelVersion = '2.7.10r1'
-    coreVersion = '2.10.0'
+    coreVersion = '2.10.0r1'
     payVersion = '1.9.0'
     ticketVersion = '0.7.0'
     searchVersion = '0.7.0'
