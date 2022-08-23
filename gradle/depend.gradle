@@ -134,7 +134,7 @@ ext {
     taxiVersion = '0.6.1'
     scanVersion = '0.5.0'
     transpoVersion = '1.4.0'
-    evchargingVersion = '1.5.0r1'
+    evchargingVersion = '1.5.0r2'
     tripoVersion = '1.4.1'
     mobilitySharingVersion = '2.13.0r2'
 
