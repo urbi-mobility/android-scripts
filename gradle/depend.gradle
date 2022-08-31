@@ -125,22 +125,22 @@ ext {
 
 //---Module Version---//
     utilityVersion = '2.6.0'
-    designsystemVersion = '1.2.0'
-    modelVersion = '2.7.13'
-    coreVersion = '2.10.1'
+    designsystemVersion = '1.2.1'
+    modelVersion = '2.7.14'
+    coreVersion = '2.10.2'
     payVersion = '1.9.0'
     ticketVersion = '0.7.0'
     searchVersion = '0.7.0'
-    taxiVersion = '0.6.1'
+    taxiVersion = '0.6.2'
     scanVersion = '0.5.0'
     transpoVersion = '1.4.0'
-    evchargingVersion = '1.5.1'
+    evchargingVersion = '1.5.2'
     tripoVersion = '1.4.1'
-    mobilitySharingVersion = '2.13.0'
+    mobilitySharingVersion = '2.13.1'
 
     telepassModelVersion = '2.5.0'
     telepassNetworkVersion = '2.7.0'
-    telepassLibCode = '1'
+    telepassLibCode = '2'
     telepassLibVersion = '2.9.' + telepassLibCode
 
     versionUrbi = '50505'
