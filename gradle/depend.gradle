@@ -125,7 +125,7 @@ ext {
 
 //---Module Version---//
     utilityVersion = '2.6.0'
-    designsystemVersion = '1.2.1'
+    designsystemVersion = '1.2.2'
     modelVersion = '2.7.14'
     coreVersion = '2.10.2'
     payVersion = '1.9.0'
@@ -135,7 +135,7 @@ ext {
     scanVersion = '0.5.0'
     transpoVersion = '1.4.0'
     evchargingVersion = '1.5.2'
-    tripoVersion = '1.4.1'
+    tripoVersion = '1.4.2'
     mobilitySharingVersion = '2.13.1'
 
     telepassModelVersion = '2.5.0'
