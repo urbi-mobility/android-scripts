@@ -13,16 +13,16 @@ def subsamplingimage_version = '3.10.0'
 def marketingcloudsdk_version = '7.1.0'
 def recycleradapter_version = '2.10.0'
 // ANDROID VERSION
-def material_version = '1.3.0'
+def material_version = '1.5.0'
 def maps_utils_version = '2.2.2'
 // ANDROID X VERSION
 def biometric_version = '1.0.1'
 def preference_version = '1.1.0'
-def lifecycle_version = '2.4.0'
-def appcompat_version = "1.3.1"
+def lifecycle_version = '2.4.1'
+def appcompat_version = "1.4.1"
 def activityx_version = "1.5.1"
 def fragmentx_version = "1.5.1"
-def constraintlayout_version = '2.0.4'
+def constraintlayout_version = '2.1.3'
 def gridlayout_version = '1.0.0'
 def recyclerview_version = '1.1.0'
 def swiperefresh_version = '1.1.0'
@@ -52,8 +52,9 @@ def firebase_core_version = '16.0.9'
 def mlkit_facedetection_version = '17.0.0'
 def mlkit_textrecognition_version = '18.0.0'
 def mlkit_barcodescanning_version = '17.0.2'
-// PICASSO VERSION
-def picasso_version = '2.5.2'
+// GLIDE VERSION
+def glide_version = '4.13.2'
+def landscapist_version = "1.5.2"
 // RX_VERSION
 def rxandroid_version = '2.1.1'
 //  Retrofit VERSION
@@ -63,6 +64,8 @@ def retrofit_adapter_rxjava_version = '2.8.1'
 //  OK-HTTP3 VERSION
 def okhttp3_version = '4.9.1'
 
+// HILT
+def hilt_compose_version = '1.0.0'
 // PAYMENT_VERSION
 def stripe_android_version = '19.1.0'
 def satispay_version = '1.0.6'
@@ -70,7 +73,7 @@ def satispay_version = '1.0.6'
 def rxbinding_version = '3.0.0'
 def rxredux_version = '1.0.1'
 def rxrelay_version = '2.1.0'
-def core_ktx_version = '1.3.2'
+def core_ktx_version = '1.7.0'
 //  LOTTIE VERSION
 def lottieVersion = "3.4.0"
 // APACHE VERSION
@@ -91,12 +94,16 @@ def mockk_version = "1.12.3"
 //core-testing
 def core_testing_version = "2.1.0"
 //
-def turbine_version = "0.7.0"
+def turbine_version = "0.8.0"
 //
-def compose_constaint_version = "1.0.0"
+def compose_constaint_version = "1.0.1"
+//Accompanist compose
+def accompanist_compose_version = "0.25.0"
+//
+def map_compose_version = "2.5.3"
 
 ext {
-// Github-packages
+// Github packages
     ghp_registry_name = 'GitHubPackages'
     urbiGroupId = 'co.urbi.android'
     telepassGroupId = 'com.telepass.urbi'
@@ -124,7 +131,7 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.6.1'
+    utilityVersion = '2.6.2'
     designsystemVersion = '1.2.2'
     modelVersion = '2.7.15'
     coreVersion = '2.10.3'
@@ -143,13 +150,17 @@ ext {
     telepassLibCode = '2'
     telepassLibVersion = '2.9.' + telepassLibCode
 
-    versionUrbi = '50505'
+    versionUrbi = '52108'
     atacVersion = '2.0.5r'
 //---End---//
 
     android_gradle_plugin = '7.2.0'
     //  DAGGER VERSION
     dagger_version = '2.43'
+//  Compose
+    compose_version = '1.2.0'
+    compose_activity = '1.4.0'
+    nav_version = '2.4.2'
 //  KOTLIN
     kotlin_version = '1.7.0'
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
@@ -180,6 +191,7 @@ ext {
     core_ktx = "androidx.core:core-ktx:$core_ktx_version"
     gridlayout = "androidx.gridlayout:gridlayout:$gridlayout_version"
     recyclerview = "androidx.recyclerview:recyclerview:$recyclerview_version"
+    swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefresh_version"
     cardview = "androidx.cardview:cardview:$cardview_version"
     serialization_core = "org.jetbrains.kotlinx:kotlinx-serialization-core:$kotlinx_serialization_core_version"
     serialization_json = "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinx_serialization_json_version"
@@ -203,12 +215,44 @@ ext {
                        }),
                        dependencies.create("com.squareup.okhttp3:logging-interceptor:$okhttp3_version"),
                        "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_rxjava_version"]
+// Compose
+    compose_ui = ["androidx.compose.ui:ui:$compose_version","androidx.compose.ui:ui-tooling:$compose_version", "androidx.compose.ui:ui-tooling-preview:$compose_version"]
+    compose_material = "androidx.compose.material:material:$compose_version"
+    //HILT
+    hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose_version"
+    //Navigation
+    compose_navigation = "androidx.navigation:navigation-compose:$nav_version"
 
+    compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:$compose_constaint_version"
+
+    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
+    compose_foundation = "androidx.compose.foundation:foundation:$compose_version"
+    compose_activity = "androidx.activity:activity-compose:$compose_activity"
+
+    accompanist_compose = ["com.google.accompanist:accompanist-swiperefresh:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-pager:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-pager-indicators:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-permissions:$accompanist_compose_version"]
+
+    maps_compose = "com.google.maps.android:maps-compose:$map_compose_version"
+
+    // Material design icons
+    material_icon = ["androidx.compose.material:material-icons-core:$compose_version",
+                     "androidx.compose.material:material-icons-extended:$compose_version"]
+    // Integration with ViewModels
+    view_model_compose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
+    // Integration with observables
+    runtime_livedata = "androidx.compose.runtime:runtime-livedata:$compose_version"
+    runtime_rxjava = "androidx.compose.runtime:runtime-rxjava2:$compose_version"
+    compose_deep = [core_ktx, appcompat, compose_ui, compose_material, compose_navigation, compose_foundation, compose_activity, runtime_livedata, runtime_rxjava]
 //  RxJava & RxAndroid
     rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
 
 //  Android
-    min_sdk_version = 21
+    min_sdk_version = 24
     compile_sdk_version = 33
     target_sdk_version = 30
     global_build_tools_version = "30.0.3"
@@ -275,6 +319,7 @@ ext {
     firebase_config = "com.google.firebase:firebase-config:$firebase_config_version"
     firebase_messaging = "com.google.firebase:firebase-messaging:$firebase_messaging_version"
 
+    firebase_ui = "com.firebaseui:firebase-ui-auth:7.2.0"
     // MLKIT
     mlkit_facedetection = "com.google.android.gms:play-services-mlkit-face-detection:$mlkit_facedetection_version"
     //thin
@@ -287,8 +332,10 @@ ext {
             mlkit_textrecognition,
             mlkit_barcodescanning
     ]
-//  Picasso
-    picasso = "com.squareup.picasso:picasso:$picasso_version"
+//  glide
+    glide = "com.github.bumptech.glide:glide:$glide_version"
+    glideCompiler = "com.github.bumptech.glide:compiler:$glide_version"
+    landscapist = "com.github.skydoves:landscapist-glide:${landscapist_version}"
 //  Dagger
     dagger = "com.google.dagger:hilt-android:$dagger_version"
     dagger_compile = "com.google.dagger:hilt-compiler:$dagger_version"
@@ -367,8 +414,9 @@ ext {
 
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
+    mockk_android = "io.mockk:mockk-android:$mockk_version"
     core_testing = "androidx.arch.core:core-testing:$core_testing_version"
-    coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
+    coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinx_coroutines_core_version"
     turbine = "app.cash.turbine:turbine:$turbine_version"
     junit = 'junit:junit:4.12'
     mockito = 'org.mockito:mockito-android:2.6.3'
@@ -379,7 +427,12 @@ ext {
                    , 'androidx.annotation:annotation:1.1.0', dependencies.create('androidx.test.uiautomator:uiautomator:2.2.0', {
         exclude group: 'com.android.support'
     }), 'androidx.test:rules:1.2.0', 'androidx.test:runner:1.2.0']
-
+    testJson = "org.json:json:20180813"
+    testHilt = "com.google.dagger:hilt-android-testing:$dagger_version"
+    testCompose = ["androidx.compose.ui:ui-test:$compose_version", "androidx.compose.ui:ui-test-junit4:$compose_version", "androidx.compose.ui:ui-test-manifest:$compose_version"]
+    testAndroidX = [dependencies.create("androidx.test:core:1.4.0"),dependencies.create("androidx.test:core-ktx:1.4.0"),
+                    dependencies.create("androidx.test.ext:junit:1.1.3"),dependencies.create("androidx.test.ext:junit-ktx:1.1.3"),
+                    dependencies.create("androidx.test.ext:truth:1.4.0"),dependencies.create("androidx.test:runner:1.4.0")]
 //  URBI
     designsystemdep = "$urbiGroupId:$designsystemId:$designsystemVersion"
     utilitylibdep = "$urbiGroupId:$utilityId:$utilityVersion"
