@@ -133,7 +133,7 @@ ext {
     searchVersion = '0.7.1'
     taxiVersion = '0.6.3'
     scanVersion = '0.5.0'
-    transpoVersion = '1.4.0'
+    transpoVersion = '1.4.0ar2'
     evchargingVersion = '1.5.3'
     tripoVersion = '1.4.2'
     mobilitySharingVersion = '2.13.1'
@@ -145,7 +145,6 @@ ext {
 
     versionUrbi = '50505'
     atacVersion = '2.0.6'
-    atacJitpackVersion = '2.0.6-atac'
 //---End---//
 
     android_gradle_plugin = '7.2.0'
@@ -364,8 +363,6 @@ ext {
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
     sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
     atac_dep = [atac, sql_cipher]
-    atac_jitpack_dep = "org.bitbucket.eo-mobile:eo-mobile-android-sdk-artifacts:$atacJitpackVersion"
-
 
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
