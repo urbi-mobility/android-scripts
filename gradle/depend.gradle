@@ -64,7 +64,7 @@ def retrofit_adapter_rxjava_version = '2.8.1'
 //  OK-HTTP3 VERSION
 def okhttp3_version = '4.9.1'
 
-// HIL
+// HILT
 def hilt_compose_version = '1.0.0'
 // PAYMENT_VERSION
 def stripe_android_version = '19.1.0'
@@ -131,23 +131,23 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.6.0'
-    designsystemVersion = '1.2.0'
-    modelVersion = '2.7.10'
-    coreVersion = '2.10.0'
-    payVersion = '1.9.0'
+    utilityVersion = '2.6.2'
+    designsystemVersion = '1.2.2'
+    modelVersion = '2.7.15'
+    coreVersion = '2.10.3'
+    payVersion = '1.9.1'
     ticketVersion = '0.7.0'
-    searchVersion = '0.7.0'
-    taxiVersion = '0.6.0'
+    searchVersion = '0.7.1'
+    taxiVersion = '0.6.4'
     scanVersion = '0.5.0'
-    transpoVersion = '1.4.0'
-    evchargingVersion = '1.5.0'
-    tripoVersion = '1.4.0'
-    mobilitySharingVersion = '2.13.0'
+    transpoVersion = '1.4.1'
+    evchargingVersion = '1.5.3'
+    tripoVersion = '1.4.2'
+    mobilitySharingVersion = '2.13.1'
 
     telepassModelVersion = '2.5.0'
     telepassNetworkVersion = '2.7.0'
-    telepassLibCode = '0'
+    telepassLibCode = '2'
     telepassLibVersion = '2.9.' + telepassLibCode
 
     versionUrbi = '52108'
