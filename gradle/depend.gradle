@@ -133,7 +133,7 @@ ext {
     searchVersion = '0.7.2'
     taxiVersion = '0.6.5'
     scanVersion = '0.5.0'
-    transpoVersion = '1.4.1'
+    transpoVersion = '1.4.2'
     evchargingVersion = '1.5.3'
     tripoVersion = '1.4.2'
     mobilitySharingVersion = '2.13.1'
@@ -144,7 +144,7 @@ ext {
     telepassLibVersion = '2.9.' + telepassLibCode
 
     versionUrbi = '50505'
-    atacVersion = '2.0.5r'
+    atacVersion = '2.0.6r'
 //---End---//
 
     android_gradle_plugin = '7.2.0'
@@ -363,7 +363,6 @@ ext {
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
     sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
     atac_dep = [atac, sql_cipher]
-
 
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
