@@ -147,7 +147,7 @@ ext {
     atacVersion = '2.0.6r'
 //---End---//
 
-    android_gradle_plugin = '7.2.0'
+    android_gradle_plugin = '7.3.0'
     //  DAGGER VERSION
     dagger_version = '2.43'
 //  KOTLIN
