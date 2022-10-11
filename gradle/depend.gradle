@@ -168,7 +168,7 @@ ext {
                           "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_android_version",
                           "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
                           "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"]
-
+    kotlinx_coroutines_play_services = 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4'
 //  AndroidX
     camerax_version = "1.0.0"
     cameraxview_version = "1.0.0-alpha22"
