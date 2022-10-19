@@ -44,10 +44,7 @@ def kotlinx_coroutines_android_version = '1.6.3'
 //  Stream Guava VERSION
 def guava_version = "27.0.1-android"
 // FIREBASE VERSION
-def firebase_config_version = '17.0.0'
-def firebase_analytics_version = '17.1.0'
-def firebase_messaging_version = '21.0.0'
-def firebase_core_version = '16.0.9'
+def firebase_bom_version = '31.0.0'
 // ML KIT VERSIONS
 def mlkit_facedetection_version = '17.0.0'
 def mlkit_textrecognition_version = '18.0.0'
@@ -311,13 +308,12 @@ ext {
 //  Guava
     guava = "com.google.guava:guava:$guava_version"
 
+
 //  FIREBASE
-    firebase_core = dependencies.create("com.google.firebase:firebase-core:$firebase_core_version", {
-        exclude module: 'play-services-stats'
-    })
-    firebase_analytics = "com.google.firebase:firebase-analytics:$firebase_analytics_version"
-    firebase_config = "com.google.firebase:firebase-config:$firebase_config_version"
-    firebase_messaging = "com.google.firebase:firebase-messaging:$firebase_messaging_version"
+    firebase_bom = "com.google.firebase:firebase-bom:$firebase_bom_version"
+    firebase_analytics = "com.google.firebase:firebase-analytics"
+    firebase_messaging = "com.google.firebase:firebase-messaging"
+    firebase_crashlytics ="com.google.firebase:firebase-crashlytics"
 
     firebase_ui = "com.firebaseui:firebase-ui-auth:7.2.0"
     // MLKIT
