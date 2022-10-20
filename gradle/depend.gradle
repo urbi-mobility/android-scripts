@@ -14,7 +14,7 @@ def marketingcloudsdk_version = '7.1.0'
 def recycleradapter_version = '2.10.0'
 // ANDROID VERSION
 def material_version = '1.5.0'
-def maps_utils_version = '2.2.2'
+def maps_utils_version = '2.4.0'
 // ANDROID X VERSION
 def biometric_version = '1.0.1'
 def preference_version = '1.1.0'
