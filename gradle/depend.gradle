@@ -87,7 +87,7 @@ def zxing_qr_code = "3.4.1"
 //PhotoView
 def photo_view_version = "2.3.0"
 //mockk
-def mockk_version = "1.12.3"
+def mockk_version = "1.13.2"
 //core-testing
 def core_testing_version = "2.1.0"
 //
