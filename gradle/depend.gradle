@@ -100,7 +100,7 @@ ext {
     ghp_registry_name = 'GitHubPackages'
     urbiGroupId = 'co.urbi.android'
     telepassGroupId = 'com.telepass.urbi'
-    urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-telepass-pay-framework'
+    urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-urbi-framework'
     telepass_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-unica-framework'
     telepass_urbi_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-framework'
 // Artifact ids
@@ -125,17 +125,17 @@ ext {
 
 //---Module Version---//
     utilityVersion = '2.6.3'
-    designsystemVersion = '1.2.3'
+    designsystemVersion = '1.2.4'
     modelVersion = '2.7.18'
     coreVersion = '2.10.6'
     payVersion = '1.9.2'
-    ticketVersion = '0.7.0'
-    searchVersion = '0.7.2'
-    taxiVersion = '0.6.6'
+    ticketVersion = '0.7.1'
+    searchVersion = '0.7.3'
+    taxiVersion = '0.6.7'
     scanVersion = '0.5.1'
     transpoVersion = '1.4.4'
     evchargingVersion = '1.5.5'
-    tripoVersion = '1.4.4'
+    tripoVersion = '1.4.5'
     mobilitySharingVersion = '2.13.5'
 
     telepassModelVersion = '2.5.0'
