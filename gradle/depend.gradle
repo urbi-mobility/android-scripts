@@ -133,9 +133,9 @@ ext {
     searchVersion = '0.7.3'
     taxiVersion = '0.6.7'
     scanVersion = '0.5.1'
-    transpoVersion = '1.4.4'
+    transpoVersion = '1.4.5'
     evchargingVersion = '1.5.5'
-    tripoVersion = '1.4.5'
+    tripoVersion = '1.4.6'
     mobilitySharingVersion = '2.13.5'
 
     telepassModelVersion = '2.5.0'
