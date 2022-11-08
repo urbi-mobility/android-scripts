@@ -124,7 +124,7 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.6.3'
+    utilityVersion = '2.6.4'
     designsystemVersion = '1.2.4'
     modelVersion = '2.7.18'
     coreVersion = '2.10.6'
@@ -135,7 +135,7 @@ ext {
     scanVersion = '0.5.1'
     transpoVersion = '1.4.5'
     evchargingVersion = '1.5.5'
-    tripoVersion = '1.4.6'
+    tripoVersion = '1.4.7'
     mobilitySharingVersion = '2.13.5'
 
     telepassModelVersion = '2.5.0'
