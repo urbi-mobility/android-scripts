@@ -65,7 +65,6 @@ def okhttp3_version = '4.9.1'
 def hilt_compose_version = '1.0.0'
 // PAYMENT_VERSION
 def stripe_android_version = '19.1.0'
-def satispay_version = '1.0.6'
 // RX REDUX
 def rxbinding_version = '3.0.0'
 def rxredux_version = '1.0.1'
@@ -107,7 +106,7 @@ ext {
     ghp_registry_name = 'GitHubPackages'
     urbiGroupId = 'co.urbi.android'
     telepassGroupId = 'com.telepass.urbi'
-    urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-telepass-pay-framework'
+    urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-urbi-framework'
     telepass_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-unica-framework'
     telepass_urbi_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-framework'
 // Artifact ids
@@ -350,10 +349,9 @@ ext {
     flow_layout = "com.nex3z:flow-layout:$flow_layout_version"
 
 //  PAYMENTS
-    payments = [dependencies.create("com.stripe:stripe-android:$stripe_android_version", {
+    payments = dependencies.create("com.stripe:stripe-android:$stripe_android_version", {
         exclude group: 'com.google.code.gson'
-    }),
-                "com.satispay:satispayintent:$satispay_version"]
+    })
 //   DELEGATE
     adapterdelegates4 = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterdelegates4_version"
     adapterdelegates4Binding = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterdelegates4_version"
