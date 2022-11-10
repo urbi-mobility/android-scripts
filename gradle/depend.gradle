@@ -128,7 +128,7 @@ ext {
     designsystemVersion = '1.2.4'
     modelVersion = '2.7.18'
     coreVersion = '2.10.6'
-    payVersion = '1.9.2'
+    payVersion = '1.9.3'
     ticketVersion = '0.7.1'
     searchVersion = '0.7.3'
     taxiVersion = '0.6.7'
@@ -300,10 +300,9 @@ ext {
     flow_layout = "com.nex3z:flow-layout:$flow_layout_version"
 
 //  PAYMENTS
-    payments = [dependencies.create("com.stripe:stripe-android:$stripe_android_version", {
+    payments = dependencies.create("com.stripe:stripe-android:$stripe_android_version", {
         exclude group: 'com.google.code.gson'
-    }),
-                "com.satispay:satispayintent:$satispay_version"]
+    })
 //   DELEGATE
     adapterdelegates4 = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterdelegates4_version"
     adapterdelegates4Binding = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterdelegates4_version"
