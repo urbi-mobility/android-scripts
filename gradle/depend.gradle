@@ -65,7 +65,6 @@ def okhttp3_version = '4.9.1'
 def hilt_compose_version = '1.0.0'
 // PAYMENT_VERSION
 def stripe_android_version = '19.1.0'
-def satispay_version = '1.0.6'
 // RX REDUX
 def rxbinding_version = '3.0.0'
 def rxredux_version = '1.0.1'
@@ -103,11 +102,12 @@ def map_compose_version = "2.5.3"
 def subsampling_scale_image_version = "3.10.0"
 
 ext {
+    android_script_path = "../android-scripts"
 // Github packages
     ghp_registry_name = 'GitHubPackages'
     urbiGroupId = 'co.urbi.android'
     telepassGroupId = 'com.telepass.urbi'
-    urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-telepass-pay-framework'
+    urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-urbi-framework'
     telepass_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-unica-framework'
     telepass_urbi_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-framework'
 // Artifact ids
@@ -131,26 +131,30 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.6.3'
-    designsystemVersion = '1.2.3'
+    utilityVersion = '2.6.4'
+    designsystemVersion = '1.2.4'
     modelVersion = '2.7.18'
     coreVersion = '2.10.6'
-    payVersion = '1.9.2'
-    ticketVersion = '0.7.0'
-    searchVersion = '0.7.2'
-    taxiVersion = '0.6.6'
+    payVersion = '1.9.3'
+    ticketVersion = '0.7.1'
+    searchVersion = '0.7.3'
+    taxiVersion = '0.6.7'
     scanVersion = '0.5.1'
-    transpoVersion = '1.4.4'
+    transpoVersion = '1.4.5'
     evchargingVersion = '1.5.5'
-    tripoVersion = '1.4.4'
+    tripoVersion = '1.4.7'
     mobilitySharingVersion = '2.13.5'
 
     telepassModelVersion = '2.5.0'
     telepassNetworkVersion = '2.7.0'
     telepassLibCode = '2'
     telepassLibVersion = '2.9.' + telepassLibCode
-
-    versionUrbi = '52108'
+    versionUrbiMajor = 5
+    versionUrbiMinor = 21
+    versionUrbiPatch = 8
+    versionUrbi = (versionUrbiMajor * 10000 + versionUrbiMinor * 100 + versionUrbiPatch).toString()
+    versionUrbiLabelFull = versionUrbiMajor+'.'+versionUrbiMinor+'.'+versionUrbiPatch
+    versionUrbiLabel = versionUrbiMajor+'.'+versionUrbiMinor
     atacVersion = '2.0.6r'
 //---End---//
 
@@ -346,10 +350,9 @@ ext {
     flow_layout = "com.nex3z:flow-layout:$flow_layout_version"
 
 //  PAYMENTS
-    payments = [dependencies.create("com.stripe:stripe-android:$stripe_android_version", {
+    payments = dependencies.create("com.stripe:stripe-android:$stripe_android_version", {
         exclude group: 'com.google.code.gson'
-    }),
-                "com.satispay:satispayintent:$satispay_version"]
+    })
 //   DELEGATE
     adapterdelegates4 = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterdelegates4_version"
     adapterdelegates4Binding = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterdelegates4_version"
