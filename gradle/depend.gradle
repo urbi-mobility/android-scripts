@@ -149,9 +149,9 @@ ext {
     telepassNetworkVersion = '2.7.0'
     telepassLibCode = '2'
     telepassLibVersion = '2.9.' + telepassLibCode
-    versionUrbiMajor = 5
-    versionUrbiMinor = 21
-    versionUrbiPatch = 8
+    versionUrbiMajor = 6
+    versionUrbiMinor = 0
+    versionUrbiPatch = 0
     versionUrbi = (versionUrbiMajor * 10000 + versionUrbiMinor * 100 + versionUrbiPatch).toString()
     versionUrbiLabelFull = versionUrbiMajor+'.'+versionUrbiMinor+'.'+versionUrbiPatch
     versionUrbiLabel = versionUrbiMajor+'.'+versionUrbiMinor
