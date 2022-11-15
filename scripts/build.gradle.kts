@@ -7,9 +7,7 @@ tasks.register("uploadlib") {
     doLast {
         val appId = System.getProperty("args")
 
-        //Added this because for other libs this method is not implemented in dev already, just in compose
-        if(appId == "tpay")
-            forcePullServiceFileAndCopy()
+        forcePullServiceFileAndCopy()
 
         var mapChangelog: LinkedHashMap<String, String>;
         if(appId == "tpay")
