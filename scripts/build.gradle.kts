@@ -7,7 +7,10 @@ tasks.register("uploadlib") {
     doLast {
         val appId = System.getProperty("args")
 
-        forcePullServiceFileAndCopy()
+        if(appId == "tpay")
+            forcePullServiceFileAndCopyTPayLib()
+        else
+            forcePullServiceFileAndCopy()
 
         var mapChangelog: LinkedHashMap<String, String>;
         if(appId == "tpay")
@@ -228,7 +231,7 @@ fun writeChangelog(
 }
 
 
-fun forcePullServiceFileAndCopy() {
+fun forcePullServiceFileAndCopyTPayLib() {
     println("Pull  urbi-services-providers-file")
     ByteArrayOutputStream().use { os ->
         val result = exec {
@@ -241,6 +244,25 @@ fun forcePullServiceFileAndCopy() {
     ByteArrayOutputStream().use { os ->
         val result = exec {
             commandLine("./gradlew", "tpaylib:copyServicesProvider","-Dargs=force")
+            standardOutput = os
+        }
+        println(os.toString())
+    }
+}
+
+fun forcePullServiceFileAndCopy() {
+    println("Pull  urbi-services-providers-file")
+    ByteArrayOutputStream().use { os ->
+        val result = exec {
+            commandLine("git", "submodule", "update","--recursive","--remote")
+            standardOutput = os
+        }
+        println(os.toString())
+    }
+    println("Force Copy service file from urbi-services-providers-file")
+    ByteArrayOutputStream().use { os ->
+        val result = exec {
+            commandLine("./gradlew", "mobilitylib:copyServicesProvider","-Dargs=force")
             standardOutput = os
         }
         println(os.toString())
