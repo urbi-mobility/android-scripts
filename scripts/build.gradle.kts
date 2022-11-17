@@ -6,11 +6,17 @@ import kotlin.collections.*
 tasks.register("uploadlib") {
     doLast {
         val appId = System.getProperty("args")
-
-        if(appId == "tpay")
-            forcePullServiceFileAndCopyTPayLib()
-        else
-            forcePullServiceFileAndCopy()
+        if (project.hasProperty("args")) {
+            val service = project.properties["args"]
+            if(service == "service") {
+                if (appId == "tpay")
+                    forcePullServiceFileAndCopyTPayLib()
+                else
+                    forcePullServiceFileAndCopy()
+            } else
+                println("project property dosen't match")
+        } else
+            println("No service file is force pull and uploaded, tou know what you are doing.......")
 
         var mapChangelog: LinkedHashMap<String, String>;
         if(appId == "tpay")
