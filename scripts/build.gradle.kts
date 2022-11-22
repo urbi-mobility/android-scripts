@@ -6,15 +6,12 @@ import kotlin.collections.*
 tasks.register("uploadlib") {
     doLast {
         val appId = System.getProperty("args")
-        if (project.hasProperty("args")) {
-            val service = project.properties["args"]
-            if(service == "service") {
-                if (appId == "tpay")
-                    forcePullServiceFileAndCopyTPayLib()
-                else
-                    forcePullServiceFileAndCopy()
-            } else
-                println("project property dosen't match")
+        val skipService = project.hasProperty("args") && (project.properties["args"] == "skipService")
+        if (!skipService) {
+            if (appId == "tpay")
+                forcePullServiceFileAndCopyTPayLib()
+            else
+                forcePullServiceFileAndCopy()
         } else
             println("No service file is force pull and uploaded, tou know what you are doing.......")
 
