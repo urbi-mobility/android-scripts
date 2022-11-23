@@ -131,24 +131,24 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.6.4'
+    utilityVersion = '2.6.5'
     designsystemVersion = '1.2.4'
-    modelVersion = '2.7.18'
-    coreVersion = '2.10.6'
+    modelVersion = '2.7.19'
+    coreVersion = '2.10.8'
     payVersion = '1.9.3'
     ticketVersion = '0.7.1'
-    searchVersion = '0.7.3'
+    searchVersion = '0.7.4'
     taxiVersion = '0.6.7'
     scanVersion = '0.5.1'
-    transpoVersion = '1.4.5'
-    evchargingVersion = '1.5.5'
+    transpoVersion = '1.4.6'
+    evchargingVersion = '1.5.7'
     tripoVersion = '1.4.7'
-    mobilitySharingVersion = '2.13.5'
+    mobilitySharingVersion = '2.13.7'
 
     telepassModelVersion = '2.5.0'
-    telepassNetworkVersion = '2.7.0'
-    telepassLibCode = '2'
-    telepassLibVersion = '2.9.' + telepassLibCode
+    telepassNetworkVersion = '2.7.1'
+    telepassLibCode = '1'
+    telepassLibVersion = '2.10.' + telepassLibCode
     versionUrbiMajor = 6
     versionUrbiMinor = 0
     versionUrbiPatch = 0
@@ -158,7 +158,7 @@ ext {
     atacVersion = '2.0.6r'
 //---End---//
 
-    android_gradle_plugin = '7.2.0'
+    android_gradle_plugin = '7.3.0'
     //  DAGGER VERSION
     dagger_version = '2.43'
 //  Compose
