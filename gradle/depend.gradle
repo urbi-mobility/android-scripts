@@ -415,7 +415,6 @@ ext {
     sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
     atac_dep = [atac, sql_cipher]
 
-
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
     mockk_android = "io.mockk:mockk-android:$mockk_version"
@@ -424,8 +423,8 @@ ext {
     turbine = "app.cash.turbine:turbine:$turbine_version"
     junit = 'junit:junit:4.12'
     mockito = 'org.mockito:mockito-android:2.6.3'
-    junit_x = 'androidx.test.ext:junit:1.1.1'
-    espresso = 'androidx.test.espresso:espresso-core:3.2.0'
+    junit_x = 'androidx.test.ext:junit:1.1.3'
+    espresso = 'androidx.test.espresso:espresso-core:3.4.0'
     testimpl = [junit_x, espresso]
     testimplapp = [junit_x, espresso, 'org.mockito:mockito-core:2.28.2', 'org.mockito:mockito-android:2.6.3'
                    , 'androidx.annotation:annotation:1.1.0', dependencies.create('androidx.test.uiautomator:uiautomator:2.2.0', {

@@ -6,8 +6,14 @@ import kotlin.collections.*
 tasks.register("uploadlib") {
     doLast {
         val appId = System.getProperty("args")
-
-        forcePullServiceFileAndCopy()
+        val skipService = project.hasProperty("args") && (project.properties["args"] == "skipService")
+        if (!skipService) {
+            if (appId == "tpay")
+                forcePullServiceFileAndCopyTPayLib()
+            else
+                forcePullServiceFileAndCopy()
+        } else
+            println("No service file is force pull and uploaded, tou know what you are doing.......")
 
         var mapChangelog: LinkedHashMap<String, String>;
         if(appId == "tpay")
@@ -224,6 +230,26 @@ fun writeChangelog(
                 out.println(it)
             }
         }
+    }
+}
+
+
+fun forcePullServiceFileAndCopyTPayLib() {
+    println("Pull  urbi-services-providers-file")
+    ByteArrayOutputStream().use { os ->
+        val result = exec {
+            commandLine("git", "submodule", "update","--recursive","--remote")
+            standardOutput = os
+        }
+        println(os.toString())
+    }
+    println("Force Copy service file from urbi-services-providers-file")
+    ByteArrayOutputStream().use { os ->
+        val result = exec {
+            commandLine("./gradlew", "tpaylib:copyServicesProvider","-Dargs=force")
+            standardOutput = os
+        }
+        println(os.toString())
     }
 }
 
