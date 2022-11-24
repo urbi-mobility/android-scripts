@@ -100,6 +100,10 @@ def map_compose_version = "2.5.3"
 // subsampling_scale_image
 def subsampling_scale_image_version = "3.10.0"
 
+// play services auth
+def playServicesAuthVersion = "20.4.0"
+def playServicesAuthPhoneVersion = "18.0.1"
+
 ext {
     android_script_path = "../android-scripts"
 // Github packages
@@ -158,6 +162,11 @@ ext {
 //---End---//
 
     android_gradle_plugin = '7.3.0'
+    //google play auth
+    play_services_auth = "com.google.android.gms:play-services-auth:$playServicesAuthVersion"
+    play_services_auth_phone = "com.google.android.gms:play-services-auth-api-phone:$playServicesAuthPhoneVersion"
+
+    android_gradle_plugin = '7.2.0'
     //  DAGGER VERSION
     dagger_version = '2.43'
 //  Compose
@@ -319,7 +328,8 @@ ext {
     firebase_bom = "com.google.firebase:firebase-bom:$firebase_bom_version"
     firebase_analytics = "com.google.firebase:firebase-analytics"
     firebase_messaging = "com.google.firebase:firebase-messaging"
-    firebase_crashlytics ="com.google.firebase:firebase-crashlytics"
+    firebase_crashlytics = "com.google.firebase:firebase-crashlytics"
+    firebase_auth = "com.google.firebase:firebase-auth-ktx"
 
     firebase_ui = "com.firebaseui:firebase-ui-auth:8.0.2"
     // MLKIT
