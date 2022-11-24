@@ -9,7 +9,6 @@ def jsonwebtoken_version = '0.8.0'
 def materialdatetimepicker_version = '4.2.3'
 def flow_layout_version = '1.3.3'
 def adapterdelegates4_version = '4.3.0'
-def subsamplingimage_version = '3.10.0'
 def marketingcloudsdk_version = '7.1.0'
 def recycleradapter_version = '2.10.0'
 // ANDROID VERSION
@@ -357,8 +356,6 @@ ext {
     adapterdelegates4 = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterdelegates4_version"
     adapterdelegates4Binding = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterdelegates4_version"
 
-//  SUBSAMPLING SCALED IMAGE
-    subsamplingimage = "com.davemorrissey.labs:subsampling-scale-image-view:$subsamplingimage_version"
 
 //  RECYCLERADAPTER
     recycleradapter = "net.gotev:recycleradapter:$recycleradapter_version"
@@ -405,7 +402,7 @@ ext {
     jumio_mandatory_dependencies = [jumio_core, jumio_nv, room_runtime, cardview, serialization_core, serialization_json]
     jumio_optional_dependencies = [jumio_nv_ocr, jumio_bam, jumio_dv]
 
-    subsampling_scale_image = "com.davemorrissey.labs:subsampling-scale-image-view:$subsampling_scale_image_version"
+    subsampling_scale_image = "com.davemorrissey.labs:subsampling-scale-image-view-androidx:$subsampling_scale_image_version"
 
     //ZXING
     zxing = "com.google.zxing:core:$zxing_qr_code"
