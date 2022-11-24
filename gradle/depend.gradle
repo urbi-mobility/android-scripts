@@ -9,7 +9,6 @@ def jsonwebtoken_version = '0.8.0'
 def materialdatetimepicker_version = '4.2.3'
 def flow_layout_version = '1.3.3'
 def adapterdelegates4_version = '4.3.0'
-def subsamplingimage_version = '3.10.0'
 def marketingcloudsdk_version = '7.1.0'
 def recycleradapter_version = '2.10.0'
 // ANDROID VERSION
@@ -131,24 +130,24 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.6.4'
+    utilityVersion = '2.6.5'
     designsystemVersion = '1.2.4'
-    modelVersion = '2.7.18'
-    coreVersion = '2.10.6'
+    modelVersion = '2.7.19'
+    coreVersion = '2.10.8'
     payVersion = '1.9.3'
     ticketVersion = '0.7.1'
-    searchVersion = '0.7.3'
+    searchVersion = '0.7.4'
     taxiVersion = '0.6.7'
     scanVersion = '0.5.1'
-    transpoVersion = '1.4.5'
-    evchargingVersion = '1.5.5'
+    transpoVersion = '1.4.6'
+    evchargingVersion = '1.5.7'
     tripoVersion = '1.4.7'
-    mobilitySharingVersion = '2.13.5'
+    mobilitySharingVersion = '2.13.7'
 
     telepassModelVersion = '2.5.0'
-    telepassNetworkVersion = '2.7.0'
-    telepassLibCode = '2'
-    telepassLibVersion = '2.9.' + telepassLibCode
+    telepassNetworkVersion = '2.7.1'
+    telepassLibCode = '1'
+    telepassLibVersion = '2.10.' + telepassLibCode
     versionUrbiMajor = 6
     versionUrbiMinor = 0
     versionUrbiPatch = 0
@@ -158,7 +157,7 @@ ext {
     atacVersion = '2.0.6r'
 //---End---//
 
-    android_gradle_plugin = '7.2.0'
+    android_gradle_plugin = '7.3.0'
     //  DAGGER VERSION
     dagger_version = '2.43'
 //  Compose
@@ -357,8 +356,6 @@ ext {
     adapterdelegates4 = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterdelegates4_version"
     adapterdelegates4Binding = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterdelegates4_version"
 
-//  SUBSAMPLING SCALED IMAGE
-    subsamplingimage = "com.davemorrissey.labs:subsampling-scale-image-view:$subsamplingimage_version"
 
 //  RECYCLERADAPTER
     recycleradapter = "net.gotev:recycleradapter:$recycleradapter_version"
@@ -405,7 +402,7 @@ ext {
     jumio_mandatory_dependencies = [jumio_core, jumio_nv, room_runtime, cardview, serialization_core, serialization_json]
     jumio_optional_dependencies = [jumio_nv_ocr, jumio_bam, jumio_dv]
 
-    subsampling_scale_image = "com.davemorrissey.labs:subsampling-scale-image-view:$subsampling_scale_image_version"
+    subsampling_scale_image = "com.davemorrissey.labs:subsampling-scale-image-view-androidx:$subsampling_scale_image_version"
 
     //ZXING
     zxing = "com.google.zxing:core:$zxing_qr_code"
@@ -415,7 +412,6 @@ ext {
     sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
     atac_dep = [atac, sql_cipher]
 
-
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
     mockk_android = "io.mockk:mockk-android:$mockk_version"
@@ -424,8 +420,8 @@ ext {
     turbine = "app.cash.turbine:turbine:$turbine_version"
     junit = 'junit:junit:4.12'
     mockito = 'org.mockito:mockito-android:2.6.3'
-    junit_x = 'androidx.test.ext:junit:1.1.1'
-    espresso = 'androidx.test.espresso:espresso-core:3.2.0'
+    junit_x = 'androidx.test.ext:junit:1.1.3'
+    espresso = 'androidx.test.espresso:espresso-core:3.4.0'
     testimpl = [junit_x, espresso]
     testimplapp = [junit_x, espresso, 'org.mockito:mockito-core:2.28.2', 'org.mockito:mockito-android:2.6.3'
                    , 'androidx.annotation:annotation:1.1.0', dependencies.create('androidx.test.uiautomator:uiautomator:2.2.0', {
