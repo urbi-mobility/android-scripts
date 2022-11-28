@@ -201,6 +201,7 @@ ext {
     biometric = "androidx.biometric:biometric:$biometric_version"
     preference = "androidx.preference:preference:$preference_version"
     core_ktx = "androidx.core:core-ktx:$core_ktx_version"
+    splashscreen = "androidx.core:core-splashscreen:1.0.0"
     gridlayout = "androidx.gridlayout:gridlayout:$gridlayout_version"
     recyclerview = "androidx.recyclerview:recyclerview:$recyclerview_version"
     swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefresh_version"
