@@ -104,6 +104,7 @@ def subsampling_scale_image_version = "3.10.0"
 def playServicesAuthVersion = "20.4.0"
 def playServicesAuthPhoneVersion = "18.0.1"
 
+def splash_screen_version = '1.0.0'
 ext {
     android_script_path = "../android-scripts"
 // Github packages
@@ -201,6 +202,7 @@ ext {
     biometric = "androidx.biometric:biometric:$biometric_version"
     preference = "androidx.preference:preference:$preference_version"
     core_ktx = "androidx.core:core-ktx:$core_ktx_version"
+    splashscreen = "androidx.core:core-splashscreen:$splash_screen_version"
     gridlayout = "androidx.gridlayout:gridlayout:$gridlayout_version"
     recyclerview = "androidx.recyclerview:recyclerview:$recyclerview_version"
     swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefresh_version"
@@ -266,8 +268,8 @@ ext {
 //  Android
     min_sdk_version = 23
     compile_sdk_version = 33
-    target_sdk_version = 31
-    global_build_tools_version = "30.0.3"
+    target_sdk_version = 33
+    global_build_tools_version = "33.0.1"
 
     maps_utils = "com.google.maps.android:android-maps-utils:$maps_utils_version"
     material = "com.google.android.material:material:$material_version"
