@@ -268,8 +268,8 @@ ext {
 //  Android
     min_sdk_version = 23
     compile_sdk_version = 33
-    target_sdk_version = 33
-    global_build_tools_version = "33.0.1"
+    target_sdk_version = 31
+    global_build_tools_version = "30.0.2"
 
     maps_utils = "com.google.maps.android:android-maps-utils:$maps_utils_version"
     material = "com.google.android.material:material:$material_version"
