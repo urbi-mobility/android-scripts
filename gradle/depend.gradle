@@ -105,6 +105,8 @@ def playServicesAuthVersion = "20.4.0"
 def playServicesAuthPhoneVersion = "18.0.1"
 
 def splash_screen_version = '1.0.0'
+// SQL LITE
+def sqlite_version = "2.2.0"
 ext {
     android_script_path = "../android-scripts"
 // Github packages
@@ -322,8 +324,10 @@ ext {
 
 //  Guava
     guava = "com.google.guava:guava:$guava_version"
-
-
+// SQL_LITE
+    sqlite = "androidx.sqlite:sqlite:$sqlite_version"
+    sqlite_ktx = "androidx.sqlite:sqlite-ktx:$sqlite_version"
+    sqlite_framework = "androidx.sqlite:sqlite-framework:$sqlite_version"
 //  FIREBASE
     firebase_bom = "com.google.firebase:firebase-bom:$firebase_bom_version"
     firebase_analytics = "com.google.firebase:firebase-analytics"
@@ -417,7 +421,7 @@ ext {
     //ATAC
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
     sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
-    atac_dep = [atac, sql_cipher]
+    atac_dep = [atac, sql_cipher,sqlite,sqlite_ktx,sqlite_framework]
 
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
