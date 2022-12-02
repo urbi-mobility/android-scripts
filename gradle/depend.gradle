@@ -105,6 +105,8 @@ def playServicesAuthVersion = "20.4.0"
 def playServicesAuthPhoneVersion = "18.0.1"
 
 def splash_screen_version = '1.0.0'
+// SQL LITE
+def sqlite_version = "2.2.0"
 ext {
     android_script_path = "../android-scripts"
 // Github packages
@@ -162,12 +164,10 @@ ext {
     atacVersion = '2.0.6r'
 //---End---//
 
-    android_gradle_plugin = '7.3.0'
+    android_gradle_plugin = '7.3.1'
     //google play auth
     play_services_auth = "com.google.android.gms:play-services-auth:$playServicesAuthVersion"
     play_services_auth_phone = "com.google.android.gms:play-services-auth-api-phone:$playServicesAuthPhoneVersion"
-
-    android_gradle_plugin = '7.2.0'
     //  DAGGER VERSION
     dagger_version = '2.43'
 //  Compose
@@ -268,8 +268,8 @@ ext {
 //  Android
     min_sdk_version = 23
     compile_sdk_version = 33
-    target_sdk_version = 31
-    global_build_tools_version = "30.0.2"
+    target_sdk_version = 33
+    global_build_tools_version = "33.0.1"
 
     maps_utils = "com.google.maps.android:android-maps-utils:$maps_utils_version"
     material = "com.google.android.material:material:$material_version"
@@ -324,8 +324,10 @@ ext {
 
 //  Guava
     guava = "com.google.guava:guava:$guava_version"
-
-
+// SQL_LITE
+    sqlite = "androidx.sqlite:sqlite:$sqlite_version"
+    sqlite_ktx = "androidx.sqlite:sqlite-ktx:$sqlite_version"
+    sqlite_framework = "androidx.sqlite:sqlite-framework:$sqlite_version"
 //  FIREBASE
     firebase_bom = "com.google.firebase:firebase-bom:$firebase_bom_version"
     firebase_analytics = "com.google.firebase:firebase-analytics"
@@ -419,7 +421,7 @@ ext {
     //ATAC
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
     sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
-    atac_dep = [atac, sql_cipher]
+    atac_dep = [atac, sql_cipher,sqlite,sqlite_ktx,sqlite_framework]
 
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
