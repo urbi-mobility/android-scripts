@@ -63,7 +63,7 @@ def okhttp3_version = '4.9.1'
 // HILT
 def hilt_compose_version = '1.0.0'
 // PAYMENT_VERSION
-def stripe_android_version = '19.1.0'
+def stripe_android_version = '20.1.0'
 // RX REDUX
 def rxbinding_version = '3.0.0'
 def rxredux_version = '1.0.1'
