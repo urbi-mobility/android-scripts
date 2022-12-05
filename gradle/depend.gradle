@@ -92,7 +92,7 @@ def core_testing_version = "2.1.0"
 //
 def turbine_version = "0.7.0"
 //
-def compose_constaint_version = "1.0.0"
+def sqlite_version = "2.2.0"
 
 // subsampling_scale_image
 def subsampling_scale_image_version = "3.10.0"
@@ -356,10 +356,15 @@ ext {
     //ZXING
     zxing = "com.google.zxing:core:$zxing_qr_code"
 
+    //SQLITE
+    sqlite = "androidx.sqlite:sqlite:$sqlite_version"
+    sqlite_ktx = "androidx.sqlite:sqlite-ktx:$sqlite_version"
+    sqlite_framework = "androidx.sqlite:sqlite-framework:$sqlite_version"
+
     //ATAC
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
     sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
-    atac_dep = [atac, sql_cipher]
+    atac_dep = [atac, sql_cipher, sqlite, sqlite_ktx, sqlite_framework]
 
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
