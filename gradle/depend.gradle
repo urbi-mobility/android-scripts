@@ -107,6 +107,7 @@ def playServicesAuthPhoneVersion = "18.0.1"
 def splash_screen_version = '1.0.0'
 // SQL LITE
 def sqlite_version = "2.2.0"
+
 ext {
     android_script_path = "../android-scripts"
 // Github packages
@@ -336,6 +337,10 @@ ext {
     firebase_auth = "com.google.firebase:firebase-auth-ktx"
 
     firebase_ui = "com.firebaseui:firebase-ui-auth:8.0.2"
+    //INSTABUG
+    instabug_version = "11.6.0"
+    instabug_dep = "com.instabug.library:instabug:$instabug_version"
+    instabub_okhttp = "com.instabug.library:instabug-with-okhttp-interceptor:$instabug_version"
     // MLKIT
     mlkit_facedetection = "com.google.android.gms:play-services-mlkit-face-detection:$mlkit_facedetection_version"
     //thin
