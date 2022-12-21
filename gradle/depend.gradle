@@ -127,9 +127,9 @@ ext {
 //---Module Version---//
     utilityVersion = '2.6.5'
     designsystemVersion = '1.2.4'
-    modelVersion = '2.8.1'
-    coreVersion = '2.11.3'
-    payVersion = '1.9.3'
+    modelVersion = '2.8.2'
+    coreVersion = '2.11.4'
+    payVersion = '1.9.4'
     ticketVersion = '0.7.1'
     searchVersion = '0.7.5'
     taxiVersion = '0.6.7'
