@@ -126,10 +126,10 @@ ext {
 
 //---Module Version---//
     utilityVersion = '2.6.5'
-    designsystemVersion = '1.2.4'
-    modelVersion = '2.9.0'
-    coreVersion = '2.12.0'
-    payVersion = '1.9.4'
+    designsystemVersion = '1.2.5'
+    modelVersion = '2.9.1'
+    coreVersion = '2.12.1'
+    payVersion = '1.9.5'
     ticketVersion = '0.7.1'
     searchVersion = '0.7.5'
     taxiVersion = '0.6.7'
