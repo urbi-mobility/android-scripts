@@ -91,6 +91,8 @@ def core_testing_version = "2.1.0"
 //
 def turbine_version = "0.8.0"
 //
+def sqlite_version = "2.2.0"
+
 def compose_constaint_version = "1.0.1"
 //Accompanist compose
 def accompanist_compose_version = "0.25.0"
@@ -105,8 +107,6 @@ def playServicesAuthVersion = "20.4.0"
 def playServicesAuthPhoneVersion = "18.0.1"
 
 def splash_screen_version = '1.0.0'
-// SQL LITE
-def sqlite_version = "2.2.0"
 
 ext {
     android_script_path = "../android-scripts"
@@ -139,18 +139,18 @@ ext {
 
 //---Module Version---//
     utilityVersion = '2.6.5'
-    designsystemVersion = '1.2.4'
-    modelVersion = '2.8.1'
-    coreVersion = '2.11.2'
-    payVersion = '1.9.3'
+    designsystemVersion = '1.2.5'
+    modelVersion = '2.9.1'
+    coreVersion = '2.12.1'
+    payVersion = '1.9.5'
     ticketVersion = '0.7.1'
-    searchVersion = '0.7.4'
+    searchVersion = '0.7.5'
     taxiVersion = '0.6.7'
     scanVersion = '1.0.0'
-    transpoVersion = '1.4.6'
+    transpoVersion = '1.5.0'
     evchargingVersion = '1.5.7'
-    tripoVersion = '1.4.8'
-    mobilitySharingVersion = '2.13.7'
+    tripoVersion = '1.4.9'
+    mobilitySharingVersion = '2.13.8'
 
     telepassModelVersion = '2.5.0'
     telepassNetworkVersion = '2.7.1'
@@ -422,6 +422,11 @@ ext {
 
     //ZXING
     zxing = "com.google.zxing:core:$zxing_qr_code"
+
+    //SQLITE
+    sqlite = "androidx.sqlite:sqlite:$sqlite_version"
+    sqlite_ktx = "androidx.sqlite:sqlite-ktx:$sqlite_version"
+    sqlite_framework = "androidx.sqlite:sqlite-framework:$sqlite_version"
 
     //ATAC
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
