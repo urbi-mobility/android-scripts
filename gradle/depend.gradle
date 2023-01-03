@@ -126,9 +126,9 @@ ext {
 
 //---Module Version---//
     utilityVersion = '2.6.5'
-    designsystemVersion = '1.2.5'
-    modelVersion = '2.9.1'
-    coreVersion = '2.12.1'
+    designsystemVersion = '1.2.6'
+    modelVersion = '2.9.2'
+    coreVersion = '2.12.2'
     payVersion = '1.9.5'
     ticketVersion = '0.7.1'
     searchVersion = '0.7.5'
@@ -137,11 +137,11 @@ ext {
     transpoVersion = '1.5.0'
     evchargingVersion = '1.5.7'
     tripoVersion = '1.4.9'
-    mobilitySharingVersion = '2.13.8'
+    mobilitySharingVersion = '2.14.0'
 
     telepassModelVersion = '2.5.0'
     telepassNetworkVersion = '2.7.1'
-    telepassLibCode = '0'
+    telepassLibCode = '1'
     telepassLibVersion = '2.11.' + telepassLibCode
 
     versionUrbi = '50505'
