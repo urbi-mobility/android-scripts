@@ -97,7 +97,7 @@ def compose_constaint_version = "1.0.1"
 //Accompanist compose
 def accompanist_compose_version = "0.25.0"
 //
-def map_compose_version = "2.5.3"
+def map_compose_version = "2.8.1"
 
 // subsampling_scale_image
 def subsampling_scale_image_version = "3.10.0"
