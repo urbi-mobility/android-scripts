@@ -17,7 +17,7 @@ def maps_utils_version = '2.4.0'
 // ANDROID X VERSION
 def biometric_version = '1.0.1'
 def preference_version = '1.1.0'
-def lifecycle_version = '2.4.1'
+def lifecycle_version = '2.5.1'
 def appcompat_version = "1.5.0"
 def activityx_version = "1.5.1"
 def fragmentx_version = "1.5.1"
@@ -189,6 +189,7 @@ ext {
     lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     lifecycle_viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     lifecycle_common = "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    lifecycle_process = "androidx.lifecycle:lifecycle-process:$lifecycle_version"
     lifecycle_group = [lifecycle_runtime, lifecycle_livedata, lifecycle_viewmodel, lifecycle_common]
     legacy_appcompat = [legacy, appcompat]
     lifecycle_appcompat = [lifecycle_group, appcompat]
