@@ -134,14 +134,14 @@ ext {
     searchVersion = '0.7.5'
     taxiVersion = '0.6.8'
     scanVersion = '1.0.0'
-    transpoVersion = '1.5.2'
+    transpoVersion = '1.5.3'
     evchargingVersion = '1.5.8'
     tripoVersion = '1.4.9'
     mobilitySharingVersion = '2.14.1'
 
     telepassModelVersion = '2.5.0'
     telepassNetworkVersion = '2.7.1'
-    telepassLibCode = '3'
+    telepassLibCode = '4'
     telepassLibVersion = '2.11.' + telepassLibCode
 
     versionUrbi = '50505'
