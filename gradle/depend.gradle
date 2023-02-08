@@ -164,7 +164,7 @@ ext {
     play_services_auth = "com.google.android.gms:play-services-auth:$playServicesAuthVersion"
     play_services_auth_phone = "com.google.android.gms:play-services-auth-api-phone:$playServicesAuthPhoneVersion"
     //  DAGGER VERSION
-    dagger_version = '2.43'
+    dagger_version = '2.44'
 //  Compose
     compose_version = '1.2.0'
     compose_activity = '1.4.0'
