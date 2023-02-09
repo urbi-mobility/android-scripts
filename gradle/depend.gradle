@@ -132,6 +132,15 @@ ext {
     evchargingId = 'evcharging'
     tripoId = 'tripo'
     mobilitySharingId = 'mobilitysharing'
+    commonStateId = 'commonstate'
+    commonViewId = 'commonview'
+    commonNavigationId = 'commonnavigation'
+    composeDsId = 'composeds'
+    historyId = 'history'
+    mapId = 'map'
+    profileId = '0.0.1'
+    shopId = 'shop'
+    loginId = 'login'
 
     telepassModelId = 'telepassmodel'
     telepassNetworkId = 'telepassnetwork'
@@ -151,6 +160,15 @@ ext {
     evchargingVersion = '1.5.8'
     tripoVersion = '1.4.9'
     mobilitySharingVersion = '2.14.1'
+    commonStateVersion = '0.0.1'
+    commonViewVersion = '0.0.1'
+    commonNavigationVersion = '0.0.1'
+    composeDsVersion = '0.0.1'
+    historyVersion = '0.0.1'
+    mapVersion = '0.0.1'
+    profileVersion = '0.0.1'
+    shopVersion = '0.0.1'
+    loginVersion = '0.0.1'
 
     telepassModelVersion = '2.5.0'
     telepassNetworkVersion = '2.7.1'
@@ -454,117 +472,118 @@ ext {
     designsystemdep = "$urbiGroupId:$designsystemId:$designsystemVersion"
     utilitylibdep = "$urbiGroupId:$utilityId:$utilityVersion"
     urbimodeldep = "$urbiGroupId:$modelId:$modelVersion"
+    commonnavigationdep = "$urbiGroupId:$commonNavigationId:$commonNavigationVersion"
     urbimodeldep_exclude = dependencies.create(urbimodeldep, {
-        exclude module: 'utilitylib'
+        exclude module: "$utilityId"
     })
     urbicoredep = "$urbiGroupId:$coreId:$coreVersion"
     urbicoredep_exclude = dependencies.create(urbicoredep, {
         exclude group: 'com.android.support'
         exclude group: 'com.google.dagger'
         exclude group: 'androidx.appcompat'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
     })
     ticketlibdep = "$urbiGroupId:$ticketId:$ticketVersion"
     ticketlibdep_exclude = dependencies.create(ticketlibdep, {
         exclude group: 'com.google.dagger:dagger'
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
     })
     urbipaydep = "$urbiGroupId:$payId:$payVersion"
     urbipaydep_exclude = dependencies.create(urbipaydep, {
         exclude group: 'com.google.dagger:dagger'
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
     })
     transpodep = "$urbiGroupId:$transpoId:$transpoVersion"
     transpodep_exclude = dependencies.create(transpodep, {
         exclude group: 'com.google.dagger:dagger'
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
     })
     tripodep = "$urbiGroupId:$tripoId:$tripoVersion"
     tripodep_exclude = dependencies.create(tripodep, {
         exclude group: 'com.google.dagger:dagger'
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
-        exclude module: 'ticketlib'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
+        exclude module: "$ticketId"
     })
     urbisearchdep = "$urbiGroupId:$searchId:$searchVersion"
     urbisearchdep_exclude = dependencies.create(urbisearchdep, {
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
     })
     urbiscandep = "$urbiGroupId:$scanId:$scanVersion"
     urbiscandep_exclude = dependencies.create(urbiscandep, {
-        exclude module: 'designsystem'
-        exclude module: 'utilitylib'
+        exclude module: "$designsystemId"
+        exclude module: "$utilityId"
     })
 
     urbitaxidep = "$urbiGroupId:$taxiId:$taxiVersion"
     urbitaxidep_exclude = dependencies.create(urbitaxidep, {
-        exclude module: 'urbisearch'
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
+        exclude module: "$searchId"
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
     })
 
     evchargingdep = "$urbiGroupId:$evchargingId:$evchargingVersion"
     evchargingdep_exclude = dependencies.create(evchargingdep, {
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
     })
 
     mobilitylibdep = "$urbiGroupId:$mobilitySharingId:$mobilitySharingVersion"
     mobilitylibdep_exclude = dependencies.create(mobilitylibdep, {
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'designsystem'
-        exclude module: 'urbisearch'
-        exclude module: 'tripo'
-        exclude module: 'transpo'
-        exclude module: 'evcharging'
-        exclude module: 'urbitaxi'
-        exclude module: 'ticketlib'
-        exclude module: 'urbiscan'
-        exclude module: 'utilitylib'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$designsystemId"
+        exclude module: "$searchId"
+        exclude module: "$tripoId"
+        exclude module: "$transpoId"
+        exclude module: "$evchargingId"
+        exclude module: "$taxiId"
+        exclude module: "$ticketId"
+        exclude module: "$scanId"
+        exclude module: "$utilityId"
     })
 
     tpaylibdep = "$telepassGroupId:$telepassLibId:$telepassLibVersion"
     tpaylibdep_exclude = dependencies.create(tpaylibdep, {
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'designsystem'
-        exclude module: 'urbisearch'
-        exclude module: 'tripo'
-        exclude module: 'transpo'
-        exclude module: 'evcharging'
-        exclude module: 'urbitaxi'
-        exclude module: 'ticketlib'
-        exclude module: 'urbiscan'
-        exclude module: 'mobilitysharing'
-        exclude module: 'telepasspaymodel'
-        exclude module: 'telepasspaynetwork'
-        exclude module: 'utilitylib'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$designsystemId"
+        exclude module: "$searchId"
+        exclude module: "$tripoId"
+        exclude module: "$transpoId"
+        exclude module: "$evchargingId"
+        exclude module: "$taxiId"
+        exclude module: "$ticketId"
+        exclude module: "$scanId"
+        exclude module: "$mobilitySharingId"
+        exclude module: "$telepassModelId"
+        exclude module: "$telepassNetworkId"
+        exclude module: "$utilityId"
     })
 
     telepasspaymodeldep = "$telepassGroupId:$telepassModelId:$telepassModelVersion"
 
     telepasspaymodeldep_exclude = dependencies.create(telepasspaymodeldep, {
-        exclude module: 'utilitylib'
+        exclude module: "$utilityId"
     })
 
     telepasspaynetworkdep = dependencies.create("$telepassGroupId:$telepassNetworkId:$telepassNetworkVersion", {
@@ -575,11 +594,12 @@ ext {
     telepasspaynetworkdep_exclude = dependencies.create(telepasspaynetworkdep, {
         exclude module: 'play-services-stats'
         exclude module: 'firebase-measurement-connector-impl'
-        exclude module: 'utilitylib'
-        exclude module: 'telepasspaymodel'
+        exclude module: "$utilityId"
+        exclude module: "$telepassModelId"
     })
 
-    nexusUser = 'telepass'
-    nexusPassword = 'telepass'
-    realmSchemaVersion = '11'
+    composedsdep_exclude = dependencies.create(urbimodeldep, {
+        exclude module: "$utilityId"
+        exclude module: "$modelId"
+    })
 }
