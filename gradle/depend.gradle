@@ -40,8 +40,6 @@ def play_services_google_pay_passes_version = '16.0.3'
 def kotlinx_coroutines_core_version = '1.6.3'
 def kotlinx_coroutines_android_version = '1.6.3'
 
-//  Stream Guava VERSION
-def guava_version = "27.0.1-android"
 // FIREBASE VERSION
 def firebase_bom_version = '31.0.0'
 // ML KIT VERSIONS
@@ -336,8 +334,6 @@ ext {
     play_services_wallet = "com.google.android.gms:play-services-wallet:$play_services_wallet_version"
     play_services_google_pay_passes = "com.google.android.gms:play-services-pay:$play_services_google_pay_passes_version"
 
-//  Guava
-    guava = "com.google.guava:guava:$guava_version"
 // SQL_LITE
     sqlite = "androidx.sqlite:sqlite:$sqlite_version"
     sqlite_ktx = "androidx.sqlite:sqlite-ktx:$sqlite_version"
