@@ -136,7 +136,7 @@ ext {
     composeDsId = 'composeds'
     historyId = 'history'
     mapId = 'map'
-    profileId = '0.0.1'
+    profileId = 'profile'
     shopId = 'shop'
     loginId = 'login'
 
