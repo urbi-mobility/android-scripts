@@ -347,7 +347,7 @@ ext {
 
     firebase_ui = "com.firebaseui:firebase-ui-auth:8.0.2"
     //INSTABUG
-    instabug_version = "11.6.0"
+    instabug_version = "11.8.0"
     instabug_dep = "com.instabug.library:instabug:$instabug_version"
     instabub_okhttp = "com.instabug.library:instabug-with-okhttp-interceptor:$instabug_version"
     // MLKIT
