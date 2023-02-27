@@ -116,6 +116,11 @@ fun getChangelogMap(): LinkedHashMap<String, String> = linkedMapOf(
     "urbimodel" to "MDL_",
     "urbicore" to "CRE_",
     "designsystem" to "DSG_",
+    "composenavigation" to "COMPOSENAVIGATION_",
+    "composeds" to "COMPOSEDS_",
+     "common-state" to "COMMON-STATE_",
+    "login" to "LOGIN_",
+    "commonview" to "COMMONVIEW_",
     "urbiscan" to "SCN_",
     "urbisearch" to "SRC_",
     "urbipay" to "PAY_",
@@ -125,6 +130,10 @@ fun getChangelogMap(): LinkedHashMap<String, String> = linkedMapOf(
     "transpo" to "TRN_",
     "tripo" to "TRP_",
     "mobilitylib" to "MBL_",
+    "shop" to "SHOP_",
+    "profile" to "PROFILE_",
+    "map" to "MAP_",
+    "history" to "HISTORY_"
 )
 
 fun getChangelogTpayMap(): LinkedHashMap<String, String> = linkedMapOf(
@@ -147,6 +156,15 @@ fun getVersionKeyFromModule(): LinkedHashMap<String, String> = linkedMapOf(
     "transpo" to "transpoVersion",
     "tripo" to "tripoVersion",
     "mobilitylib" to "mobilitySharingVersion",
+    "commonstate" to  "commonStateVersion",
+    "commonview" to "commonViewVersion",
+    "commonnavigation" to "commonNavigationVersion",
+    "composeds" to "composeDsVersion",
+    "history" to "historyVersion",
+    "map" to "mapVersion",
+    "profile" to "profileVersion",
+    "shop" to "shopVersion",
+    "login"  to "loginVersion",
     "telepasspaymodel" to "telepassModelVersion",
     "telepasspaynetwork" to "telepassNetworkVersion",
     "tpaylib" to "telepassLibVersion",
