@@ -174,7 +174,7 @@ fun createMapVersion(): HashMap<String, String> {
     val tpaylib = "telepassLibVersion"
     // Read Version on Gradle file
     val mapVersion: HashMap<String, String> = hashMapOf()
-    val gradle = File("android-scripts/gradle/depend.gradle")
+    val gradle = if(File("android-scripts/gradle/depend.gradle").exists()) File("android-scripts/gradle/depend.gradle") else File("$rootDir/android-urbi-framework/android-scripts/gradle/depend.gradle")
     var readVersion = false
     println("Reading /gradle/depend.gradle file for version ......")
     gradle.forEachLine { line ->
@@ -212,7 +212,7 @@ fun writeChangelog(
     println("Reading Changelog $pathFile........")
     val format = SimpleDateFormat("yyyy-MM-dd")
     val dataNow = format.format(Date())
-    val changelog = File(pathFile)
+    val changelog = if(File(pathFile).exists()) File(pathFile) else File("$rootDir/android-urbi-framework/$pathFile")
     var lastIsUnrelase = false
     var haveToWriteFile = false
     val newChangelog = arrayListOf<String>()
@@ -243,7 +243,7 @@ fun writeChangelog(
             println(os.toString())
         }
         println("Updating Changelog $pathFile..........")
-        File(pathFile).printWriter().use { out ->
+        changelog.printWriter().use { out ->
             newChangelog.forEach {
                 out.println(it)
             }
