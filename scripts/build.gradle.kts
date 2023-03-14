@@ -35,6 +35,25 @@ tasks.register("uploadlib") {
 
     }
 }
+
+tasks.register("print-changelog-changed") {
+    doLast {
+        var mapChangelog = getChangelogMap()
+
+        // Create map from versions in depend.gradle file
+        val mapVersion: HashMap<String, String> = createMapVersion()
+
+        println("Start to scan Changelog files.......")
+
+////         Read Changelog Utility on Gradle file
+        mapChangelog.forEach { map ->
+            printChangelogChanged(mapVersion, mapChangelog, map.key, "${map.key}/changelog.md")
+        }
+
+        println("TASK COMPLETED.......")
+
+    }
+}
 tasks.register("commitversions") {
     doLast {
         val tpaylib = "tpaylib"
@@ -118,7 +137,7 @@ fun getChangelogMap(): LinkedHashMap<String, String> = linkedMapOf(
     "designsystem" to "DSG_",
     "composenavigation" to "COMPOSENAVIGATION_",
     "composeds" to "COMPOSEDS_",
-     "common-state" to "COMMON-STATE_",
+    "common-state" to "COMMON-STATE_",
     "login" to "LOGIN_",
     "commonview" to "COMMONVIEW_",
     "urbiscan" to "SCN_",
@@ -156,7 +175,7 @@ fun getVersionKeyFromModule(): LinkedHashMap<String, String> = linkedMapOf(
     "transpo" to "transpoVersion",
     "tripo" to "tripoVersion",
     "mobilitylib" to "mobilitySharingVersion",
-    "commonstate" to  "commonStateVersion",
+    "common-state" to  "commonStateVersion",
     "commonview" to "commonViewVersion",
     "commonnavigation" to "commonNavigationVersion",
     "composeds" to "composeDsVersion",
@@ -248,6 +267,35 @@ fun writeChangelog(
                 out.println(it)
             }
         }
+    }
+}
+
+fun printChangelogChanged(
+    mapVersion: HashMap<String, String>,
+    mapChangelog: HashMap<String, String>,
+    key: String,
+    pathFile: String
+) {
+    val format = SimpleDateFormat("yyyy-MM-dd")
+    val dataNow = format.format(Date())
+    val changelog = if(File(pathFile).exists()) File(pathFile) else File("$rootDir/android-urbi-framework/$pathFile")
+    var lastIsUnrelase = false
+    var haveToWriteFile = false
+    // Read module from name Version on Gradle file
+    val mapModuleName: HashMap<String, String> = getVersionKeyFromModule()
+    val tagVersionKey = mapVersion[mapModuleName[key]]
+    changelog.readLines().forEach { line ->
+        if (line.startsWith("## [Unreleased]", true)) {
+            lastIsUnrelase = true
+        } else if (lastIsUnrelase && line.startsWith("##")) {
+            return
+        } else if (lastIsUnrelase && line.startsWith("-")) {
+            lastIsUnrelase = false
+            haveToWriteFile = true
+        }
+    }
+    if (haveToWriteFile) {
+        println("Changelod changed  $key..........")
     }
 }
 
