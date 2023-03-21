@@ -280,7 +280,7 @@ ext {
     rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
 
 //  Android
-    min_sdk_version = 23
+    min_sdk_version = 24
     compile_sdk_version = 33
     target_sdk_version = 33
     global_build_tools_version = "33.0.1"
