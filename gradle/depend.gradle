@@ -132,7 +132,7 @@ ext {
     payVersion = '1.9.6'
     ticketVersion = '0.7.2'
     searchVersion = '0.7.5'
-    taxiVersion = '0.6.9'
+    taxiVersion = '0.6.10'
     scanVersion = '1.0.0'
     transpoVersion = '1.5.7'
     evchargingVersion = '1.5.8'
