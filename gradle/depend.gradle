@@ -132,9 +132,9 @@ ext {
     payVersion = '1.9.6'
     ticketVersion = '0.7.2'
     searchVersion = '0.7.5'
-    taxiVersion = '0.6.9'
+    taxiVersion = '0.6.10'
     scanVersion = '1.0.0'
-    transpoVersion = '1.5.6'
+    transpoVersion = '1.5.7'
     evchargingVersion = '1.5.8'
     tripoVersion = '1.4.10'
     mobilitySharingVersion = '2.14.1'
@@ -145,7 +145,7 @@ ext {
     telepassLibVersion = '2.11.' + telepassLibCode
 
     versionUrbi = '50505'
-    atacVersion = '2.0.6r'
+    atacVersion = '2.1.1r'
 //---End---//
 
     android_gradle_plugin = '7.3.0'
