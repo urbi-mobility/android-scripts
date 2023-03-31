@@ -146,28 +146,28 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.6.5-compose'
+    utilityVersion = '2.6.6-compose'
     designsystemVersion = '1.2.8-compose'
-    modelVersion = '2.9.5-compose'
-    coreVersion = '2.12.6-compose'
-    payVersion = '1.9.8-compose'
+    modelVersion = '2.9.6-compose'
+    coreVersion = '2.12.7-compose'
+    payVersion = '1.9.9-compose'
     ticketVersion = '0.7.2-compose'
     searchVersion = '0.7.5-compose'
-    taxiVersion = '0.6.10-compose'
+    taxiVersion = '0.6.11-compose'
     scanVersion = '1.0.0-compose'
-    transpoVersion = '1.5.5-compose'
-    evchargingVersion = '1.5.9-compose'
-    tripoVersion = '1.4.10-compose'
-    mobilitySharingVersion = '2.14.3-compose'
-    commonStateVersion = '0.0.4-compose'
-    commonViewVersion = '0.0.3-compose'
+    transpoVersion = '1.5.6-compose'
+    evchargingVersion = '1.5.10-compose'
+    tripoVersion = '1.4.11-compose'
+    mobilitySharingVersion = '2.14.4-compose'
+    commonStateVersion = '0.0.5-compose'
+    commonViewVersion = '0.0.4-compose'
     commonNavigationVersion = '0.0.1-compose'
-    composeDsVersion = '0.0.4-compose'
-    historyVersion = '0.0.3-compose'
-    mapVersion = '0.0.4-compose'
-    profileVersion = '0.0.4-compose'
-    shopVersion = '0.0.2-compose'
-    loginVersion = '0.0.3-compose'
+    composeDsVersion = '0.0.5-compose'
+    historyVersion = '0.0.4-compose'
+    mapVersion = '0.0.5-compose'
+    profileVersion = '0.0.5-compose'
+    shopVersion = '0.0.3-compose'
+    loginVersion = '0.0.4-compose'
 
     telepassModelVersion = '2.5.0'
     telepassNetworkVersion = '2.7.1'
@@ -608,6 +608,9 @@ ext {
     composestatedep_exclude = dependencies.create("$urbiGroupId:$commonStateId:$commonStateVersion", {
         exclude module: "$commonNavigationId"
         exclude module: "$composeDsId"
+        exclude module: "$utilityId"
+        exclude module: "$coreId"
+        exclude module: "$modelId"
     })
 
     logindep = dependencies.create("$urbiGroupId:$loginId:$loginVersion")
