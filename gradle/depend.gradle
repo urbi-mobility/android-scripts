@@ -176,7 +176,7 @@ ext {
     atacVersion = '2.0.6r'
 //---End---//
 
-    android_gradle_plugin = '7.3.1'
+    android_gradle_plugin = '7.4.2'
     //google play auth
     play_services_auth = "com.google.android.gms:play-services-auth:$playServicesAuthVersion"
     play_services_auth_phone = "com.google.android.gms:play-services-auth-api-phone:$playServicesAuthPhoneVersion"
