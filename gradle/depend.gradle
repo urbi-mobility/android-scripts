@@ -146,7 +146,7 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.6.6-compose'
+    utilityVersion = '2.6.7-compose'
     designsystemVersion = '1.2.8-compose'
     modelVersion = '2.9.7-compose'
     coreVersion = '2.12.8-compose'
