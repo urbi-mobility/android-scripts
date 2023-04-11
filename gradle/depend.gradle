@@ -37,8 +37,8 @@ def play_services_analytics_version = '18.0.1'
 def play_services_wallet_version = '18.1.1'
 def play_services_google_pay_passes_version = '16.0.3'
 // KOTLIN VERSION
-def kotlinx_coroutines_core_version = '1.6.3'
-def kotlinx_coroutines_android_version = '1.6.3'
+def kotlinx_coroutines_core_version = '1.6.4'
+def kotlinx_coroutines_android_version = '1.6.4'
 
 // FIREBASE VERSION
 def firebase_bom_version = '31.0.0'
@@ -96,7 +96,7 @@ def compose_constaint_version = "1.0.1"
 //Accompanist compose
 def accompanist_compose_version = "0.25.0"
 //
-def map_compose_version = "2.8.1"
+def map_compose_version = "2.11.4"
 
 // subsampling_scale_image
 def subsampling_scale_image_version = "3.10.0"
@@ -183,18 +183,19 @@ ext {
     //  DAGGER VERSION
     dagger_version = '2.44'
 //  Compose
-    compose_version = '1.2.0'
-    compose_activity = '1.4.0'
+    compose_bom_version = '2022.11.00'
+    compose_activity = '1.5.0'
     nav_version = '2.4.2'
 //  KOTLIN
-    kotlin_version = '1.7.0'
+    kotlin_version = '1.7.20'
+    kotlin_compiler_extension_version = '1.3.2'
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     kotlin_reflect = "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
     kotlinx_coroutines = ["org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_core_version",
                           "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_android_version",
                           "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
                           "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"]
-    kotlinx_coroutines_play_services = 'org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.6.4'
+    kotlinx_coroutines_play_services = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$kotlinx_coroutines_core_version"
 //  AndroidX
     camerax_version = "1.0.0"
     cameraxview_version = "1.0.0-alpha22"
@@ -244,8 +245,10 @@ ext {
                        dependencies.create("com.squareup.okhttp3:logging-interceptor:$okhttp3_version"),
                        "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_rxjava_version"]
 // Compose
-    compose_ui = ["androidx.compose.ui:ui:$compose_version","androidx.compose.ui:ui-tooling:$compose_version", "androidx.compose.ui:ui-tooling-preview:$compose_version"]
-    compose_material = "androidx.compose.material:material:$compose_version"
+    compose_bom = "androidx.compose:compose-bom:$compose_bom_version"
+    compose_ui = ["androidx.compose.ui:ui","androidx.compose.ui:ui-tooling", "androidx.compose.ui:ui-tooling-preview"]
+    compose_material = "androidx.compose.material:material"
+    compose_foundation = "androidx.compose.foundation:foundation"
     //HILT
     hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose_version"
     //Navigation
@@ -254,7 +257,6 @@ ext {
     compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:$compose_constaint_version"
 
     // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
-    compose_foundation = "androidx.compose.foundation:foundation:$compose_version"
     compose_activity = "androidx.activity:activity-compose:$compose_activity"
 
     accompanist_compose = ["com.google.accompanist:accompanist-swiperefresh:$accompanist_compose_version",
@@ -268,13 +270,13 @@ ext {
     maps_compose = "com.google.maps.android:maps-compose:$map_compose_version"
 
     // Material design icons
-    material_icon = ["androidx.compose.material:material-icons-core:$compose_version",
-                     "androidx.compose.material:material-icons-extended:$compose_version"]
+    material_icon = ["androidx.compose.material:material-icons-core",
+                     "androidx.compose.material:material-icons-extended"]
     // Integration with ViewModels
     view_model_compose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
     // Integration with observables
-    runtime_livedata = "androidx.compose.runtime:runtime-livedata:$compose_version"
-    runtime_rxjava = "androidx.compose.runtime:runtime-rxjava2:$compose_version"
+    runtime_livedata = "androidx.compose.runtime:runtime-livedata"
+    runtime_rxjava = "androidx.compose.runtime:runtime-rxjava2"
     compose_deep = [core_ktx, appcompat, compose_ui, compose_material, compose_navigation, compose_foundation, compose_activity, runtime_livedata, runtime_rxjava]
 //  RxJava & RxAndroid
     rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
@@ -462,7 +464,7 @@ ext {
     }), 'androidx.test:rules:1.2.0', 'androidx.test:runner:1.2.0']
     testJson = "org.json:json:20180813"
     testHilt = "com.google.dagger:hilt-android-testing:$dagger_version"
-    testCompose = ["androidx.compose.ui:ui-test:$compose_version", "androidx.compose.ui:ui-test-junit4:$compose_version", "androidx.compose.ui:ui-test-manifest:$compose_version"]
+    testCompose = ["androidx.compose.ui:ui-test", "androidx.compose.ui:ui-test-junit4", "androidx.compose.ui:ui-test-manifest"]
     testAndroidX = [dependencies.create("androidx.test:core:1.4.0"),dependencies.create("androidx.test:core-ktx:1.4.0"),
                     dependencies.create("androidx.test.ext:junit:1.1.3"),dependencies.create("androidx.test.ext:junit-ktx:1.1.3"),
                     dependencies.create("androidx.test.ext:truth:1.4.0"),dependencies.create("androidx.test:runner:1.4.0")]
