@@ -133,7 +133,7 @@ ext {
     mobilitySharingId = 'mobilitysharing'
     commonStateId = 'commonstate'
     commonViewId = 'commonview'
-    commonNavigationId = 'commonnavigation'
+    composeNavigationId = 'commonnavigation'
     composeDsId = 'composeds'
     historyId = 'history'
     mapId = 'map'
@@ -161,7 +161,7 @@ ext {
     mobilitySharingVersion = '2.14.5-compose'
     commonStateVersion = '0.0.6-compose'
     commonViewVersion = '0.0.5-compose'
-    commonNavigationVersion = '0.0.1-compose'
+    composeNavigationVersion = '0.0.1-compose'
     composeDsVersion = '0.0.6-compose'
     historyVersion = '0.0.4-compose'
     mapVersion = '0.0.6-compose'
@@ -173,9 +173,8 @@ ext {
     telepassNetworkVersion = '2.7.1'
     telepassLibCode = '4'
     telepassLibVersion = '2.11.' + telepassLibCode
-    atacVersion = '2.0.6r'
 //---End---//
-
+    atacVersion = '2.0.6r'
     android_gradle_plugin = '7.4.2'
     //google play auth
     play_services_auth = "com.google.android.gms:play-services-auth:$playServicesAuthVersion"
@@ -473,7 +472,7 @@ ext {
     designsystemdep = "$urbiGroupId:$designsystemId:$designsystemVersion"
     utilitylibdep = "$urbiGroupId:$utilityId:$utilityVersion"
     urbimodeldep = "$urbiGroupId:$modelId:$modelVersion"
-    commonnavigationdep = "$urbiGroupId:$commonNavigationId:$commonNavigationVersion"
+    composenavigationdep = "$urbiGroupId:$composeNavigationId:$composeNavigationVersion"
     urbimodeldep_exclude = dependencies.create(urbimodeldep, {
         exclude module: "$utilityId"
     })
@@ -602,13 +601,13 @@ ext {
     composedsdep = dependencies.create("$urbiGroupId:$composeDsId:$composeDsVersion")
 
     composedsdep_exclude = dependencies.create("$urbiGroupId:$composeDsId:$composeDsVersion", {
-        exclude module: "$commonNavigationId"
+        exclude module: "$composeNavigationId"
     })
 
     composestatedep = dependencies.create("$urbiGroupId:$commonStateId:$commonStateVersion")
 
     composestatedep_exclude = dependencies.create("$urbiGroupId:$commonStateId:$commonStateVersion", {
-        exclude module: "$commonNavigationId"
+        exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
         exclude module: "$utilityId"
         exclude module: "$coreId"
@@ -618,7 +617,7 @@ ext {
     logindep = dependencies.create("$urbiGroupId:$loginId:$loginVersion")
 
     logindep_exclude = dependencies.create("$urbiGroupId:$loginId:$loginVersion", {
-        exclude module: "$commonNavigationId"
+        exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
         exclude module: "$commonStateId"
     })
@@ -626,7 +625,7 @@ ext {
     composeviewdep = dependencies.create("$urbiGroupId:$commonViewId:$commonViewVersion")
 
     composeviewdep_exclude = dependencies.create("$urbiGroupId:$commonViewId:$commonViewVersion", {
-        exclude module: "$commonNavigationId"
+        exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
         exclude module: "$commonStateId"
         exclude module: "$loginId"
@@ -635,7 +634,7 @@ ext {
     historyIddep = dependencies.create("$urbiGroupId:$historyId:$historyVersion")
 
     historyId_exclude = dependencies.create("$urbiGroupId:$historyId:$historyVersion", {
-        exclude module: "$commonNavigationId"
+        exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
         exclude module: "$commonStateId"
         exclude module: "$mobilitySharingId"
@@ -644,7 +643,7 @@ ext {
     shopIddep = dependencies.create("$urbiGroupId:$shopId:$shopVersion")
 
     shopId_exclude = dependencies.create("$urbiGroupId:$shopId:$shopVersion", {
-        exclude module: "$commonNavigationId"
+        exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
         exclude module: "$commonStateId"
         exclude module: "$payId"
@@ -653,7 +652,7 @@ ext {
     profileIddep = dependencies.create("$urbiGroupId:$profileId:$profileVersion")
 
     profileId_exclude = dependencies.create("$urbiGroupId:$profileId:$profileVersion", {
-        exclude module: "$commonNavigationId"
+        exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
         exclude module: "$commonStateId"
         exclude module: "$payId"
@@ -662,7 +661,7 @@ ext {
     mapIddep = dependencies.create("$urbiGroupId:$mapId:$mapVersion")
 
     mapId_exclude = dependencies.create("$urbiGroupId:$mapId:$mapVersion", {
-        exclude module: "$commonNavigationId"
+        exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
         exclude module: "$commonStateId"
         exclude module: "$payId"

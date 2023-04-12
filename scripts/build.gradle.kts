@@ -177,7 +177,7 @@ fun getVersionKeyFromModule(): LinkedHashMap<String, String> = linkedMapOf(
     "mobilitylib" to "mobilitySharingVersion",
     "common-state" to  "commonStateVersion",
     "commonview" to "commonViewVersion",
-    "commonnavigation" to "commonNavigationVersion",
+    "composenavigation" to "composeNavigationVersion",
     "composeds" to "composeDsVersion",
     "history" to "historyVersion",
     "map" to "mapVersion",
