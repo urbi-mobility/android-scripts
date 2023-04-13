@@ -116,6 +116,7 @@ ext {
     urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-urbi-framework'
     telepass_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-unica-framework'
     telepass_urbi_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-framework'
+    urbi_third_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility//android-third-party-package-lib'
 // Artifact ids
     utilityId = 'utility'
     designsystemId = 'designsystem'
