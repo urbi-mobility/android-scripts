@@ -418,7 +418,7 @@ tasks.register("update-version-lib") {
                     standardOutput = os
                 }
                 println(os.toString())
-                println("RESULT$result")
+                println("Upload Libs RESULT$result")
             }
         }
         else
