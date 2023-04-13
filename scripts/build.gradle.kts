@@ -338,6 +338,9 @@ fun forcePullServiceFileAndCopy() {
     }
 }
 
+/**
+ * This scripts read depend.gradle file where libs version are and update that if there is some change in their changelog
+ */
 tasks.register("update-version-lib") {
     doLast {
         val mapVersionUrbi = getVersionKeyFromModule()
@@ -418,7 +421,7 @@ tasks.register("update-version-lib") {
                     standardOutput = os
                 }
                 println(os.toString())
-                println("RESULT$result")
+                println("Upload Libs RESULT$result")
             }
         }
         else
