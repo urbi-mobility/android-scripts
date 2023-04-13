@@ -405,12 +405,24 @@ tasks.register("update-version-lib") {
                 else
                     newGradleDeep.add(line)
             }
+            println("Update dep file")
             gradle.printWriter().use { out ->
                 newGradleDeep.forEach {
                     out.println(it)
                 }
             }
+            println("Upload Libs............")
+            ByteArrayOutputStream().use { os ->
+                val result = exec {
+                    commandLine("./gradlew", "uploadlib", "-Pargs=skipService")
+                    standardOutput = os
+                }
+                println(os.toString())
+                println("RESULT$result")
+            }
         }
+        else
+            println("No Version have updated")
     }
 }
 
