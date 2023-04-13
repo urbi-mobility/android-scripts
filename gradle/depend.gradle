@@ -133,7 +133,7 @@ ext {
     mobilitySharingId = 'mobilitysharing'
     commonStateId = 'commonstate'
     commonViewId = 'commonview'
-    composeNavigationId = 'commonnavigation'
+    composeNavigationId = 'composenavigation'
     composeDsId = 'composeds'
     historyId = 'history'
     mapId = 'map'
