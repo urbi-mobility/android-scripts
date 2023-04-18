@@ -33,7 +33,6 @@ def kotlinx_serialization_json_version = '1.0.0'
 // GMS_VERSION
 def play_services_maps_version = '18.0.2'
 def play_services_base_version = '18.0.1'
-def play_services_analytics_version = '18.0.1'
 def play_services_wallet_version = '18.1.1'
 def play_services_google_pay_passes_version = '16.0.3'
 // KOTLIN VERSION
@@ -328,14 +327,6 @@ ext {
     play_services_base = dependencies.create("com.google.android.gms:play-services-base:$play_services_base_version", {
         exclude group: 'com.android.support'
     })
-    play_services_analytics = [
-            dependencies.create("com.google.android.gms:play-services-analytics:$play_services_analytics_version",
-                    { exclude group: 'com.android.support' }
-            ),
-            dependencies.create("com.google.android.gms:play-services-analytics-impl:$play_services_analytics_version",
-                    { exclude group: 'com.android.support' }
-            )
-    ]
 
     play_services_wallet = "com.google.android.gms:play-services-wallet:$play_services_wallet_version"
     play_services_google_pay_passes = "com.google.android.gms:play-services-pay:$play_services_google_pay_passes_version"
@@ -346,7 +337,7 @@ ext {
     sqlite_framework = "androidx.sqlite:sqlite-framework:$sqlite_version"
 //  FIREBASE
     firebase_bom = "com.google.firebase:firebase-bom:$firebase_bom_version"
-    firebase_analytics = "com.google.firebase:firebase-analytics"
+    firebase_analytics = "com.google.firebase:firebase-analytics-ktx"
     firebase_messaging = "com.google.firebase:firebase-messaging"
     firebase_crashlytics = "com.google.firebase:firebase-crashlytics"
     firebase_auth = "com.google.firebase:firebase-auth-ktx"
