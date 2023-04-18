@@ -256,7 +256,7 @@ fun writeChangelog(
         println("Update lib $key..........")
         ByteArrayOutputStream().use { os ->
             val result = exec {
-                commandLine("./gradlew", "$key:clean", "$key:publish")
+                commandLine("./gradlew", "$key:clean", "$key:publishReleasePublicationToGitHubPackagesRepository", "$key:publishThirdPublicationToGitHubPackages-ThirdRepository")
                 standardOutput = os
             }
             println(os.toString())

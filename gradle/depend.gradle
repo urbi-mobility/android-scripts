@@ -110,12 +110,14 @@ ext {
     android_script_path = "../android-scripts"
 // Github packages
     ghp_registry_name = 'GitHubPackages'
+    ghp_registry_name_third = 'GitHubPackages-Third'
     urbiGroupId = 'co.urbi.android'
     telepassGroupId = 'com.telepass.urbi'
     urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-urbi-framework'
     telepass_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-unica-framework'
     telepass_urbi_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-framework'
     urbi_third_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-third-party-package-lib'
+    suffixArtifactId='third'
 // Artifact ids
     utilityId = 'utility'
     designsystemId = 'designsystem'
@@ -462,13 +464,18 @@ ext {
     testSharedPreference = "io.github.ivanshafran:shared-preferences-mock:1.2.4"
 //  URBI
     designsystemdep = "$urbiGroupId:$designsystemId:$designsystemVersion"
+    designsystemdep_third = "$urbiGroupId:$designsystemId$suffixArtifactId:$designsystemVersion"
     utilitylibdep = "$urbiGroupId:$utilityId:$utilityVersion"
+    utilitylibdep_third = "$urbiGroupId:$utilityId$suffixArtifactId:$utilityVersion"
     urbimodeldep = "$urbiGroupId:$modelId:$modelVersion"
+    urbimodeldep_third = "$urbiGroupId:$modelId$suffixArtifactId:$modelVersion"
     composenavigationdep = "$urbiGroupId:$composeNavigationId:$composeNavigationVersion"
+    composenavigationdep_third = "$urbiGroupId:$composeNavigationId$suffixArtifactId:$composeNavigationVersion"
     urbimodeldep_exclude = dependencies.create(urbimodeldep, {
         exclude module: "$utilityId"
     })
     urbicoredep = "$urbiGroupId:$coreId:$coreVersion"
+    urbicoredep_third = "$urbiGroupId:$coreId$suffixArtifactId:$coreVersion"
     urbicoredep_exclude = dependencies.create(urbicoredep, {
         exclude group: 'com.android.support'
         exclude group: 'com.google.dagger'
@@ -477,6 +484,7 @@ ext {
         exclude module: "$utilityId"
     })
     ticketlibdep = "$urbiGroupId:$ticketId:$ticketVersion"
+    ticketlibdep_third = "$urbiGroupId:$ticketId$suffixArtifactId:$ticketVersion"
     ticketlibdep_exclude = dependencies.create(ticketlibdep, {
         exclude group: 'com.google.dagger:dagger'
         exclude module: "$coreId"
@@ -485,6 +493,7 @@ ext {
         exclude module: "$designsystemId"
     })
     urbipaydep = "$urbiGroupId:$payId:$payVersion"
+    urbipaydep_third = "$urbiGroupId:$payId$suffixArtifactId:$payVersion"
     urbipaydep_exclude = dependencies.create(urbipaydep, {
         exclude group: 'com.google.dagger:dagger'
         exclude module: "$coreId"
@@ -501,6 +510,7 @@ ext {
         exclude module: "$designsystemId"
     })
     tripodep = "$urbiGroupId:$tripoId:$tripoVersion"
+    tripodep_third = "$urbiGroupId:$tripoId$suffixArtifactId:$tripoVersion"
     tripodep_exclude = dependencies.create(tripodep, {
         exclude group: 'com.google.dagger:dagger'
         exclude module: "$coreId"
@@ -591,12 +601,14 @@ ext {
     })
 
     composedsdep = dependencies.create("$urbiGroupId:$composeDsId:$composeDsVersion")
+    composedsdep_third = dependencies.create("$urbiGroupId:$composeDsId$suffixArtifactId:$composeDsVersion")
 
     composedsdep_exclude = dependencies.create("$urbiGroupId:$composeDsId:$composeDsVersion", {
         exclude module: "$composeNavigationId"
     })
 
     composestatedep = dependencies.create("$urbiGroupId:$commonStateId:$commonStateVersion")
+    composestatedep_third = dependencies.create("$urbiGroupId:$commonStateId$suffixArtifactId:$commonStateVersion")
 
     composestatedep_exclude = dependencies.create("$urbiGroupId:$commonStateId:$commonStateVersion", {
         exclude module: "$composeNavigationId"
