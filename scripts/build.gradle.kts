@@ -189,6 +189,25 @@ fun getVersionKeyFromModule(): LinkedHashMap<String, String> = linkedMapOf(
     "tpaylib" to "telepassLibVersion",
 )
 
+/**
+ * if Module have third lib is inside this map
+ */
+fun haveModuleThird(key: String): Boolean {
+    val list = arrayListOf(
+        "utilitylib",
+        "urbimodel",
+        "urbicore" ,
+        "designsystem",
+        "urbipay",
+        "ticketlib",
+        "tripo",
+        "common-state",
+        "composenavigation",
+        "composeds",
+    )
+    return list.contains(key)
+}
+
 fun createMapVersion(): HashMap<String, String> {
     val tpaylib = "telepassLibVersion"
     // Read Version on Gradle file
@@ -256,11 +275,19 @@ fun writeChangelog(
         println("Update lib $key..........")
         ByteArrayOutputStream().use { os ->
             val result = exec {
-                commandLine("./gradlew", "$key:clean", "$key:publishReleasePublicationToGitHubPackagesRepository", "$key:publishThirdPublicationToGitHubPackages-ThirdRepository")
+                commandLine("./gradlew", "$key:clean", "$key:publishReleasePublicationToGitHubPackagesRepository")
                 standardOutput = os
             }
             println(os.toString())
         }
+        if(haveModuleThird(key))
+            ByteArrayOutputStream().use { os ->
+            val result = exec {
+                commandLine("./gradlew", "$key:publishThirdPublicationToGitHubPackages-ThirdRepository")
+                standardOutput = os
+                }
+                println(os.toString())
+            }
         println("Updating Changelog $pathFile..........")
         changelog.printWriter().use { out ->
             newChangelog.forEach {
