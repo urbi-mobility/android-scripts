@@ -341,6 +341,7 @@ ext {
     firebase_messaging = "com.google.firebase:firebase-messaging"
     firebase_crashlytics = "com.google.firebase:firebase-crashlytics"
     firebase_auth = "com.google.firebase:firebase-auth-ktx"
+    firebase_config = "com.google.firebase:firebase-config"
 
     firebase_ui = "com.firebaseui:firebase-ui-auth:8.0.2"
     //INSTABUG
