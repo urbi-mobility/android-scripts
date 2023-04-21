@@ -166,7 +166,7 @@ ext {
     composeNavigationVersion = '0.0.2-compose'
     composeDsVersion = '0.0.7-compose'
     historyVersion = '0.0.6-compose'
-    mapVersion = '0.0.8-compose'
+    mapVersion = '0.0.9-compose'
     profileVersion = '0.0.7-compose'
     shopVersion = '0.0.5-compose'
     loginVersion = '0.0.7-compose'
