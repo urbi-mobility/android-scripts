@@ -417,7 +417,7 @@ tasks.register("update-version-lib") {
                                     mirrorVersion = arrMirror[0]
                                     extraMirrorVersion = arrMirror[1]
                                 }
-                                mirrorVersion = "${mirrorVersion.toInt()+1}-test"
+                                mirrorVersion = "${mirrorVersion.toInt()+1}"
                                 var newVersionApp = "${versionArray[0]}.${versionArray[1]}.${mirrorVersion}"
                                 if(extraMirrorVersion.isNotEmpty())
                                     newVersionApp = "$newVersionApp-$extraMirrorVersion"
