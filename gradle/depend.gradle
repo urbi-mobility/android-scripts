@@ -172,7 +172,7 @@ ext {
     loginVersion = '0.0.8-compose'
 
     telepassModelVersion = '2.5.0-compose'
-    telepassNetworkVersion = '2.7.1-compose'
+    telepassNetworkVersion = '2.8.1-compose'
     telepassLibCode = '4'
     telepassLibVersion = '2.11.' + telepassLibCode+"-compose"
 //---End---//
