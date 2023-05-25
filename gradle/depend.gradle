@@ -266,7 +266,8 @@ ext {
                            "com.google.accompanist:accompanist-pager:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-pager-indicators:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-permissions:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version"]
+                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-flowlayout:$accompanist_compose_version"]
 
     maps_compose = "com.google.maps.android:maps-compose:$map_compose_version"
 
