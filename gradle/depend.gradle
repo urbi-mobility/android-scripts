@@ -260,14 +260,14 @@ ext {
     // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
     compose_activity = "androidx.activity:activity-compose:$compose_activity"
 
-    accompanist_compose = ["com.google.accompanist:accompanist-swiperefresh:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version",
+    accompanist_compose = ["com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-pager:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-pager-indicators:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-permissions:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version"]
+                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-flowlayout:$accompanist_compose_version"]
 
     maps_compose = "com.google.maps.android:maps-compose:$map_compose_version"
 
