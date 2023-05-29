@@ -125,17 +125,17 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.6.6'
-    designsystemVersion = '1.2.8'
-    modelVersion = '2.10.0'
-    coreVersion = '2.13.0'
+    utilityVersion = '2.6.7'
+    designsystemVersion = '1.2.9'
+    modelVersion = '2.10.1'
+    coreVersion = '2.13.1'
     payVersion = '1.9.7'
     ticketVersion = '0.7.3'
     searchVersion = '0.7.6'
-    taxiVersion = '0.6.12'
+    taxiVersion = '0.6.13'
     scanVersion = '1.0.1'
     transpoVersion = '1.5.8'
-    evchargingVersion = '1.5.10'
+    evchargingVersion = '1.5.11'
     tripoVersion = '1.5.2'
     mobilitySharingVersion = '2.14.2'
 
