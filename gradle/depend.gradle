@@ -177,7 +177,7 @@ ext {
     telepassLibVersion = '2.11.' + telepassLibCode
 //---End---//
     atacVersion = '2.0.6r'
-    android_gradle_plugin = '7.4.2'
+    android_gradle_plugin = '8.0.2'
     //google play auth
     play_services_auth = "com.google.android.gms:play-services-auth:$playServicesAuthVersion"
     play_services_auth_phone = "com.google.android.gms:play-services-auth-api-phone:$playServicesAuthPhoneVersion"
