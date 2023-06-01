@@ -40,7 +40,7 @@ def kotlinx_coroutines_core_version = '1.6.4'
 def kotlinx_coroutines_android_version = '1.6.4'
 
 // FIREBASE VERSION
-def firebase_bom_version = '31.5.0'
+def firebase_bom_version = '32.0.0'
 // ML KIT VERSIONS
 def mlkit_facedetection_version = '17.0.0'
 def mlkit_textrecognition_version = '18.0.0'
@@ -93,7 +93,7 @@ def sqlite_version = "2.2.0"
 
 def compose_constaint_version = "1.0.1"
 //Accompanist compose
-def accompanist_compose_version = "0.25.0"
+def accompanist_compose_version = "0.28.0"
 //
 def map_compose_version = "2.11.4"
 
@@ -148,28 +148,28 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.6.10-compose'
+    utilityVersion = '2.6.11-compose'
     designsystemVersion = '1.2.11-compose'
-    modelVersion = '2.9.10-compose'
-    coreVersion = '2.12.13-compose'
-    payVersion = '1.9.14-compose'
+    modelVersion = '2.9.14-compose'
+    coreVersion = '2.12.15-compose'
+    payVersion = '1.9.15-compose'
     ticketVersion = '0.7.2-compose'
-    searchVersion = '0.7.7-compose'
+    searchVersion = '0.7.8-compose'
     taxiVersion = '0.6.15-compose'
     scanVersion = '1.0.0-compose'
-    transpoVersion = '1.5.11-compose'
-    evchargingVersion = '1.5.14-compose'
-    tripoVersion = '1.4.14-compose'
-    mobilitySharingVersion = '2.14.10-compose'
-    commonStateVersion = '0.0.11-compose'
-    commonViewVersion = '0.0.12-compose'
-    composeNavigationVersion = '0.0.2-compose'
-    composeDsVersion = '0.0.10-compose'
-    historyVersion = '0.0.7-compose'
-    mapVersion = '0.0.13-compose'
-    profileVersion = '0.0.9-compose'
-    shopVersion = '0.0.6-compose'
-    loginVersion = '0.0.8-compose'
+    transpoVersion = '1.5.12-compose'
+    evchargingVersion = '1.5.15-compose'
+    tripoVersion = '1.4.15-compose'
+    mobilitySharingVersion = '2.14.12-compose'
+    commonStateVersion = '0.0.14-compose'
+    commonViewVersion = '0.0.13-compose'
+    composeNavigationVersion = '0.0.3-compose'
+    composeDsVersion = '0.0.13-compose'
+    historyVersion = '0.0.9-compose'
+    mapVersion = '0.0.16-compose'
+    profileVersion = '0.0.10-compose'
+    shopVersion = '0.0.8-compose'
+    loginVersion = '0.0.9-compose'
 
     telepassModelVersion = '2.5.0-compose'
     telepassNetworkVersion = '2.8.1-compose'
@@ -177,7 +177,7 @@ ext {
     telepassLibVersion = '2.11.' + telepassLibCode+"-compose"
 //---End---//
     atacVersion = '2.0.6r'
-    android_gradle_plugin = '7.4.2'
+    android_gradle_plugin = '8.0.2'
     //google play auth
     play_services_auth = "com.google.android.gms:play-services-auth:$playServicesAuthVersion"
     play_services_auth_phone = "com.google.android.gms:play-services-auth-api-phone:$playServicesAuthPhoneVersion"
@@ -260,13 +260,14 @@ ext {
     // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
     compose_activity = "androidx.activity:activity-compose:$compose_activity"
 
-    accompanist_compose = ["com.google.accompanist:accompanist-swiperefresh:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version",
+    accompanist_compose = ["com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-pager:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-pager-indicators:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-permissions:$accompanist_compose_version"]
+                           "com.google.accompanist:accompanist-permissions:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-flowlayout:$accompanist_compose_version"]
 
     maps_compose = "com.google.maps.android:maps-compose:$map_compose_version"
 
