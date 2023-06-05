@@ -509,6 +509,9 @@ ext {
         exclude module: "$modelId"
         exclude module: "$utilityId"
         exclude module: "$designsystemId"
+        exclude module: "$composeNavigationId"
+        exclude module: "$composeDsId"
+        exclude module: "$commonStateId"
     })
     tripodep = "$urbiGroupId:$tripoId:$tripoVersion"
     tripodep_third = "$urbiGroupId:$tripoId$suffixArtifactId:$tripoVersion"
@@ -519,6 +522,9 @@ ext {
         exclude module: "$utilityId"
         exclude module: "$designsystemId"
         exclude module: "$ticketId"
+        exclude module: "$composeNavigationId"
+        exclude module: "$composeDsId"
+        exclude module: "$commonStateId"
     })
     urbisearchdep = "$urbiGroupId:$searchId:$searchVersion"
     urbisearchdep_exclude = dependencies.create(urbisearchdep, {
