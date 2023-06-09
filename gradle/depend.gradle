@@ -106,6 +106,9 @@ def playServicesAuthPhoneVersion = "18.0.1"
 
 def splash_screen_version = '1.0.0'
 
+//Kustomer
+def kustomer_version = '2.10.8'
+
 ext {
     android_script_path = "../android-scripts"
 // Github packages
@@ -440,6 +443,9 @@ ext {
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
     sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
     atac_dep = [atac, sql_cipher,sqlite,sqlite_ktx,sqlite_framework]
+
+    //Kustomer
+    kustomer = "com.kustomer.chat:ui:$kustomer_version"
 
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
