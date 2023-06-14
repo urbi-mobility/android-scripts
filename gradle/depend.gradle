@@ -106,6 +106,9 @@ def playServicesAuthPhoneVersion = "18.0.1"
 
 def splash_screen_version = '1.0.0'
 
+//Kustomer
+def kustomer_version = '2.10.8'
+
 ext {
     android_script_path = "../android-scripts"
 // Github packages
@@ -148,28 +151,28 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.6.12-compose'
-    designsystemVersion = '1.2.12-compose'
-    modelVersion = '2.9.16-compose'
-    coreVersion = '2.12.16-compose'
+    utilityVersion = '2.6.13-compose'
+    designsystemVersion = '1.2.14-compose'
+    modelVersion = '2.9.18-compose'
+    coreVersion = '2.12.18-compose'
     payVersion = '1.9.16-compose'
     ticketVersion = '0.7.3-compose'
     searchVersion = '0.7.9-compose'
-    taxiVersion = '0.6.16-compose'
+    taxiVersion = '0.6.18-compose'
     scanVersion = '1.0.1-compose'
-    transpoVersion = '1.5.13-compose'
+    transpoVersion = '1.5.14-compose'
     evchargingVersion = '1.5.16-compose'
-    tripoVersion = '1.4.16-compose'
+    tripoVersion = '1.4.17-compose'
     mobilitySharingVersion = '2.14.14-compose'
-    commonStateVersion = '0.0.16-compose'
-    commonViewVersion = '0.0.15-compose'
+    commonStateVersion = '0.0.17-compose'
+    commonViewVersion = '0.0.16-compose'
     composeNavigationVersion = '0.0.4-compose'
-    composeDsVersion = '0.0.16-compose'
+    composeDsVersion = '0.0.18-compose'
     historyVersion = '0.0.10-compose'
-    mapVersion = '0.0.17-compose'
-    profileVersion = '0.0.11-compose'
-    shopVersion = '0.0.9-compose'
-    loginVersion = '0.0.11-compose'
+    mapVersion = '0.0.19-compose'
+    profileVersion = '0.0.12-compose'
+    shopVersion = '0.0.10-compose'
+    loginVersion = '0.0.12-compose'
 
     telepassModelVersion = '2.5.1-compose'
     telepassNetworkVersion = '2.8.2-compose'
@@ -442,6 +445,9 @@ ext {
     sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
     atac_dep = [atac, sql_cipher,sqlite,sqlite_ktx,sqlite_framework]
 
+    //Kustomer
+    kustomer = "com.kustomer.chat:ui:$kustomer_version"
+
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
     mockk_android = "io.mockk:mockk-android:$mockk_version"
@@ -678,4 +684,5 @@ ext {
         exclude module: "$commonStateId"
         exclude module: "$payId"
     })
+
 }
