@@ -174,10 +174,10 @@ ext {
     shopVersion = '0.1.10'
     loginVersion = '0.1.13'
 
-    telepassModelVersion = '2.5.1-compose'
-    telepassNetworkVersion = '2.8.2-compose'
+    telepassModelVersion = '2.6.1'
+    telepassNetworkVersion = '2.6.2'
     telepassLibCode = '5'
-    telepassLibVersion = '2.11.' + telepassLibCode+"-compose-2"
+    telepassLibVersion = '2.12.' + telepassLibCode
 //---End---//
     atacVersion = '2.0.6r'
     android_gradle_plugin = '8.0.2'
