@@ -86,7 +86,7 @@ tasks.register("commitversions") {
                         println("Analyze ${key} version ${tagVersionKey}..............")
                         ByteArrayOutputStream().use { os ->
                             exec {
-                                commandLine("./gradlew", "$key::formatKotlin")
+                                commandLine("./gradlew", "$key:formatKotlin")
                                 standardOutput = os
                             }
                             println(os.toString())
@@ -275,7 +275,7 @@ fun writeChangelog(
         println("Update lib $key..........")
         ByteArrayOutputStream().use { os ->
             val result = exec {
-                commandLine("./gradlew", "$key:clean", "$key:publishReleasePublicationToGitHubPackagesRepository")
+                commandLine("./gradlew", "$key:clean", "$key:publishReleasePublicationToGitHubPackagesRepository", "$key:publishReleasePublicationToGitHubPackages2Repository")
                 standardOutput = os
             }
             println(os.toString())
