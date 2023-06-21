@@ -175,7 +175,7 @@ ext {
     loginVersion = '0.1.13'
 
     telepassModelVersion = '2.6.1'
-    telepassNetworkVersion = '2.6.2'
+    telepassNetworkVersion = '2.9.0'
     telepassLibCode = '5'
     telepassLibVersion = '2.12.' + telepassLibCode
 //---End---//
