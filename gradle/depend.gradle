@@ -174,9 +174,9 @@ ext {
     shopVersion = '0.2.0'
     loginVersion = '0.2.0'
 
-    telepassModelVersion = '2.6.1'
+    telepassModelVersion = '2.6.0'
     telepassNetworkVersion = '2.9.0'
-    telepassLibCode = '5'
+    telepassLibCode = '0'
     telepassLibVersion = '2.12.' + telepassLibCode
 //---End---//
     atacVersion = '2.0.6r'
