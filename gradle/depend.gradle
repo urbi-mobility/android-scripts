@@ -174,10 +174,10 @@ ext {
     shopVersion = '0.2.0'
     loginVersion = '0.2.0'
 
-    telepassModelVersion = '2.5.0'
-    telepassNetworkVersion = '2.7.1'
-    telepassLibCode = '4'
-    telepassLibVersion = '2.11.' + telepassLibCode
+    telepassModelVersion = '2.6.0'
+    telepassNetworkVersion = '2.9.0'
+    telepassLibCode = '0'
+    telepassLibVersion = '2.12.' + telepassLibCode
 //---End---//
     atacVersion = '2.0.6r'
     android_gradle_plugin = '8.0.2'
@@ -345,6 +345,7 @@ ext {
     firebase_messaging = "com.google.firebase:firebase-messaging"
     firebase_crashlytics = "com.google.firebase:firebase-crashlytics"
     firebase_auth = "com.google.firebase:firebase-auth-ktx"
+    firebase_config = "com.google.firebase:firebase-config"
 
     firebase_ui = "com.firebaseui:firebase-ui-auth:8.0.2"
     //INSTABUG
