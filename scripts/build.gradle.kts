@@ -28,7 +28,7 @@ tasks.register("uploadlib") {
 
 ////         Read Changelog Utility on Gradle file
         mapChangelog.forEach { map ->
-            writeChangelog(mapVersion, mapChangelog, map.key, "${map.key}/changelog.md")
+            writeChangelog(mapVersion, mapChangelog, map.key, "${map.key}/changelog.md", appId)
         }
 
         println("UPLOAD TASK COMPLETED.......")
@@ -86,7 +86,7 @@ tasks.register("commitversions") {
                         println("Analyze ${key} version ${tagVersionKey}..............")
                         ByteArrayOutputStream().use { os ->
                             exec {
-                                commandLine("./gradlew", "$key::formatKotlin")
+                                commandLine("./gradlew", "$key:formatKotlin")
                                 standardOutput = os
                             }
                             println(os.toString())
@@ -245,7 +245,8 @@ fun writeChangelog(
     mapVersion: HashMap<String, String>,
     mapChangelog: HashMap<String, String>,
     key: String,
-    pathFile: String
+    pathFile: String,
+    appId: String
 ) {
     println("Reading Changelog $pathFile........")
     val format = SimpleDateFormat("yyyy-MM-dd")
@@ -273,12 +274,31 @@ fun writeChangelog(
     }
     if (haveToWriteFile) {
         println("Update lib $key..........")
-        ByteArrayOutputStream().use { os ->
-            val result = exec {
-                commandLine("./gradlew", "$key:clean", "$key:publishReleasePublicationToGitHubPackagesRepository")
-                standardOutput = os
+        if(appId != "tpay") {
+            ByteArrayOutputStream().use { os ->
+                val result = exec {
+                    commandLine(
+                        "./gradlew",
+                        "$key:clean",
+                        "$key:publishReleasePublicationToGitHubPackagesRepository",
+                        "$key:publishReleasePublicationToGitHubPackages2Repository"
+                    )
+                    standardOutput = os
+                }
+                println(os.toString())
             }
-            println(os.toString())
+        } else {
+            ByteArrayOutputStream().use { os ->
+                val result = exec {
+                    commandLine(
+                        "./gradlew",
+                        "$key:clean",
+                        "$key:publishReleasePublicationToGitHubPackagesRepository",
+                    )
+                    standardOutput = os
+                }
+                println(os.toString())
+            }
         }
         if(haveModuleThird(key))
             ByteArrayOutputStream().use { os ->
