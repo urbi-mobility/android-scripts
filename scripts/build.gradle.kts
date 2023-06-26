@@ -246,7 +246,7 @@ fun writeChangelog(
     mapChangelog: HashMap<String, String>,
     key: String,
     pathFile: String,
-    appId: String
+    appId: String? = null
 ) {
     println("Reading Changelog $pathFile........")
     val format = SimpleDateFormat("yyyy-MM-dd")
