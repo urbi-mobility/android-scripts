@@ -176,7 +176,7 @@ ext {
 
     telepassModelVersion = '2.6.0'
     telepassNetworkVersion = '2.9.0'
-    telepassLibCode = '0'
+    telepassLibCode = '1'
     telepassLibVersion = '2.12.' + telepassLibCode
 //---End---//
     atacVersion = '2.0.6r'
