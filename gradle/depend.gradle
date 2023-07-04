@@ -189,7 +189,7 @@ ext {
 //  Compose
     compose_bom_version = '2023.05.01'
     compose_activity = '1.7.2'
-    nav_version = '2.6.0'
+    nav_version = '2.5.0'
 //  KOTLIN
     kotlin_version = '1.8.20'
     kotlin_compiler_extension_version = '1.4.6'
