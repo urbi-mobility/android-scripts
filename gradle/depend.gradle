@@ -188,8 +188,7 @@ ext {
     dagger_version = '2.44'
 //  Compose
     compose_bom_version = '2023.05.01'
-    compose_activity = '1.7.2'
-    nav_version = '2.5.0'
+    nav_version = '2.5.2'
 //  KOTLIN
     kotlin_version = '1.8.20'
     kotlin_compiler_extension_version = '1.4.6'
@@ -260,7 +259,7 @@ ext {
     compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:$compose_constaint_version"
 
     // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
-    compose_activity = "androidx.activity:activity-compose:$compose_activity"
+    compose_activity = "androidx.activity:activity-compose:$activityx_version"
 
     accompanist_compose = ["com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
