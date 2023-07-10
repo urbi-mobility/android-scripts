@@ -13,15 +13,15 @@ def marketingcloudsdk_version = '7.1.0'
 def recycleradapter_version = '2.10.0'
 // ANDROID VERSION
 def material_version = '1.5.0'
-def maps_utils_version = '2.2.2'
+def maps_utils_version = '2.4.0'
 // ANDROID X VERSION
 def biometric_version = '1.0.1'
 def preference_version = '1.1.0'
-def lifecycle_version = '2.4.0'
-def appcompat_version = "1.6.1"
+def lifecycle_version = '2.5.1'
+def appcompat_version = "1.6.0"
 def activityx_version = "1.5.1"
 def fragmentx_version = "1.5.1"
-def constraintlayout_version = '2.0.4'
+def constraintlayout_version = '2.1.3'
 def gridlayout_version = '1.0.0'
 def recyclerview_version = '1.1.0'
 def swiperefresh_version = '1.1.0'
@@ -33,26 +33,22 @@ def kotlinx_serialization_json_version = '1.0.0'
 // GMS_VERSION
 def play_services_maps_version = '18.0.2'
 def play_services_base_version = '18.0.1'
-def play_services_analytics_version = '18.0.1'
 def play_services_wallet_version = '18.1.1'
 def play_services_google_pay_passes_version = '16.0.3'
 // KOTLIN VERSION
-def kotlinx_coroutines_core_version = '1.6.3'
-def kotlinx_coroutines_android_version = '1.6.3'
+def kotlinx_coroutines_core_version = '1.6.4'
+def kotlinx_coroutines_android_version = '1.6.4'
 
-//  Stream Guava VERSION
-def guava_version = "27.0.1-android"
 // FIREBASE VERSION
-def firebase_config_version = '17.0.0'
-def firebase_analytics_version = '17.1.0'
-def firebase_messaging_version = '21.0.0'
-def firebase_core_version = '16.0.9'
+def firebase_bom_version = '32.0.0'
 // ML KIT VERSIONS
 def mlkit_facedetection_version = '17.0.0'
 def mlkit_textrecognition_version = '18.0.0'
 def mlkit_barcodescanning_version = '17.0.2'
-// PICASSO VERSION
-def picasso_version = '2.5.2'
+// GLIDE VERSION
+def glide_version = '4.13.2'
+def glide_compose_version = '1.0.0-alpha.2'
+def landscapist_version = "1.5.2"
 // RX_VERSION
 def rxandroid_version = '2.1.1'
 //  Retrofit VERSION
@@ -62,14 +58,15 @@ def retrofit_adapter_rxjava_version = '2.8.1'
 //  OK-HTTP3 VERSION
 def okhttp3_version = '4.9.1'
 
+// HILT
+def hilt_compose_version = '1.0.0'
 // PAYMENT_VERSION
-def stripe_android_version = '19.1.0'
-def satispay_version = '1.0.6'
+def stripe_android_version = '20.1.0'
 // RX REDUX
 def rxbinding_version = '3.0.0'
 def rxredux_version = '1.0.1'
 def rxrelay_version = '2.1.0'
-def core_ktx_version = '1.3.2'
+def core_ktx_version = '1.7.0'
 //  LOTTIE VERSION
 def lottieVersion = "3.4.0"
 // APACHE VERSION
@@ -86,24 +83,44 @@ def zxing_qr_code = "3.4.1"
 //PhotoView
 def photo_view_version = "2.3.0"
 //mockk
-def mockk_version = "1.12.3"
+def mockk_version = "1.13.2"
 //core-testing
 def core_testing_version = "2.1.0"
 //
-def turbine_version = "0.7.0"
+def turbine_version = "0.8.0"
 //
 def sqlite_version = "2.2.0"
 
+def compose_constaint_version = "1.0.1"
+//Accompanist compose
+def accompanist_compose_version = "0.30.1"
+//
+def map_compose_version = "2.11.4"
+
 // subsampling_scale_image
 def subsampling_scale_image_version = "3.10.0"
+
+// play services auth
+def playServicesAuthVersion = "20.4.0"
+def playServicesAuthPhoneVersion = "18.0.1"
+
+def splash_screen_version = '1.0.0'
+
+//Kustomer
+def kustomer_version = '2.10.8'
+
 ext {
-// Github-packages
+    android_script_path = "../android-scripts"
+// Github packages
     ghp_registry_name = 'GitHubPackages'
+    ghp_registry_name_third = 'GitHubPackages-Third'
     urbiGroupId = 'co.urbi.android'
     telepassGroupId = 'com.telepass.urbi'
     urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-urbi-framework'
     telepass_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-unica-framework'
     telepass_urbi_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-framework'
+    urbi_third_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-third-party-package-lib'
+    suffixArtifactId='third'
 // Artifact ids
     utilityId = 'utility'
     designsystemId = 'designsystem'
@@ -119,46 +136,68 @@ ext {
     evchargingId = 'evcharging'
     tripoId = 'tripo'
     mobilitySharingId = 'mobilitysharing'
+    commonStateId = 'commonstate'
+    commonViewId = 'commonview'
+    composeNavigationId = 'composenavigation'
+    composeDsId = 'composeds'
+    historyId = 'history'
+    mapId = 'map'
+    profileId = 'profile'
+    shopId = 'shop'
+    loginId = 'login'
 
     telepassModelId = 'telepassmodel'
     telepassNetworkId = 'telepassnetwork'
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.6.7'
-    designsystemVersion = '1.2.10'
-    modelVersion = '2.10.2'
-    coreVersion = '2.13.2'
-    payVersion = '1.9.7'
-    ticketVersion = '0.7.3'
-    searchVersion = '0.7.6'
-    taxiVersion = '0.6.17'
-    scanVersion = '1.0.1'
-    transpoVersion = '1.5.8'
-    evchargingVersion = '1.5.11'
-    tripoVersion = '1.5.4'
-    mobilitySharingVersion = '2.14.2'
+    utilityVersion = '2.7.1'
+    designsystemVersion = '1.3.2'
+    modelVersion = '2.11.3'
+    coreVersion = '2.14.3'
+    payVersion = '1.11.2'
+    ticketVersion = '0.9.1'
+    searchVersion = '1.0.1'
+    taxiVersion = '1.0.1'
+    scanVersion = '1.2.1'
+    transpoVersion = '1.7.2'
+    evchargingVersion = '1.7.1'
+    tripoVersion = '1.6.2'
+    mobilitySharingVersion = '2.16.3'
+    commonStateVersion = '0.1.2'
+    commonViewVersion = '0.2.3'
+    composeNavigationVersion = '0.2.2'
+    composeDsVersion = '0.2.2'
+    historyVersion = '0.2.3'
+    mapVersion = '0.2.3'
+    profileVersion = '0.2.2'
+    shopVersion = '0.2.2'
+    loginVersion = '0.2.3'
 
-    telepassModelVersion = '2.5.1'
-    telepassNetworkVersion = '2.8.2'
-    telepassLibCode = '7'
-    telepassLibVersion = '2.11.' + telepassLibCode
-
-    versionUrbi = '50505'
-    atacVersion = '2.1.1r'
+    telepassModelVersion = '2.6.0'
+    telepassNetworkVersion = '2.9.0'
+    telepassLibCode = '1'
+    telepassLibVersion = '2.12.' + telepassLibCode
 //---End---//
-
-    android_gradle_plugin = '7.3.0'
+    atacVersion = '2.1.1r'
+    android_gradle_plugin = '8.0.2'
+    //google play auth
+    play_services_auth = "com.google.android.gms:play-services-auth:$playServicesAuthVersion"
+    play_services_auth_phone = "com.google.android.gms:play-services-auth-api-phone:$playServicesAuthPhoneVersion"
     //  DAGGER VERSION
-    dagger_version = '2.43'
+    dagger_version = '2.44'
+//  Compose
+    compose_bom_version = '2023.05.01'
+    nav_version = '2.5.2'
 //  KOTLIN
-    kotlin_version = '1.7.0'
+    kotlin_version = '1.8.20'
+    kotlin_compiler_extension_version = '1.4.6'
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     kotlinx_coroutines = ["org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_core_version",
                           "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_android_version",
                           "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
                           "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"]
-
+    kotlinx_coroutines_play_services = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$kotlinx_coroutines_core_version"
 //  AndroidX
     camerax_version = "1.0.0"
     cameraxview_version = "1.0.0-alpha22"
@@ -171,6 +210,7 @@ ext {
     lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
     lifecycle_viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     lifecycle_common = "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
+    lifecycle_process = "androidx.lifecycle:lifecycle-process:$lifecycle_version"
     lifecycle_group = [lifecycle_runtime, lifecycle_livedata, lifecycle_viewmodel, lifecycle_common]
     legacy_appcompat = [legacy, appcompat]
     lifecycle_appcompat = [lifecycle_group, appcompat]
@@ -179,8 +219,10 @@ ext {
     biometric = "androidx.biometric:biometric:$biometric_version"
     preference = "androidx.preference:preference:$preference_version"
     core_ktx = "androidx.core:core-ktx:$core_ktx_version"
+    splashscreen = "androidx.core:core-splashscreen:$splash_screen_version"
     gridlayout = "androidx.gridlayout:gridlayout:$gridlayout_version"
     recyclerview = "androidx.recyclerview:recyclerview:$recyclerview_version"
+    swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefresh_version"
     cardview = "androidx.cardview:cardview:$cardview_version"
     serialization_core = "org.jetbrains.kotlinx:kotlinx-serialization-core:$kotlinx_serialization_core_version"
     serialization_json = "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinx_serialization_json_version"
@@ -204,15 +246,49 @@ ext {
                        }),
                        dependencies.create("com.squareup.okhttp3:logging-interceptor:$okhttp3_version"),
                        "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_rxjava_version"]
+// Compose
+    compose_bom = "androidx.compose:compose-bom:$compose_bom_version"
+    compose_ui = ["androidx.compose.ui:ui","androidx.compose.ui:ui-tooling", "androidx.compose.ui:ui-tooling-preview"]
+    compose_material = "androidx.compose.material:material"
+    compose_foundation = "androidx.compose.foundation:foundation"
+    //HILT
+    hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose_version"
+    //Navigation
+    compose_navigation = "androidx.navigation:navigation-compose:$nav_version"
 
+    compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:$compose_constaint_version"
+
+    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
+    compose_activity = "androidx.activity:activity-compose:$activityx_version"
+
+    accompanist_compose = ["com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-pager:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-pager-indicators:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-permissions:$accompanist_compose_version",
+                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
+                           ]
+
+    maps_compose = "com.google.maps.android:maps-compose:$map_compose_version"
+
+    // Material design icons
+    material_icon = ["androidx.compose.material:material-icons-core",
+                     "androidx.compose.material:material-icons-extended"]
+    // Integration with ViewModels
+    view_model_compose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
+    // Integration with observables
+    runtime_livedata = "androidx.compose.runtime:runtime-livedata"
+    runtime_rxjava = "androidx.compose.runtime:runtime-rxjava2"
+    compose_deep = [core_ktx, appcompat, compose_ui, compose_material, compose_navigation, compose_foundation, compose_activity, runtime_livedata, runtime_rxjava]
 //  RxJava & RxAndroid
     rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
 
 //  Android
-    min_sdk_version = 23
+    min_sdk_version = 24
     compile_sdk_version = 33
     target_sdk_version = 33
-    global_build_tools_version = "30.0.3"
+    global_build_tools_version = "33.0.1"
 
     maps_utils = "com.google.maps.android:android-maps-utils:$maps_utils_version"
     material = "com.google.android.material:material:$material_version"
@@ -253,29 +329,27 @@ ext {
     play_services_base = dependencies.create("com.google.android.gms:play-services-base:$play_services_base_version", {
         exclude group: 'com.android.support'
     })
-    play_services_analytics = [
-            dependencies.create("com.google.android.gms:play-services-analytics:$play_services_analytics_version",
-                    { exclude group: 'com.android.support' }
-            ),
-            dependencies.create("com.google.android.gms:play-services-analytics-impl:$play_services_analytics_version",
-                    { exclude group: 'com.android.support' }
-            )
-    ]
 
     play_services_wallet = "com.google.android.gms:play-services-wallet:$play_services_wallet_version"
     play_services_google_pay_passes = "com.google.android.gms:play-services-pay:$play_services_google_pay_passes_version"
 
-//  Guava
-    guava = "com.google.guava:guava:$guava_version"
-
+// SQL_LITE
+    sqlite = "androidx.sqlite:sqlite:$sqlite_version"
+    sqlite_ktx = "androidx.sqlite:sqlite-ktx:$sqlite_version"
+    sqlite_framework = "androidx.sqlite:sqlite-framework:$sqlite_version"
 //  FIREBASE
-    firebase_core = dependencies.create("com.google.firebase:firebase-core:$firebase_core_version", {
-        exclude module: 'play-services-stats'
-    })
-    firebase_analytics = "com.google.firebase:firebase-analytics:$firebase_analytics_version"
-    firebase_config = "com.google.firebase:firebase-config:$firebase_config_version"
-    firebase_messaging = "com.google.firebase:firebase-messaging:$firebase_messaging_version"
+    firebase_bom = "com.google.firebase:firebase-bom:$firebase_bom_version"
+    firebase_analytics = "com.google.firebase:firebase-analytics-ktx"
+    firebase_messaging = "com.google.firebase:firebase-messaging"
+    firebase_crashlytics = "com.google.firebase:firebase-crashlytics"
+    firebase_auth = "com.google.firebase:firebase-auth-ktx"
+    firebase_config = "com.google.firebase:firebase-config"
 
+    firebase_ui = "com.firebaseui:firebase-ui-auth:8.0.2"
+    //INSTABUG
+    instabug_version = "11.8.0"
+    instabug_dep = "com.instabug.library:instabug:$instabug_version"
+    instabub_okhttp = "com.instabug.library:instabug-with-okhttp-interceptor:$instabug_version"
     // MLKIT
     mlkit_facedetection = "com.google.android.gms:play-services-mlkit-face-detection:$mlkit_facedetection_version"
     //thin
@@ -288,8 +362,11 @@ ext {
             mlkit_textrecognition,
             mlkit_barcodescanning
     ]
-//  Picasso
-    picasso = "com.squareup.picasso:picasso:$picasso_version"
+//  glide
+    glide = "com.github.bumptech.glide:glide:$glide_version"
+    glideCompiler = "com.github.bumptech.glide:compiler:$glide_version"
+    glideCompose = "com.github.bumptech.glide:compose:$glide_compose_version"
+    landscapist = "com.github.skydoves:landscapist-glide:${landscapist_version}"
 //  Dagger
     dagger = "com.google.dagger:hilt-android:$dagger_version"
     dagger_compile = "com.google.dagger:hilt-compiler:$dagger_version"
@@ -364,12 +441,16 @@ ext {
     //ATAC
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
     sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
-    atac_dep = [atac, sql_cipher, sqlite, sqlite_ktx, sqlite_framework]
+    atac_dep = [atac, sql_cipher,sqlite,sqlite_ktx,sqlite_framework]
+
+    //Kustomer
+    kustomer = "com.kustomer.chat:ui:$kustomer_version"
 
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
+    mockk_android = "io.mockk:mockk-android:$mockk_version"
     core_testing = "androidx.arch.core:core-testing:$core_testing_version"
-    coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0"
+    coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinx_coroutines_core_version"
     turbine = "app.cash.turbine:turbine:$turbine_version"
     junit = 'junit:junit:4.12'
     mockito = 'org.mockito:mockito-android:2.6.3'
@@ -380,122 +461,143 @@ ext {
                    , 'androidx.annotation:annotation:1.1.0', dependencies.create('androidx.test.uiautomator:uiautomator:2.2.0', {
         exclude group: 'com.android.support'
     }), 'androidx.test:rules:1.2.0', 'androidx.test:runner:1.2.0']
-
+    testJson = "org.json:json:20180813"
+    testHilt = "com.google.dagger:hilt-android-testing:$dagger_version"
+    testCompose = ["androidx.compose.ui:ui-test", "androidx.compose.ui:ui-test-junit4", "androidx.compose.ui:ui-test-manifest"]
+    testAndroidX = [dependencies.create("androidx.test:core:1.4.0"),dependencies.create("androidx.test:core-ktx:1.4.0"),
+                    dependencies.create("androidx.test.ext:junit:1.1.3"),dependencies.create("androidx.test.ext:junit-ktx:1.1.3"),
+                    dependencies.create("androidx.test.ext:truth:1.4.0"),dependencies.create("androidx.test:runner:1.4.0")]
+    testSharedPreference = "io.github.ivanshafran:shared-preferences-mock:1.2.4"
 //  URBI
     designsystemdep = "$urbiGroupId:$designsystemId:$designsystemVersion"
+    designsystemdep_third = "$urbiGroupId:$designsystemId$suffixArtifactId:$designsystemVersion"
     utilitylibdep = "$urbiGroupId:$utilityId:$utilityVersion"
+    utilitylibdep_third = "$urbiGroupId:$utilityId$suffixArtifactId:$utilityVersion"
     urbimodeldep = "$urbiGroupId:$modelId:$modelVersion"
+    urbimodeldep_third = "$urbiGroupId:$modelId$suffixArtifactId:$modelVersion"
+    composenavigationdep = "$urbiGroupId:$composeNavigationId:$composeNavigationVersion"
+    composenavigationdep_third = "$urbiGroupId:$composeNavigationId$suffixArtifactId:$composeNavigationVersion"
     urbimodeldep_exclude = dependencies.create(urbimodeldep, {
-        exclude module: 'utilitylib'
+        exclude module: "$utilityId"
     })
     urbicoredep = "$urbiGroupId:$coreId:$coreVersion"
+    urbicoredep_third = "$urbiGroupId:$coreId$suffixArtifactId:$coreVersion"
     urbicoredep_exclude = dependencies.create(urbicoredep, {
         exclude group: 'com.android.support'
         exclude group: 'com.google.dagger'
         exclude group: 'androidx.appcompat'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
     })
     ticketlibdep = "$urbiGroupId:$ticketId:$ticketVersion"
+    ticketlibdep_third = "$urbiGroupId:$ticketId$suffixArtifactId:$ticketVersion"
     ticketlibdep_exclude = dependencies.create(ticketlibdep, {
         exclude group: 'com.google.dagger:dagger'
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
     })
     urbipaydep = "$urbiGroupId:$payId:$payVersion"
+    urbipaydep_third = "$urbiGroupId:$payId$suffixArtifactId:$payVersion"
     urbipaydep_exclude = dependencies.create(urbipaydep, {
         exclude group: 'com.google.dagger:dagger'
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
     })
     transpodep = "$urbiGroupId:$transpoId:$transpoVersion"
     transpodep_exclude = dependencies.create(transpodep, {
         exclude group: 'com.google.dagger:dagger'
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
+        exclude module: "$composeNavigationId"
+        exclude module: "$composeDsId"
+        exclude module: "$commonStateId"
     })
     tripodep = "$urbiGroupId:$tripoId:$tripoVersion"
+    tripodep_third = "$urbiGroupId:$tripoId$suffixArtifactId:$tripoVersion"
     tripodep_exclude = dependencies.create(tripodep, {
         exclude group: 'com.google.dagger:dagger'
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
-        exclude module: 'ticketlib'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
+        exclude module: "$ticketId"
+        exclude module: "$composeNavigationId"
+        exclude module: "$composeDsId"
+        exclude module: "$commonStateId"
     })
     urbisearchdep = "$urbiGroupId:$searchId:$searchVersion"
     urbisearchdep_exclude = dependencies.create(urbisearchdep, {
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
     })
     urbiscandep = "$urbiGroupId:$scanId:$scanVersion"
     urbiscandep_exclude = dependencies.create(urbiscandep, {
-        exclude module: 'designsystem'
-        exclude module: 'utilitylib'
+        exclude module: "$designsystemId"
+        exclude module: "$utilityId"
     })
 
     urbitaxidep = "$urbiGroupId:$taxiId:$taxiVersion"
     urbitaxidep_exclude = dependencies.create(urbitaxidep, {
-        exclude module: 'urbisearch'
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
+        exclude module: "$searchId"
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
     })
 
     evchargingdep = "$urbiGroupId:$evchargingId:$evchargingVersion"
     evchargingdep_exclude = dependencies.create(evchargingdep, {
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'utilitylib'
-        exclude module: 'designsystem'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$utilityId"
+        exclude module: "$designsystemId"
     })
 
     mobilitylibdep = "$urbiGroupId:$mobilitySharingId:$mobilitySharingVersion"
     mobilitylibdep_exclude = dependencies.create(mobilitylibdep, {
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'designsystem'
-        exclude module: 'urbisearch'
-        exclude module: 'tripo'
-        exclude module: 'transpo'
-        exclude module: 'evcharging'
-        exclude module: 'urbitaxi'
-        exclude module: 'ticketlib'
-        exclude module: 'urbiscan'
-        exclude module: 'utilitylib'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$designsystemId"
+        exclude module: "$searchId"
+        exclude module: "$tripoId"
+        exclude module: "$transpoId"
+        exclude module: "$evchargingId"
+        exclude module: "$taxiId"
+        exclude module: "$ticketId"
+        exclude module: "$scanId"
+        exclude module: "$utilityId"
     })
 
     tpaylibdep = "$telepassGroupId:$telepassLibId:$telepassLibVersion"
     tpaylibdep_exclude = dependencies.create(tpaylibdep, {
-        exclude module: 'urbicore'
-        exclude module: 'urbimodel'
-        exclude module: 'designsystem'
-        exclude module: 'urbisearch'
-        exclude module: 'tripo'
-        exclude module: 'transpo'
-        exclude module: 'evcharging'
-        exclude module: 'urbitaxi'
-        exclude module: 'ticketlib'
-        exclude module: 'urbiscan'
-        exclude module: 'mobilitysharing'
-        exclude module: 'telepasspaymodel'
-        exclude module: 'telepasspaynetwork'
-        exclude module: 'utilitylib'
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+        exclude module: "$designsystemId"
+        exclude module: "$searchId"
+        exclude module: "$tripoId"
+        exclude module: "$transpoId"
+        exclude module: "$evchargingId"
+        exclude module: "$taxiId"
+        exclude module: "$ticketId"
+        exclude module: "$scanId"
+        exclude module: "$mobilitySharingId"
+        exclude module: "$telepassModelId"
+        exclude module: "$telepassNetworkId"
+        exclude module: "$utilityId"
     })
 
     telepasspaymodeldep = "$telepassGroupId:$telepassModelId:$telepassModelVersion"
 
     telepasspaymodeldep_exclude = dependencies.create(telepasspaymodeldep, {
-        exclude module: 'utilitylib'
+        exclude module: "$utilityId"
     })
 
     telepasspaynetworkdep = dependencies.create("$telepassGroupId:$telepassNetworkId:$telepassNetworkVersion", {
@@ -506,11 +608,79 @@ ext {
     telepasspaynetworkdep_exclude = dependencies.create(telepasspaynetworkdep, {
         exclude module: 'play-services-stats'
         exclude module: 'firebase-measurement-connector-impl'
-        exclude module: 'utilitylib'
-        exclude module: 'telepasspaymodel'
+        exclude module: "$utilityId"
+        exclude module: "$telepassModelId"
     })
 
-    nexusUser = 'telepass'
-    nexusPassword = 'telepass'
-    realmSchemaVersion = '11'
+    composedsdep = dependencies.create("$urbiGroupId:$composeDsId:$composeDsVersion")
+    composedsdep_third = dependencies.create("$urbiGroupId:$composeDsId$suffixArtifactId:$composeDsVersion")
+
+    composedsdep_exclude = dependencies.create("$urbiGroupId:$composeDsId:$composeDsVersion", {
+        exclude module: "$composeNavigationId"
+    })
+
+    composestatedep = dependencies.create("$urbiGroupId:$commonStateId:$commonStateVersion")
+    composestatedep_third = dependencies.create("$urbiGroupId:$commonStateId$suffixArtifactId:$commonStateVersion")
+
+    composestatedep_exclude = dependencies.create("$urbiGroupId:$commonStateId:$commonStateVersion", {
+        exclude module: "$composeNavigationId"
+        exclude module: "$composeDsId"
+        exclude module: "$utilityId"
+        exclude module: "$coreId"
+        exclude module: "$modelId"
+    })
+
+    logindep = dependencies.create("$urbiGroupId:$loginId:$loginVersion")
+
+    logindep_exclude = dependencies.create("$urbiGroupId:$loginId:$loginVersion", {
+        exclude module: "$composeNavigationId"
+        exclude module: "$composeDsId"
+        exclude module: "$commonStateId"
+    })
+
+    commonviewdep = dependencies.create("$urbiGroupId:$commonViewId:$commonViewVersion")
+
+    commonviewdep_exclude = dependencies.create("$urbiGroupId:$commonViewId:$commonViewVersion", {
+        exclude module: "$composeNavigationId"
+        exclude module: "$composeDsId"
+        exclude module: "$commonStateId"
+        exclude module: "$loginId"
+    })
+
+    historyIddep = dependencies.create("$urbiGroupId:$historyId:$historyVersion")
+
+    historyId_exclude = dependencies.create("$urbiGroupId:$historyId:$historyVersion", {
+        exclude module: "$composeNavigationId"
+        exclude module: "$composeDsId"
+        exclude module: "$commonStateId"
+        exclude module: "$mobilitySharingId"
+    })
+
+    shopIddep = dependencies.create("$urbiGroupId:$shopId:$shopVersion")
+
+    shopId_exclude = dependencies.create("$urbiGroupId:$shopId:$shopVersion", {
+        exclude module: "$composeNavigationId"
+        exclude module: "$composeDsId"
+        exclude module: "$commonStateId"
+        exclude module: "$payId"
+    })
+
+    profileIddep = dependencies.create("$urbiGroupId:$profileId:$profileVersion")
+
+    profileId_exclude = dependencies.create("$urbiGroupId:$profileId:$profileVersion", {
+        exclude module: "$composeNavigationId"
+        exclude module: "$composeDsId"
+        exclude module: "$commonStateId"
+        exclude module: "$payId"
+    })
+
+    mapIddep = dependencies.create("$urbiGroupId:$mapId:$mapVersion")
+
+    mapId_exclude = dependencies.create("$urbiGroupId:$mapId:$mapVersion", {
+        exclude module: "$composeNavigationId"
+        exclude module: "$composeDsId"
+        exclude module: "$commonStateId"
+        exclude module: "$payId"
+    })
+
 }

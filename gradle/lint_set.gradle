@@ -2,8 +2,8 @@ android {
     lintOptions {
         // set to true to turn off analysis progress reporting by lint
         quiet true
-        // Turns off checks for the issue IDs you specify.
-        disable 'MissingTranslation','TypographyQuotes'
+//        // Turns off checks for the issue IDs you specify.
+        disable 'MissingTranslation', 'TypographyQuotes'
 //        // Turns on checks for the issue IDs you specify. These checks are in
 //        // addition to the default lint checks.
 //        enable 'RtlHardcoded','RtlCompat', 'RtlEnabled'
@@ -25,6 +25,5 @@ android {
         // problem. However, this leads to quite a bit of extra computation; a library is
         // analyzed repeatedly, for each module that it is used in.
         checkDependencies false
-
     }
 }
