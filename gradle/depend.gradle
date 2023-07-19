@@ -628,6 +628,7 @@ ext {
         exclude module: "$utilityId"
         exclude module: "$coreId"
         exclude module: "$modelId"
+        exclude module: "$designsystemId"
     })
 
     logindep = dependencies.create("$urbiGroupId:$loginId:$loginVersion")
