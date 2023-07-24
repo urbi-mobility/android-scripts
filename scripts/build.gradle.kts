@@ -13,7 +13,7 @@ tasks.register("uploadlib") {
             else
                 forcePullServiceFileAndCopy()
         } else
-            println("No service file is force pull and uploaded, tou know what you are doing.......")
+            println("No service file is force pull and uploaded, you know what you are doing.......")
 
         var mapChangelog: LinkedHashMap<String, String>;
         if(appId == "tpay")
@@ -77,8 +77,9 @@ tasks.register("commitversions") {
         var haveToPushTpayLib = false
         outputGit.toString().split("\n").reversed().forEach { line ->
             line.replace("\\s".toRegex(), "").let { newLine ->
-                if (newLine.startsWith("modified:")) {
-                    val clearLine = newLine.replace("modified:".toRegex(), "")
+                if (newLine.startsWith("modified:") || newLine.startsWith("modificato:")) {
+                    val italianClearLine = newLine.replace("modificato:".toRegex(), "")
+                    val clearLine = italianClearLine.replace("modified:".toRegex(), "")
                     val arrayRow = clearLine.split("/")
                     if (arrayRow.isNotEmpty() && mapVersion.containsKey(mapModuleName[arrayRow[0]])) {
                         val key = arrayRow[0]
