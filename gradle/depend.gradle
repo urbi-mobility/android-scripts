@@ -109,6 +109,9 @@ def splash_screen_version = '1.0.0'
 //Kustomer
 def kustomer_version = '2.10.8'
 
+// Onfido
+def onfido_version = '19.0.0'
+
 ext {
     android_script_path = "../android-scripts"
 // Github packages
@@ -445,6 +448,9 @@ ext {
 
     //Kustomer
     kustomer = "com.kustomer.chat:ui:$kustomer_version"
+
+    //Onfido
+    onfido = "com.onfido.sdk.capture:onfido-capture-sdk:$onfido_version"
 
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
