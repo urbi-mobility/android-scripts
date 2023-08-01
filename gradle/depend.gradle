@@ -1,5 +1,4 @@
 //Version
-def legacy_support_version = '1.0.0'
 def android_places_version = '2.5.0'
 def tempo_version = '1.3.0-alpha01'
 def security_crypto_version = '1.1.0-alpha02'
@@ -17,8 +16,6 @@ def maps_utils_version = '2.4.0'
 // ANDROID X VERSION
 def biometric_version = '1.0.1'
 def preference_version = '1.1.0'
-def lifecycle_version = '2.5.1'
-def appcompat_version = "1.6.0"
 def activityx_version = "1.5.1"
 def fragmentx_version = "1.5.1"
 def constraintlayout_version = '2.1.3'
@@ -35,9 +32,6 @@ def play_services_maps_version = '18.0.2'
 def play_services_base_version = '18.0.1'
 def play_services_wallet_version = '18.1.1'
 def play_services_google_pay_passes_version = '16.0.3'
-// KOTLIN VERSION
-def kotlinx_coroutines_core_version = '1.6.4'
-def kotlinx_coroutines_android_version = '1.6.4'
 
 // FIREBASE VERSION
 def firebase_bom_version = '32.0.0'
@@ -66,7 +60,6 @@ def stripe_android_version = '20.1.0'
 def rxbinding_version = '3.0.0'
 def rxredux_version = '1.0.1'
 def rxrelay_version = '2.1.0'
-def core_ktx_version = '1.7.0'
 //  LOTTIE VERSION
 def lottieVersion = "3.4.0"
 // APACHE VERSION
@@ -108,9 +101,6 @@ def splash_screen_version = '1.0.0'
 
 //Kustomer
 def kustomer_version = '2.10.8'
-
-// Onfido
-def onfido_version = '19.0.0'
 
 ext {
     android_script_path = "../android-scripts"
@@ -191,37 +181,19 @@ ext {
     dagger_version = '2.44'
 //  Compose
     compose_bom_version = '2023.05.01'
-    nav_version = '2.5.2'
 //  KOTLIN
     kotlin_version = '1.8.20'
     kotlin_compiler_extension_version = '1.4.6'
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    kotlinx_coroutines = ["org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_core_version",
-                          "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_android_version",
-                          "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
-                          "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"]
-    kotlinx_coroutines_play_services = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$kotlinx_coroutines_core_version"
 //  AndroidX
     camerax_version = "1.0.0"
     cameraxview_version = "1.0.0-alpha22"
     activityx = "androidx.activity:activity-ktx:$activityx_version"
     fragmentx = "androidx.fragment:fragment-ktx:$fragmentx_version"
     androidx_view = [activityx, fragmentx]
-    appcompat = "androidx.appcompat:appcompat:$appcompat_version"
-    legacy = "androidx.legacy:legacy-support-v4:$legacy_support_version"
-    lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-    lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-    lifecycle_viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    lifecycle_common = "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
-    lifecycle_process = "androidx.lifecycle:lifecycle-process:$lifecycle_version"
-    lifecycle_group = [lifecycle_runtime, lifecycle_livedata, lifecycle_viewmodel, lifecycle_common]
-    legacy_appcompat = [legacy, appcompat]
-    lifecycle_appcompat = [lifecycle_group, appcompat]
-    legacy_appcompat_lifecycle = [legacy, appcompat, lifecycle_group]
     constraintlayout = "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
     biometric = "androidx.biometric:biometric:$biometric_version"
     preference = "androidx.preference:preference:$preference_version"
-    core_ktx = "androidx.core:core-ktx:$core_ktx_version"
     splashscreen = "androidx.core:core-splashscreen:$splash_screen_version"
     gridlayout = "androidx.gridlayout:gridlayout:$gridlayout_version"
     recyclerview = "androidx.recyclerview:recyclerview:$recyclerview_version"
@@ -251,18 +223,10 @@ ext {
                        "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_rxjava_version"]
 // Compose
     compose_bom = "androidx.compose:compose-bom:$compose_bom_version"
-    compose_ui = ["androidx.compose.ui:ui","androidx.compose.ui:ui-tooling", "androidx.compose.ui:ui-tooling-preview"]
-    compose_material = "androidx.compose.material:material"
-    compose_foundation = "androidx.compose.foundation:foundation"
     //HILT
     hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose_version"
-    //Navigation
-    compose_navigation = "androidx.navigation:navigation-compose:$nav_version"
 
     compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:$compose_constaint_version"
-
-    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
-    compose_activity = "androidx.activity:activity-compose:$activityx_version"
 
     accompanist_compose = ["com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version",
                            "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
@@ -278,12 +242,6 @@ ext {
     // Material design icons
     material_icon = ["androidx.compose.material:material-icons-core",
                      "androidx.compose.material:material-icons-extended"]
-    // Integration with ViewModels
-    view_model_compose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
-    // Integration with observables
-    runtime_livedata = "androidx.compose.runtime:runtime-livedata"
-    runtime_rxjava = "androidx.compose.runtime:runtime-rxjava2"
-    compose_deep = [core_ktx, appcompat, compose_ui, compose_material, compose_navigation, compose_foundation, compose_activity, runtime_livedata, runtime_rxjava]
 //  RxJava & RxAndroid
     rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
 
@@ -449,14 +407,10 @@ ext {
     //Kustomer
     kustomer = "com.kustomer.chat:ui:$kustomer_version"
 
-    //Onfido
-    onfido = "com.onfido.sdk.capture:onfido-capture-sdk:$onfido_version"
-
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
     mockk_android = "io.mockk:mockk-android:$mockk_version"
     core_testing = "androidx.arch.core:core-testing:$core_testing_version"
-    coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinx_coroutines_core_version"
     turbine = "app.cash.turbine:turbine:$turbine_version"
     junit = 'junit:junit:4.12'
     mockito = 'org.mockito:mockito-android:2.6.3'

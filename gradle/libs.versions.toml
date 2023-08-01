@@ -1,0 +1,82 @@
+[versions]
+androidx-activity = "1.5.1"
+androidx-appcompat = "1.6.0"
+androidx-core-ktx = "1.7.0"
+androidx-legacy-support = "1.0.0"
+androidx-lifecycle = "2.5.1"
+androidx-navigation = "2.5.2"
+kotlinx-coroutines = "1.6.4"
+onfido = "19.0.0"
+
+[libraries]
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-compose-material = { group = "androidx.compose.material", name = "material" }
+androidx-compose-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata" }
+androidx-compose-runtime-rxjava = { group = "androidx.compose.runtime", name = "runtime-rxjava2" }
+androidx-compose-ui-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
+androidx-legacy-support = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "androidx-legacy-support" }
+androidx-lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidx-navigation" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+onfido = { group = "com.onfido.sdk.capture", name = "onfido-capture-sdk", version.ref = "onfido" }
+
+[bundles]
+androidx-legacy-appcompat = ["androidx-legacy-support", "androidx-appcompat"]
+androidx-legacy-appcompat-lifecycle = [
+    "androidx-legacy-support",
+    "androidx-appcompat",
+    "androidx-lifecycle-runtime",
+    "androidx-lifecycle-livedata",
+    "androidx-lifecycle-viewmodel",
+    "androidx-lifecycle-common"
+]
+androidx-lifecycle = [
+    "androidx-lifecycle-runtime",
+    "androidx-lifecycle-livedata",
+    "androidx-lifecycle-viewmodel",
+    "androidx-lifecycle-common"
+]
+androidx-lifecycle-appcompat = [
+    "androidx-lifecycle-runtime",
+    "androidx-lifecycle-livedata",
+    "androidx-lifecycle-viewmodel",
+    "androidx-lifecycle-common",
+    "androidx-appcompat"
+]
+compose-deep = [
+    "androidx-core-ktx",
+    "androidx-appcompat",
+    "androidx-compose-ui-ui",
+    "androidx-compose-ui-tooling",
+    "androidx-compose-ui-preview",
+    "androidx-compose-material",
+    "androidx-compose-foundation",
+    "androidx-navigation-compose",
+    "androidx-activity-compose",
+    "androidx-compose-runtime-livedata",
+    "androidx-compose-runtime-rxjava"
+]
+compose-ui = [
+    "androidx-compose-ui-ui",
+    "androidx-compose-ui-tooling",
+    "androidx-compose-ui-preview"
+]
+kotlinx-coroutines = [
+    "kotlinx-coroutines-android",
+    "kotlinx-coroutines-core",
+    "androidx-lifecycle-runtime",
+    "androidx-lifecycle-viewmodel"
+]
