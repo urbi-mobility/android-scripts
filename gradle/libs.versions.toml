@@ -6,7 +6,9 @@ androidx-activity = "1.5.1"
 androidx-fragment = "1.5.1"
 androidx-appcompat = "1.6.0"
 androidx-biometric = "1.0.1"
+androidx-constraintlayout = "2.1.3"
 androidx-core-ktx = "1.7.0"
+androidx-gridlayout = "1.0.0"
 androidx-legacy-support = "1.0.0"
 androidx-lifecycle = "2.5.1"
 androidx-navigation = "2.5.2"
@@ -44,8 +46,10 @@ androidx-compose-runtime-rxjava = { group = "androidx.compose.runtime", name = "
 androidx-compose-ui-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
 androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "androidx-fragment" }
+androidx-gridlayout = { group = "androidx.gridlayout", name = "gridlayout", version.ref = "androidx-gridlayout" }
 androidx-legacy-support = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "androidx-legacy-support" }
 androidx-lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "androidx-lifecycle" }
