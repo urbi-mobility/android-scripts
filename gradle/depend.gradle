@@ -1,15 +1,9 @@
 //Version
-def tempo_version = '1.3.0-alpha01'
-def security_crypto_version = '1.1.0-alpha02'
 def jackson_databind_version = '2.4.2'
 def gson_version = '2.7'
 def jsonwebtoken_version = '0.8.0'
-def materialdatetimepicker_version = '4.2.3'
 def flow_layout_version = '1.3.3'
 def marketingcloudsdk_version = '7.1.0'
-// ANDROID VERSION
-def material_version = '1.5.0'
-def maps_utils_version = '2.4.0'
 // ANDROID X VERSION
 def biometric_version = '1.0.1'
 def preference_version = '1.1.0'
@@ -62,12 +56,8 @@ def lottieVersion = "3.4.0"
 // APACHE VERSION
 def commons_codec_version = '1.11'
 def commons_lang_version = '3:3.5'
-// JUMIO
-def jumio_version = '4.3.0'
 //ATAC dependencies
 def sql_cipher_version = "4.4.3"
-//ZXing
-def zxing_qr_code = "3.4.1"
 //PhotoView
 def photo_view_version = "2.3.0"
 //mockk
@@ -191,8 +181,6 @@ ext {
     navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:$navigation_ui_ktx_version"
 //  MARKETINGCLOUDSDK
     marketingcloudsdk = "com.salesforce.marketingcloud:marketingcloudsdk:$marketingcloudsdk_version"
-//  JetPack
-    security_crypto = "androidx.security:security-crypto:$security_crypto_version"
 
 //  REDUX
     rxbinding = "com.jakewharton.rxbinding3:rxbinding:$rxbinding_version"
@@ -224,9 +212,6 @@ ext {
 
     maps_compose = "com.google.maps.android:maps-compose:$map_compose_version"
 
-    // Material design icons
-    material_icon = ["androidx.compose.material:material-icons-core",
-                     "androidx.compose.material:material-icons-extended"]
 //  RxJava & RxAndroid
     rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
 
@@ -235,10 +220,6 @@ ext {
     compile_sdk_version = 33
     target_sdk_version = 33
     global_build_tools_version = "33.0.1"
-
-    maps_utils = "com.google.maps.android:android-maps-utils:$maps_utils_version"
-    material = "com.google.android.material:material:$material_version"
-    materialdatetimepicker = "com.wdullaer:materialdatetimepicker:$materialdatetimepicker_version"
 
 //  LOTTIE
     lottie = dependencies.create("com.airbnb.android:lottie:$lottieVersion", {
@@ -249,13 +230,6 @@ ext {
 //  APACHE
     commons_codec = "commons-codec:commons-codec:$commons_codec_version"
     commons_lang = "org.apache.commons:commons-lang$commons_lang_version"
-
-//  TEMPO
-    tempo = dependencies.create("com.github.AllanHasegawa.Tempo:tempo:$tempo_version",
-            {
-                exclude group: 'org.jetbrains.kotlin'
-                exclude group: 'io.reactivex.rxjava2'
-            })
 
 //  JACKSON
     jackson_databind = "com.fasterxml.jackson.core:jackson-databind:$jackson_databind_version"
