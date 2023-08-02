@@ -1,4 +1,5 @@
 [versions]
+adapter-delegates4 = "4.3.0"
 android-places = "2.5.0"
 androidx-activity = "1.5.1"
 androidx-appcompat = "1.6.0"
@@ -7,12 +8,17 @@ androidx-legacy-support = "1.0.0"
 androidx-lifecycle = "2.5.1"
 androidx-navigation = "2.5.2"
 androidx-sqlite = "2.2.0"
+dagger = "2.44"
+jumio = "4.3.0"
 kotlinx-coroutines = "1.6.4"
 kustomer = "2.10.8"
 onfido = "19.0.0"
+subsampling-scale-image = "3.10.0"
 zxing = "3.4.1"
 
 [libraries]
+adapterdelegates4 = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
+adapterdelegates4-binding = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl-viewbinding", version.ref = "adapter-delegates4" }
 android-places = { group = "com.google.android.libraries.places", name = "places", version.ref = "android-places" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
@@ -35,6 +41,14 @@ androidx-navigation-compose = { group = "androidx.navigation", name = "navigatio
 androidx-sqlite = { group = "androidx.sqlite", name = "sqlite", version.ref = "androidx-sqlite" }
 androidx-sqlite-ktx = { group = "androidx.sqlite", name = "sqlite-ktx", version.ref = "androidx-sqlite" }
 androidx-sqlite-framework = { group = "androidx.sqlite", name = "sqlite-framework", version.ref = "androidx-sqlite" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger" }
+hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "dagger" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "dagger" }
+jumio-core = { group = "com.jumio.android", name = "core", version.ref = "jumio" }
+jumio-defaultui = { group = "com.jumio.android", name = "defaultui", version.ref = "jumio" }
+jumio-linefinder = { group = "com.jumio.android", name = "linefinder", version.ref = "jumio" }
+jumio-barcode = { group = "com.jumio.android", name = "barcode", version.ref = "jumio" }
+jumio-iproov = { group = "com.jumio.android", name = "iproov", version.ref = "jumio" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "kotlinx-coroutines" }
@@ -42,6 +56,7 @@ kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 kustomer-chat = { group = "com.kustomer.chat", name = "ui", version.ref = "kustomer" }
 google-zxing = { group = "com.google.zxing", name = "core", version.ref = "zxing" }
 onfido = { group = "com.onfido.sdk.capture", name = "onfido-capture-sdk", version.ref = "onfido" }
+subsampling-sample-image = { group = "com.davemorrissey.labs", name = "subsampling-scale-image-view-androidx", version.ref = "subsampling-scale-image" }
 
 [bundles]
 androidx-legacy-appcompat = [
@@ -87,9 +102,19 @@ compose-ui = [
     "androidx-compose-ui-tooling",
     "androidx-compose-ui-preview"
 ]
+jumio = [
+    "jumio-core",
+    "jumio-defaultui",
+    "jumio-linefinder",
+    "jumio-barcode",
+    "jumio-iproov"
+]
 kotlinx-coroutines = [
     "kotlinx-coroutines-android",
     "kotlinx-coroutines-core",
     "androidx-lifecycle-runtime",
     "androidx-lifecycle-viewmodel"
 ]
+
+[plugins]
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
