@@ -294,4 +294,5 @@ test-impl = [
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
