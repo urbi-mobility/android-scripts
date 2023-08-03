@@ -1,20 +1,3 @@
-//ATAC dependencies
-def sql_cipher_version = "4.4.3"
-//mockk
-def mockk_version = "1.13.2"
-//core-testing
-def core_testing_version = "2.1.0"
-//
-def turbine_version = "0.8.0"
-
-def compose_constaint_version = "1.0.1"
-//Accompanist compose
-def accompanist_compose_version = "0.30.1"
-//
-def map_compose_version = "2.11.4"
-
-def splash_screen_version = '1.0.0'
-
 ext {
     android_script_path = "../android-scripts"
 // Github packages
@@ -87,97 +70,30 @@ ext {
 //---End---//
     atacVersion = '2.1.1r'
     android_gradle_plugin = '8.0.2'
-//  Compose
-    compose_bom_version = '2023.05.01'
 //  KOTLIN
     kotlin_version = '1.8.20'
     kotlin_compiler_extension_version = '1.4.6'
     kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-//  AndroidX
-    camerax_version = "1.0.0"
-    cameraxview_version = "1.0.0-alpha22"
-    splashscreen = "androidx.core:core-splashscreen:$splash_screen_version"
-
-// Compose
-    compose_bom = "androidx.compose:compose-bom:$compose_bom_version"
-
-    compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:$compose_constaint_version"
-
-    accompanist_compose = ["com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-pager:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-pager-indicators:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-permissions:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
-                           ]
-
-    maps_compose = "com.google.maps.android:maps-compose:$map_compose_version"
-
 //  Android
     min_sdk_version = 24
     compile_sdk_version = 33
     target_sdk_version = 33
     global_build_tools_version = "33.0.1"
 
-    // NFC scan related libraries
-    jmrtd = dependencies.create("org.jmrtd:jmrtd:0.7.18", {
-        exclude module: 'bcprov-jdk15on'
-    })
-    jj2000 = 'edu.ucar:jj2000:5.2'
-    jnbis = 'com.github.mhshams:jnbis:1.1.0'
-    scuba = 'net.sf.scuba:scuba-sc-android:0.0.20'
-    spongycastle = 'com.madgag.spongycastle:prov:1.58.0.0'
-
-
-    nfc_scan_tools = [
-            jmrtd, jj2000, jnbis, scuba, spongycastle
-    ]
-
-    // CAMERAX
-    // CameraX core library
-    camera_core = "androidx.camera:camera-core:$camerax_version"
-    // CameraX Camera2 extensions
-    camera_camera2 = "androidx.camera:camera-camera2:$camerax_version"
-    // CameraX Lifecycle library
-    camera_lifecycle = "androidx.camera:camera-lifecycle:$camerax_version"
-    // CameraX View class
-    camera_view = dependencies.create("androidx.camera:camera-view:$cameraxview_version", {
-        exclude module: libs.androidx.appcompat.get().module
-    })
-
-    camerax_group = [camera_core, camera_camera2, camera_lifecycle, camera_view]
-
     //ATAC
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
-    sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
-    atac_dep = [
-            atac,
-            sql_cipher,
-            libs.androidx.sqlite,
-            libs.androidx.sqlite.ktx,
-            libs.androidx.sqlite.framework
-    ]
 
 //  TEST
-    mockk_unit = "io.mockk:mockk:$mockk_version"
-    mockk_android = "io.mockk:mockk-android:$mockk_version"
-    core_testing = "androidx.arch.core:core-testing:$core_testing_version"
-    turbine = "app.cash.turbine:turbine:$turbine_version"
     junit = 'junit:junit:4.12'
     mockito = 'org.mockito:mockito-android:2.6.3'
     junit_x = 'androidx.test.ext:junit:1.1.3'
     espresso = 'androidx.test.espresso:espresso-core:3.4.0'
-    testimpl = [junit_x, espresso]
     testimplapp = [junit_x, espresso, 'org.mockito:mockito-core:2.28.2', 'org.mockito:mockito-android:2.6.3'
                    , 'androidx.annotation:annotation:1.1.0', dependencies.create('androidx.test.uiautomator:uiautomator:2.2.0', {
         exclude group: 'com.android.support'
     }), 'androidx.test:rules:1.2.0', 'androidx.test:runner:1.2.0']
     testJson = "org.json:json:20180813"
     testCompose = ["androidx.compose.ui:ui-test", "androidx.compose.ui:ui-test-junit4", "androidx.compose.ui:ui-test-manifest"]
-    testAndroidX = [dependencies.create("androidx.test:core:1.4.0"),dependencies.create("androidx.test:core-ktx:1.4.0"),
-                    dependencies.create("androidx.test.ext:junit:1.1.3"),dependencies.create("androidx.test.ext:junit-ktx:1.1.3"),
-                    dependencies.create("androidx.test.ext:truth:1.4.0"),dependencies.create("androidx.test:runner:1.4.0")]
     testSharedPreference = "io.github.ivanshafran:shared-preferences-mock:1.2.4"
 //  URBI
     designsystemdep = "$urbiGroupId:$designsystemId:$designsystemVersion"
@@ -394,5 +310,4 @@ ext {
         exclude module: "$commonStateId"
         exclude module: "$payId"
     })
-
 }
