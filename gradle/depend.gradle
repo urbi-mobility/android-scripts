@@ -1,33 +1,5 @@
-// GLIDE VERSION
-def glide_version = '4.15.1'
-def glide_compose_version = '1.0.0-alpha.2'
-def landscapist_version = "1.5.2"
-// RX_VERSION
-def rxandroid_version = '2.1.1'
-//  Retrofit VERSION
-def retrofit_version = '2.9.0'
-def retrofit_converter_gson_version = '2.8.1'
-def retrofit_adapter_rxjava_version = '2.8.1'
-//  OK-HTTP3 VERSION
-def okhttp3_version = '4.9.1'
-
-// HILT
-def hilt_compose_version = '1.0.0'
-// PAYMENT_VERSION
-def stripe_android_version = '20.1.0'
-// RX REDUX
-def rxbinding_version = '3.0.0'
-def rxredux_version = '1.0.1'
-def rxrelay_version = '2.1.0'
-//  LOTTIE VERSION
-def lottieVersion = "3.4.0"
-// APACHE VERSION
-def commons_codec_version = '1.11'
-def commons_lang_version = '3:3.5'
 //ATAC dependencies
 def sql_cipher_version = "4.4.3"
-//PhotoView
-def photo_view_version = "2.3.0"
 //mockk
 def mockk_version = "1.13.2"
 //core-testing
@@ -40,10 +12,6 @@ def compose_constaint_version = "1.0.1"
 def accompanist_compose_version = "0.30.1"
 //
 def map_compose_version = "2.11.4"
-
-// play services auth
-def playServicesAuthVersion = "20.4.0"
-def playServicesAuthPhoneVersion = "18.0.1"
 
 def splash_screen_version = '1.0.0'
 
@@ -119,9 +87,6 @@ ext {
 //---End---//
     atacVersion = '2.1.1r'
     android_gradle_plugin = '8.0.2'
-    //google play auth
-    play_services_auth = "com.google.android.gms:play-services-auth:$playServicesAuthVersion"
-    play_services_auth_phone = "com.google.android.gms:play-services-auth-api-phone:$playServicesAuthPhoneVersion"
 //  Compose
     compose_bom_version = '2023.05.01'
 //  KOTLIN
@@ -133,22 +98,8 @@ ext {
     cameraxview_version = "1.0.0-alpha22"
     splashscreen = "androidx.core:core-splashscreen:$splash_screen_version"
 
-//  REDUX
-    rxbinding = "com.jakewharton.rxbinding3:rxbinding:$rxbinding_version"
-    rxredux = [rxbinding,
-               "com.freeletics.rxredux:rxredux:$rxredux_version",
-               "com.jakewharton.rxrelay2:rxrelay:$rxrelay_version"]
-
-    retrofit_okhttp = ["com.squareup.retrofit2:retrofit:$retrofit_version",
-                       dependencies.create("com.squareup.retrofit2:converter-gson:$retrofit_converter_gson_version", {
-                           exclude group: 'com.google.code.gson'
-                       }),
-                       dependencies.create("com.squareup.okhttp3:logging-interceptor:$okhttp3_version"),
-                       "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_rxjava_version"]
 // Compose
     compose_bom = "androidx.compose:compose-bom:$compose_bom_version"
-    //HILT
-    hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose_version"
 
     compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:$compose_constaint_version"
 
@@ -163,40 +114,11 @@ ext {
 
     maps_compose = "com.google.maps.android:maps-compose:$map_compose_version"
 
-//  RxJava & RxAndroid
-    rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
-
 //  Android
     min_sdk_version = 24
     compile_sdk_version = 33
     target_sdk_version = 33
     global_build_tools_version = "33.0.1"
-
-//  LOTTIE
-    lottie = dependencies.create("com.airbnb.android:lottie:$lottieVersion", {
-        exclude module: 'okio'
-    })
-
-    photho_view = "com.github.chrisbanes:PhotoView:$photo_view_version"
-//  APACHE
-    commons_codec = "commons-codec:commons-codec:$commons_codec_version"
-    commons_lang = "org.apache.commons:commons-lang$commons_lang_version"
-
-    //INSTABUG
-    instabug_version = "11.8.0"
-    instabug_dep = "com.instabug.library:instabug:$instabug_version"
-    instabub_okhttp = "com.instabug.library:instabug-with-okhttp-interceptor:$instabug_version"
-
-//  glide
-    glide = "com.github.bumptech.glide:glide:$glide_version"
-    glideCompiler = "com.github.bumptech.glide:compiler:$glide_version"
-    glideCompose = "com.github.bumptech.glide:compose:$glide_compose_version"
-    landscapist = "com.github.skydoves:landscapist-glide:${landscapist_version}"
-
-//  PAYMENTS
-    payments = dependencies.create("com.stripe:stripe-android:$stripe_android_version", {
-        exclude group: 'com.google.code.gson'
-    })
 
     // NFC scan related libraries
     jmrtd = dependencies.create("org.jmrtd:jmrtd:0.7.18", {

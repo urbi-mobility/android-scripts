@@ -9,37 +9,56 @@ androidx-biometric = "1.0.1"
 androidx-constraintlayout = "2.1.3"
 androidx-core-ktx = "1.7.0"
 androidx-gridlayout = "1.0.0"
+androidx-hilt-navigation-compose = "1.0.0"
 androidx-legacy-support = "1.0.0"
 androidx-lifecycle = "2.5.1"
 androidx-navigation = "2.5.2"
 androidx-preference = "1.1.0"
 androidx-security-crypto = "1.1.0-alpha02"
 androidx-sqlite = "2.2.0"
+commons-codec = "1.11"
 dagger = "2.44"
 firebase-bom = "32.0.0"
 flow-layout = "1.3.3"
+glide = "4.15.1"
+glide-compose = "1.0.0-alpha.2"
 gson = "2.7"
 google-maps-utils = "2.4.0"
 google-mlkit-barcode-scanning = "17.0.2"
+google-play-services-auth = "20.4.0"
+google-play-services-authphone = "18.0.1"
 google-play-services-base = "18.0.1"
 google-play-services-maps = "18.0.2"
 google-play-services-mlkit-face-detection = "17.0.0"
 google-play-services-mlkit-text-recognition = "18.0.0"
 google-play-services-pay = "16.0.3"
 google-play-services-wallet = "18.1.1"
+instabug = "11.8.0"
 jackson = "2.4.2"
 jumio = "4.3.0"
 jwt = "0.8.0"
 kotlinx-coroutines = "1.6.4"
 kustomer = "2.10.8"
+landscapist-glide = "1.5.2"
+lottie = "3.4.0"
 material-datetime-picker = "4.2.3"
+okhttp = "4.9.1"
 onfido = "19.0.0"
+photoview = "2.3.0"
+retrofit = "2.9.0"
+retrofit-adapter-rxjava = "2.8.1"
+retrofit-converter-gson = "2.8.1"
+rx-android = "2.1.1"
+rx-binding = "3.0.0"
+rx-redux = "1.0.1"
+rx-relay = "2.1.0"
+stripe-android = "20.1.0"
 subsampling-scale-image = "3.10.0"
 tempo = "1.3.0-alpha01"
 zxing = "3.4.1"
 
 [libraries]
-adapterdelegates4 = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
+adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
 adapterdelegates4-binding = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl-viewbinding", version.ref = "adapter-delegates4" }
 android-material = { group = "com.google.android.material", name = "material", version.ref = "android-material" }
 android-places = { group = "com.google.android.libraries.places", name = "places", version.ref = "android-places" }
@@ -58,6 +77,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
 androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "androidx-fragment" }
 androidx-gridlayout = { group = "androidx.gridlayout", name = "gridlayout", version.ref = "androidx-gridlayout" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidx-hilt-navigation-compose" }
 androidx-legacy-support = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "androidx-legacy-support" }
 androidx-lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "androidx-lifecycle" }
 androidx-lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "androidx-lifecycle" }
@@ -71,7 +91,11 @@ androidx-security-crypto = { group = "androidx.security", name = "security-crypt
 androidx-sqlite = { group = "androidx.sqlite", name = "sqlite", version.ref = "androidx-sqlite" }
 androidx-sqlite-ktx = { group = "androidx.sqlite", name = "sqlite-ktx", version.ref = "androidx-sqlite" }
 androidx-sqlite-framework = { group = "androidx.sqlite", name = "sqlite-framework", version.ref = "androidx-sqlite" }
+commons-codec = { group = "commons-codec", name = "commons-codec", version.ref = "commons-codec" }
 flow-layout = { group = "com.nex3z", name = "flow-layout", version.ref = "flow-layout" }
+glide-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
+glide-compose = { group = "com.github.bumptech.glide", name = "compose", version.ref = "glide-compose" }
 google-firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
 google-firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx" }
 google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
@@ -80,6 +104,8 @@ google-firebase-messaging = { group = "com.google.firebase", name = "firebase-me
 google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 google-maps-utils = { group = "com.google.maps.android", name = "android-maps-utils", version.ref = "google-maps-utils" }
 google-mlkit-barcode-scanning = { group = "com.google.mlkit", name = "barcode-scanning", version.ref = "google-mlkit-barcode-scanning" }
+google-play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "google-play-services-auth" }
+google-play-services-authphone = { group = "com.google.android.gms", name = "play-services-auth-api-phone", version.ref = "google-play-services-authphone" }
 google-play-services-base = { group = "com.google.android.gms", name = "play-services-base", version.ref = "google-play-services-base" }
 google-play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "google-play-services-maps" }
 google-play-services-mlkit-face-detection = { group = "com.google.android.gms", name = "play-services-mlkit-face-detection", version.ref = "google-play-services-mlkit-face-detection" }
@@ -88,8 +114,10 @@ google-play-services-pay = { group = "com.google.android.gms", name = "play-serv
 google-play-services-wallet = { group = "com.google.android.gms", name = "play-services-wallet", version.ref = "google-play-services-wallet" }
 google-zxing = { group = "com.google.zxing", name = "core", version.ref = "zxing" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger" }
-hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "dagger" }
+hilt-androidtesting = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "dagger" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "dagger" }
+instabug-instabug = { group = "com.instabug.library", name = "instabug", version.ref = "instabug" }
+instabug-okhttp = { group = "com.instabug.library", name = "instabug-with-okhttp-interceptor", version.ref = "instabug" }
 jackson-databind = { group = "com.fasterxml.jackson.core", name = "jackson-databind", version.ref = "jackson" }
 jumio-core = { group = "com.jumio.android", name = "core", version.ref = "jumio" }
 jumio-defaultui = { group = "com.jumio.android", name = "defaultui", version.ref = "jumio" }
@@ -102,8 +130,20 @@ kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 kotlinx-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "kotlinx-coroutines" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 kustomer-chat = { group = "com.kustomer.chat", name = "ui", version.ref = "kustomer" }
+landscapist-glide = { group = "com.github.skydoves", name = "landscapist-glide", version.ref = "landscapist-glide" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 material-datetime-picker = { group = "com.wdullaer", name = "materialdatetimepicker", version.ref = "material-datetime-picker" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 onfido = { group = "com.onfido.sdk.capture", name = "onfido-capture-sdk", version.ref = "onfido" }
+photoview = { group = "com.github.chrisbanes", name = "PhotoView", version.ref = "photoview" }
+retrofit-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-adapter-rxjava = { group = "com.squareup.retrofit2", name = "adapter-rxjava2", version.ref = "retrofit-adapter-rxjava" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit-converter-gson" }
+rx-binding = { group = "com.jakewharton.rxbinding3", name = "rxbinding", version.ref = "rx-binding" }
+rx-redux = { group = "com.freeletics.rxredux", name = "rxredux", version.ref = "rx-redux" }
+rx-relay = { group = "com.jakewharton.rxrelay2", name = "rxrelay", version.ref = "rx-relay" }
+rxjava-android = { group = "io.reactivex.rxjava2", name = "rxandroid", version.ref = "rx-android" }
+stripe-android = { group = "com.stripe", name = "stripe-android", version.ref = "stripe-android" }
 subsampling-sample-image = { group = "com.davemorrissey.labs", name = "subsampling-scale-image-view-androidx", version.ref = "subsampling-scale-image" }
 tempo = { group = "com.github.AllanHasegawa.Tempo", name = "tempo", version.ref = "tempo" }
 
@@ -172,6 +212,11 @@ mlkit = [
     "google-play-services-mlkit-face-detection",
     "google-play-services-mlkit-text-recognition",
     "google-mlkit-barcode-scanning"
+]
+rx-redux = [
+    "rx-binding",
+    "rx-redux",
+    "rx-relay"
 ]
 
 [plugins]
