@@ -16,9 +16,17 @@ androidx-preference = "1.1.0"
 androidx-security-crypto = "1.1.0-alpha02"
 androidx-sqlite = "2.2.0"
 dagger = "2.44"
+firebase-bom = "32.0.0"
 flow-layout = "1.3.3"
 gson = "2.7"
 google-maps-utils = "2.4.0"
+google-mlkit-barcode-scanning = "17.0.2"
+google-play-services-base = "18.0.1"
+google-play-services-maps = "18.0.2"
+google-play-services-mlkit-face-detection = "17.0.0"
+google-play-services-mlkit-text-recognition = "18.0.0"
+google-play-services-pay = "16.0.3"
+google-play-services-wallet = "18.1.1"
 jackson = "2.4.2"
 jumio = "4.3.0"
 jwt = "0.8.0"
@@ -64,8 +72,20 @@ androidx-sqlite = { group = "androidx.sqlite", name = "sqlite", version.ref = "a
 androidx-sqlite-ktx = { group = "androidx.sqlite", name = "sqlite-ktx", version.ref = "androidx-sqlite" }
 androidx-sqlite-framework = { group = "androidx.sqlite", name = "sqlite-framework", version.ref = "androidx-sqlite" }
 flow-layout = { group = "com.nex3z", name = "flow-layout", version.ref = "flow-layout" }
+google-firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
+google-firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
+google-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
+google-firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
 google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 google-maps-utils = { group = "com.google.maps.android", name = "android-maps-utils", version.ref = "google-maps-utils" }
+google-mlkit-barcode-scanning = { group = "com.google.mlkit", name = "barcode-scanning", version.ref = "google-mlkit-barcode-scanning" }
+google-play-services-base = { group = "com.google.android.gms", name = "play-services-base", version.ref = "google-play-services-base" }
+google-play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "google-play-services-maps" }
+google-play-services-mlkit-face-detection = { group = "com.google.android.gms", name = "play-services-mlkit-face-detection", version.ref = "google-play-services-mlkit-face-detection" }
+google-play-services-mlkit-text-recognition = { group = "com.google.android.gms", name = "play-services-mlkit-text-recognition", version.ref = "google-play-services-mlkit-text-recognition" }
+google-play-services-pay = { group = "com.google.android.gms", name = "play-services-pay", version.ref = "google-play-services-pay" }
+google-play-services-wallet = { group = "com.google.android.gms", name = "play-services-wallet", version.ref = "google-play-services-wallet" }
 google-zxing = { group = "com.google.zxing", name = "core", version.ref = "zxing" }
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger" }
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "dagger" }
@@ -147,6 +167,11 @@ kotlinx-coroutines = [
     "kotlinx-coroutines-core",
     "androidx-lifecycle-runtime",
     "androidx-lifecycle-viewmodel"
+]
+mlkit = [
+    "google-play-services-mlkit-face-detection",
+    "google-play-services-mlkit-text-recognition",
+    "google-mlkit-barcode-scanning"
 ]
 
 [plugins]
