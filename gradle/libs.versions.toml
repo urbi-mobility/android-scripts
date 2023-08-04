@@ -50,6 +50,7 @@ google-play-services-wallet = "18.1.1"
 instabug = "11.8.0"
 jackson = "2.4.2"
 jj2000 = "5.2"
+json-test = "20180813"
 jmrtd = "0.7.18"
 jnbis = "1.1.0"
 jumio = "4.3.0"
@@ -58,6 +59,7 @@ jwt = "0.8.0"
 kotlin = "1.8.20"
 kotlin-compiler-extension = "1.4.6"
 kotlinx-coroutines = "1.6.4"
+kotlinter = "3.1.0"
 kustomer = "2.10.8"
 landscapist-glide = "1.5.2"
 lottie = "3.4.0"
@@ -75,6 +77,7 @@ rx-binding = "3.0.0"
 rx-redux = "1.0.1"
 rx-relay = "2.1.0"
 scuba = "0.0.20"
+shared-preferences-mock = "1.2.4"
 spongycastle = "1.58.0.0"
 sql-cipher = "4.4.3"
 stripe-android = "20.1.0"
@@ -102,6 +105,9 @@ androidx-compose-material = { group = "androidx.compose.material", name = "mater
 androidx-compose-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata" }
 androidx-compose-runtime-rxjava = { group = "androidx.compose.runtime", name = "runtime-rxjava2" }
 androidx-compose-ui-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-test-junit = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-compose-ui-test-ui = { group = "androidx.compose.ui", name = "ui-test" }
 androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 androidx-compose-ui-ui = { group = "androidx.compose.ui", name = "ui" }
 androidx-constraintlayout-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
@@ -168,6 +174,7 @@ instabug-instabug = { group = "com.instabug.library", name = "instabug", version
 instabug-okhttp = { group = "com.instabug.library", name = "instabug-with-okhttp-interceptor", version.ref = "instabug" }
 jackson-databind = { group = "com.fasterxml.jackson.core", name = "jackson-databind", version.ref = "jackson" }
 jj2000 = { group = "edu.ucar", name = "jj2000", version.ref = "jj2000" }
+json-test = { group = "org.json", name = "json", version.ref = "json-test" }
 jmrtd = { group = "org.jmrtd", name = "jmrtd", version.ref = "jmrtd" }
 jnbis = { group = "com.github.mhshams", name = "jnbis", version.ref = "jnbis" }
 jumio-core = { group = "com.jumio.android", name = "core", version.ref = "jumio" }
@@ -199,6 +206,7 @@ rx-redux = { group = "com.freeletics.rxredux", name = "rxredux", version.ref = "
 rx-relay = { group = "com.jakewharton.rxrelay2", name = "rxrelay", version.ref = "rx-relay" }
 rxjava-android = { group = "io.reactivex.rxjava2", name = "rxandroid", version.ref = "rx-android" }
 scuba = { group = "net.sf.scuba", name = "scuba-sc-android", version.ref = "scuba" }
+shared-preferences-mock = { group = "io.github.ivanshafran", name = "shared-preferences-mock", version.ref = "shared-preferences-mock" }
 spongycastle = { group = "com.madgag.spongycastle", name = "prov", version.ref = "spongycastle" }
 sql-cipher = { group = "net.zetetic", name = "android-database-sqlcipher", version.ref = "sql-cipher" }
 stripe-android = { group = "com.stripe", name = "stripe-android", version.ref = "stripe-android" }
@@ -270,6 +278,11 @@ compose-ui = [
     "androidx-compose-ui-tooling",
     "androidx-compose-ui-preview"
 ]
+compose-uitest = [
+    "androidx-compose-ui-test-ui",
+    "androidx-compose-ui-test-junit",
+    "androidx-compose-ui-test-manifest"
+]
 jumio = [
     "jumio-core",
     "jumio-defaultui",
@@ -304,3 +317,4 @@ android-library = { id = "com.android.library", version.ref = "android-gradle-pl
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }

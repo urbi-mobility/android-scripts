@@ -78,12 +78,6 @@ ext {
     //ATAC
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
 
-//  TEST
-    junit_x = 'androidx.test.ext:junit:1.1.3'
-    espresso = 'androidx.test.espresso:espresso-core:3.4.0'
-    testJson = "org.json:json:20180813"
-    testCompose = ["androidx.compose.ui:ui-test", "androidx.compose.ui:ui-test-junit4", "androidx.compose.ui:ui-test-manifest"]
-    testSharedPreference = "io.github.ivanshafran:shared-preferences-mock:1.2.4"
 //  URBI
     designsystemdep = "$urbiGroupId:$designsystemId:$designsystemVersion"
     designsystemdep_third = "$urbiGroupId:$designsystemId$suffixArtifactId:$designsystemVersion"
