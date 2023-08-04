@@ -69,10 +69,6 @@ ext {
     telepassLibVersion = '2.12.' + telepassLibCode
 //---End---//
     atacVersion = '2.1.1r'
-    android_gradle_plugin = '8.0.2'
-//  KOTLIN
-    kotlin_version = '1.8.20'
-    kotlin_compiler_extension_version = '1.4.6'
 //  Android
     min_sdk_version = 24
     compile_sdk_version = 33
@@ -83,8 +79,6 @@ ext {
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
 
 //  TEST
-    junit = 'junit:junit:4.12'
-    mockito = 'org.mockito:mockito-android:2.6.3'
     junit_x = 'androidx.test.ext:junit:1.1.3'
     espresso = 'androidx.test.espresso:espresso-core:3.4.0'
     testJson = "org.json:json:20180813"
