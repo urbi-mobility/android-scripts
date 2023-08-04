@@ -46,7 +46,7 @@ def mlkit_facedetection_version = '17.0.0'
 def mlkit_textrecognition_version = '18.0.0'
 def mlkit_barcodescanning_version = '17.0.2'
 // GLIDE VERSION
-def glide_version = '4.13.2'
+def glide_version = '4.15.1'
 def glide_compose_version = '1.0.0-alpha.2'
 def landscapist_version = "1.5.2"
 // RX_VERSION
@@ -109,6 +109,9 @@ def splash_screen_version = '1.0.0'
 //Kustomer
 def kustomer_version = '2.10.8'
 
+// Onfido
+def onfido_version = '19.0.0'
+
 ext {
     android_script_path = "../android-scripts"
 // Github packages
@@ -151,32 +154,32 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.7.2'
-    designsystemVersion = '1.3.4'
-    modelVersion = '2.11.6'
-    coreVersion = '2.14.7'
-    payVersion = '1.11.3'
+    utilityVersion = '2.7.3'
+    designsystemVersion = '1.3.5'
+    modelVersion = '2.11.8'
+    coreVersion = '2.14.9'
+    payVersion = '1.11.5'
     ticketVersion = '0.9.1'
-    searchVersion = '1.0.1'
-    taxiVersion = '1.0.1'
-    scanVersion = '1.2.1'
-    transpoVersion = '1.7.6'
-    evchargingVersion = '1.7.1'
-    tripoVersion = '1.6.3'
-    mobilitySharingVersion = '2.16.6'
-    commonStateVersion = '0.1.3'
-    commonViewVersion = '0.2.5'
+    searchVersion = '1.0.2'
+    taxiVersion = '1.0.2'
+    scanVersion = '1.2.2'
+    transpoVersion = '1.7.7'
+    evchargingVersion = '1.7.3'
+    tripoVersion = '1.6.5'
+    mobilitySharingVersion = '2.16.8'
+    commonStateVersion = '0.1.5'
+    commonViewVersion = '0.2.7'
     composeNavigationVersion = '0.2.3'
-    composeDsVersion = '0.2.5'
-    historyVersion = '0.2.5'
-    mapVersion = '0.2.6'
-    profileVersion = '0.2.3'
-    shopVersion = '0.2.3'
-    loginVersion = '0.2.4'
+    composeDsVersion = '0.2.7'
+    historyVersion = '0.2.7'
+    mapVersion = '0.2.8'
+    profileVersion = '0.2.4'
+    shopVersion = '0.2.5'
+    loginVersion = '0.2.5'
 
     telepassModelVersion = '2.6.0'
     telepassNetworkVersion = '2.9.0'
-    telepassLibCode = '1'
+    telepassLibCode = '2'
     telepassLibVersion = '2.12.' + telepassLibCode
 //---End---//
     atacVersion = '2.1.1r'
@@ -445,6 +448,9 @@ ext {
 
     //Kustomer
     kustomer = "com.kustomer.chat:ui:$kustomer_version"
+
+    //Onfido
+    onfido = "com.onfido.sdk.capture:onfido-capture-sdk:$onfido_version"
 
 //  TEST
     mockk_unit = "io.mockk:mockk:$mockk_version"
