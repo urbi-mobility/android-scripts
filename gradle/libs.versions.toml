@@ -160,7 +160,7 @@ google-firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-aut
 google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
 google-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 google-firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
-google-firebase-ui-auth = { group = "com.google.firebase", name = "firebase-ui-auth", version.ref = "firebase-ui-auth" }
+google-firebase-ui-auth = { group = "com.firebaseui", name = "firebase-ui-auth", version.ref = "firebase-ui-auth" }
 google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 google-maps-compose = { group = "com.google.maps.android", name = "maps-compose", version.ref = "google-maps-compose" }
 google-maps-utils = { group = "com.google.maps.android", name = "android-maps-utils", version.ref = "google-maps-utils" }
