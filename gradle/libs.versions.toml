@@ -145,6 +145,7 @@ androidx-test-ext-junitktx = { group = "androidx.test.ext", name = "junit-ktx", 
 androidx-test-ext-truth = { group = "androidx.test.ext", name = "truth", version.ref = "androidx-test-ext-truth" }
 androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidx-test-runner" }
 commons-codec = { group = "commons-codec", name = "commons-codec", version.ref = "commons-codec" }
+firebase-ui-auth = { group = "com.firebaseui", name = "firebase-ui-auth", version.ref = "firebase-ui-auth" }
 flow-layout = { group = "com.nex3z", name = "flow-layout", version.ref = "flow-layout" }
 glide-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
 glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
@@ -160,7 +161,6 @@ google-firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-aut
 google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
 google-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 google-firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
-google-firebase-ui-auth = { group = "com.firebaseui", name = "firebase-ui-auth", version.ref = "firebase-ui-auth" }
 google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 google-maps-compose = { group = "com.google.maps.android", name = "maps-compose", version.ref = "google-maps-compose" }
 google-maps-utils = { group = "com.google.maps.android", name = "android-maps-utils", version.ref = "google-maps-utils" }
