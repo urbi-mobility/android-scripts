@@ -57,10 +57,10 @@ ext {
     commonViewVersion = '0.2.8'
     composeNavigationVersion = '0.2.4'
     composeDsVersion = '0.2.8'
-    historyVersion = '0.2.8'
-    mapVersion = '0.2.9'
+    historyVersion = '0.2.10'
+    mapVersion = '0.2.11'
     profileVersion = '0.2.7'
-    shopVersion = '0.2.6'
+    shopVersion = '0.2.8'
     loginVersion = '0.2.6'
 
     telepassModelVersion = '2.6.0'
