@@ -57,7 +57,7 @@ ext {
     commonViewVersion = '0.2.8'
     composeNavigationVersion = '0.2.4'
     composeDsVersion = '0.2.8'
-    historyVersion = '0.2.10'
+    historyVersion = '0.2.8'
     mapVersion = '0.2.11'
     profileVersion = '0.2.7'
     shopVersion = '0.2.8'
