@@ -30,7 +30,7 @@ androidx-test-espresso = "3.4.0"
 androidx-test-ext-junit = "1.1.3"
 androidx-test-ext-truth = "1.4.0"
 androidx-test-runner = "1.4.0"
-apache-commons-lang = "3:3.5"
+apache-commons-lang = "3.5"
 commons-codec = "1.11"
 dagger = "2.44"
 firebase-bom = "32.0.0"
@@ -148,7 +148,7 @@ androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version
 androidx-test-ext-junitktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidx-test-ext-junit" }
 androidx-test-ext-truth = { group = "androidx.test.ext", name = "truth", version.ref = "androidx-test-ext-truth" }
 androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidx-test-runner" }
-apache-commons-lang = { group = "org.apache.commons", name = "commons-lang", version.ref = "apache-commons-lang" }
+apache-commons-lang = { group = "org.apache.commons", name = "commons-lang3", version.ref = "apache-commons-lang" }
 commons-codec = { group = "commons-codec", name = "commons-codec", version.ref = "commons-codec" }
 firebase-ui-auth = { group = "com.firebaseui", name = "firebase-ui-auth", version.ref = "firebase-ui-auth" }
 flow-layout = { group = "com.nex3z", name = "flow-layout", version.ref = "flow-layout" }
