@@ -54,7 +54,7 @@ ext {
     tripoVersion = '1.6.8'
     mobilitySharingVersion = '2.16.11'
     commonStateVersion = '0.1.6'
-    commonViewVersion = '0.2.8'
+    commonViewVersion = '0.2.9'
     composeNavigationVersion = '0.2.4'
     composeDsVersion = '0.2.8'
     historyVersion = '0.2.8'
