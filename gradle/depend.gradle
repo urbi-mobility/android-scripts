@@ -1,117 +1,3 @@
-//Version
-def legacy_support_version = '1.0.0'
-def android_places_version = '2.5.0'
-def tempo_version = '1.3.0-alpha01'
-def security_crypto_version = '1.1.0-alpha02'
-def jackson_databind_version = '2.4.2'
-def gson_version = '2.7'
-def jsonwebtoken_version = '0.8.0'
-def materialdatetimepicker_version = '4.2.3'
-def flow_layout_version = '1.3.3'
-def adapterdelegates4_version = '4.3.0'
-def marketingcloudsdk_version = '7.1.0'
-def recycleradapter_version = '2.10.0'
-// ANDROID VERSION
-def material_version = '1.5.0'
-def maps_utils_version = '2.4.0'
-// ANDROID X VERSION
-def biometric_version = '1.0.1'
-def preference_version = '1.1.0'
-def lifecycle_version = '2.5.1'
-def appcompat_version = "1.6.0"
-def activityx_version = "1.5.1"
-def fragmentx_version = "1.5.1"
-def constraintlayout_version = '2.1.3'
-def gridlayout_version = '1.0.0'
-def recyclerview_version = '1.1.0'
-def swiperefresh_version = '1.1.0'
-def cardview_version = '1.0.0'
-def navigation_fragment_ktx_version = '2.5.0'
-def navigation_ui_ktx_version = '2.5.0'
-def kotlinx_serialization_core_version = '1.0.0'
-def kotlinx_serialization_json_version = '1.0.0'
-// GMS_VERSION
-def play_services_maps_version = '18.0.2'
-def play_services_base_version = '18.0.1'
-def play_services_wallet_version = '18.1.1'
-def play_services_google_pay_passes_version = '16.0.3'
-// KOTLIN VERSION
-def kotlinx_coroutines_core_version = '1.6.4'
-def kotlinx_coroutines_android_version = '1.6.4'
-
-// FIREBASE VERSION
-def firebase_bom_version = '32.0.0'
-// ML KIT VERSIONS
-def mlkit_facedetection_version = '17.0.0'
-def mlkit_textrecognition_version = '18.0.0'
-def mlkit_barcodescanning_version = '17.0.2'
-// GLIDE VERSION
-def glide_version = '4.15.1'
-def glide_compose_version = '1.0.0-alpha.2'
-def landscapist_version = "1.5.2"
-// RX_VERSION
-def rxandroid_version = '2.1.1'
-//  Retrofit VERSION
-def retrofit_version = '2.9.0'
-def retrofit_converter_gson_version = '2.8.1'
-def retrofit_adapter_rxjava_version = '2.8.1'
-//  OK-HTTP3 VERSION
-def okhttp3_version = '4.9.1'
-
-// HILT
-def hilt_compose_version = '1.0.0'
-// PAYMENT_VERSION
-def stripe_android_version = '20.1.0'
-// RX REDUX
-def rxbinding_version = '3.0.0'
-def rxredux_version = '1.0.1'
-def rxrelay_version = '2.1.0'
-def core_ktx_version = '1.7.0'
-//  LOTTIE VERSION
-def lottieVersion = "3.4.0"
-// APACHE VERSION
-def commons_codec_version = '1.11'
-def commons_lang_version = '3:3.5'
-// JUMIO
-def jumio_version = '4.3.0'
-// ROOM
-def room_runtime_version = '2.2.6'
-//ATAC dependencies
-def sql_cipher_version = "4.4.3"
-//ZXing
-def zxing_qr_code = "3.4.1"
-//PhotoView
-def photo_view_version = "2.3.0"
-//mockk
-def mockk_version = "1.13.2"
-//core-testing
-def core_testing_version = "2.1.0"
-//
-def turbine_version = "0.8.0"
-//
-def sqlite_version = "2.2.0"
-
-def compose_constaint_version = "1.0.1"
-//Accompanist compose
-def accompanist_compose_version = "0.30.1"
-//
-def map_compose_version = "2.11.4"
-
-// subsampling_scale_image
-def subsampling_scale_image_version = "3.10.0"
-
-// play services auth
-def playServicesAuthVersion = "20.4.0"
-def playServicesAuthPhoneVersion = "18.0.1"
-
-def splash_screen_version = '1.0.0'
-
-//Kustomer
-def kustomer_version = '2.10.8'
-
-// Onfido
-def onfido_version = '19.0.0'
-
 ext {
     android_script_path = "../android-scripts"
 // Github packages
@@ -154,326 +40,44 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.7.3'
-    designsystemVersion = '1.3.5'
-    modelVersion = '2.11.8'
-    coreVersion = '2.14.9'
-    payVersion = '1.11.5'
-    ticketVersion = '0.9.1'
-    searchVersion = '1.0.2'
-    taxiVersion = '1.0.2'
-    scanVersion = '1.2.2'
-    transpoVersion = '1.7.7'
-    evchargingVersion = '1.7.3'
-    tripoVersion = '1.6.5'
-    mobilitySharingVersion = '2.16.8'
-    commonStateVersion = '0.1.5'
-    commonViewVersion = '0.2.7'
-    composeNavigationVersion = '0.2.3'
-    composeDsVersion = '0.2.7'
-    historyVersion = '0.2.7'
-    mapVersion = '0.2.8'
-    profileVersion = '0.2.4'
-    shopVersion = '0.2.5'
-    loginVersion = '0.2.5'
+    utilityVersion = '2.7.4'
+    designsystemVersion = '1.3.6'
+    modelVersion = '2.11.9'
+    coreVersion = '2.14.10'
+    payVersion = '1.11.6'
+    ticketVersion = '0.9.2'
+    searchVersion = '1.0.3'
+    taxiVersion = '1.0.3'
+    scanVersion = '1.2.3'
+    transpoVersion = '1.7.10'
+    evchargingVersion = '1.7.6'
+    tripoVersion = '1.6.8'
+    mobilitySharingVersion = '2.16.11'
+    commonStateVersion = '0.1.6'
+    commonViewVersion = '0.2.9'
+    composeNavigationVersion = '0.2.4'
+    composeDsVersion = '0.2.8'
+    historyVersion = '0.2.8'
+    mapVersion = '0.2.11'
+    profileVersion = '0.2.7'
+    shopVersion = '0.2.8'
+    loginVersion = '0.2.6'
 
-    telepassModelVersion = '2.6.0'
-    telepassNetworkVersion = '2.9.0'
-    telepassLibCode = '2'
+    telepassModelVersion = '2.6.1'
+    telepassNetworkVersion = '2.9.1'
+    telepassLibCode = '3'
     telepassLibVersion = '2.12.' + telepassLibCode
 //---End---//
     atacVersion = '2.1.1r'
-    android_gradle_plugin = '8.0.2'
-    //google play auth
-    play_services_auth = "com.google.android.gms:play-services-auth:$playServicesAuthVersion"
-    play_services_auth_phone = "com.google.android.gms:play-services-auth-api-phone:$playServicesAuthPhoneVersion"
-    //  DAGGER VERSION
-    dagger_version = '2.44'
-//  Compose
-    compose_bom_version = '2023.05.01'
-    nav_version = '2.5.2'
-//  KOTLIN
-    kotlin_version = '1.8.20'
-    kotlin_compiler_extension_version = '1.4.6'
-    kotlin_stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
-    kotlinx_coroutines = ["org.jetbrains.kotlinx:kotlinx-coroutines-core:$kotlinx_coroutines_core_version",
-                          "org.jetbrains.kotlinx:kotlinx-coroutines-android:$kotlinx_coroutines_android_version",
-                          "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version",
-                          "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"]
-    kotlinx_coroutines_play_services = "org.jetbrains.kotlinx:kotlinx-coroutines-play-services:$kotlinx_coroutines_core_version"
-//  AndroidX
-    camerax_version = "1.0.0"
-    cameraxview_version = "1.0.0-alpha22"
-    activityx = "androidx.activity:activity-ktx:$activityx_version"
-    fragmentx = "androidx.fragment:fragment-ktx:$fragmentx_version"
-    androidx_view = [activityx, fragmentx]
-    appcompat = "androidx.appcompat:appcompat:$appcompat_version"
-    legacy = "androidx.legacy:legacy-support-v4:$legacy_support_version"
-    lifecycle_runtime = "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
-    lifecycle_livedata = "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
-    lifecycle_viewmodel = "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    lifecycle_common = "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
-    lifecycle_process = "androidx.lifecycle:lifecycle-process:$lifecycle_version"
-    lifecycle_group = [lifecycle_runtime, lifecycle_livedata, lifecycle_viewmodel, lifecycle_common]
-    legacy_appcompat = [legacy, appcompat]
-    lifecycle_appcompat = [lifecycle_group, appcompat]
-    legacy_appcompat_lifecycle = [legacy, appcompat, lifecycle_group]
-    constraintlayout = "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
-    biometric = "androidx.biometric:biometric:$biometric_version"
-    preference = "androidx.preference:preference:$preference_version"
-    core_ktx = "androidx.core:core-ktx:$core_ktx_version"
-    splashscreen = "androidx.core:core-splashscreen:$splash_screen_version"
-    gridlayout = "androidx.gridlayout:gridlayout:$gridlayout_version"
-    recyclerview = "androidx.recyclerview:recyclerview:$recyclerview_version"
-    swiperefreshlayout = "androidx.swiperefreshlayout:swiperefreshlayout:$swiperefresh_version"
-    cardview = "androidx.cardview:cardview:$cardview_version"
-    serialization_core = "org.jetbrains.kotlinx:kotlinx-serialization-core:$kotlinx_serialization_core_version"
-    serialization_json = "org.jetbrains.kotlinx:kotlinx-serialization-json:$kotlinx_serialization_json_version"
-
-    navigation_fragment_ktx = "androidx.navigation:navigation-fragment-ktx:$navigation_fragment_ktx_version"
-    navigation_ui_ktx = "androidx.navigation:navigation-ui-ktx:$navigation_ui_ktx_version"
-//  MARKETINGCLOUDSDK
-    marketingcloudsdk = "com.salesforce.marketingcloud:marketingcloudsdk:$marketingcloudsdk_version"
-//  JetPack
-    security_crypto = "androidx.security:security-crypto:$security_crypto_version"
-
-//  REDUX
-    rxbinding = "com.jakewharton.rxbinding3:rxbinding:$rxbinding_version"
-    rxredux = [rxbinding,
-               "com.freeletics.rxredux:rxredux:$rxredux_version",
-               "com.jakewharton.rxrelay2:rxrelay:$rxrelay_version"]
-
-    retrofit_okhttp = ["com.squareup.retrofit2:retrofit:$retrofit_version",
-                       dependencies.create("com.squareup.retrofit2:converter-gson:$retrofit_converter_gson_version", {
-                           exclude group: 'com.google.code.gson'
-                       }),
-                       dependencies.create("com.squareup.okhttp3:logging-interceptor:$okhttp3_version"),
-                       "com.squareup.retrofit2:adapter-rxjava2:$retrofit_adapter_rxjava_version"]
-// Compose
-    compose_bom = "androidx.compose:compose-bom:$compose_bom_version"
-    compose_ui = ["androidx.compose.ui:ui","androidx.compose.ui:ui-tooling", "androidx.compose.ui:ui-tooling-preview"]
-    compose_material = "androidx.compose.material:material"
-    compose_foundation = "androidx.compose.foundation:foundation"
-    //HILT
-    hilt_compose = "androidx.hilt:hilt-navigation-compose:$hilt_compose_version"
-    //Navigation
-    compose_navigation = "androidx.navigation:navigation-compose:$nav_version"
-
-    compose_constraint_layout = "androidx.constraintlayout:constraintlayout-compose:$compose_constaint_version"
-
-    // Foundation (Border, Background, Box, Image, Scroll, shapes, animations, etc.)
-    compose_activity = "androidx.activity:activity-compose:$activityx_version"
-
-    accompanist_compose = ["com.google.accompanist:accompanist-navigation-animation:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-placeholder:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-pager:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-pager-indicators:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-permissions:$accompanist_compose_version",
-                           "com.google.accompanist:accompanist-systemuicontroller:$accompanist_compose_version",
-                           ]
-
-    maps_compose = "com.google.maps.android:maps-compose:$map_compose_version"
-
-    // Material design icons
-    material_icon = ["androidx.compose.material:material-icons-core",
-                     "androidx.compose.material:material-icons-extended"]
-    // Integration with ViewModels
-    view_model_compose = "androidx.lifecycle:lifecycle-viewmodel-compose:$lifecycle_version"
-    // Integration with observables
-    runtime_livedata = "androidx.compose.runtime:runtime-livedata"
-    runtime_rxjava = "androidx.compose.runtime:runtime-rxjava2"
-    compose_deep = [core_ktx, appcompat, compose_ui, compose_material, compose_navigation, compose_foundation, compose_activity, runtime_livedata, runtime_rxjava]
-//  RxJava & RxAndroid
-    rxandroid = "io.reactivex.rxjava2:rxandroid:$rxandroid_version"
-
 //  Android
     min_sdk_version = 24
     compile_sdk_version = 33
     target_sdk_version = 33
     global_build_tools_version = "33.0.1"
 
-    maps_utils = "com.google.maps.android:android-maps-utils:$maps_utils_version"
-    material = "com.google.android.material:material:$material_version"
-    materialdatetimepicker = "com.wdullaer:materialdatetimepicker:$materialdatetimepicker_version"
-
-//  LOTTIE
-    lottie = dependencies.create("com.airbnb.android:lottie:$lottieVersion", {
-        exclude module: 'okio'
-    })
-
-    photho_view = "com.github.chrisbanes:PhotoView:$photo_view_version"
-
-//  PLACES
-    android_places = "com.google.android.libraries.places:places:$android_places_version"
-//  APACHE
-    commons_codec = "commons-codec:commons-codec:$commons_codec_version"
-    commons_lang = "org.apache.commons:commons-lang$commons_lang_version"
-
-//  TEMPO
-    tempo = dependencies.create("com.github.AllanHasegawa.Tempo:tempo:$tempo_version",
-            {
-                exclude group: 'org.jetbrains.kotlin'
-                exclude group: 'io.reactivex.rxjava2'
-            })
-
-//  JACKSON
-    jackson_databind = "com.fasterxml.jackson.core:jackson-databind:$jackson_databind_version"
-
-//  GSON
-    gson = "com.google.code.gson:gson:$gson_version"
-
-//  GMS
-    play_services_maps = dependencies.create("com.google.android.gms:play-services-maps:$play_services_maps_version",
-            {
-                exclude group: 'com.android.support'
-                exclude group: 'com.google.android.gms'
-            })
-    play_services_base = dependencies.create("com.google.android.gms:play-services-base:$play_services_base_version", {
-        exclude group: 'com.android.support'
-    })
-
-    play_services_wallet = "com.google.android.gms:play-services-wallet:$play_services_wallet_version"
-    play_services_google_pay_passes = "com.google.android.gms:play-services-pay:$play_services_google_pay_passes_version"
-
-// SQL_LITE
-    sqlite = "androidx.sqlite:sqlite:$sqlite_version"
-    sqlite_ktx = "androidx.sqlite:sqlite-ktx:$sqlite_version"
-    sqlite_framework = "androidx.sqlite:sqlite-framework:$sqlite_version"
-//  FIREBASE
-    firebase_bom = "com.google.firebase:firebase-bom:$firebase_bom_version"
-    firebase_analytics = "com.google.firebase:firebase-analytics-ktx"
-    firebase_messaging = "com.google.firebase:firebase-messaging"
-    firebase_crashlytics = "com.google.firebase:firebase-crashlytics"
-    firebase_auth = "com.google.firebase:firebase-auth-ktx"
-    firebase_config = "com.google.firebase:firebase-config"
-
-    firebase_ui = "com.firebaseui:firebase-ui-auth:8.0.2"
-    //INSTABUG
-    instabug_version = "11.8.0"
-    instabug_dep = "com.instabug.library:instabug:$instabug_version"
-    instabub_okhttp = "com.instabug.library:instabug-with-okhttp-interceptor:$instabug_version"
-    // MLKIT
-    mlkit_facedetection = "com.google.android.gms:play-services-mlkit-face-detection:$mlkit_facedetection_version"
-    //thin
-    mlkit_textrecognition = "com.google.android.gms:play-services-mlkit-text-recognition:$mlkit_textrecognition_version"
-    //thin
-    mlkit_barcodescanning = "com.google.mlkit:barcode-scanning:$mlkit_barcodescanning_version"
-    //bundled
-    mlkit_group = [
-            mlkit_facedetection,
-            mlkit_textrecognition,
-            mlkit_barcodescanning
-    ]
-//  glide
-    glide = "com.github.bumptech.glide:glide:$glide_version"
-    glideCompiler = "com.github.bumptech.glide:compiler:$glide_version"
-    glideCompose = "com.github.bumptech.glide:compose:$glide_compose_version"
-    landscapist = "com.github.skydoves:landscapist-glide:${landscapist_version}"
-//  Dagger
-    dagger = "com.google.dagger:hilt-android:$dagger_version"
-    dagger_compile = "com.google.dagger:hilt-compiler:$dagger_version"
-//  JWT
-    jwt = dependencies.create("io.jsonwebtoken:jjwt:$jsonwebtoken_version", {
-        exclude group: 'com.fasterxml.jackson.core'
-    })
-//  Flow Layout
-    flow_layout = "com.nex3z:flow-layout:$flow_layout_version"
-
-//  PAYMENTS
-    payments = dependencies.create("com.stripe:stripe-android:$stripe_android_version", {
-        exclude group: 'com.google.code.gson'
-    })
-//   DELEGATE
-    adapterdelegates4 = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl:$adapterdelegates4_version"
-    adapterdelegates4Binding = "com.hannesdorfmann:adapterdelegates4-kotlin-dsl-viewbinding:$adapterdelegates4_version"
-
-
-//  RECYCLERADAPTER
-    recycleradapter = "net.gotev:recycleradapter:$recycleradapter_version"
-
-    // NFC scan related libraries
-    jmrtd = dependencies.create("org.jmrtd:jmrtd:0.7.18", {
-        exclude module: 'bcprov-jdk15on'
-    })
-    jj2000 = 'edu.ucar:jj2000:5.2'
-    jnbis = 'com.github.mhshams:jnbis:1.1.0'
-    scuba = 'net.sf.scuba:scuba-sc-android:0.0.20'
-    spongycastle = 'com.madgag.spongycastle:prov:1.58.0.0'
-
-
-    nfc_scan_tools = [
-            jmrtd, jj2000, jnbis, scuba, spongycastle
-    ]
-
-    // CAMERAX
-    // CameraX core library
-    camera_core = "androidx.camera:camera-core:$camerax_version"
-    // CameraX Camera2 extensions
-    camera_camera2 = "androidx.camera:camera-camera2:$camerax_version"
-    // CameraX Lifecycle library
-    camera_lifecycle = "androidx.camera:camera-lifecycle:$camerax_version"
-    // CameraX View class
-    camera_view = dependencies.create("androidx.camera:camera-view:$cameraxview_version", {
-        exclude module: 'appcompat'
-    })
-
-    camerax_group = [camera_core, camera_camera2, camera_lifecycle, camera_view]
-
-    //ROOM
-    room_runtime = "androidx.room:room-runtime:$room_runtime_version"
-
-    //JUMIO
-    jumio_core = "com.jumio.android:core:$jumio_version"
-    jumio_defaultui = "com.jumio.android:defaultui:$jumio_version"
-    jumio_linefinder = "com.jumio.android:linefinder:$jumio_version"
-    jumio_barcode = "com.jumio.android:barcode:$jumio_version"
-    jumio_iproov = "com.jumio.android:iproov:$jumio_version"
-    jumio_dependencies = [jumio_core, jumio_defaultui, jumio_linefinder, jumio_barcode, jumio_iproov]
-
-    subsampling_scale_image = "com.davemorrissey.labs:subsampling-scale-image-view-androidx:$subsampling_scale_image_version"
-
-    //ZXING
-    zxing = "com.google.zxing:core:$zxing_qr_code"
-
-    //SQLITE
-    sqlite = "androidx.sqlite:sqlite:$sqlite_version"
-    sqlite_ktx = "androidx.sqlite:sqlite-ktx:$sqlite_version"
-    sqlite_framework = "androidx.sqlite:sqlite-framework:$sqlite_version"
-
     //ATAC
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
-    sql_cipher = "net.zetetic:android-database-sqlcipher:$sql_cipher_version@aar"
-    atac_dep = [atac, sql_cipher,sqlite,sqlite_ktx,sqlite_framework]
 
-    //Kustomer
-    kustomer = "com.kustomer.chat:ui:$kustomer_version"
-
-    //Onfido
-    onfido = "com.onfido.sdk.capture:onfido-capture-sdk:$onfido_version"
-
-//  TEST
-    mockk_unit = "io.mockk:mockk:$mockk_version"
-    mockk_android = "io.mockk:mockk-android:$mockk_version"
-    core_testing = "androidx.arch.core:core-testing:$core_testing_version"
-    coroutines_test = "org.jetbrains.kotlinx:kotlinx-coroutines-test:$kotlinx_coroutines_core_version"
-    turbine = "app.cash.turbine:turbine:$turbine_version"
-    junit = 'junit:junit:4.12'
-    mockito = 'org.mockito:mockito-android:2.6.3'
-    junit_x = 'androidx.test.ext:junit:1.1.3'
-    espresso = 'androidx.test.espresso:espresso-core:3.4.0'
-    testimpl = [junit_x, espresso]
-    testimplapp = [junit_x, espresso, 'org.mockito:mockito-core:2.28.2', 'org.mockito:mockito-android:2.6.3'
-                   , 'androidx.annotation:annotation:1.1.0', dependencies.create('androidx.test.uiautomator:uiautomator:2.2.0', {
-        exclude group: 'com.android.support'
-    }), 'androidx.test:rules:1.2.0', 'androidx.test:runner:1.2.0']
-    testJson = "org.json:json:20180813"
-    testHilt = "com.google.dagger:hilt-android-testing:$dagger_version"
-    testCompose = ["androidx.compose.ui:ui-test", "androidx.compose.ui:ui-test-junit4", "androidx.compose.ui:ui-test-manifest"]
-    testAndroidX = [dependencies.create("androidx.test:core:1.4.0"),dependencies.create("androidx.test:core-ktx:1.4.0"),
-                    dependencies.create("androidx.test.ext:junit:1.1.3"),dependencies.create("androidx.test.ext:junit-ktx:1.1.3"),
-                    dependencies.create("androidx.test.ext:truth:1.4.0"),dependencies.create("androidx.test:runner:1.4.0")]
-    testSharedPreference = "io.github.ivanshafran:shared-preferences-mock:1.2.4"
 //  URBI
     designsystemdep = "$urbiGroupId:$designsystemId:$designsystemVersion"
     designsystemdep_third = "$urbiGroupId:$designsystemId$suffixArtifactId:$designsystemVersion"
@@ -689,5 +293,4 @@ ext {
         exclude module: "$commonStateId"
         exclude module: "$payId"
     })
-
 }

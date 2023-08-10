@@ -1,0 +1,340 @@
+[versions]
+accompanist_compose = "0.30.1"
+adapter-delegates4 = "4.3.0"
+android-gradle-plugin = "8.0.2"
+android-material = "1.5.0"
+android-places = "2.5.0"
+androidx-activity = "1.5.1"
+androidx-camera = "1.0.0"
+androidx-camera-view = "1.0.0-alpha22"
+androidx-compose-bom = "2023.05.01"
+androidx-fragment = "1.5.1"
+androidx-appcompat = "1.6.0"
+androidx-biometric = "1.0.1"
+androidx-constraintlayout = "2.1.3"
+androidx-constraintlayout-compose = "1.0.1"
+androidx-core-ktx = "1.7.0"
+androidx-core-testing = "2.1.0"
+androidx-gridlayout = "1.0.0"
+androidx-hilt-navigation-compose = "1.0.0"
+androidx-legacy-support = "1.0.0"
+androidx-lifecycle = "2.5.1"
+androidx-navigation = "2.5.2"
+androidx-preference = "1.1.0"
+androidx-recyclerview = "1.1.0"
+androidx-security-crypto = "1.1.0-alpha02"
+androidx-splashscreen = "1.0.0"
+androidx-sqlite = "2.2.0"
+androidx-test-core = "1.4.0"
+androidx-test-espresso = "3.4.0"
+androidx-test-ext-junit = "1.1.3"
+androidx-test-ext-truth = "1.4.0"
+androidx-test-runner = "1.4.0"
+apache-commons-lang = "3.5"
+commons-codec = "1.11"
+dagger = "2.44"
+firebase-bom = "32.0.0"
+firebase-app-distribution-plugin = "3.1.0"
+firebase-crashlytics-plugin = "2.9.2"
+firebase-ui-auth = "8.0.2"
+flow-layout = "1.3.3"
+glide = "4.15.1"
+glide-compose = "1.0.0-alpha.2"
+gson = "2.7"
+google-guava = "27.0.1-android"
+google-maps-compose = "2.11.4"
+google-maps-secrets = "2.0.1"
+google-maps-utils = "2.4.0"
+google-mlkit-barcode-scanning = "17.0.2"
+google-play-services-auth = "20.4.0"
+google-play-services-authphone = "18.0.1"
+google-play-services-base = "18.0.1"
+google-play-services-maps = "18.0.2"
+google-play-services-mlkit-face-detection = "17.0.0"
+google-play-services-mlkit-text-recognition = "18.0.0"
+google-play-services-pay = "16.0.3"
+google-play-services-plugin = "4.3.14"
+google-play-services-wallet = "18.1.1"
+instabug = "11.8.0"
+jackson = "2.4.2"
+jj2000 = "5.2"
+json-test = "20180813"
+jmrtd = "0.7.18"
+jnbis = "1.1.0"
+jumio = "4.3.0"
+junit = "4.12"
+jwt = "0.8.0"
+kotlin = "1.8.20"
+kotlin-compiler-extension = "1.4.6"
+kotlinx-coroutines = "1.6.4"
+kotlinter = "3.1.0"
+kustomer = "2.10.8"
+landscapist-glide = "1.5.2"
+lottie = "3.4.0"
+material-datetime-picker = "4.2.3"
+mockito = "2.6.3"
+mockk = "1.13.2"
+okhttp = "4.9.1"
+onfido = "19.0.0"
+photoview = "2.3.0"
+retrofit = "2.9.0"
+retrofit-adapter-rxjava = "2.8.1"
+retrofit-converter-gson = "2.8.1"
+rx-android = "2.1.1"
+rx-binding = "3.0.0"
+rx-redux = "1.0.1"
+rx-relay = "2.1.0"
+scuba = "0.0.20"
+shared-preferences-mock = "1.2.4"
+spongycastle = "1.58.0.0"
+sql-cipher = "4.4.3"
+stripe-android = "20.1.0"
+subsampling-scale-image = "3.10.0"
+tempo = "1.3.0-alpha01"
+triplet-play = "3.8.1"
+turbine = "0.8.0"
+zxing = "3.4.1"
+
+[libraries]
+adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
+adapterdelegates4-binding = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl-viewbinding", version.ref = "adapter-delegates4" }
+android-material = { group = "com.google.android.material", name = "material", version.ref = "android-material" }
+android-places = { group = "com.google.android.libraries.places", name = "places", version.ref = "android-places" }
+androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "androidx-activity" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
+androidx-biometric = { group = "androidx.biometric", name = "biometric", version.ref = "androidx-biometric" }
+androidx-camera-core = { group = "androidx.camera", name = "camera-core", version.ref = "androidx-camera" }
+androidx-camera-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "androidx-camera" }
+androidx-camera-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "androidx-camera" }
+androidx-camera-view = { group = "androidx.camera", name = "camera-view", version.ref = "androidx-camera-view" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "androidx-compose-bom" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation" }
+androidx-compose-material = { group = "androidx.compose.material", name = "material" }
+androidx-compose-runtime-livedata = { group = "androidx.compose.runtime", name = "runtime-livedata" }
+androidx-compose-runtime-rxjava = { group = "androidx.compose.runtime", name = "runtime-rxjava2" }
+androidx-compose-ui-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-compose-ui-test-junit = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-compose-ui-test-ui = { group = "androidx.compose.ui", name = "ui-test" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-constraintlayout-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "androidx-constraintlayout" }
+androidx-constraintlayout-compose = { group = "androidx.constraintlayout", name = "constraintlayout-compose", version.ref = "androidx-constraintlayout-compose" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "androidx-core-ktx" }
+androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "androidx-splashscreen" }
+androidx-core-testing = { group = "androidx.arch.core", name = "core-testing", version.ref = "androidx-core-testing" }
+androidx-fragment-ktx = { group = "androidx.fragment", name = "fragment-ktx", version.ref = "androidx-fragment" }
+androidx-gridlayout = { group = "androidx.gridlayout", name = "gridlayout", version.ref = "androidx-gridlayout" }
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidx-hilt-navigation-compose" }
+androidx-legacy-support = { group = "androidx.legacy", name = "legacy-support-v4", version.ref = "androidx-legacy-support" }
+androidx-lifecycle-common = { group = "androidx.lifecycle", name = "lifecycle-common-java8", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-process = { group = "androidx.lifecycle", name = "lifecycle-process", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-livedata = { group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-runtime = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "androidx-lifecycle" }
+androidx-lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidx-lifecycle" }
+androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidx-navigation" }
+androidx-preference = { group = "androidx.preference", name = "preference", version.ref = "androidx-preference" }
+androidx-recyclerview = { group = "androidx.recyclerview", name = "recyclerview", version.ref = "androidx-recyclerview" }
+androidx-security-crypto = { group = "androidx.security", name = "security-crypto", version.ref = "androidx-security-crypto" }
+androidx-sqlite-sqlite = { group = "androidx.sqlite", name = "sqlite", version.ref = "androidx-sqlite" }
+androidx-sqlite-ktx = { group = "androidx.sqlite", name = "sqlite-ktx", version.ref = "androidx-sqlite" }
+androidx-sqlite-framework = { group = "androidx.sqlite", name = "sqlite-framework", version.ref = "androidx-sqlite" }
+androidx-test-core = { group = "androidx.test", name = "core", version.ref = "androidx-test-core" }
+androidx-test-corektx = { group = "androidx.test", name = "core-ktx", version.ref = "androidx-test-core" }
+androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-test-espresso" }
+androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "androidx-test-ext-junit" }
+androidx-test-ext-junitktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidx-test-ext-junit" }
+androidx-test-ext-truth = { group = "androidx.test.ext", name = "truth", version.ref = "androidx-test-ext-truth" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidx-test-runner" }
+apache-commons-lang = { group = "org.apache.commons", name = "commons-lang3", version.ref = "apache-commons-lang" }
+commons-codec = { group = "commons-codec", name = "commons-codec", version.ref = "commons-codec" }
+firebase-ui-auth = { group = "com.firebaseui", name = "firebase-ui-auth", version.ref = "firebase-ui-auth" }
+flow-layout = { group = "com.nex3z", name = "flow-layout", version.ref = "flow-layout" }
+glide-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
+glide-compiler = { group = "com.github.bumptech.glide", name = "compiler", version.ref = "glide" }
+glide-compose = { group = "com.github.bumptech.glide", name = "compose", version.ref = "glide-compose" }
+google-accompanist-navigation-animation = { group = "com.google.accompanist", name = "accompanist-navigation-animation", version.ref = "accompanist_compose" }
+google-accompanist-pager = { group = "com.google.accompanist", name = "accompanist-pager", version.ref = "accompanist_compose" }
+google-accompanist-pagerindicators = { group = "com.google.accompanist", name = "accompanist-pager-indicators", version.ref = "accompanist_compose" }
+google-accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanist_compose" }
+google-accompanist-placeholder = { group = "com.google.accompanist", name = "accompanist-placeholder", version.ref = "accompanist_compose" }
+google-accompanist-systemuicontroller = { group = "com.google.accompanist", name = "accompanist-systemuicontroller", version.ref = "accompanist_compose" }
+google-firebase-analytics-ktx = { group = "com.google.firebase", name = "firebase-analytics-ktx" }
+google-firebase-auth-ktx = { group = "com.google.firebase", name = "firebase-auth-ktx" }
+google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
+google-firebase-config = { group = "com.google.firebase", name = "firebase-config" }
+google-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
+google-firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
+google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
+google-guava = { group = "com.google.guava", name = "guava", version.ref = "google-guava" }
+google-maps-compose = { group = "com.google.maps.android", name = "maps-compose", version.ref = "google-maps-compose" }
+google-maps-utils = { group = "com.google.maps.android", name = "android-maps-utils", version.ref = "google-maps-utils" }
+google-mlkit-barcode-scanning = { group = "com.google.mlkit", name = "barcode-scanning", version.ref = "google-mlkit-barcode-scanning" }
+google-play-services-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "google-play-services-auth" }
+google-play-services-authphone = { group = "com.google.android.gms", name = "play-services-auth-api-phone", version.ref = "google-play-services-authphone" }
+google-play-services-base = { group = "com.google.android.gms", name = "play-services-base", version.ref = "google-play-services-base" }
+google-play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "google-play-services-maps" }
+google-play-services-mlkit-face-detection = { group = "com.google.android.gms", name = "play-services-mlkit-face-detection", version.ref = "google-play-services-mlkit-face-detection" }
+google-play-services-mlkit-text-recognition = { group = "com.google.android.gms", name = "play-services-mlkit-text-recognition", version.ref = "google-play-services-mlkit-text-recognition" }
+google-play-services-pay = { group = "com.google.android.gms", name = "play-services-pay", version.ref = "google-play-services-pay" }
+google-play-services-wallet = { group = "com.google.android.gms", name = "play-services-wallet", version.ref = "google-play-services-wallet" }
+google-zxing = { group = "com.google.zxing", name = "core", version.ref = "zxing" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger" }
+hilt-androidtesting = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "dagger" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "dagger" }
+instabug-instabug = { group = "com.instabug.library", name = "instabug", version.ref = "instabug" }
+instabug-okhttp = { group = "com.instabug.library", name = "instabug-with-okhttp-interceptor", version.ref = "instabug" }
+jackson-databind = { group = "com.fasterxml.jackson.core", name = "jackson-databind", version.ref = "jackson" }
+jj2000 = { group = "edu.ucar", name = "jj2000", version.ref = "jj2000" }
+json-test = { group = "org.json", name = "json", version.ref = "json-test" }
+jmrtd = { group = "org.jmrtd", name = "jmrtd", version.ref = "jmrtd" }
+jnbis = { group = "com.github.mhshams", name = "jnbis", version.ref = "jnbis" }
+jumio-core = { group = "com.jumio.android", name = "core", version.ref = "jumio" }
+jumio-defaultui = { group = "com.jumio.android", name = "defaultui", version.ref = "jumio" }
+jumio-linefinder = { group = "com.jumio.android", name = "linefinder", version.ref = "jumio" }
+jumio-barcode = { group = "com.jumio.android", name = "barcode", version.ref = "jumio" }
+jumio-iproov = { group = "com.jumio.android", name = "iproov", version.ref = "jumio" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+jwt = { group = "io.jsonwebtoken", name = "jjwt", version.ref = "jwt" }
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-core = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
+kustomer-chat = { group = "com.kustomer.chat", name = "ui", version.ref = "kustomer" }
+landscapist-glide = { group = "com.github.skydoves", name = "landscapist-glide", version.ref = "landscapist-glide" }
+lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+material-datetime-picker = { group = "com.wdullaer", name = "materialdatetimepicker", version.ref = "material-datetime-picker" }
+mockito-android = { group  ="org.mockito", name = "mockito-android", version.ref = "mockito" }
+mockk-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
+okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+onfido = { group = "com.onfido.sdk.capture", name = "onfido-capture-sdk", version.ref = "onfido" }
+photoview = { group = "com.github.chrisbanes", name = "PhotoView", version.ref = "photoview" }
+retrofit-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-adapter-rxjava = { group = "com.squareup.retrofit2", name = "adapter-rxjava2", version.ref = "retrofit-adapter-rxjava" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit-converter-gson" }
+rx-binding = { group = "com.jakewharton.rxbinding3", name = "rxbinding", version.ref = "rx-binding" }
+rx-redux = { group = "com.freeletics.rxredux", name = "rxredux", version.ref = "rx-redux" }
+rx-relay = { group = "com.jakewharton.rxrelay2", name = "rxrelay", version.ref = "rx-relay" }
+rxjava-android = { group = "io.reactivex.rxjava2", name = "rxandroid", version.ref = "rx-android" }
+scuba = { group = "net.sf.scuba", name = "scuba-sc-android", version.ref = "scuba" }
+shared-preferences-mock = { group = "io.github.ivanshafran", name = "shared-preferences-mock", version.ref = "shared-preferences-mock" }
+spongycastle = { group = "com.madgag.spongycastle", name = "prov", version.ref = "spongycastle" }
+sql-cipher = { group = "net.zetetic", name = "android-database-sqlcipher", version.ref = "sql-cipher" }
+stripe-android = { group = "com.stripe", name = "stripe-android", version.ref = "stripe-android" }
+subsampling-sample-image = { group = "com.davemorrissey.labs", name = "subsampling-scale-image-view-androidx", version.ref = "subsampling-scale-image" }
+tempo = { group = "com.github.AllanHasegawa.Tempo", name = "tempo", version.ref = "tempo" }
+turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+
+[bundles]
+accompanist = [
+    "google-accompanist-navigation-animation",
+    "google-accompanist-pager",
+    "google-accompanist-pagerindicators",
+    "google-accompanist-permissions",
+    "google-accompanist-placeholder",
+    "google-accompanist-systemuicontroller"
+]
+androidx-legacy-appcompat = [
+    "androidx-legacy-support",
+    "androidx-appcompat"
+]
+androidx-legacy-appcompat-lifecycle = [
+    "androidx-legacy-support",
+    "androidx-appcompat",
+    "androidx-lifecycle-runtime",
+    "androidx-lifecycle-livedata",
+    "androidx-lifecycle-viewmodel",
+    "androidx-lifecycle-common"
+]
+androidx-lifecycle = [
+    "androidx-lifecycle-runtime",
+    "androidx-lifecycle-livedata",
+    "androidx-lifecycle-viewmodel",
+    "androidx-lifecycle-common"
+]
+androidx-lifecycle-appcompat = [
+    "androidx-lifecycle-runtime",
+    "androidx-lifecycle-livedata",
+    "androidx-lifecycle-viewmodel",
+    "androidx-lifecycle-common",
+    "androidx-appcompat"
+]
+androidx-test = [
+    "androidx-test-core",
+    "androidx-test-corektx",
+    "androidx-test-ext-junit",
+    "androidx-test-ext-junitktx",
+    "androidx-test-ext-truth",
+    "androidx-test-runner"
+]
+androidx-view = [
+    "androidx-activity-ktx",
+    "androidx-fragment-ktx"
+]
+compose-deep = [
+    "androidx-core-ktx",
+    "androidx-appcompat",
+    "androidx-compose-ui-ui",
+    "androidx-compose-ui-tooling",
+    "androidx-compose-ui-preview",
+    "androidx-compose-material",
+    "androidx-compose-foundation",
+    "androidx-navigation-compose",
+    "androidx-activity-compose",
+    "androidx-compose-runtime-livedata",
+    "androidx-compose-runtime-rxjava"
+]
+compose-ui = [
+    "androidx-compose-ui-ui",
+    "androidx-compose-ui-tooling",
+    "androidx-compose-ui-preview"
+]
+compose-uitest = [
+    "androidx-compose-ui-test-ui",
+    "androidx-compose-ui-test-junit",
+    "androidx-compose-ui-test-manifest"
+]
+jumio = [
+    "jumio-core",
+    "jumio-defaultui",
+    "jumio-linefinder",
+    "jumio-barcode",
+    "jumio-iproov"
+]
+kotlinx-coroutines = [
+    "kotlinx-coroutines-android",
+    "kotlinx-coroutines-core",
+    "androidx-lifecycle-runtime",
+    "androidx-lifecycle-viewmodel"
+]
+mlkit = [
+    "google-play-services-mlkit-face-detection",
+    "google-play-services-mlkit-text-recognition",
+    "google-mlkit-barcode-scanning"
+]
+rx-redux = [
+    "rx-binding",
+    "rx-redux",
+    "rx-relay"
+]
+test-impl = [
+    "androidx-test-ext-junit",
+    "androidx-test-espresso"
+]
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "android-gradle-plugin" }
+android-library = { id = "com.android.library", version.ref = "android-gradle-plugin" }
+firebase-app-distribution = { id = "com.google.firebase.appdistribution", version.ref = "firebase-app-distribution-plugin" }
+firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebase-crashlytics-plugin" }
+google-maps-secrets = { id = "com.google.android.libraries.mapsplatform.secrets-gradle-plugin", version.ref = "google-maps-secrets" }
+google-play-services = { id = "com.google.gms.google-services", version.ref = "google-play-services-plugin" }
+hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "dagger" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-kapt = { id = "org.jetbrains.kotlin.kapt", version.ref = "kotlin" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
+triplet-play = { id = "com.github.triplet.play", version.ref = "triplet-play" }
