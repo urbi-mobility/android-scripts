@@ -60,7 +60,6 @@ google-play-services-pay = "16.0.3"
 google-play-services-plugin = "4.3.14"
 google-play-services-wallet = "18.1.1"
 instabug = "11.8.0"
-jackson = "2.4.2"
 jj2000 = "5.2"
 json-test = "20180813"
 jmrtd = "0.7.18"
@@ -195,7 +194,6 @@ hilt-androidtesting = { group = "com.google.dagger", name = "hilt-android-testin
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "dagger" }
 instabug-instabug = { group = "com.instabug.library", name = "instabug", version.ref = "instabug" }
 instabug-okhttp = { group = "com.instabug.library", name = "instabug-with-okhttp-interceptor", version.ref = "instabug" }
-jackson-databind = { group = "com.fasterxml.jackson.core", name = "jackson-databind", version.ref = "jackson" }
 jj2000 = { group = "edu.ucar", name = "jj2000", version.ref = "jj2000" }
 json-test = { group = "org.json", name = "json", version.ref = "json-test" }
 jmrtd = { group = "org.jmrtd", name = "jmrtd", version.ref = "jmrtd" }
