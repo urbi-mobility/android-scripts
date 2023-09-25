@@ -63,10 +63,10 @@ ext {
     shopVersion = '0.2.10'
     loginVersion = '0.2.9'
 
-    telepassModelVersion = '2.6.1'
-    telepassNetworkVersion = '2.9.1'
-    telepassLibCode = '6'
-    telepassLibVersion = '2.12.' + telepassLibCode
+    telepassModelVersion = '2.7.0'
+    telepassNetworkVersion = '2.10.0'
+    telepassLibCode = '0'
+    telepassLibVersion = '2.13.' + telepassLibCode
 //---End---//
     atacVersion = '2.1.1r'
 //  Android
