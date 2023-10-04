@@ -68,7 +68,7 @@ ext {
     telepassLibCode = '1'
     telepassLibVersion = '2.13.' + telepassLibCode
 //---End---//
-    atacVersion = '2.1.1r'
+    atacVersion = '2.1.4'
 //  Android
     min_sdk_version = 24
     compile_sdk_version = 34
