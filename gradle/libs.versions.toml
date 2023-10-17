@@ -65,7 +65,6 @@ jj2000 = "5.2"
 json-test = "20180813"
 jmrtd = "0.7.18"
 jnbis = "1.1.0"
-jumio = "4.3.0"
 junit = "4.13.2"
 jwt = "0.8.0"
 kotlin = "1.9.10"
@@ -201,11 +200,6 @@ jj2000 = { group = "edu.ucar", name = "jj2000", version.ref = "jj2000" }
 json-test = { group = "org.json", name = "json", version.ref = "json-test" }
 jmrtd = { group = "org.jmrtd", name = "jmrtd", version.ref = "jmrtd" }
 jnbis = { group = "com.github.mhshams", name = "jnbis", version.ref = "jnbis" }
-jumio-core = { group = "com.jumio.android", name = "core", version.ref = "jumio" }
-jumio-defaultui = { group = "com.jumio.android", name = "defaultui", version.ref = "jumio" }
-jumio-linefinder = { group = "com.jumio.android", name = "linefinder", version.ref = "jumio" }
-jumio-barcode = { group = "com.jumio.android", name = "barcode", version.ref = "jumio" }
-jumio-iproov = { group = "com.jumio.android", name = "iproov", version.ref = "jumio" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 jwt = { group = "io.jsonwebtoken", name = "jjwt", version.ref = "jwt" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
@@ -314,13 +308,6 @@ compose-uitest = [
     "androidx-compose-ui-test-ui",
     "androidx-compose-ui-test-junit",
     "androidx-compose-ui-test-manifest"
-]
-jumio = [
-    "jumio-core",
-    "jumio-defaultui",
-    "jumio-linefinder",
-    "jumio-barcode",
-    "jumio-iproov"
 ]
 kotlinx-coroutines = [
     "kotlinx-coroutines-android",
