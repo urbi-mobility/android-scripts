@@ -35,6 +35,7 @@ androidx-test-ext-junit = "1.1.5"
 androidx-test-ext-truth = "1.5.0"
 androidx-test-runner = "1.5.2"
 androidx-work-manager = "2.8.1"
+androidx-web-kit = "1.8.0"
 apache-commons-lang = "3.5"
 commons-codec = "1.11"
 dagger = "2.48"
@@ -109,8 +110,6 @@ android-material = { group = "com.google.android.material", name = "material", v
 android-places = { group = "com.google.android.libraries.places", name = "places", version.ref = "android-places" }
 androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "androidx-activity" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "androidx-activity" }
-androidx-work-manager-runtime = { group = "androidx.work", name = "work-runtime", version.ref = "androidx-work-manager" }
-androidx-work-manager-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidx-work-manager" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "androidx-appcompat" }
 androidx-biometric = { group = "androidx.biometric", name = "biometric", version.ref = "androidx-biometric" }
 androidx-biometric-ktx = { group = "androidx.biometric", name = "biometric-ktx", version.ref = "androidx-biometric-ktx" }
@@ -159,6 +158,9 @@ androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version
 androidx-test-ext-junitktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidx-test-ext-junit" }
 androidx-test-ext-truth = { group = "androidx.test.ext", name = "truth", version.ref = "androidx-test-ext-truth" }
 androidx-test-runner = { group = "androidx.test", name = "runner", version.ref = "androidx-test-runner" }
+androidx-work-manager-runtime = { group = "androidx.work", name = "work-runtime", version.ref = "androidx-work-manager" }
+androidx-work-manager-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidx-work-manager" }
+androidx-webkit = { group = "androidx.webkit", name = "webkit", version.ref = "androidx-web-kit" }
 apache-commons-lang = { group = "org.apache.commons", name = "commons-lang3", version.ref = "apache-commons-lang" }
 commons-codec = { group = "commons-codec", name = "commons-codec", version.ref = "commons-codec" }
 firebase-ui-auth = { group = "com.firebaseui", name = "firebase-ui-auth", version.ref = "firebase-ui-auth" }
