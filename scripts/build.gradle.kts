@@ -283,7 +283,7 @@ fun writeChangelog(
                         "./gradlew",
                         "$key:clean",
                         "$key:publishReleasePublicationToGitHubPackagesRepository",
-                        if(avoidPublishTpay.toBoolean()) "" else" "$key:publishReleasePublicationToGitHubPackages2Repository"
+                        if(avoidPublishTpay.toBoolean()) "" else "$key:publishReleasePublicationToGitHubPackages2Repository"
                     )
                     standardOutput = os
                 }
