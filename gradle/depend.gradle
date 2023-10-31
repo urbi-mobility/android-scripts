@@ -59,7 +59,7 @@ ext {
     composeDsVersion = '0.2.15'
     historyVersion = '0.2.12'
     mapVersion = '0.2.23'
-    profileVersion = '0.2.13'
+    profileVersion = '0.2.14'
     shopVersion = '0.2.12'
     loginVersion = '0.2.10'
 
