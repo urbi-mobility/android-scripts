@@ -49,7 +49,7 @@ ext {
     searchVersion = '1.0.7'
     taxiVersion = '1.0.11'
     scanVersion = '1.2.7'
-    transpoVersion = '1.7.18'
+    transpoVersion = '1.7.19'
     evchargingVersion = '1.7.12'
     tripoVersion = '1.6.16'
     mobilitySharingVersion = '2.16.26'
@@ -68,7 +68,7 @@ ext {
     telepassLibCode = '6'
     telepassLibVersion = '2.13.' + telepassLibCode
 //---End---//
-    atacVersion = '2.1.4'
+    atacVersion = '2.1.5'
 //  Android
     min_sdk_version = 24
     compile_sdk_version = 34
