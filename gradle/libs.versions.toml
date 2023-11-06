@@ -78,6 +78,7 @@ kustomer = "2.10.8"
 ksp-plugin = "1.9.20-1.0.14"
 landscapist-glide = "1.5.2"
 lottie = "3.4.0"
+lottie-compose = "6.1.0"
 material-datetime-picker = "4.2.3"
 mockito = "2.6.3"
 mockk = "1.13.2"
@@ -213,7 +214,8 @@ kotlinx-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "ko
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinx-coroutines" }
 kustomer-chat = { group = "com.kustomer.chat", name = "ui", version.ref = "kustomer" }
 landscapist-glide = { group = "com.github.skydoves", name = "landscapist-glide", version.ref = "landscapist-glide" }
-lottie = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+lottie-android = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
+lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie-compose" }
 material-datetime-picker = { group = "com.wdullaer", name = "materialdatetimepicker", version.ref = "material-datetime-picker" }
 mockito-android = { group  ="org.mockito", name = "mockito-android", version.ref = "mockito" }
 mockk-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
