@@ -273,9 +273,23 @@ fun writeChangelog(
     } else
         newChangelog.add(line)
     }
+    val avoidPublishTpay = project.properties["avoidPublishTpay"].toString()
     if (haveToWriteFile) {
         println("Update lib $key..........")
-        if(appId != "tpay") {
+        if(avoidPublishTpay.toBoolean()){
+            ByteArrayOutputStream().use { os ->
+                val result = exec {
+                    commandLine(
+                        "./gradlew",
+                        "$key:clean",
+                        "$key:publishReleasePublicationToGitHubPackagesRepository",
+                    )
+                    standardOutput = os
+                }
+                println(os.toString())
+            }
+        }
+        else if(appId != "tpay") {
             ByteArrayOutputStream().use { os ->
                 val result = exec {
                     commandLine(
