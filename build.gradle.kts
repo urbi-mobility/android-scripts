@@ -1,4 +1,3 @@
-
 plugins {
     idea
 }
@@ -11,3 +10,4 @@ idea {
 tasks.wrapper {
     distributionType = Wrapper.DistributionType.ALL
 }
+tasks.register<urbi.co.RemoveGitHubPackage>("remove-package-urbi")
