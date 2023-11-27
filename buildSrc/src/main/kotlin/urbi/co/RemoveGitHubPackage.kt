@@ -4,11 +4,15 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonParser
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
+import org.gradle.internal.impldep.org.joda.time.Days
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
 import java.net.http.HttpResponse
 import java.time.LocalDate
+import java.time.Month
+import java.time.Period
+import java.time.format.DateTimeFormatter
 
 abstract class RemoveGitHubPackage : DefaultTask() {
 
@@ -38,7 +42,7 @@ abstract class RemoveGitHubPackage : DefaultTask() {
     }
 
     private fun getDetailVersionPackage(org: String, packageName: String){
-        println("GET DETAIL FROR $packageName ORG $org")
+        println("GET DETAIL FOR $packageName ORG $org")
         val request = HttpRequest.newBuilder()
             .uri(URI("https://api.github.com/orgs/$org/packages/maven/$packageName/versions?per_page=100"))
             .GET()
@@ -52,8 +56,10 @@ abstract class RemoveGitHubPackage : DefaultTask() {
             val tradeElement: JsonElement = jsonParser.parse(response.body())
             tradeElement.asJsonArray.forEach {element->
                 val dataString = element.asJsonObject.get("updated_at").asString
-                val localDate = LocalDate.parse(dataString)
-                //TODO trasform to data and remove data OLD Tot month respect actual data
+                if(diffMonth(dataString) > 8){
+                    println("REMOVE $packageName ${element.asJsonObject.get("id").asString}")
+                    removeUrbiPackage(ORG, packageName, element.asJsonObject.get("id").asString)
+                }
             }
 
         } catch (e: Exception) {
@@ -75,5 +81,12 @@ abstract class RemoveGitHubPackage : DefaultTask() {
         val client = HttpClient.newHttpClient()
         val response = client.send(request, HttpResponse.BodyHandlers.ofString())
         println("RESPONSE ${response.statusCode()}")
+    }
+
+    private fun diffMonth(updateLib: String): Int{
+        val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssX")
+        val data = LocalDate.parse(updateLib, formatter)
+        val today = LocalDate.now()
+        return Period.between(data,today).months
     }
 }
