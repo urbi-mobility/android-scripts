@@ -19,25 +19,24 @@ abstract class RemoveGitHubPackage : DefaultTask() {
     }
     @TaskAction
     fun removeUrbiPackages() {
-        getDetailVersionPackage(ORG,"co.urbi.android.model")
-//        val client = HttpClient.newHttpClient()
-//        val request = HttpRequest.newBuilder()
-//            .uri(URI("https://api.github.com/orgs/$ORG/packages?package_type=maven"))
-//            .GET()
-//            .header("Authorization", "Bearer ${System.getenv("GHP_API_KEY")}")
-//            .header("X-GitHub-Api-Version", "2022-11-28")
-//            .build()
-//        val response = client.send(request, HttpResponse.BodyHandlers.ofString())
-//        val jsonParser = JsonParser()
-//        try {
-//            val tradeElement: JsonElement = jsonParser.parse(response.body())
-//            tradeElement.asJsonArray.forEach{ element->
-//                val packageName = element.asJsonObject.get("name").asString
-//                getDetailVersionPackage(ORG,packageName)
-//         }
-//        } catch (e: Exception) {
-//            e.printStackTrace()
-//        }
+        val client = HttpClient.newHttpClient()
+        val request = HttpRequest.newBuilder()
+            .uri(URI("https://api.github.com/orgs/$ORG/packages?package_type=maven"))
+            .GET()
+            .header("Authorization", "Bearer ${System.getenv("GHP_API_KEY")}")
+            .header("X-GitHub-Api-Version", "2022-11-28")
+            .build()
+        val response = client.send(request, HttpResponse.BodyHandlers.ofString())
+        val jsonParser = JsonParser()
+        try {
+            val tradeElement: JsonElement = jsonParser.parse(response.body())
+            tradeElement.asJsonArray.forEach{ element->
+                val packageName = element.asJsonObject.get("name").asString
+                getDetailVersionPackage(ORG,packageName)
+         }
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     private fun getDetailVersionPackage(org: String, packageName: String){

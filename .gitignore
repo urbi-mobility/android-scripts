@@ -3,6 +3,7 @@
 app.iml
 .idea/*
 .gradle
+/local.properties
 /.idea/workspace.xml
 .DS_Store
 app/app.iml
@@ -10,7 +11,7 @@ app/app.iml
 # built application files
 *.apk
 *.ap_
-
+<<
 # files for the dex VM
 *.dex
 
@@ -47,3 +48,6 @@ proguard/
 .idea/datasources.xml
 .idea/dataSources.ids
 .idea
+urbidebug-accountservizio.json
+urbidebug-accountservizio.json.asc
+gradle/wrapper/**
