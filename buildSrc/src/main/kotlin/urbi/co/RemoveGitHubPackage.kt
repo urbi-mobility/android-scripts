@@ -4,13 +4,11 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonParser
 import org.gradle.api.DefaultTask
 import org.gradle.api.tasks.TaskAction
-import org.gradle.internal.impldep.org.joda.time.Days
 import java.net.URI
 import java.net.http.HttpClient
 import java.net.http.HttpRequest
 import java.net.http.HttpResponse
 import java.time.LocalDate
-import java.time.Month
 import java.time.Period
 import java.time.format.DateTimeFormatter
 
@@ -21,24 +19,25 @@ abstract class RemoveGitHubPackage : DefaultTask() {
     }
     @TaskAction
     fun removeUrbiPackages() {
-        val client = HttpClient.newHttpClient()
-        val request = HttpRequest.newBuilder()
-            .uri(URI("https://api.github.com/orgs/$ORG/packages?package_type=maven"))
-            .GET()
-            .header("Authorization", "Bearer ${System.getenv("GHP_API_KEY")}")
-            .header("X-GitHub-Api-Version", "2022-11-28")
-            .build()
-        val response = client.send(request, HttpResponse.BodyHandlers.ofString())
-        val jsonParser = JsonParser()
-        try {
-            val tradeElement: JsonElement = jsonParser.parse(response.body())
-            tradeElement.asJsonArray.forEach{ element->
-                val packageName = element.asJsonObject.get("name").asString
-                getDetailVersionPackage(ORG,packageName)
-         }
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+        getDetailVersionPackage(ORG,"co.urbi.android.model")
+//        val client = HttpClient.newHttpClient()
+//        val request = HttpRequest.newBuilder()
+//            .uri(URI("https://api.github.com/orgs/$ORG/packages?package_type=maven"))
+//            .GET()
+//            .header("Authorization", "Bearer ${System.getenv("GHP_API_KEY")}")
+//            .header("X-GitHub-Api-Version", "2022-11-28")
+//            .build()
+//        val response = client.send(request, HttpResponse.BodyHandlers.ofString())
+//        val jsonParser = JsonParser()
+//        try {
+//            val tradeElement: JsonElement = jsonParser.parse(response.body())
+//            tradeElement.asJsonArray.forEach{ element->
+//                val packageName = element.asJsonObject.get("name").asString
+//                getDetailVersionPackage(ORG,packageName)
+//         }
+//        } catch (e: Exception) {
+//            e.printStackTrace()
+//        }
     }
 
     private fun getDetailVersionPackage(org: String, packageName: String){
@@ -56,7 +55,7 @@ abstract class RemoveGitHubPackage : DefaultTask() {
             val tradeElement: JsonElement = jsonParser.parse(response.body())
             tradeElement.asJsonArray.forEach {element->
                 val dataString = element.asJsonObject.get("updated_at").asString
-                if(diffMonth(dataString) > 8){
+                if(diffMonth(dataString)){
                     println("REMOVE $packageName ${element.asJsonObject.get("id").asString}")
                     removeUrbiPackage(ORG, packageName, element.asJsonObject.get("id").asString)
                 }
@@ -83,10 +82,13 @@ abstract class RemoveGitHubPackage : DefaultTask() {
         println("RESPONSE ${response.statusCode()}")
     }
 
-    private fun diffMonth(updateLib: String): Int{
+    private fun diffMonth(updateLib: String): Boolean{
         val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssX")
         val data = LocalDate.parse(updateLib, formatter)
         val today = LocalDate.now()
-        return Period.between(data,today).months
+        val period = Period.between(data,today)
+        if(period.years >= 1)
+            return true
+        return Period.between(data,today).months > 8
     }
 }
