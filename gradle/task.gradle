@@ -1,12 +1,7 @@
-import urbi.co.CommitVersionsTask
-import urbi.co.RemoveGitHubPackage
-import urbi.co.UpdateVersionLibTask
-import urbi.co.UploadGitHubPackage
-
-tasks.register("remove-package-urbi", RemoveGitHubPackage)
-tasks.register("uploadlib", UploadGitHubPackage)
-tasks.register("uploadlibskip", UploadGitHubPackage){
+tasks.register("remove-package-urbi", urbi.co.RemoveGitHubPackage)
+tasks.register("uploadlib", urbi.co.UploadGitHubPackage)
+tasks.register("uploadlibskip", urbi.co.UploadGitHubPackage){
     skipService=true
 }
-tasks.register("commitversions", CommitVersionsTask)
-tasks.register("update-version-lib", UpdateVersionLibTask)
+tasks.register("commitversions", urbi.co.CommitVersionsTask)
+tasks.register("update-version-lib", urbi.co.UpdateVersionLibTask)
