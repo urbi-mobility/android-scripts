@@ -44,7 +44,7 @@ ext {
     designsystemVersion = '1.3.18'
     modelVersion = '2.11.25'
     coreVersion = '2.14.29'
-    payVersion = '1.11.16'
+    payVersion = '1.11.17'
     ticketVersion = '0.9.9'
     searchVersion = '1.0.10'
     taxiVersion = '1.0.18'
@@ -242,7 +242,7 @@ ext {
     })
 
     logindep = dependencies.create("$urbiGroupId:$loginId:$loginVersion")
-
+    logindep_third = "$urbiGroupId:$loginId$suffixArtifactId:$loginVersion"
     logindep_exclude = dependencies.create("$urbiGroupId:$loginId:$loginVersion", {
         exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
@@ -250,7 +250,7 @@ ext {
     })
 
     commonviewdep = dependencies.create("$urbiGroupId:$commonViewId:$commonViewVersion")
-
+    commonviewdep_third = "$urbiGroupId:$commonViewId$suffixArtifactId:$commonViewVersion"
     commonviewdep_exclude = dependencies.create("$urbiGroupId:$commonViewId:$commonViewVersion", {
         exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
