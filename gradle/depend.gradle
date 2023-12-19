@@ -242,7 +242,7 @@ ext {
     })
 
     logindep = dependencies.create("$urbiGroupId:$loginId:$loginVersion")
-
+    logindep_third = "$urbiGroupId:$loginId$suffixArtifactId:$loginVersion"
     logindep_exclude = dependencies.create("$urbiGroupId:$loginId:$loginVersion", {
         exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
@@ -250,7 +250,7 @@ ext {
     })
 
     commonviewdep = dependencies.create("$urbiGroupId:$commonViewId:$commonViewVersion")
-
+    commonviewdep_third = "$urbiGroupId:$commonViewId$suffixArtifactId:$commonViewVersion"
     commonviewdep_exclude = dependencies.create("$urbiGroupId:$commonViewId:$commonViewVersion", {
         exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
