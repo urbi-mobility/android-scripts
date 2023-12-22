@@ -202,6 +202,8 @@ fun haveModuleThird(key: String): Boolean {
         "urbipay",
         "ticketlib",
         "tripo",
+        "login",
+        "commonview",
         "common-state",
         "composenavigation",
         "composeds",
