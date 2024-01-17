@@ -70,6 +70,9 @@ ext {
 //---End---//
     atacVersion = '2.1.6'
 //  Android
+    android_version_array = ["utility", utilityVersion, "designsystem", designsystemVersion, "modelVersion", modelVersion, "coreVersion", coreVersion, "pay", payVersion, "ticket", ticketVersion, "search", searchVersion, "taxi", taxiVersion,
+                             "taxi", taxiVersion, "scan", scanVersion, "transpo", transpoVersion, "evcharging", evchargingVersion, "tripo", tripoVersion, "mobilitySharing", mobilitySharingVersion, "commonState", commonStateVersion, "commonView", commonViewVersion,
+                             "composeNavigation", composeNavigationVersion, "composeDs", composeDsVersion, "history", historyVersion, "map", mapVersion, "profile", profileVersion, "shop", shopVersion, "login", loginVersion]
     min_sdk_version = 24
     compile_sdk_version = 34
     target_sdk_version = 34
