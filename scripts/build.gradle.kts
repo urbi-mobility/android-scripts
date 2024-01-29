@@ -478,7 +478,7 @@ tasks.register("update-version-lib") {
                     out.println(it)
                 }
             }
-            println("Upload Libs............")
+            println("Upload libsUrbi............")
             ByteArrayOutputStream().use { os ->
                 val result = exec {
                     commandLine("./gradlew", "uploadlib", "-Pargs=skipService")
