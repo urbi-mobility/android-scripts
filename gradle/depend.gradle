@@ -41,7 +41,7 @@ ext {
 
 //---Module Version---//
     utilityVersion = '2.7.14'
-    designsystemVersion = '1.3.22'
+    designsystemVersion = '1.3.23'
     modelVersion = '2.11.28'
     coreVersion = '2.14.35'
     payVersion = '1.11.22'
@@ -49,7 +49,7 @@ ext {
     searchVersion = '1.0.12'
     taxiVersion = '1.0.23'
     scanVersion = '1.2.13'
-    transpoVersion = '1.7.33'
+    transpoVersion = '1.7.34'
     evchargingVersion = '1.7.19'
     tripoVersion = '1.6.25'
     mobilitySharingVersion = '2.16.45'
@@ -68,7 +68,7 @@ ext {
     telepassLibCode = '7'
     telepassLibVersion = '2.13.' + telepassLibCode
 //---End---//
-    atacVersion = '2.1.6'
+    atacVersion = '2.1.8'
 //  Android
     android_version_array = ["utility", utilityVersion, "designsystem", designsystemVersion, "modelVersion", modelVersion, "coreVersion", coreVersion, "pay", payVersion, "ticket", ticketVersion, "search", searchVersion, "taxi", taxiVersion,
                              "taxi", taxiVersion, "scan", scanVersion, "transpo", transpoVersion, "evcharging", evchargingVersion, "tripo", tripoVersion, "mobilitySharing", mobilitySharingVersion, "commonState", commonStateVersion, "commonView", commonViewVersion,
