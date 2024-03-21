@@ -61,7 +61,7 @@ ext {
     mapVersion = '0.2.42'
     profileVersion = '0.2.24'
     shopVersion = '0.2.19'
-    loginVersion = '0.2.18'
+    loginVersion = '0.2.19'
 
     telepassModelVersion = '2.7.0'
     telepassNetworkVersion = '2.10.0'
