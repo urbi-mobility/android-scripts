@@ -91,7 +91,7 @@ rx-redux = "1.0.1"
 rx-relay = "2.1.0"
 scuba = "0.0.20"
 shared-preferences-mock = "1.2.4"
-spongycastle = "1.58.0.0"
+bouncycastle = "1.77"
 sql-cipher = "4.4.3"
 stripe-android = "20.9.0"
 subsampling-scale-image = "3.10.0"
@@ -227,7 +227,7 @@ rx-relay = { group = "com.jakewharton.rxrelay2", name = "rxrelay", version.ref =
 rxjava-android = { group = "io.reactivex.rxjava2", name = "rxandroid", version.ref = "rx-android" }
 scuba = { group = "net.sf.scuba", name = "scuba-sc-android", version.ref = "scuba" }
 shared-preferences-mock = { group = "io.github.ivanshafran", name = "shared-preferences-mock", version.ref = "shared-preferences-mock" }
-spongycastle = { group = "com.madgag.spongycastle", name = "prov", version.ref = "spongycastle" }
+bouncycastle = { group = "org.bouncycastle", name = "bcpkix-jdk18on", version.ref = "bouncycastle" }
 sql-cipher = { group = "net.zetetic", name = "android-database-sqlcipher", version.ref = "sql-cipher" }
 stripe-android = { group = "com.stripe", name = "stripe-android", version.ref = "stripe-android" }
 subsampling-sample-image = { group = "com.davemorrissey.labs", name = "subsampling-scale-image-view-androidx", version.ref = "subsampling-scale-image" }
