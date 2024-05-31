@@ -211,6 +211,31 @@ fun haveModuleThird(key: String): Boolean {
     return list.contains(key)
 }
 
+/**
+ * if Module is used inside Tpay
+ */
+fun haveModuleTPay(key: String): Boolean {
+    val list = arrayListOf(
+        "utilitylib",
+        "urbimodel",
+        "urbicore" ,
+        "designsystem",
+        "urbipay",
+        "ticketlib",
+        "tripo",
+        "login",
+        "commonview",
+        "common-state",
+        "composenavigation",
+        "composeds",
+        "mobilitylib",
+        "ticketlib",
+        "urbitaxi",
+        "transpo"
+    )
+    return list.contains(key)
+}
+
 fun createMapVersion(): HashMap<String, String> {
     val tpaylib = "telepassLibVersion"
     // Read Version on Gradle file
@@ -291,7 +316,7 @@ fun writeChangelog(
                 println(os.toString())
             }
         }
-        else if(appId != "tpay") {
+        else if(haveModuleTPay(key)){
             ByteArrayOutputStream().use { os ->
                 val result = exec {
                     commandLine(
