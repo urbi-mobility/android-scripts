@@ -316,7 +316,7 @@ fun writeChangelog(
                 println(os.toString())
             }
         }
-        else if(appId != "tpay"){
+        else if(haveModuleTPay(key)){
             ByteArrayOutputStream().use { os ->
                 val result = exec {
                     commandLine(
