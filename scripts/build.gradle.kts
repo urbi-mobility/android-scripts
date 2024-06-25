@@ -16,10 +16,7 @@ tasks.register("uploadlib") {
             println("No service file is force pull and uploaded, you know what you are doing.......")
 
         var mapChangelog: LinkedHashMap<String, String>;
-        if(appId == "tpay")
-            mapChangelog = getChangelogTpayMap()
-        else
-            mapChangelog = getChangelogMap()
+        mapChangelog = getChangelogMap()
 
         // Create map from versions in depend.gradle file
         val mapVersion: HashMap<String, String> = createMapVersion()
@@ -56,13 +53,9 @@ tasks.register("print-changelog-changed") {
 }
 tasks.register("commitversions") {
     doLast {
-        val tpaylib = "tpaylib"
         val appId = System.getProperty("args")
         var mapChangelog: LinkedHashMap<String, String>;
-        if(appId == "tpay")
-            mapChangelog = getChangelogTpayMap()
-        else
-            mapChangelog = getChangelogMap()
+        mapChangelog = getChangelogMap()
         // Create map from versions in depend.gradle file
         val mapVersion: HashMap<String, String> = createMapVersion()
         val outputGit = ByteArrayOutputStream()
@@ -150,16 +143,6 @@ fun getChangelogMap(): LinkedHashMap<String, String> = linkedMapOf(
     "transpo" to "TRN_",
     "tripo" to "TRP_",
     "mobilitylib" to "MBL_",
-    "shop" to "SHOP_",
-    "profile" to "PROFILE_",
-    "map" to "MAP_",
-    "history" to "HISTORY_"
-)
-
-fun getChangelogTpayMap(): LinkedHashMap<String, String> = linkedMapOf(
-    "telepasspaymodel" to "TPM_",
-    "telepasspaynetwork" to "TPN_",
-    "tpaylib" to "TPL_"
 )
 
 fun getVersionKeyFromModule(): LinkedHashMap<String, String> = linkedMapOf(
@@ -180,14 +163,7 @@ fun getVersionKeyFromModule(): LinkedHashMap<String, String> = linkedMapOf(
     "commonview" to "commonViewVersion",
     "composenavigation" to "composeNavigationVersion",
     "composeds" to "composeDsVersion",
-    "history" to "historyVersion",
-    "map" to "mapVersion",
-    "profile" to "profileVersion",
-    "shop" to "shopVersion",
     "login"  to "loginVersion",
-    "telepasspaymodel" to "telepassModelVersion",
-    "telepasspaynetwork" to "telepassNetworkVersion",
-    "tpaylib" to "telepassLibVersion",
 )
 
 /**
