@@ -72,7 +72,7 @@ ext {
 //  Android
     android_version_array = ["utility", utilityVersion, "designsystem", designsystemVersion, "modelVersion", modelVersion, "coreVersion", coreVersion, "pay", payVersion, "ticket", ticketVersion, "search", searchVersion, "taxi", taxiVersion,
                              "taxi", taxiVersion, "scan", scanVersion, "transpo", transpoVersion, "evcharging", evchargingVersion, "tripo", tripoVersion, "mobilitySharing", mobilitySharingVersion, "commonState", commonStateVersion, "commonView", commonViewVersion,
-                             "composeNavigation", composeNavigationVersion, "composeDs", composeDsVersion, "history", historyVersion, "map", mapVersion, "profile", profileVersion, "shop", shopVersion, "login", loginVersion]
+                             "composeNavigation", composeNavigationVersion, "composeDs", composeDsVersion, "login", loginVersion]
     min_sdk_version = 24
     compile_sdk_version = 34
     target_sdk_version = 34
@@ -272,51 +272,5 @@ ext {
         exclude module: "$designsystemId"
     })
 
-    historyIddep = dependencies.create("$urbiGroupId:$historyId:$historyVersion")
 
-    historyId_exclude = dependencies.create("$urbiGroupId:$historyId:$historyVersion", {
-        exclude module: "$composeNavigationId"
-        exclude module: "$composeDsId"
-        exclude module: "$commonStateId"
-        exclude module: "$mobilitySharingId"
-        exclude module: "$coreId"
-        exclude module: "$modelId"
-        exclude module: "$designsystemId"
-    })
-
-    shopIddep = dependencies.create("$urbiGroupId:$shopId:$shopVersion")
-
-    shopId_exclude = dependencies.create("$urbiGroupId:$shopId:$shopVersion", {
-        exclude module: "$composeNavigationId"
-        exclude module: "$composeDsId"
-        exclude module: "$commonStateId"
-        exclude module: "$payId"
-        exclude module: "$coreId"
-        exclude module: "$modelId"
-        exclude module: "$designsystemId"
-    })
-
-    profileIddep = dependencies.create("$urbiGroupId:$profileId:$profileVersion")
-
-    profileId_exclude = dependencies.create("$urbiGroupId:$profileId:$profileVersion", {
-        exclude module: "$composeNavigationId"
-        exclude module: "$composeDsId"
-        exclude module: "$commonStateId"
-        exclude module: "$payId"
-        exclude module: "$coreId"
-        exclude module: "$modelId"
-        exclude module: "$designsystemId"
-    })
-
-    mapIddep = dependencies.create("$urbiGroupId:$mapId:$mapVersion")
-
-    mapId_exclude = dependencies.create("$urbiGroupId:$mapId:$mapVersion", {
-        exclude module: "$composeNavigationId"
-        exclude module: "$composeDsId"
-        exclude module: "$commonStateId"
-        exclude module: "$payId"
-        exclude module: "$coreId"
-        exclude module: "$modelId"
-        exclude module: "$designsystemId"
-    })
 }
