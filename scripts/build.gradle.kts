@@ -207,7 +207,10 @@ fun haveModuleTPay(key: String): Boolean {
         "mobilitylib",
         "ticketlib",
         "urbitaxi",
-        "transpo"
+        "transpo",
+        "urbiscan",
+        "evcharging",
+        "urbisearch"
     )
     return list.contains(key)
 }
