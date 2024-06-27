@@ -209,7 +209,8 @@ fun haveModuleTPay(key: String): Boolean {
         "urbitaxi",
         "transpo",
         "urbiscan",
-        "evcharging"
+        "evcharging",
+        "urbisearch"
     )
     return list.contains(key)
 }
