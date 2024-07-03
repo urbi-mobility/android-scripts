@@ -37,6 +37,7 @@ androidx-web-kit = "1.8.0"
 apache-commons-lang = "3.5"
 commons-codec = "1.15"
 dagger = "2.51.1"
+dependencyGuard = "0.5.0"
 firebase-bom = "33.1.0"
 firebase-app-distribution-plugin = "5.0.0"
 firebase-crashlytics-plugin = "3.0.1"
@@ -337,3 +338,4 @@ kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", versi
 kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
 triplet-play = { id = "com.github.triplet.play", version.ref = "triplet-play" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
