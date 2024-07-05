@@ -44,7 +44,7 @@ ext {
     designsystemVersion = '1.4.4'
     modelVersion = '2.13.4'
     coreVersion = '2.16.2'
-    payVersion = '1.13.4'
+    payVersion = '1.13.5'
     ticketVersion = '0.10.1'
     searchVersion = '1.1.1'
     taxiVersion = '1.1.2'
