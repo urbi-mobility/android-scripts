@@ -1,9 +1,9 @@
 android {
-    lintOptions {
+    lint {
         // set to true to turn off analysis progress reporting by lint
         quiet true
 //        // Turns off checks for the issue IDs you specify.
-        disable 'MissingTranslation', 'TypographyQuotes', 'UnsafeOptInUsageError'
+        disable+= ['MissingTranslation', 'TypographyQuotes', 'UnsafeOptInUsageError', 'ParameterWrapping']
 //        // Turns on checks for the issue IDs you specify. These checks are in
 //        // addition to the default lint checks.
 //        enable 'RtlHardcoded','RtlCompat', 'RtlEnabled'
