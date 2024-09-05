@@ -27,6 +27,7 @@ androidx-preference = "1.1.0"
 androidx-security-crypto = "1.1.0-alpha06"
 androidx-splashscreen = "1.0.1"
 androidx-sqlite = "2.2.0"
+androidx-swiperefreshlayout-version = "1.1.0"
 androidx-test-core = "1.5.0"
 androidx-test-espresso = "3.4.0"
 androidx-test-ext-junit = "1.1.5"
@@ -147,6 +148,7 @@ androidx-security-crypto = { group = "androidx.security", name = "security-crypt
 androidx-sqlite-sqlite = { group = "androidx.sqlite", name = "sqlite", version.ref = "androidx-sqlite" }
 androidx-sqlite-ktx = { group = "androidx.sqlite", name = "sqlite-ktx", version.ref = "androidx-sqlite" }
 androidx-sqlite-framework = { group = "androidx.sqlite", name = "sqlite-framework", version.ref = "androidx-sqlite" }
+androidx-swiperefreshlayout = {group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "androidx-swiperefreshlayout-version" }
 androidx-test-core = { group = "androidx.test", name = "core", version.ref = "androidx-test-core" }
 androidx-test-corektx = { group = "androidx.test", name = "core-ktx", version.ref = "androidx-test-core" }
 androidx-test-espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidx-test-espresso" }
