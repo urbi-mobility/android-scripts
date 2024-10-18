@@ -74,8 +74,8 @@ ext {
                              "taxi", taxiVersion, "scan", scanVersion, "transpo", transpoVersion, "evcharging", evchargingVersion, "tripo", tripoVersion, "mobilitySharing", mobilitySharingVersion, "commonState", commonStateVersion, "commonView", commonViewVersion,
                              "composeNavigation", composeNavigationVersion, "composeDs", composeDsVersion, "login", loginVersion]
     min_sdk_version = 24
-    compile_sdk_version = 34
-    target_sdk_version = 34
+    compile_sdk_version = 35
+    target_sdk_version = 35
 
 
     //ATAC
