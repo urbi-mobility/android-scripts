@@ -1,9 +1,7 @@
 [versions]
 accompanist_compose = "0.34.0"
 adapter-delegates4 = "4.3.0"
-adjust = "4.33.5"
 android-gradle-plugin = "8.5.1"
-android-installreferrer = "2.2"
 android-material = "1.11.0"
 android-places = "3.5.0"
 androidx-activity = "1.9.0"
@@ -103,8 +101,6 @@ zxing = "3.4.1"
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
 adapterdelegates4-binding = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl-viewbinding", version.ref = "adapter-delegates4" }
-adjust = { group = "com.adjust.sdk", name = "adjust-android", version.ref = "adjust" }
-android-installreferrer = { group = "com.android.installreferrer", name = "installreferrer", version.ref = "android-installreferrer" }
 android-material = { group = "com.google.android.material", name = "material", version.ref = "android-material" }
 android-places = { group = "com.google.android.libraries.places", name = "places", version.ref = "android-places" }
 androidx-activity-ktx = { group = "androidx.activity", name = "activity-ktx", version.ref = "androidx-activity" }
