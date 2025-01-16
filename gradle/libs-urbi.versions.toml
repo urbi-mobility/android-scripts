@@ -61,10 +61,8 @@ google-play-services-pay = "16.5.0"
 google-play-services-plugin = "4.4.2"
 google-play-services-wallet = "19.4.0"
 instabug = "12.2.0"
-jj2000 = "5.2"
 json-test = "20180813"
 jmrtd = "0.7.18"
-jnbis = "1.1.0"
 junit = "4.13.2"
 jwt = "0.8.0"
 kotlin = "2.0.20"
@@ -78,7 +76,7 @@ material-datetime-picker = "4.2.3"
 mockito = "2.6.3"
 mockk = "1.13.2"
 okhttp = "4.12.0"
-onfido = "19.0.0"
+onfido = "22.0.0"
 photoview = "2.3.0"
 retrofit = "2.9.0"
 retrofit-adapter-rxjava = "2.9.0"
@@ -89,7 +87,6 @@ rx-redux = "1.0.1"
 rx-relay = "2.1.0"
 scuba = "0.0.20"
 shared-preferences-mock = "1.2.4"
-spongycastle = "1.58.0.0"
 sql-cipher = "4.4.3"
 stripe-android = "20.51.0"
 subsampling-scale-image = "3.10.0"
@@ -155,7 +152,6 @@ androidx-test-runner = { group = "androidx.test", name = "runner", version.ref =
 androidx-work-manager-runtime = { group = "androidx.work", name = "work-runtime", version.ref = "androidx-work-manager" }
 androidx-work-manager-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidx-work-manager" }
 androidx-webkit = { group = "androidx.webkit", name = "webkit", version.ref = "androidx-web-kit" }
-apache-commons-lang = { group = "org.apache.commons", name = "commons-lang3", version.ref = "apache-commons-lang" }
 commons-codec = { group = "commons-codec", name = "commons-codec", version.ref = "commons-codec" }
 firebase-ui-auth = { group = "com.firebaseui", name = "firebase-ui-auth", version.ref = "firebase-ui-auth" }
 flow-layout = { group = "com.nex3z", name = "flow-layout", version.ref = "flow-layout" }
@@ -193,10 +189,8 @@ hilt-androidtesting = { group = "com.google.dagger", name = "hilt-android-testin
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "dagger" }
 instabug-instabug = { group = "com.instabug.library", name = "instabug", version.ref = "instabug" }
 instabug-okhttp = { group = "com.instabug.library", name = "instabug-with-okhttp-interceptor", version.ref = "instabug" }
-jj2000 = { group = "edu.ucar", name = "jj2000", version.ref = "jj2000" }
 json-test = { group = "org.json", name = "json", version.ref = "json-test" }
 jmrtd = { group = "org.jmrtd", name = "jmrtd", version.ref = "jmrtd" }
-jnbis = { group = "com.github.mhshams", name = "jnbis", version.ref = "jnbis" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 jwt = { group = "io.jsonwebtoken", name = "jjwt", version.ref = "jwt" }
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinx-coroutines" }
@@ -223,7 +217,6 @@ rx-relay = { group = "com.jakewharton.rxrelay2", name = "rxrelay", version.ref =
 rxjava-android = { group = "io.reactivex.rxjava2", name = "rxandroid", version.ref = "rx-android" }
 scuba = { group = "net.sf.scuba", name = "scuba-sc-android", version.ref = "scuba" }
 shared-preferences-mock = { group = "io.github.ivanshafran", name = "shared-preferences-mock", version.ref = "shared-preferences-mock" }
-spongycastle = { group = "com.madgag.spongycastle", name = "prov", version.ref = "spongycastle" }
 sql-cipher = { group = "net.zetetic", name = "android-database-sqlcipher", version.ref = "sql-cipher" }
 stripe-android = { group = "com.stripe", name = "stripe-android", version.ref = "stripe-android" }
 subsampling-sample-image = { group = "com.davemorrissey.labs", name = "subsampling-scale-image-view-androidx", version.ref = "subsampling-scale-image" }
