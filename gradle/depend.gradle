@@ -43,7 +43,7 @@ ext {
     utilityVersion = '2.8.12'
     designsystemVersion = '1.4.17'
     modelVersion = '2.13.20'
-    coreVersion = '2.16.22'
+    coreVersion = '2.16.23'
     payVersion = '1.13.20'
     ticketVersion = '0.10.2'
     searchVersion = '1.1.4'
