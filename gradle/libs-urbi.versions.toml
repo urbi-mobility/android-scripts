@@ -72,8 +72,6 @@ ksp-plugin = "2.0.20-1.0.25"
 landscapist-glide = "1.5.2"
 lottie = "6.4.1"
 material-datetime-picker = "4.2.3"
-mockito = "5.12.0"
-mockito_kotlin = "5.4.0"
 mockk = "1.13.16"
 okhttp = "4.12.0"
 onfido = "20.0.2"
@@ -200,8 +198,6 @@ landscapist-glide = { group = "com.github.skydoves", name = "landscapist-glide",
 lottie-android = { group = "com.airbnb.android", name = "lottie", version.ref = "lottie" }
 lottie-compose = { group = "com.airbnb.android", name = "lottie-compose", version.ref = "lottie" }
 material-datetime-picker = { group = "com.wdullaer", name = "materialdatetimepicker", version.ref = "material-datetime-picker" }
-mockito-android = { group  ="org.mockito", name = "mockito-android", version.ref = "mockito" }
-mockito-kotlin = { group  ="org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito_kotlin" }
 mockk-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "mockk" }
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
