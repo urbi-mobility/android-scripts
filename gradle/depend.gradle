@@ -40,28 +40,28 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.8.14'
-    designsystemVersion = '1.4.19'
-    modelVersion = '2.13.23'
-    coreVersion = '2.16.26'
-    payVersion = '1.13.25'
+    utilityVersion = '2.8.15'
+    designsystemVersion = '1.4.21'
+    modelVersion = '2.13.25'
+    coreVersion = '2.16.28'
+    payVersion = '1.13.27'
     ticketVersion = '0.10.2'
     searchVersion = '1.1.4'
-    taxiVersion = '1.1.25'
+    taxiVersion = '1.1.27'
     scanVersion = '1.3.7'
-    transpoVersion = '1.9.26'
-    evchargingVersion = '1.8.5'
-    tripoVersion = '1.8.32'
-    mobilitySharingVersion = '2.17.31'
-    commonStateVersion = '0.2.27'
-    commonViewVersion = '0.3.30'
-    composeNavigationVersion = '0.3.4'
-    composeDsVersion = '0.3.22'
+    transpoVersion = '1.9.27'
+    evchargingVersion = '1.8.6'
+    tripoVersion = '1.8.34'
+    mobilitySharingVersion = '2.17.33'
+    commonStateVersion = '0.2.28'
+    commonViewVersion = '0.3.32'
+    composeNavigationVersion = '0.3.5'
+    composeDsVersion = '0.3.24'
     historyVersion = '0.3.0'
     mapVersion = '0.3.2'
     profileVersion = '0.3.1'
     shopVersion = '0.3.0'
-    loginVersion = '0.3.9'
+    loginVersion = '0.3.10'
 
     telepassModelVersion = '2.7.0'
     telepassNetworkVersion = '2.10.0'
@@ -74,8 +74,8 @@ ext {
                              "taxi", taxiVersion, "scan", scanVersion, "transpo", transpoVersion, "evcharging", evchargingVersion, "tripo", tripoVersion, "mobilitySharing", mobilitySharingVersion, "commonState", commonStateVersion, "commonView", commonViewVersion,
                              "composeNavigation", composeNavigationVersion, "composeDs", composeDsVersion, "login", loginVersion]
     min_sdk_version = 24
-    compile_sdk_version = 34
-    target_sdk_version = 34
+    compile_sdk_version = 35
+    target_sdk_version = 35
 
 
     //ATAC
