@@ -302,6 +302,7 @@ fun writeChangelog(
                     commandLine(
                         "./gradlew",
                         "$key:clean",
+                        "$key:publishReleasePublicationToGitHubPackagesRepository",
                         "$key:publishReleasePublicationToGitHubPackages2Repository"
                     )
                     standardOutput = os
@@ -321,6 +322,14 @@ fun writeChangelog(
                 println(os.toString())
             }
         }
+        if(haveModuleThird(key))
+            ByteArrayOutputStream().use { os ->
+                val result = exec {
+                    commandLine("./gradlew", "$key:publishThirdPublicationToGitHubPackages-ThirdRepository")
+                    standardOutput = os
+                }
+                println(os.toString())
+            }
 
         println("Updating Changelog $pathFile..........")
         changelog.printWriter().use { out ->
