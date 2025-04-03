@@ -68,7 +68,7 @@ ext {
     telepassLibCode = '7'
     telepassLibVersion = '2.13.' + telepassLibCode
 //---End---//
-    atacVersion = '2.1.8'
+    atacVersion = '2.1.9'
 //  Android
     android_version_array = ["utility", utilityVersion, "designsystem", designsystemVersion, "modelVersion", modelVersion, "coreVersion", coreVersion, "pay", payVersion, "ticket", ticketVersion, "search", searchVersion, "taxi", taxiVersion,
                              "taxi", taxiVersion, "scan", scanVersion, "transpo", transpoVersion, "evcharging", evchargingVersion, "tripo", tripoVersion, "mobilitySharing", mobilitySharingVersion, "commonState", commonStateVersion, "commonView", commonViewVersion,
