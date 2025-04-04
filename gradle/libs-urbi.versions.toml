@@ -1,7 +1,7 @@
 [versions]
 accompanist_compose = "0.34.0"
 adapter-delegates4 = "4.3.0"
-android-gradle-plugin = "8.5.1"
+android-gradle-plugin = "8.6.1"
 android-material = "1.11.0"
 android-places = "3.5.0"
 androidx-activity = "1.9.0"
@@ -36,6 +36,7 @@ androidx-web-kit = "1.8.0"
 commons-codec = "1.15"
 dagger = "2.52"
 dependencyGuard = "0.5.0"
+facebook = "latest.release"
 firebase-bom = "33.1.0"
 firebase-app-distribution-plugin = "5.0.0"
 firebase-crashlytics-plugin = "3.0.1"
@@ -60,14 +61,14 @@ google-play-services-pay = "16.5.0"
 google-play-services-plugin = "4.4.2"
 google-play-services-wallet = "19.4.0"
 instabug = "14.1.0"
-json-test = "20180813"
+json-test = "20250107"
 jmrtd = "0.7.18"
 junit = "4.13.2"
 jwt = "0.8.0"
 kotlin = "2.0.20"
 kotlinx-coroutines = "1.8.1" # Cannot update this until we remove the Tempo library
 kotlinter = "4.3.0"
-kustomer = "2.10.8"
+kustomer = "3.3.1"
 ksp-plugin = "2.0.20-1.0.25"
 landscapist-glide = "1.5.2"
 lottie = "6.4.1"
@@ -153,6 +154,7 @@ androidx-work-manager-runtime = { group = "androidx.work", name = "work-runtime"
 androidx-work-manager-runtime-ktx = { group = "androidx.work", name = "work-runtime-ktx", version.ref = "androidx-work-manager" }
 androidx-webkit = { group = "androidx.webkit", name = "webkit", version.ref = "androidx-web-kit" }
 commons-codec = { group = "commons-codec", name = "commons-codec", version.ref = "commons-codec" }
+facebook = { group = "com.facebook.android", name = "facebook-core", version.ref = "facebook" }
 firebase-ui-auth = { group = "com.firebaseui", name = "firebase-ui-auth", version.ref = "firebase-ui-auth" }
 flow-layout = { group = "com.nex3z", name = "flow-layout", version.ref = "flow-layout" }
 glide-glide = { group = "com.github.bumptech.glide", name = "glide", version.ref = "glide" }
