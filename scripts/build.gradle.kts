@@ -283,44 +283,16 @@ fun writeChangelog(
     val avoidPublishTpay = project.properties["avoidPublishTpay"].toString()
     if (haveToWriteFile) {
         println("Update lib $key..........")
-        if(avoidPublishTpay.toBoolean()){
-            ByteArrayOutputStream().use { os ->
-                val result = exec {
-                    commandLine(
-                        "./gradlew",
-                        "$key:clean",
-                        "$key:publishReleasePublicationToGitHubPackagesRepository",
-                    )
-                    standardOutput = os
-                }
-                println(os.toString())
+        ByteArrayOutputStream().use { os ->
+            val result = exec {
+                commandLine(
+                    "./gradlew",
+                    "$key:clean",
+                    "$key:publishReleasePublicationToGitHubPackages2Repository",
+                )
+                standardOutput = os
             }
-        }
-        else if(haveModuleTPay(key)){
-            ByteArrayOutputStream().use { os ->
-                val result = exec {
-                    commandLine(
-                        "./gradlew",
-                        "$key:clean",
-                        "$key:publishReleasePublicationToGitHubPackagesRepository",
-                        "$key:publishReleasePublicationToGitHubPackages2Repository"
-                    )
-                    standardOutput = os
-                }
-                println(os.toString())
-            }
-        } else {
-            ByteArrayOutputStream().use { os ->
-                val result = exec {
-                    commandLine(
-                        "./gradlew",
-                        "$key:clean",
-                        "$key:publishReleasePublicationToGitHubPackagesRepository",
-                    )
-                    standardOutput = os
-                }
-                println(os.toString())
-            }
+            println(os.toString())
         }
 
         println("Updating Changelog $pathFile..........")
