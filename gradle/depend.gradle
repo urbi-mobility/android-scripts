@@ -49,7 +49,7 @@ ext {
     searchVersion = '1.2.0'
     taxiVersion = '1.2.0'
     scanVersion = '1.4.0'
-    transpoVersion = '1.10.0'
+    transpoVersion = '1.10.0-test'
     evchargingVersion = '1.9.0'
     tripoVersion = '1.9.0'
     mobilitySharingVersion = '2.18.0'
