@@ -51,7 +51,7 @@ ext {
     scanVersion = '1.4.0'
     transpoVersion = '1.10.1'
     evchargingVersion = '1.9.2'
-    tripoVersion = '1.9.3'
+    tripoVersion = '1.9.4'
     mobilitySharingVersion = '2.18.3'
     commonStateVersion = '0.3.2'
     commonViewVersion = '0.4.2'
