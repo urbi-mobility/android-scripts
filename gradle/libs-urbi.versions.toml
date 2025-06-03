@@ -92,6 +92,7 @@ true-time = "4.0.0.alpha"
 triplet-play = "3.10.1"
 turbine = "1.2.0"
 zxing = "3.4.1"
+rootbeer = "0.1.1"
 
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
@@ -168,6 +169,8 @@ google-firebase-auth = { group = "com.google.firebase", name = "firebase-auth" }
 google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
 google-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 google-firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
+google-firebase-appcheck-playintegrity = { group = "com.google.firebase", name = "firebase-appcheck-playintegrity" }
+google-firebase-appcheck-debug = { group = "com.google.firebase", name = "firebase-appcheck-debug" }
 google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 google-maps-compose = { group = "com.google.maps.android", name = "maps-compose", version.ref = "google-maps-compose" }
 google-maps-utils = { group = "com.google.maps.android", name = "android-maps-utils", version.ref = "google-maps-utils" }
@@ -222,6 +225,8 @@ stripe-android = { group = "com.stripe", name = "stripe-android", version.ref = 
 subsampling-sample-image = { group = "com.davemorrissey.labs", name = "subsampling-scale-image-view-androidx", version.ref = "subsampling-scale-image" }
 true-time = { group = "com.github.instacart", name = "truetime-android", version.ref = "true-time" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+rootbeer = { group = "com.scottyab", name = "rootbeer-lib", version.ref = "rootbeer" }
+
 
 [bundles]
 accompanist = [
