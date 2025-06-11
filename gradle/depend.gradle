@@ -42,8 +42,8 @@ ext {
 //---Module Version---//
     utilityVersion = '2.9.4'
     designsystemVersion = '1.5.3'
-    modelVersion = '2.14.5'
-    coreVersion = '2.17.5'
+    modelVersion = '2.14.6'
+    coreVersion = '2.17.6'
     payVersion = '1.14.3'
     ticketVersion = '0.11.0'
     searchVersion = '1.2.1'
