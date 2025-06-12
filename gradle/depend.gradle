@@ -48,7 +48,7 @@ ext {
     ticketVersion = '0.10.3-j17'
     searchVersion = '1.1.6-j17'
     taxiVersion = '1.1.29-j17'
-    scanVersion = '1.3.9-j17'
+    scanVersion = '1.3.10-j17'
     transpoVersion = '1.9.32-j17'
     evchargingVersion = '1.8.8-j17'
     tripoVersion = '1.8.36-j17-hotfix'
