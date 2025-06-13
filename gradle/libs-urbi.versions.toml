@@ -22,7 +22,7 @@ androidx-legacy-support = "1.0.0"
 androidx-lifecycle = "2.8.7"
 androidx-navigation = "2.7.7"
 androidx-preference = "1.2.1"
-androidx-security-crypto = "1.1.0-alpha06"
+androidx-security-crypto = "1.1.0-alpha07"
 androidx-splashscreen = "1.0.1"
 androidx-sqlite = "2.2.0"
 androidx-swiperefreshlayout-version = "1.1.0"
@@ -38,7 +38,7 @@ dagger = "2.52"
 dependencyGuard = "0.5.0"
 facebook = "latest.release"
 firebase-bom = "33.8.0"
-firebase-app-distribution-plugin = "5.1.0"
+firebase-app-distribution-plugin = "5.1.1"
 firebase-crashlytics-plugin = "3.0.2"
 firebase-ui-auth = "8.0.2"
 flow-layout = "1.3.3"
@@ -65,7 +65,7 @@ jmrtd = "0.7.18"
 junit = "4.13.2"
 jwt = "0.11.3"
 kotlin = "2.0.20"
-kotlinx-coroutines = "1.8.1" # Cannot update this until we remove the Tempo library
+kotlinx-coroutines = "1.10.2"
 kotlinter = "4.3.0"
 kustomer = "3.3.1"
 ksp-plugin = "2.0.20-1.0.25"
@@ -76,7 +76,7 @@ mockito = "5.12.0"
 mockito_kotlin = "5.4.0"
 mockk = "1.13.16"
 okhttp = "4.12.0"
-onfido = "20.0.2"
+onfido = "22.8.0"
 photoview = "2.3.0"
 retrofit = "2.11.0"
 rx-android = "2.1.1"
@@ -85,13 +85,14 @@ rx-redux = "1.0.1"
 rx-relay = "2.1.0"
 scuba = "0.0.20"
 shared-preferences-mock = "1.2.4"
-sql-cipher = "4.2.0"
+sql-cipher = "4.9.0"
 stripe-android = "20.51.0"
 subsampling-scale-image = "3.10.0"
-tempo = "1.3.0-alpha01"
+true-time = "4.0.0.alpha"
 triplet-play = "3.10.1"
 turbine = "1.2.0"
 zxing = "3.4.1"
+rootbeer = "0.1.1"
 urbi-bom = "2025.05.20"
 
 [libraries]
@@ -169,6 +170,8 @@ google-firebase-auth = { group = "com.google.firebase", name = "firebase-auth" }
 google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
 google-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 google-firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
+google-firebase-appcheck-playintegrity = { group = "com.google.firebase", name = "firebase-appcheck-playintegrity" }
+google-firebase-appcheck-debug = { group = "com.google.firebase", name = "firebase-appcheck-debug" }
 google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 google-maps-compose = { group = "com.google.maps.android", name = "maps-compose", version.ref = "google-maps-compose" }
 google-maps-utils = { group = "com.google.maps.android", name = "android-maps-utils", version.ref = "google-maps-utils" }
@@ -218,11 +221,13 @@ rx-relay = { group = "com.jakewharton.rxrelay2", name = "rxrelay", version.ref =
 rxjava-android = { group = "io.reactivex.rxjava2", name = "rxandroid", version.ref = "rx-android" }
 scuba = { group = "net.sf.scuba", name = "scuba-sc-android", version.ref = "scuba" }
 shared-preferences-mock = { group = "io.github.ivanshafran", name = "shared-preferences-mock", version.ref = "shared-preferences-mock" }
-sql-cipher = { group = "net.zetetic", name = "android-database-sqlcipher", version.ref = "sql-cipher" }
+sql-cipher = { group = "net.zetetic", name = "sqlcipher-android", version.ref = "sql-cipher" }
 stripe-android = { group = "com.stripe", name = "stripe-android", version.ref = "stripe-android" }
 subsampling-sample-image = { group = "com.davemorrissey.labs", name = "subsampling-scale-image-view-androidx", version.ref = "subsampling-scale-image" }
-tempo = { group = "com.github.AllanHasegawa.Tempo", name = "tempo", version.ref = "tempo" }
+true-time = { group = "com.github.instacart", name = "truetime-android", version.ref = "true-time" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+rootbeer = { group = "com.scottyab", name = "rootbeer-lib", version.ref = "rootbeer" }
+
 urbi-bom = { group = "co.urbi.android", name = "bom", version.ref = "urbi-bom" }
 urbi-bom-third = { group = "co.urbi.android", name = "bom.third", version.ref = "urbi-bom" }
 urbi-common-state = { module = "co.urbi.android:commonstate"}
