@@ -74,7 +74,7 @@ ext {
     urbiBomId = 'bom'
     urbiBomTelepassId = 'bom.telepass'
     urbiBomThirdId = 'bom.third'
-    urbiBomVersion = '2025.05.20'
+    urbiBomVersion = '2025.06.13'
     urbiTelepassBomVersion = "$urbiBomVersion"
     urbiThirdBomVersion = "$urbiBomVersion"
 //  Android
