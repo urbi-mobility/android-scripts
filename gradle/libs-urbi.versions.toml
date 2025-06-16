@@ -93,6 +93,7 @@ triplet-play = "3.10.1"
 turbine = "1.2.0"
 zxing = "3.4.1"
 rootbeer = "0.1.1"
+urbi-bom = "2025.06.13"
 
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
@@ -227,8 +228,77 @@ true-time = { group = "com.github.instacart", name = "truetime-android", version
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 rootbeer = { group = "com.scottyab", name = "rootbeer-lib", version.ref = "rootbeer" }
 
+urbi-bom = { group = "co.urbi.android", name = "bom", version.ref = "urbi-bom" }
+urbi-bom-third = { group = "co.urbi.android", name = "bom.third", version.ref = "urbi-bom" }
+urbi-common-state = { module = "co.urbi.android:commonstate"}
+urbi-common-view = { module = "co.urbi.android:commonview"}
+urbi-compose-ds = { module = "co.urbi.android:composeds"}
+urbi-compose-navigation = { module = "co.urbi.android:composenavigation"}
+urbi-core = { module = "co.urbi.android:core"}
+urbi-login = { module = "co.urbi.android:login"}
+urbi-designsystem = { module = "co.urbi.android:designsystem"}
+urbi-evcharging = { module = "co.urbi.android:evcharging"}
+urbi-mobilitysharing = { module = "co.urbi.android:mobilitysharing"}
+urbi-model = { module = "co.urbi.android:model"}
+urbi-pay = { module = "co.urbi.android:pay"}
+urbi-scan = { module = "co.urbi.android:scan"}
+urbi-search = { module = "co.urbi.android:search"}
+urbi-taxi = { module = "co.urbi.android:taxi"}
+urbi-ticket = { module = "co.urbi.android:ticket"}
+urbi-transpo = { module = "co.urbi.android:transpo"}
+urbi-tripo = { module = "co.urbi.android:tripo"}
+urbi-utility = { module = "co.urbi.android:utility"}
+
+urbi-common-state-third = { group = "co.urbi.android", name = "commonstatethird"}
+urbi-common-view-third = { group = "co.urbi.android", name = "commonviewthird"}
+urbi-compose-ds-third = { group = "co.urbi.android", name = "composedsthird"}
+urbi-compose-navigation-third = { group = "co.urbi.android", name = "composenavigationthird"}
+urbi-core-third = { group = "co.urbi.android", name = "corethird"}
+urbi-login-third = { group = "co.urbi.android", name = "loginthird"}
+urbi-designsystem-third = { group = "co.urbi.android", name = "designsystemthird"}
+urbi-model-third = { group = "co.urbi.android", name = "modelthird"}
+urbi-pay-third = { group = "co.urbi.android", name = "paythird"}
+urbi-scan-third = { group = "co.urbi.android", name = "scanthird"}
+urbi-ticket-third = { group = "co.urbi.android", name = "ticketthird"}
+urbi-tripo-third = { group = "co.urbi.android", name = "tripothird"}
+urbi-utility-third = { group = "co.urbi.android", name = "utilitythird"}
 
 [bundles]
+urbi = [
+    "urbi-core",
+    "urbi-designsystem",
+    "urbi-evcharging",
+    "urbi-mobilitysharing",
+    "urbi-model",
+    "urbi-login",
+    "urbi-pay",
+    "urbi-scan",
+    "urbi-search",
+    "urbi-taxi",
+    "urbi-ticket",
+    "urbi-transpo",
+    "urbi-tripo",
+    "urbi-utility",
+    "urbi-compose-navigation",
+    "urbi-compose-ds",
+    "urbi-common-view",
+    "urbi-common-state"
+]
+urbithird = [
+    "urbi-core-third",
+    "urbi-designsystem-third",
+    "urbi-model-third",
+    "urbi-login-third",
+    "urbi-pay-third",
+    "urbi-scan-third",
+    "urbi-ticket-third",
+    "urbi-tripo-third",
+    "urbi-utility-third",
+    "urbi-compose-navigation-third",
+    "urbi-compose-ds-third",
+    "urbi-common-view-third",
+    "urbi-common-state-third"
+]
 accompanist = [
     "google-accompanist-navigation-animation",
     "google-accompanist-pager",
