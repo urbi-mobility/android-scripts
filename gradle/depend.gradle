@@ -42,28 +42,28 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.9.4'
-    designsystemVersion = '1.5.4'
-    modelVersion = '2.14.7'
-    coreVersion = '2.17.7'
-    payVersion = '1.14.3'
-    ticketVersion = '0.11.0'
-    searchVersion = '1.2.1'
-    taxiVersion = '1.2.3'
-    scanVersion = '1.4.2'
-    transpoVersion = '1.10.5'
-    evchargingVersion = '1.9.3'
-    tripoVersion = '1.9.6'
-    mobilitySharingVersion = '2.18.7'
-    commonStateVersion = '0.3.6'
-    commonViewVersion = '0.4.4'
-    composeNavigationVersion = '0.5.0'
-    composeDsVersion = '0.4.2'
+    utilityVersion = '2.9.5'
+    designsystemVersion = '1.5.5'
+    modelVersion = '2.14.8'
+    coreVersion = '2.17.8'
+    payVersion = '1.14.4'
+    ticketVersion = '0.11.1'
+    searchVersion = '1.2.2'
+    taxiVersion = '1.2.4'
+    scanVersion = '1.4.3'
+    transpoVersion = '1.10.6'
+    evchargingVersion = '1.9.4'
+    tripoVersion = '1.9.7'
+    mobilitySharingVersion = '2.18.8'
+    commonStateVersion = '0.3.7'
+    commonViewVersion = '0.4.5'
+    composeNavigationVersion = '0.5.1'
+    composeDsVersion = '0.4.3'
     historyVersion = '0.4.0'
     mapVersion = '0.4.0'
     profileVersion = '0.4.0'
     shopVersion = '0.4.0'
-    loginVersion = '0.4.0'
+    loginVersion = '0.4.1'
 
     telepassModelVersion = '2.7.0'
     telepassNetworkVersion = '2.10.0'
@@ -72,9 +72,9 @@ ext {
 //---End---//
     atacVersion = '2.2.2'
     urbiBomId = 'bom'
-    urbiBomTelepassId = 'bom.telepass'
-    urbiBomThirdId = 'bom.third'
-    urbiBomVersion = '2025.06.13'
+    urbiBomTelepassId = 'bomtelepass'
+    urbiBomThirdId = 'bomthird'
+    urbiBomVersion = '2025.06.16'
     urbiTelepassBomVersion = "$urbiBomVersion"
     urbiThirdBomVersion = "$urbiBomVersion"
 //  Android
@@ -91,8 +91,8 @@ ext {
 
 //  URBI
     urbi_bom = "$urbiGroupId:$urbiBomId:$urbiBomVersion"
-    urbi_bom_telepass = "$urbiGroupId:$urbiBomTelepassId:$urbiBomVersion"
-    urbi_bom_third = "$urbiGroupId:$urbiBomThirdId:$urbiBomVersion"
+    urbi_bom_telepass = "$urbiGroupTelepassId:$urbiBomTelepassId:$urbiBomVersion"
+    urbi_bom_third = "$urbiGroupThirdId:$urbiBomThirdId:$urbiBomVersion"
 
     designsystem = "$urbiGroupId:$designsystemId"
     designsystem_third = "$urbiGroupId:$designsystemId$suffixArtifactId"

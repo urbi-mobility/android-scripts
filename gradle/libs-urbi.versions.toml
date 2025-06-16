@@ -93,7 +93,7 @@ triplet-play = "3.10.1"
 turbine = "1.2.0"
 zxing = "3.4.1"
 rootbeer = "0.1.1"
-urbi-bom = "2025.06.13"
+urbi-bom = "2025.06.16"
 
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
@@ -229,7 +229,7 @@ turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine
 rootbeer = { group = "com.scottyab", name = "rootbeer-lib", version.ref = "rootbeer" }
 
 urbi-bom = { group = "co.urbi.android", name = "bom", version.ref = "urbi-bom" }
-urbi-bom-third = { group = "co.urbi.android", name = "bom.third", version.ref = "urbi-bom" }
+urbi-bom-third = { group = "co.urbi.third", name = "bomthird", version.ref = "urbi-bom" }
 urbi-common-state = { module = "co.urbi.android:commonstate"}
 urbi-common-view = { module = "co.urbi.android:commonview"}
 urbi-compose-ds = { module = "co.urbi.android:composeds"}
