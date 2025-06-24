@@ -408,7 +408,9 @@ fun forcePullServiceFileAndCopy() {
 }
 
 /**
- * This scripts read depend.gradle file where libs version are and upgrade patch versionif there is some change in their changelog
+ * This scripts read depend.gradle file where libs version are and upgrade patch version
+ * if there is some change in their changelog. Then upload a new BoM with new versions (you have to manually
+ * upgrade BoM version) and the upload libs.
  */
 tasks.register("upgrade-lib-patch-version") {
     doLast {
