@@ -45,7 +45,7 @@ ext {
     utilityVersion = '2.9.5'
     designsystemVersion = '1.5.6'
     modelVersion = '2.14.11'
-    coreVersion = '2.17.8'
+    coreVersion = '2.17.9'
     payVersion = '1.14.5'
     ticketVersion = '0.11.1'
     searchVersion = '1.2.2'
@@ -54,7 +54,7 @@ ext {
     transpoVersion = '1.10.9'
     evchargingVersion = '1.9.5'
     tripoVersion = '1.9.10'
-    mobilitySharingVersion = '2.18.10'
+    mobilitySharingVersion = '2.18.11'
     commonStateVersion = '0.3.7'
     commonViewVersion = '0.4.7'
     composeNavigationVersion = '0.5.1'
@@ -74,7 +74,7 @@ ext {
     urbiBomId = 'bom'
     urbiBomTelepassId = 'bomtelepass'
     urbiBomThirdId = 'bomthird'
-    urbiBomVersion = '2025.06.25'
+    urbiBomVersion = '2025.06.26'
     urbiTelepassBomVersion = "$urbiBomVersion"
     urbiThirdBomVersion = "$urbiBomVersion"
 //  Android
