@@ -408,7 +408,108 @@ fun forcePullServiceFileAndCopy() {
 }
 
 /**
- * This scripts read depend.gradle file where libs version are and update that if there is some change in their changelog
+ * This scripts read depend.gradle file where libs version are and upgrade patch version
+ * if there is some change in their changelog. Then upload a new BoM with new versions (you have to manually
+ * upgrade BoM version) and the upload libs.
+ */
+tasks.register("upgrade-lib-patch-version") {
+    doLast {
+        val mapVersionUrbi = getVersionKeyFromModule()
+        val mapVersionUrbiInverse = mapVersionUrbi.inverseMap()
+        val keyToChangeVersion: HashSet<String> = HashSet()
+        println("Start to scan Changelog files.......")
+////         Read Changelog Utility on Gradle file
+        mapVersionUrbi.forEach mapFor@{  map ->
+            var lastIsUnrelase = false
+            val pathFile = "${map.key}/changelog.md"
+            try {
+                val changelog =
+                    if (File(pathFile).exists()) File(pathFile) else File("$rootDir/android-urbi-framework/$pathFile")
+                changelog.readLines().forEach { line ->
+                    if (line.startsWith("## [Unreleased]", true)) {
+                        lastIsUnrelase = true
+                    } else if (lastIsUnrelase && line.startsWith("##")) {
+                        return@mapFor
+                    } else if (lastIsUnrelase && line.startsWith("-")) {
+                        lastIsUnrelase = false
+                        keyToChangeVersion.add(map.key)
+                    }
+                }
+            }catch (e: Exception){
+                println("Error for file $pathFile ${e.message}")
+            }
+        }
+        if(keyToChangeVersion.isNotEmpty()){
+            val newGradleDeep = arrayListOf<String>()
+            val gradle = if(File("android-scripts/gradle/depend.gradle").exists()) File("android-scripts/gradle/depend.gradle") else File("$rootDir/android-urbi-framework/android-scripts/gradle/depend.gradle")
+            var readVersion = false
+            println("Reading /gradle/depend.gradle file for version......")
+            gradle.forEachLine { line ->
+                if (line.equals("//---End---//", true)) {
+                    readVersion = false
+                    newGradleDeep.add(line)
+                }
+                else if (readVersion) {
+                    line.replace("\\s".toRegex(), "").let { lineW ->
+                        lineW.split("=").let { it ->
+                            if(it.size > 1 && mapVersionUrbiInverse.containsKey(it[0]) && keyToChangeVersion.contains(mapVersionUrbiInverse[it[0]])) {
+                                val versionArray = it[1].replace("\'".toRegex(), "").split(".")
+                                var mirrorVersion = versionArray[2]
+                                var extraMirrorVersion = ""
+                                if(!mirrorVersion.all { it.isDigit() } ){
+                                    val arrMirror= mirrorVersion.split("-")
+                                    mirrorVersion = arrMirror[0]
+                                    extraMirrorVersion = arrMirror[1]
+                                }
+                                mirrorVersion = "${mirrorVersion.toInt()+1}"
+                                var newVersionApp = "${versionArray[0]}.${versionArray[1]}.${mirrorVersion}"
+                                if(extraMirrorVersion.isNotEmpty())
+                                    newVersionApp = "$newVersionApp-$extraMirrorVersion"
+                                newGradleDeep.add(line.replace(it[1].replace("\'".toRegex(), ""),newVersionApp))
+                            }
+                            else
+                                newGradleDeep.add(line)
+                        }
+                    }
+                }
+                else if (line.equals("//---Module Version---//", true)) {
+                    readVersion = true
+                    newGradleDeep.add(line)
+                }
+                else
+                    newGradleDeep.add(line)
+            }
+            println("Update dep file")
+            gradle.printWriter().use { out ->
+                newGradleDeep.forEach {
+                    out.println(it)
+                }
+            }
+            println("Upload BoM")
+            ByteArrayOutputStream().use { os ->
+                val result = exec {
+                    commandLine("./gradlew", "bom:publishAllBom")
+                    standardOutput = os
+                }
+                println(os.toString())
+                println("Upload BoM: $result")
+            }
+            ByteArrayOutputStream().use { os ->
+                val result = exec {
+                    commandLine("./gradlew", "uploadlib", "-Pargs=skipService")
+                    standardOutput = os
+                }
+                println(os.toString())
+                println("Upload Libs RESULT$result")
+            }
+        }
+        else
+            println("No Version have updated")
+    }
+}
+
+/**
+ * This scripts read depend.gradle file where libs version are and upgrade patch versionif there is some change in their changelog, and then upload new libs
  */
 tasks.register("update-version-lib") {
     doLast {
