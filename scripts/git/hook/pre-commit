@@ -1,43 +1,48 @@
-#!/bin/sh
+#!/bin/bash
 set -e
 
 ##### CHANGELOG AUTO-UPDATE START #####
 echo "Checking for module changes and updating changelogs..."
 
-# Module to changelog mapping (based on buildSrc/build.gradle.kts + app modules)
-declare -A MODULE_MAP=(
-    # Framework modules (android-urbi-framework/)
-    ["utilitylib"]="utilitylib"
-    ["urbimodel"]="urbimodel"
-    ["urbicore"]="urbicore"
-    ["designsystem"]="designsystem"
-    ["urbiscan"]="urbiscan"
-    ["urbisearch"]="urbisearch"
-    ["urbipay"]="urbipay"
-    ["ticketlib"]="ticketlib"
-    ["urbitaxi"]="urbitaxi"
-    ["evcharging"]="evcharging"
-    ["transpo"]="transpo"
-    ["tripo"]="tripo"
-    ["mobilitylib"]="mobilitylib"
-    ["composeds"]="composeds"
-    ["composenavigation"]="composenavigation"
-    ["common-state"]="common-state"
-    ["login"]="login"
-    ["commonview"]="commonview"
-    # App-level feature modules (root level)
-    ["history"]="history"
-    ["profile"]="profile"
-    ["map"]="map" 
-    ["shop"]="shop"
-)
+# Function to check if module is valid
+is_valid_module() {
+    local module="$1"
+    case "$module" in
+        "utilitylib"|"urbimodel"|"urbicore"|"designsystem"|"urbiscan"|"urbisearch"|\
+        "urbipay"|"ticketlib"|"urbitaxi"|"evcharging"|"transpo"|"tripo"|\
+        "mobilitylib"|"composeds"|"composenavigation"|"common-state"|"login"|\
+        "commonview"|"history"|"profile"|"map"|"shop")
+            return 0
+            ;;
+        *)
+            return 1
+            ;;
+    esac
+}
 
 # Function to check if changelog already has unreleased changes
 has_unreleased_changes() {
     local changelog_file="$1"
     if [ -f "$changelog_file" ]; then
         # Check if there's an [Unreleased] section with actual changes (not just the header)
-        awk '/## \[Unreleased\]/{unreleased=1; next} /^## \[/{unreleased=0} unreleased && /^- /{found=1; exit} END{exit !found}' "$changelog_file"
+        # Look for content between [Unreleased] and the next ## section
+        awk '
+        /^## \[Unreleased\]/{
+            unreleased=1; 
+            next
+        } 
+        /^## \[/{
+            if(unreleased) {
+                unreleased=0
+            }
+        } 
+        unreleased && /^- /{
+            found=1; 
+            exit
+        } 
+        END{
+            exit !found
+        }' "$changelog_file"
         return $?
     fi
     return 1
@@ -46,15 +51,56 @@ has_unreleased_changes() {
 # Function to get changelog path for module
 get_changelog_path() {
     local module="$1"
-    # App-level modules are at root level, framework modules are under android-urbi-framework/
-    case "$module" in
-        "history"|"profile"|"map"|"shop")
-            echo "$module/changelog.md"
-            ;;
-        *)
-            echo "android-urbi-framework/$module/changelog.md"
-            ;;
-    esac
+    # Determine if we're running from main repo or submodule
+    if [ -d "android-urbi-framework" ]; then
+        # Running from main repo
+        case "$module" in
+            "history"|"profile"|"map"|"shop")
+                echo "$module/changelog.md"
+                ;;
+            *)
+                echo "android-urbi-framework/$module/changelog.md"
+                ;;
+        esac
+    else
+        # Running from within android-urbi-framework submodule
+        case "$module" in
+            "history"|"profile"|"map"|"shop")
+                echo "../$module/changelog.md"
+                ;;
+            *)
+                echo "$module/changelog.md"
+                ;;
+        esac
+    fi
+}
+
+# Function to get commit message
+get_commit_message() {
+    # Try to get commit message from command line arguments
+    local commit_msg=""
+    
+    # Method 1: Check if git commit is in progress and get message from .git/COMMIT_EDITMSG
+    if [ -f ".git/COMMIT_EDITMSG" ]; then
+        commit_msg=$(head -n 1 ".git/COMMIT_EDITMSG" 2>/dev/null | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+    fi
+    
+    # Method 2: Check parent process command line for -m flag
+    if [ -z "$commit_msg" ]; then
+        local parent_cmd=$(ps -o args= $PPID 2>/dev/null || echo "")
+        if [[ "$parent_cmd" =~ -m[[:space:]]+\"([^\"]+)\" ]]; then
+            commit_msg="${BASH_REMATCH[1]}"
+        elif [[ "$parent_cmd" =~ -m[[:space:]]+([^[:space:]]+) ]]; then
+            commit_msg="${BASH_REMATCH[1]}"
+        fi
+    fi
+    
+    # Fallback to generic message if we can't extract it
+    if [ -z "$commit_msg" ] || [ "$commit_msg" = "#" ]; then
+        commit_msg="Updated module implementation"
+    fi
+    
+    echo "$commit_msg"
 }
 
 # Function to add unreleased entry to changelog
@@ -68,7 +114,10 @@ add_unreleased_entry() {
         return 0
     fi
     
-    echo "  📝 Adding unreleased entry to $module/changelog.md"
+    # Get commit message
+    local commit_message=$(get_commit_message)
+    
+    echo "  📝 Adding unreleased entry to $module/changelog.md: $commit_message"
     
     # Create changelog if it doesn't exist
     if [ ! -f "$changelog_file" ]; then
@@ -78,7 +127,7 @@ add_unreleased_entry() {
 All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
-- Updated module implementation
+- $commit_message
 
 EOF
         git add "$changelog_file"
@@ -87,17 +136,17 @@ EOF
     
     # Check if [Unreleased] section exists
     if grep -q "## \[Unreleased\]" "$changelog_file"; then
-        # Add entry under existing [Unreleased] section
-        sed -i '' '/## \[Unreleased\]/a\
-- Updated module implementation
-' "$changelog_file"
+        # Add entry under existing [Unreleased] section using double quotes for variable expansion
+        sed -i '' "/## \\[Unreleased\\]/a\\
+- $commit_message
+" "$changelog_file"
     else
-        # Add [Unreleased] section at the top after title
-        sed -i '' '/^# /a\
-\
-## [Unreleased]\
-- Updated module implementation
-' "$changelog_file"
+        # Add [Unreleased] section at the top after title using double quotes for variable expansion
+        sed -i '' "/^# /a\\
+\\
+## [Unreleased]\\
+- $commit_message
+" "$changelog_file"
     fi
     
     git add "$changelog_file"
@@ -110,34 +159,54 @@ if [ -n "$CHANGED_FILES" ]; then
     echo "📁 Checking changed files for module updates..."
     
     # Track which modules have been processed to avoid duplicates
-    declare -A PROCESSED_MODULES=()
+    PROCESSED_MODULES=""
     
     # Check each changed file
     for file in $CHANGED_FILES; do
+        echo "  🔍 Checking file: $file"
         module=""
         
         # Detect module type and extract module name
         if [[ "$file" =~ ^android-urbi-framework/([^/]+)/ ]]; then
-            # Framework module: android-urbi-framework/MODULE/...
+            # Framework module: android-urbi-framework/MODULE/... (when run from main repo)
             module="${BASH_REMATCH[1]}"
-        elif [[ "$file" =~ ^(history|profile|map|shop)/ ]]; then
-            # App-level module: MODULE/...
-            module="${BASH_REMATCH[1]}"
+            echo "  📁 Framework module detected: $module"
+        elif [[ "$file" =~ ^([^/]+)/ ]]; then
+            # When run from within android-urbi-framework submodule: MODULE/...
+            potential_module="${BASH_REMATCH[1]}"
+            # Check if this is a valid framework module or app-level module
+            if is_valid_module "$potential_module"; then
+                module="$potential_module"
+                echo "  📁 Module detected: $module"
+            else
+                echo "  ⏭️  Directory '$potential_module' is not a valid module, skipping"
+                continue
+            fi
         else
             # Skip files not in any module
+            echo "  ⏭️  File not in any module, skipping"
             continue
         fi
         
         # Skip if not a known module or already processed
-        if [ -z "$module" ] || [[ -n "${PROCESSED_MODULES[$module]}" ]]; then
+        if [ -z "$module" ]; then
+            echo "  ⚠️  Module name is empty, skipping"
             continue
         fi
         
-        # Check if this module is in our mapping
-        if [[ -n "${MODULE_MAP[$module]}" ]]; then
-            echo "🔍 Detected changes in module: $module"
+        if echo "$PROCESSED_MODULES" | grep -q " $module "; then
+            echo "  ⏭️  Module $module already processed, skipping"
+            continue
+        fi
+
+        # Check if this module is valid
+        echo "  🔍 Checking if module '$module' is valid..."
+        if is_valid_module "$module"; then
+            echo "  ✅ Detected changes in module: $module"
             add_unreleased_entry "$module"
-            PROCESSED_MODULES[$module]=1
+            PROCESSED_MODULES="$PROCESSED_MODULES $module "
+        else
+            echo "  ❌ Module '$module' is not valid"
         fi
     done
     
