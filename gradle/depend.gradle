@@ -4,7 +4,6 @@ ext {
     ghp_registry_name = 'GitHubPackages'
     ghp_registry_name_third = 'GitHubPackages-Third'
     urbiGroupId = 'co.urbi.android'
-    urbiGroupTelepassId = 'co.urbi.telepass'
     urbiGroupThirdId = 'co.urbi.third'
     telepassGroupId = 'com.telepass.urbi'
     urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-urbi-framework'
@@ -72,7 +71,6 @@ ext {
 //---End---//
     atacVersion = '2.2.2'
     urbiBomId = 'bom'
-    urbiBomTelepassId = 'bomtelepass'
     urbiBomThirdId = 'bomthird'
     urbiBomVersion = '2025.07.08'
     urbiTelepassBomVersion = "$urbiBomVersion"
@@ -90,10 +88,6 @@ ext {
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
 
 //  URBI
-    urbi_bom = "$urbiGroupId:$urbiBomId:$urbiBomVersion"
-    urbi_bom_telepass = "$urbiGroupTelepassId:$urbiBomTelepassId:$urbiBomVersion"
-    urbi_bom_third = "$urbiGroupThirdId:$urbiBomThirdId:$urbiBomVersion"
-
     designsystem = "$urbiGroupId:$designsystemId"
     designsystem_third = "$urbiGroupId:$designsystemId$suffixArtifactId"
     designsystemdep = "$designsystem:$designsystemVersion"
