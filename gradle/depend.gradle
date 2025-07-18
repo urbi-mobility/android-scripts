@@ -4,6 +4,8 @@ ext {
     ghp_registry_name = 'GitHubPackages'
     ghp_registry_name_third = 'GitHubPackages-Third'
     urbiGroupId = 'co.urbi.android'
+    urbiGroupTelepassId = 'co.urbi.telepass'
+    urbiGroupThirdId = 'co.urbi.third'
     telepassGroupId = 'com.telepass.urbi'
     urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-urbi-framework'
     telepass_ghp_registry_url = 'https://maven.pkg.github.com/wise-emotions/android-urbi-unica-framework'
@@ -40,35 +42,41 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.8.16-j17'
-    designsystemVersion = '1.4.22-j17'
-    modelVersion = '2.13.28-j17'
-    coreVersion = '2.16.29-j17'
-    payVersion = '1.13.29-j17'
-    ticketVersion = '0.10.3-j17'
-    searchVersion = '1.1.6-j17'
-    taxiVersion = '1.1.29-j17'
-    scanVersion = '1.3.10-j17'
-    transpoVersion = '1.9.32-j17'
-    evchargingVersion = '1.8.8-j17'
-    tripoVersion = '1.8.36-j17-hotfix'
-    mobilitySharingVersion = '2.17.36-j17'
-    commonStateVersion = '0.2.30-j17'
-    commonViewVersion = '0.3.34-j17'
-    composeNavigationVersion = '0.3.5-j17'
-    composeDsVersion = '0.3.28-j17'
-    historyVersion = '0.3.0'
-    mapVersion = '0.3.2'
-    profileVersion = '0.3.1'
-    shopVersion = '0.3.0'
-    loginVersion = '0.3.11-j17'
+    utilityVersion = '2.9.6'
+    designsystemVersion = '1.5.7'
+    modelVersion = '2.14.12'
+    coreVersion = '2.17.10'
+    payVersion = '1.14.5'
+    ticketVersion = '0.11.2'
+    searchVersion = '1.2.3'
+    taxiVersion = '1.2.5'
+    scanVersion = '1.4.3'
+    transpoVersion = '1.10.9'
+    evchargingVersion = '1.9.6'
+    tripoVersion = '1.9.11'
+    mobilitySharingVersion = '2.18.11'
+    commonStateVersion = '0.3.8'
+    commonViewVersion = '0.4.8'
+    composeNavigationVersion = '0.5.1'
+    composeDsVersion = '0.4.4'
+    historyVersion = '0.4.0'
+    mapVersion = '0.4.0'
+    profileVersion = '0.4.0'
+    shopVersion = '0.4.0'
+    loginVersion = '0.4.3'
 
     telepassModelVersion = '2.7.0'
     telepassNetworkVersion = '2.10.0'
     telepassLibCode = '7'
     telepassLibVersion = '2.13.' + telepassLibCode
 //---End---//
-    atacVersion = '2.1.8'
+    atacVersion = '2.2.2'
+    urbiBomId = 'bom'
+    urbiBomTelepassId = 'bomtelepass'
+    urbiBomThirdId = 'bomthird'
+    urbiBomVersion = '2025.07.08'
+    urbiTelepassBomVersion = "$urbiBomVersion"
+    urbiThirdBomVersion = "$urbiBomVersion"
 //  Android
     android_version_array = ["utility", utilityVersion, "designsystem", designsystemVersion, "modelVersion", modelVersion, "coreVersion", coreVersion, "pay", payVersion, "ticket", ticketVersion, "search", searchVersion, "taxi", taxiVersion,
                              "taxi", taxiVersion, "scan", scanVersion, "transpo", transpoVersion, "evcharging", evchargingVersion, "tripo", tripoVersion, "mobilitySharing", mobilitySharingVersion, "commonState", commonStateVersion, "commonView", commonViewVersion,
@@ -82,19 +90,33 @@ ext {
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
 
 //  URBI
-    designsystemdep = "$urbiGroupId:$designsystemId:$designsystemVersion"
-    designsystemdep_third = "$urbiGroupId:$designsystemId$suffixArtifactId:$designsystemVersion"
-    utilitylibdep = "$urbiGroupId:$utilityId:$utilityVersion"
-    utilitylibdep_third = "$urbiGroupId:$utilityId$suffixArtifactId:$utilityVersion"
-    urbimodeldep = "$urbiGroupId:$modelId:$modelVersion"
-    urbimodeldep_third = "$urbiGroupId:$modelId$suffixArtifactId:$modelVersion"
-    composenavigationdep = "$urbiGroupId:$composeNavigationId:$composeNavigationVersion"
-    composenavigationdep_third = "$urbiGroupId:$composeNavigationId$suffixArtifactId:$composeNavigationVersion"
+    urbi_bom = "$urbiGroupId:$urbiBomId:$urbiBomVersion"
+    urbi_bom_telepass = "$urbiGroupTelepassId:$urbiBomTelepassId:$urbiBomVersion"
+    urbi_bom_third = "$urbiGroupThirdId:$urbiBomThirdId:$urbiBomVersion"
+
+    designsystem = "$urbiGroupId:$designsystemId"
+    designsystem_third = "$urbiGroupId:$designsystemId$suffixArtifactId"
+    designsystemdep = "$designsystem:$designsystemVersion"
+    designsystemdep_third = "$designsystem_third:$designsystemVersion"
+    utility = "$urbiGroupId:$utilityId"
+    utility_third = "$urbiGroupId:$utilityId$suffixArtifactId"
+    utilitylibdep = "$utility:$utilityVersion"
+    utilitylibdep_third = "$utility_third:$utilityVersion"
+    model_dep = "$urbiGroupId:$modelId" //non possiamo usare "model" perchè Gradle da errore al sync
+    model_dep_third = "$urbiGroupId:$modelId$suffixArtifactId"
+    urbimodeldep = "$model_dep:$modelVersion"
+    urbimodeldep_third = "$model_dep_third:$modelVersion"
     urbimodeldep_exclude = dependencies.create(urbimodeldep, {
         exclude module: "$utilityId"
     })
-    urbicoredep = "$urbiGroupId:$coreId:$coreVersion"
-    urbicoredep_third = "$urbiGroupId:$coreId$suffixArtifactId:$coreVersion"
+    composenavigation = "$urbiGroupId:$composeNavigationId"
+    composenavigation_third = "$urbiGroupId:$composeNavigationId$suffixArtifactId"
+    composenavigationdep = "$composenavigation:$composeNavigationVersion"
+    composenavigationdep_third = "$composenavigation_third:$composeNavigationVersion"
+    core = "$urbiGroupId:$coreId"
+    core_third = "$urbiGroupId:$coreId$suffixArtifactId"
+    urbicoredep = "$core:$coreVersion"
+    urbicoredep_third = "$core_third:$coreVersion"
     urbicoredep_exclude = dependencies.create(urbicoredep, {
         exclude group: 'com.android.support'
         exclude group: 'com.google.dagger'
@@ -102,8 +124,10 @@ ext {
         exclude module: "$modelId"
         exclude module: "$utilityId"
     })
-    ticketlibdep = "$urbiGroupId:$ticketId:$ticketVersion"
-    ticketlibdep_third = "$urbiGroupId:$ticketId$suffixArtifactId:$ticketVersion"
+    ticket = "$urbiGroupId:$ticketId"
+    ticket_third = "$urbiGroupId:$ticketId$suffixArtifactId"
+    ticketlibdep = "$ticket:$ticketVersion"
+    ticketlibdep_third = "$ticket_third:$ticketVersion"
     ticketlibdep_exclude = dependencies.create(ticketlibdep, {
         exclude group: 'com.google.dagger:dagger'
         exclude module: "$coreId"
@@ -111,8 +135,10 @@ ext {
         exclude module: "$utilityId"
         exclude module: "$designsystemId"
     })
-    urbipaydep = "$urbiGroupId:$payId:$payVersion"
-    urbipaydep_third = "$urbiGroupId:$payId$suffixArtifactId:$payVersion"
+    pay = "$urbiGroupId:$payId"
+    pay_third = "$urbiGroupId:$payId$suffixArtifactId"
+    urbipaydep = "$pay:$payVersion"
+    urbipaydep_third = "$pay_third:$payVersion"
     urbipaydep_exclude = dependencies.create(urbipaydep, {
         exclude group: 'com.google.dagger:dagger'
         exclude module: "$coreId"
@@ -120,7 +146,8 @@ ext {
         exclude module: "$utilityId"
         exclude module: "$designsystemId"
     })
-    transpodep = "$urbiGroupId:$transpoId:$transpoVersion"
+    transpo = "$urbiGroupId:$transpoId"
+    transpodep = "$transpo:$transpoVersion"
     transpodep_exclude = dependencies.create(transpodep, {
         exclude group: 'com.google.dagger:dagger'
         exclude module: "$coreId"
@@ -131,8 +158,10 @@ ext {
         exclude module: "$composeDsId"
         exclude module: "$commonStateId"
     })
-    tripodep = "$urbiGroupId:$tripoId:$tripoVersion"
-    tripodep_third = "$urbiGroupId:$tripoId$suffixArtifactId:$tripoVersion"
+    tripo = "$urbiGroupId:$tripoId"
+    tripo_third = "$urbiGroupId:$tripoId$suffixArtifactId"
+    tripodep = "$tripo:$tripoVersion"
+    tripodep_third = "$tripo_third:$tripoVersion"
     tripodep_exclude = dependencies.create(tripodep, {
         exclude group: 'com.google.dagger:dagger'
         exclude module: "$coreId"
@@ -144,21 +173,25 @@ ext {
         exclude module: "$composeDsId"
         exclude module: "$commonStateId"
     })
-    urbisearchdep = "$urbiGroupId:$searchId:$searchVersion"
+    search = "$urbiGroupId:$searchId"
+    urbisearchdep = "$search:$searchVersion"
     urbisearchdep_exclude = dependencies.create(urbisearchdep, {
         exclude module: "$coreId"
         exclude module: "$modelId"
         exclude module: "$utilityId"
         exclude module: "$designsystemId"
     })
-    urbiscandep = "$urbiGroupId:$scanId:$scanVersion"
-    urbiscandep_third = "$urbiGroupId:$scanId$suffixArtifactId:$scanVersion"
+    scan = "$urbiGroupId:$scanId"
+    scan_third = "$urbiGroupId:$scanId$suffixArtifactId"
+    urbiscandep = "$scan:$scanVersion"
+    urbiscandep_third = "$scan_third:$scanVersion"
     urbiscandep_exclude = dependencies.create(urbiscandep, {
         exclude module: "$designsystemId"
         exclude module: "$utilityId"
     })
 
-    urbitaxidep = "$urbiGroupId:$taxiId:$taxiVersion"
+    taxi = "$urbiGroupId:$taxiId"
+    urbitaxidep = "$taxi:$taxiVersion"
     urbitaxidep_exclude = dependencies.create(urbitaxidep, {
         exclude module: "$searchId"
         exclude module: "$coreId"
@@ -167,7 +200,8 @@ ext {
         exclude module: "$designsystemId"
     })
 
-    evchargingdep = "$urbiGroupId:$evchargingId:$evchargingVersion"
+    evcharging = "$urbiGroupId:$evchargingId"
+    evchargingdep = "$evcharging:$evchargingVersion"
     evchargingdep_exclude = dependencies.create(evchargingdep, {
         exclude module: "$coreId"
         exclude module: "$modelId"
@@ -175,7 +209,8 @@ ext {
         exclude module: "$designsystemId"
     })
 
-    mobilitylibdep = "$urbiGroupId:$mobilitySharingId:$mobilitySharingVersion"
+    mobilitysharing = "$urbiGroupId:$mobilitySharingId"
+    mobilitylibdep = "$mobilitysharing:$mobilitySharingVersion"
     mobilitylibdep_exclude = dependencies.create(mobilitylibdep, {
         exclude module: "$coreId"
         exclude module: "$modelId"
@@ -190,46 +225,12 @@ ext {
         exclude module: "$utilityId"
     })
 
-    tpaylibdep = "$telepassGroupId:$telepassLibId:$telepassLibVersion"
-    tpaylibdep_exclude = dependencies.create(tpaylibdep, {
-        exclude module: "$coreId"
-        exclude module: "$modelId"
-        exclude module: "$designsystemId"
-        exclude module: "$searchId"
-        exclude module: "$tripoId"
-        exclude module: "$transpoId"
-        exclude module: "$evchargingId"
-        exclude module: "$taxiId"
-        exclude module: "$ticketId"
-        exclude module: "$scanId"
-        exclude module: "$mobilitySharingId"
-        exclude module: "$telepassModelId"
-        exclude module: "$telepassNetworkId"
-        exclude module: "$utilityId"
-    })
+    composeds = "$urbiGroupId:$composeDsId"
+    composeds_third = "$urbiGroupId:$composeDsId$suffixArtifactId"
+    composedsdep = dependencies.create("$composeds:$composeDsVersion")
+    composedsdep_third = dependencies.create("$composeds_third:$composeDsVersion")
 
-    telepasspaymodeldep = "$telepassGroupId:$telepassModelId:$telepassModelVersion"
-
-    telepasspaymodeldep_exclude = dependencies.create(telepasspaymodeldep, {
-        exclude module: "$utilityId"
-    })
-
-    telepasspaynetworkdep = dependencies.create("$telepassGroupId:$telepassNetworkId:$telepassNetworkVersion", {
-        exclude module: 'play-services-stats'
-        exclude module: 'firebase-measurement-connector-impl'
-    })
-
-    telepasspaynetworkdep_exclude = dependencies.create(telepasspaynetworkdep, {
-        exclude module: 'play-services-stats'
-        exclude module: 'firebase-measurement-connector-impl'
-        exclude module: "$utilityId"
-        exclude module: "$telepassModelId"
-    })
-
-    composedsdep = dependencies.create("$urbiGroupId:$composeDsId:$composeDsVersion")
-    composedsdep_third = dependencies.create("$urbiGroupId:$composeDsId$suffixArtifactId:$composeDsVersion")
-
-    composedsdep_exclude = dependencies.create("$urbiGroupId:$composeDsId:$composeDsVersion", {
+    composedsdep_exclude = dependencies.create("$composeds:$composeDsVersion", {
         exclude module: "$composeNavigationId"
         exclude module: "$utilityId"
         exclude module: "$coreId"
@@ -237,10 +238,12 @@ ext {
         exclude module: "$designsystemId"
     })
 
-    composestatedep = dependencies.create("$urbiGroupId:$commonStateId:$commonStateVersion")
-    composestatedep_third = dependencies.create("$urbiGroupId:$commonStateId$suffixArtifactId:$commonStateVersion")
+    composestate = "$urbiGroupId:$commonStateId"
+    composestate_third = "$urbiGroupId:$commonStateId$suffixArtifactId"
+    composestatedep = dependencies.create("$composestate:$commonStateVersion")
+    composestatedep_third = dependencies.create("$composestate_third:$commonStateVersion")
 
-    composestatedep_exclude = dependencies.create("$urbiGroupId:$commonStateId:$commonStateVersion", {
+    composestatedep_exclude = dependencies.create("$composestate:$commonStateVersion", {
         exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
         exclude module: "$utilityId"
@@ -249,9 +252,11 @@ ext {
         exclude module: "$designsystemId"
     })
 
-    logindep = dependencies.create("$urbiGroupId:$loginId:$loginVersion")
-    logindep_third = "$urbiGroupId:$loginId$suffixArtifactId:$loginVersion"
-    logindep_exclude = dependencies.create("$urbiGroupId:$loginId:$loginVersion", {
+    login = "$urbiGroupId:$loginId"
+    login_third = "$urbiGroupId:$loginId$suffixArtifactId"
+    logindep = dependencies.create("$login:$loginVersion")
+    logindep_third = "$login_third:$loginVersion"
+    logindep_exclude = dependencies.create("$login:$loginVersion", {
         exclude module: "$composeNavigationId"
         exclude module: "$commonStateId"
         exclude module: "$composeDsId"
@@ -261,9 +266,11 @@ ext {
         exclude module: "$designsystemId"
     })
 
+    commonview = "$urbiGroupId:$commonViewId"
+    commonview_third = "$urbiGroupId:$commonViewId$suffixArtifactId"
     commonviewdep = dependencies.create("$urbiGroupId:$commonViewId:$commonViewVersion")
-    commonviewdep_third = "$urbiGroupId:$commonViewId$suffixArtifactId:$commonViewVersion"
-    commonviewdep_exclude = dependencies.create("$urbiGroupId:$commonViewId:$commonViewVersion", {
+    commonviewdep_third = "$commonview_third:$commonViewVersion"
+    commonviewdep_exclude = dependencies.create("$commonviewdep:$commonViewVersion", {
         exclude module: "$composeNavigationId"
         exclude module: "$composeDsId"
         exclude module: "$commonStateId"

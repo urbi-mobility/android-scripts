@@ -1,28 +1,28 @@
 [versions]
 accompanist_compose = "0.34.0"
 adapter-delegates4 = "4.3.0"
-android-gradle-plugin = "8.6.1"
-android-material = "1.11.0"
+android-gradle-plugin = "8.9.0"
+android-material = "1.12.0"
 android-places = "3.5.0"
-androidx-activity = "1.9.1"
+androidx-activity = "1.9.3"
 androidx-camera = "1.3.3"
 androidx-camera-view = "1.3.3"
-androidx-compose-bom = "2024.05.00"
-androidx-fragment = "1.8.2"
+androidx-compose-bom = "2025.01.00"
+androidx-fragment = "1.8.5"
 androidx-appcompat = "1.7.0"
 androidx-biometric = "1.1.0"
 androidx-biometric-ktx = "1.2.0-alpha05"
 androidx-constraintlayout = "2.1.4"
 androidx-constraintlayout-compose = "1.1.0-alpha13"
-androidx-core-ktx = "1.13.1"
+androidx-core-ktx = "1.15.0"
 androidx-core-testing = "2.2.0"
 androidx-gridlayout = "1.0.0"
 androidx-hilt-navigation-compose = "1.2.0"
 androidx-legacy-support = "1.0.0"
-androidx-lifecycle = "2.7.0"
+androidx-lifecycle = "2.8.7"
 androidx-navigation = "2.7.7"
-androidx-preference = "1.1.0"
-androidx-security-crypto = "1.1.0-alpha06"
+androidx-preference = "1.2.1"
+androidx-security-crypto = "1.1.0-alpha07"
 androidx-splashscreen = "1.0.1"
 androidx-sqlite = "2.2.0"
 androidx-swiperefreshlayout-version = "1.1.0"
@@ -32,22 +32,22 @@ androidx-test-ext-junit = "1.2.1"
 androidx-test-ext-truth = "1.6.0"
 androidx-test-runner = "1.6.2"
 androidx-work-manager = "2.8.1"
-androidx-web-kit = "1.8.0"
+androidx-web-kit = "1.12.1"
 commons-codec = "1.15"
 dagger = "2.52"
 dependencyGuard = "0.5.0"
 facebook = "latest.release"
-firebase-bom = "33.1.0"
-firebase-app-distribution-plugin = "5.0.0"
-firebase-crashlytics-plugin = "3.0.1"
+firebase-bom = "33.8.0"
+firebase-app-distribution-plugin = "5.1.1"
+firebase-crashlytics-plugin = "3.0.2"
 firebase-ui-auth = "8.0.2"
 flow-layout = "1.3.3"
 glide = "4.16.0"
 glide-compose = "1.0.0-alpha.5"
-gson = "2.10.1"
-google-maps-compose = "6.1.1"
+gson = "2.11.0"
+google-maps-compose = "6.4.2"
 google-maps-secrets = "2.0.1"
-google-maps-utils = "3.8.2"
+google-maps-utils = "3.10.0"
 google-mlkit-barcode-scanning = "17.0.2"
 google-play-services-ads = "18.0.1"
 google-play-services-appset = "16.0.2"
@@ -60,13 +60,12 @@ google-play-services-mlkit-text-recognition = "19.0.0"
 google-play-services-pay = "16.5.0"
 google-play-services-plugin = "4.4.2"
 google-play-services-wallet = "19.4.0"
-instabug = "14.1.0"
 json-test = "20250107"
 jmrtd = "0.7.18"
 junit = "4.13.2"
 jwt = "0.11.3"
 kotlin = "2.0.20"
-kotlinx-coroutines = "1.8.1" # Cannot update this until we remove the Tempo library
+kotlinx-coroutines = "1.10.2"
 kotlinter = "4.3.0"
 kustomer = "3.3.1"
 ksp-plugin = "2.0.20-1.0.25"
@@ -79,22 +78,22 @@ mockk = "1.13.16"
 okhttp = "4.12.0"
 onfido = "22.8.0"
 photoview = "2.3.0"
-retrofit = "2.9.0"
-retrofit-adapter-rxjava = "2.9.0"
-retrofit-converter-gson = "2.9.0"
+retrofit = "2.11.0"
 rx-android = "2.1.1"
 rx-binding = "3.0.0"
 rx-redux = "1.0.1"
 rx-relay = "2.1.0"
 scuba = "0.0.20"
 shared-preferences-mock = "1.2.4"
-sql-cipher = "4.4.3"
+sql-cipher = "4.9.0"
 stripe-android = "20.51.0"
 subsampling-scale-image = "3.10.0"
-tempo = "1.3.0-alpha01"
-triplet-play = "3.8.1"
-turbine = "0.13.0"
+true-time = "4.0.0.alpha"
+triplet-play = "3.10.1"
+turbine = "1.2.0"
 zxing = "3.4.1"
+rootbeer = "0.1.1"
+urbi-bom = "2025.07.08"
 
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
@@ -171,6 +170,8 @@ google-firebase-auth = { group = "com.google.firebase", name = "firebase-auth" }
 google-firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebase-bom" }
 google-firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
 google-firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
+google-firebase-appcheck-playintegrity = { group = "com.google.firebase", name = "firebase-appcheck-playintegrity" }
+google-firebase-appcheck-debug = { group = "com.google.firebase", name = "firebase-appcheck-debug" }
 google-gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 google-maps-compose = { group = "com.google.maps.android", name = "maps-compose", version.ref = "google-maps-compose" }
 google-maps-utils = { group = "com.google.maps.android", name = "android-maps-utils", version.ref = "google-maps-utils" }
@@ -189,8 +190,6 @@ google-zxing = { group = "com.google.zxing", name = "core", version.ref = "zxing
 hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger" }
 hilt-androidtesting = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "dagger" }
 hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "dagger" }
-instabug-instabug = { group = "com.instabug.library", name = "instabug", version.ref = "instabug" }
-instabug-okhttp = { group = "com.instabug.library", name = "instabug-with-okhttp-interceptor", version.ref = "instabug" }
 json-test = { group = "org.json", name = "json", version.ref = "json-test" }
 jmrtd = { group = "org.jmrtd", name = "jmrtd", version.ref = "jmrtd" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
@@ -212,22 +211,94 @@ mockk-android = { group = "io.mockk", name = "mockk-android", version.ref = "moc
 okhttp-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
 onfido = { group = "com.onfido.sdk.capture", name = "onfido-capture-sdk", version.ref = "onfido" }
 photoview = { group = "com.github.chrisbanes", name = "PhotoView", version.ref = "photoview" }
-retrofit-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
-retrofit-adapter-rxjava = { group = "com.squareup.retrofit2", name = "adapter-rxjava2", version.ref = "retrofit-adapter-rxjava" }
-retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit-converter-gson" }
+retrofit-retrofit-bom = { group = "com.squareup.retrofit2", name = "retrofit-bom", version.ref = "retrofit" }
+retrofit-retrofit = { group = "com.squareup.retrofit2", name = "retrofit" }
+retrofit-adapter-rxjava = { group = "com.squareup.retrofit2", name = "adapter-rxjava2" }
+retrofit-converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson" }
 rx-binding = { group = "com.jakewharton.rxbinding3", name = "rxbinding", version.ref = "rx-binding" }
 rx-redux = { group = "com.freeletics.rxredux", name = "rxredux", version.ref = "rx-redux" }
 rx-relay = { group = "com.jakewharton.rxrelay2", name = "rxrelay", version.ref = "rx-relay" }
 rxjava-android = { group = "io.reactivex.rxjava2", name = "rxandroid", version.ref = "rx-android" }
 scuba = { group = "net.sf.scuba", name = "scuba-sc-android", version.ref = "scuba" }
 shared-preferences-mock = { group = "io.github.ivanshafran", name = "shared-preferences-mock", version.ref = "shared-preferences-mock" }
-sql-cipher = { group = "net.zetetic", name = "android-database-sqlcipher", version.ref = "sql-cipher" }
+sql-cipher = { group = "net.zetetic", name = "sqlcipher-android", version.ref = "sql-cipher" }
 stripe-android = { group = "com.stripe", name = "stripe-android", version.ref = "stripe-android" }
 subsampling-sample-image = { group = "com.davemorrissey.labs", name = "subsampling-scale-image-view-androidx", version.ref = "subsampling-scale-image" }
-tempo = { group = "com.github.AllanHasegawa.Tempo", name = "tempo", version.ref = "tempo" }
+true-time = { group = "com.github.instacart", name = "truetime-android", version.ref = "true-time" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+rootbeer = { group = "com.scottyab", name = "rootbeer-lib", version.ref = "rootbeer" }
+
+urbi-bom = { group = "co.urbi.android", name = "bom", version.ref = "urbi-bom" }
+urbi-bom-third = { group = "co.urbi.third", name = "bomthird", version.ref = "urbi-bom" }
+urbi-common-state = { module = "co.urbi.android:commonstate"}
+urbi-common-view = { module = "co.urbi.android:commonview"}
+urbi-compose-ds = { module = "co.urbi.android:composeds"}
+urbi-compose-navigation = { module = "co.urbi.android:composenavigation"}
+urbi-core = { module = "co.urbi.android:core"}
+urbi-login = { module = "co.urbi.android:login"}
+urbi-designsystem = { module = "co.urbi.android:designsystem"}
+urbi-evcharging = { module = "co.urbi.android:evcharging"}
+urbi-mobilitysharing = { module = "co.urbi.android:mobilitysharing"}
+urbi-model = { module = "co.urbi.android:model"}
+urbi-pay = { module = "co.urbi.android:pay"}
+urbi-scan = { module = "co.urbi.android:scan"}
+urbi-search = { module = "co.urbi.android:search"}
+urbi-taxi = { module = "co.urbi.android:taxi"}
+urbi-ticket = { module = "co.urbi.android:ticket"}
+urbi-transpo = { module = "co.urbi.android:transpo"}
+urbi-tripo = { module = "co.urbi.android:tripo"}
+urbi-utility = { module = "co.urbi.android:utility"}
+
+urbi-common-state-third = { group = "co.urbi.android", name = "commonstatethird"}
+urbi-common-view-third = { group = "co.urbi.android", name = "commonviewthird"}
+urbi-compose-ds-third = { group = "co.urbi.android", name = "composedsthird"}
+urbi-compose-navigation-third = { group = "co.urbi.android", name = "composenavigationthird"}
+urbi-core-third = { group = "co.urbi.android", name = "corethird"}
+urbi-login-third = { group = "co.urbi.android", name = "loginthird"}
+urbi-designsystem-third = { group = "co.urbi.android", name = "designsystemthird"}
+urbi-model-third = { group = "co.urbi.android", name = "modelthird"}
+urbi-pay-third = { group = "co.urbi.android", name = "paythird"}
+urbi-scan-third = { group = "co.urbi.android", name = "scanthird"}
+urbi-ticket-third = { group = "co.urbi.android", name = "ticketthird"}
+urbi-tripo-third = { group = "co.urbi.android", name = "tripothird"}
+urbi-utility-third = { group = "co.urbi.android", name = "utilitythird"}
 
 [bundles]
+urbi = [
+    "urbi-core",
+    "urbi-designsystem",
+    "urbi-evcharging",
+    "urbi-mobilitysharing",
+    "urbi-model",
+    "urbi-login",
+    "urbi-pay",
+    "urbi-scan",
+    "urbi-search",
+    "urbi-taxi",
+    "urbi-ticket",
+    "urbi-transpo",
+    "urbi-tripo",
+    "urbi-utility",
+    "urbi-compose-navigation",
+    "urbi-compose-ds",
+    "urbi-common-view",
+    "urbi-common-state"
+]
+urbithird = [
+    "urbi-core-third",
+    "urbi-designsystem-third",
+    "urbi-model-third",
+    "urbi-login-third",
+    "urbi-pay-third",
+    "urbi-scan-third",
+    "urbi-ticket-third",
+    "urbi-tripo-third",
+    "urbi-utility-third",
+    "urbi-compose-navigation-third",
+    "urbi-compose-ds-third",
+    "urbi-common-view-third",
+    "urbi-common-state-third"
+]
 accompanist = [
     "google-accompanist-navigation-animation",
     "google-accompanist-pager",
