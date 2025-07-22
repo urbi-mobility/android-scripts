@@ -74,7 +74,8 @@ ext {
     urbiBomId = 'bom'
     urbiBomTelepassId = 'bomtelepass'
     urbiBomThirdId = 'bomthird'
-    urbiBomVersion = '2025.07.15'
+    // BOM versions unified from libs-urbi.versions.toml
+    urbiBomVersion = libsUrbi.versions.urbi.bom.get()
     urbiTelepassBomVersion = "$urbiBomVersion"
     urbiThirdBomVersion = "$urbiBomVersion"
 //  Android
@@ -90,9 +91,6 @@ ext {
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
 
 //  URBI
-    urbi_bom = "$urbiGroupId:$urbiBomId:$urbiBomVersion"
-    urbi_bom_telepass = "$urbiGroupTelepassId:$urbiBomTelepassId:$urbiBomVersion"
-    urbi_bom_third = "$urbiGroupThirdId:$urbiBomThirdId:$urbiBomVersion"
 
     designsystem = "$urbiGroupId:$designsystemId"
     designsystem_third = "$urbiGroupId:$designsystemId$suffixArtifactId"
