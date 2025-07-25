@@ -3,7 +3,7 @@ ext {
 // Github packages
     ghp_registry_name = 'GitHubPackages'
     ghp_registry_name_third = 'GitHubPackages-Third'
-    urbiGroupId = 'co.urbi'
+    urbiGroupId = 'co.urbi.android'
     urbiGroupThirdId = 'co.urbi.third'
     telepassGroupId = 'com.telepass.urbi'
     urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-urbi-framework'
