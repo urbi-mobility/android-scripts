@@ -54,7 +54,7 @@ ext {
     transpoVersion = '1.10.9'
     evchargingVersion = '1.9.6'
     tripoVersion = '1.9.11'
-    mobilitySharingVersion = '2.18.11'
+    mobilitySharingVersion = '2.18.11hotfix'
     commonStateVersion = '0.3.8'
     commonViewVersion = '0.4.8'
     composeNavigationVersion = '0.5.1'
@@ -74,7 +74,7 @@ ext {
     urbiBomId = 'bom'
     urbiBomTelepassId = 'bomtelepass'
     urbiBomThirdId = 'bomthird'
-    urbiBomVersion = '2025.07.08'
+    urbiBomVersion = '2025.07.23'
     urbiTelepassBomVersion = "$urbiBomVersion"
     urbiThirdBomVersion = "$urbiBomVersion"
 //  Android
