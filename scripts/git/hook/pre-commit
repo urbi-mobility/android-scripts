@@ -103,10 +103,48 @@ get_commit_message() {
     echo "$commit_msg"
 }
 
+# Function to check if only changelog files are modified in a module
+only_changelog_files_modified() {
+    local module="$1"
+    local non_changelog_files=""
+    
+    # Check each changed file for this module
+    for file in $CHANGED_FILES; do
+        local file_module=""
+        
+        # Detect module for this file
+        if [[ "$file" =~ ^android-urbi-framework/([^/]+)/ ]]; then
+            file_module="${BASH_REMATCH[1]}"
+        elif [[ "$file" =~ ^([^/]+)/ ]]; then
+            local potential_module="${BASH_REMATCH[1]}"
+            if is_valid_module "$potential_module"; then
+                file_module="$potential_module"
+            fi
+        fi
+        
+        # If this file belongs to our module
+        if [ "$file_module" = "$module" ]; then
+            # Check if it's NOT a changelog file
+            if [[ ! "$file" =~ changelog\.md$ ]]; then
+                non_changelog_files="$non_changelog_files $file"
+            fi
+        fi
+    done
+    
+    # Return 0 (true) if no non-changelog files were found
+    [ -z "$non_changelog_files" ]
+}
+
 # Function to add unreleased entry to changelog
 add_unreleased_entry() {
     local module="$1"
     local changelog_file=$(get_changelog_path "$module")
+    
+    # Check if only changelog files are modified for this module
+    if only_changelog_files_modified "$module"; then
+        echo "  📝 $module: Only changelog files modified, skipping auto-update"
+        return 0
+    fi
     
     # Check if changelog already has unreleased changes
     if has_unreleased_changes "$changelog_file"; then
@@ -227,6 +265,14 @@ if [ -n "$CHANGED_FILES" ]; then
         echo "  🔍 Checking if module '$module' is valid..."
         if is_valid_module "$module"; then
             echo "  ✅ Detected changes in module: $module"
+            
+            # Check what type of changes we have
+            if only_changelog_files_modified "$module"; then
+                echo "  📝 Only changelog files modified in $module, skipping auto-update"
+            else
+                echo "  📝 Non-changelog files modified in $module, will update changelog"
+            fi
+            
             add_unreleased_entry "$module"
             PROCESSED_MODULES="$PROCESSED_MODULES $module "
         else
