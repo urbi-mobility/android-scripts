@@ -104,6 +104,7 @@ get_commit_message() {
 }
 
 # Function to check if only changelog files are modified in a module
+# This prevents infinite loops where changelog updates trigger more changelog updates
 only_changelog_files_modified() {
     local module="$1"
     local non_changelog_files=""
@@ -124,8 +125,8 @@ only_changelog_files_modified() {
         
         # If this file belongs to our module
         if [ "$file_module" = "$module" ]; then
-            # Check if it's NOT a changelog file
-            if [[ ! "$file" =~ changelog\.md$ ]]; then
+            # Check if it's NOT a changelog file (changelog.md or CHANGELOG.md)
+            if [[ ! "$file" =~ [Cc][Hh][Aa][Nn][Gg][Ee][Ll][Oo][Gg]\.md$ ]]; then
                 non_changelog_files="$non_changelog_files $file"
             fi
         fi
