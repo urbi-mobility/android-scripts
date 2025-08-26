@@ -44,7 +44,7 @@ ext {
 //---Module Version---//
     utilityVersion = '2.9.6'
     designsystemVersion = '1.5.7'
-    modelVersion = '2.14.12'
+    modelVersion = '2.14.12hotfix'
     coreVersion = '2.17.10'
     payVersion = '1.14.5'
     ticketVersion = '0.11.2'
@@ -74,7 +74,7 @@ ext {
     urbiBomId = 'bom'
     urbiBomTelepassId = 'bomtelepass'
     urbiBomThirdId = 'bomthird'
-    urbiBomVersion = '2025.07.23'
+    urbiBomVersion = '2025.08.26'
     urbiTelepassBomVersion = "$urbiBomVersion"
     urbiThirdBomVersion = "$urbiBomVersion"
 //  Android
