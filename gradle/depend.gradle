@@ -83,6 +83,7 @@ ext {
     min_sdk_version = 24
     compile_sdk_version = 35
     target_sdk_version = 35
+    ndk_version = '28.2.13676358'
 
 
     //ATAC

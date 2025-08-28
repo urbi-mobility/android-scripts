@@ -1,7 +1,7 @@
 android {
     lint {
         // set to true to turn off analysis progress reporting by lint
-        quiet true
+        quiet = true
 //        // Turns off checks for the issue IDs you specify.
         disable+= ['MissingTranslation', 'TypographyQuotes', 'UnsafeOptInUsageError', 'ParameterWrapping']
 //        // Turns on checks for the issue IDs you specify. These checks are in
@@ -14,16 +14,16 @@ android {
 //        // If set to true, turns off analysis progress reporting by lint.
 //        quiet true
 //        // if set to true (default), stops the build if errors are found.
-        abortOnError true
+        abortOnError = true
         // if true, only report errors.
-        ignoreWarnings false
+        ignoreWarnings = false
         // if true, generate an HTML report (with issue explanations, sourcecode, etc)
-        htmlReport false
+        htmlReport = false
         // Normally lint will analyze all dependencies along with each module; this ensures
         // that lint can correctly (for example) determine if a resource declared in a library
         // is unused; checking only the library in isolation would not be able to identify this
         // problem. However, this leads to quite a bit of extra computation; a library is
         // analyzed repeatedly, for each module that it is used in.
-        checkDependencies false
+        checkDependencies = false
     }
 }
