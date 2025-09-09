@@ -4,7 +4,6 @@ ext {
     ghp_registry_name = 'GitHubPackages'
     ghp_registry_name_third = 'GitHubPackages-Third'
     urbiGroupId = 'co.urbi.android'
-    urbiGroupTelepassId = 'co.urbi.telepass'
     urbiGroupThirdId = 'co.urbi.third'
     telepassGroupId = 'com.telepass.urbi'
     urbi_ghp_registry_url = 'https://maven.pkg.github.com/urbi-mobility/android-urbi-framework'
@@ -54,8 +53,8 @@ ext {
     transpoVersion = '1.10.9'
     evchargingVersion = '1.9.6'
     tripoVersion = '1.9.11'
-    mobilitySharingVersion = '2.18.11hotfix'
-    commonStateVersion = '0.3.8'
+    mobilitySharingVersion = '2.18.11hotfix2'
+    commonStateVersion = '0.3.8hotfix'
     commonViewVersion = '0.4.8'
     composeNavigationVersion = '0.5.1'
     composeDsVersion = '0.4.4'
@@ -72,9 +71,9 @@ ext {
 //---End---//
     atacVersion = '2.2.2'
     urbiBomId = 'bom'
-    urbiBomTelepassId = 'bomtelepass'
     urbiBomThirdId = 'bomthird'
-    urbiBomVersion = '2025.08.27'
+    // BOM versions unified from libs-urbi.versions.toml
+    urbiBomVersion = libsUrbi.versions.urbi.bom.get()
     urbiTelepassBomVersion = "$urbiBomVersion"
     urbiThirdBomVersion = "$urbiBomVersion"
 //  Android
@@ -90,9 +89,6 @@ ext {
     atac = "$urbiGroupId:$atacId:$atacVersion@aar"
 
 //  URBI
-    urbi_bom = "$urbiGroupId:$urbiBomId:$urbiBomVersion"
-    urbi_bom_telepass = "$urbiGroupTelepassId:$urbiBomTelepassId:$urbiBomVersion"
-    urbi_bom_third = "$urbiGroupThirdId:$urbiBomThirdId:$urbiBomVersion"
 
     designsystem = "$urbiGroupId:$designsystemId"
     designsystem_third = "$urbiGroupId:$designsystemId$suffixArtifactId"
