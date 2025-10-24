@@ -42,7 +42,7 @@ ext {
 
 //---Module Version---//
     utilityVersion = '2.9.6'
-    designsystemVersion = '1.5.7'
+    designsystemVersion = '1.5.7hotfix'
     modelVersion = '2.14.13hotfix'
     coreVersion = '2.17.10'
     payVersion = '1.14.5'
