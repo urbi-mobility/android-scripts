@@ -281,6 +281,7 @@ fun writeChangelog(
         newChangelog.add(line)
     }
     val avoidPublishTpay = project.properties["avoidPublishTpay"].toString()
+    val publishThirdParty = project.properties["publishThirdParty"].toString()
     if (haveToWriteFile) {
         println("Update lib $key..........")
         if(avoidPublishTpay.toBoolean()){
@@ -322,7 +323,7 @@ fun writeChangelog(
                 println(os.toString())
             }
         }
-        if(haveModuleThird(key))
+        if(haveModuleThird(key) && (publishThirdParty.toBoolean()?: false))
             ByteArrayOutputStream().use { os ->
             val result = exec {
                 commandLine("./gradlew", "$key:publishThirdPublicationToGitHubPackages-ThirdRepository")
@@ -407,13 +408,58 @@ fun forcePullServiceFileAndCopy() {
     }
 }
 
+fun updatePatchVersion(versionToUpgrade: List<String>): String {
+    val versionArray = versionToUpgrade[1].replace("\'".toRegex(), "").split(".")
+    var patchVersion = versionArray[2]
+    var extraPatchVersion = ""
+    if(!patchVersion.all { it.isDigit() } ){
+        val arrMirror= patchVersion.split("-")
+        patchVersion = arrMirror[0]
+        extraPatchVersion = arrMirror[1]
+    }
+    patchVersion = "${patchVersion.toInt()+1}"
+    var newVersionApp = "${versionArray[0]}.${versionArray[1]}.${patchVersion}"
+    if(extraPatchVersion.isNotEmpty())
+        newVersionApp = "$newVersionApp-$extraPatchVersion"
+    return newVersionApp
+}
+
+fun updateMinorVersion(versionToUpgrade: List<String>): String {
+    val versionArray = versionToUpgrade[1].replace("\'".toRegex(), "").split(".")
+    var minorVersion = versionArray[1]
+    minorVersion = "${minorVersion.toInt()+1}"
+    var newVersionApp = "${versionArray[0]}.${minorVersion}.0"
+    return newVersionApp
+}
+
+fun updateMajorVersion(versionToUpgrade: List<String>): String {
+    val versionArray = versionToUpgrade[1].replace("\'".toRegex(), "").split(".")
+    var majorVersion = versionArray[0]
+    majorVersion = "${majorVersion.toInt()+1}"
+    var newVersionApp = "${majorVersion}.0.0"
+    return newVersionApp
+}
+
 /**
- * This scripts read depend.gradle file where libs version are and upgrade patch version
- * if there is some change in their changelog. Then upload a new BoM with new versions (you have to manually
+ * This script reads the `depend.gradle` file, where library versions are defined, and upgrades
+ * the desired version if there are changes in its changelog.
+ *
+ * The level of updating can be: patch, minor and major, depending of what has been changed
+ * - **patch**: bugfixing
+ * - **minor**: small feature with no breaking changes
+ * - **major**: features with breaking changes
+ *
+ * Pass the level as an argument, e.g., `-Dargs=minor`. If no argument is passed, `patch` is the default level.
+ *
+ * Then, upload a new BoM with the new versions (you have to manually
  * upgrade BoM version) and the upload libs.
  */
-tasks.register("upgrade-lib-patch-version") {
+tasks.register("upgrade-lib-version") {
     doLast {
+        val publishThirdParty = project.properties["publishThirdParty"].toString()
+
+        val levelUpdate = System.getProperty("args")?: "patch"
+        println("Level update: $levelUpdate")
         val mapVersionUrbi = getVersionKeyFromModule()
         val mapVersionUrbiInverse = mapVersionUrbi.inverseMap()
         val keyToChangeVersion: HashSet<String> = HashSet()
@@ -453,18 +499,11 @@ tasks.register("upgrade-lib-patch-version") {
                     line.replace("\\s".toRegex(), "").let { lineW ->
                         lineW.split("=").let { it ->
                             if(it.size > 1 && mapVersionUrbiInverse.containsKey(it[0]) && keyToChangeVersion.contains(mapVersionUrbiInverse[it[0]])) {
-                                val versionArray = it[1].replace("\'".toRegex(), "").split(".")
-                                var mirrorVersion = versionArray[2]
-                                var extraMirrorVersion = ""
-                                if(!mirrorVersion.all { it.isDigit() } ){
-                                    val arrMirror= mirrorVersion.split("-")
-                                    mirrorVersion = arrMirror[0]
-                                    extraMirrorVersion = arrMirror[1]
+                                val newVersionApp = when(levelUpdate){
+                                    "minor" -> updateMinorVersion(it)
+                                    "major" -> updateMajorVersion(it)
+                                    else -> updatePatchVersion(it)
                                 }
-                                mirrorVersion = "${mirrorVersion.toInt()+1}"
-                                var newVersionApp = "${versionArray[0]}.${versionArray[1]}.${mirrorVersion}"
-                                if(extraMirrorVersion.isNotEmpty())
-                                    newVersionApp = "$newVersionApp-$extraMirrorVersion"
                                 newGradleDeep.add(line.replace(it[1].replace("\'".toRegex(), ""),newVersionApp))
                             }
                             else
@@ -488,7 +527,11 @@ tasks.register("upgrade-lib-patch-version") {
             println("Upload BoM")
             ByteArrayOutputStream().use { os ->
                 val result = exec {
-                    commandLine("./gradlew", "bom:publishAllBom")
+                    if(publishThirdParty.toBoolean()?: false) {
+                        commandLine("./gradlew", "bom:publishAllBom")
+                    } else {
+                        commandLine("./gradlew", "bom:publishAllBomNoThirdParty")
+                    }
                     standardOutput = os
                 }
                 println(os.toString())
