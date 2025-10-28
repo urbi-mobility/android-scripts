@@ -281,6 +281,7 @@ fun writeChangelog(
         newChangelog.add(line)
     }
     val avoidPublishTpay = project.properties["avoidPublishTpay"].toString()
+    val publishThirdParty = project.properties["publishThirdParty"].toString()
     if (haveToWriteFile) {
         println("Update lib $key..........")
         if(avoidPublishTpay.toBoolean()){
@@ -322,7 +323,7 @@ fun writeChangelog(
                 println(os.toString())
             }
         }
-        if(haveModuleThird(key))
+        if(haveModuleThird(key) && (publishThirdParty.toBoolean()?: false))
             ByteArrayOutputStream().use { os ->
             val result = exec {
                 commandLine("./gradlew", "$key:publishThirdPublicationToGitHubPackages-ThirdRepository")
@@ -455,6 +456,8 @@ fun updateMajorVersion(versionToUpgrade: List<String>): String {
  */
 tasks.register("upgrade-lib-version") {
     doLast {
+        val publishThirdParty = project.properties["publishThirdParty"].toString()
+
         val levelUpdate = System.getProperty("args")?: "patch"
         println("Level update: $levelUpdate")
         val mapVersionUrbi = getVersionKeyFromModule()
@@ -524,7 +527,11 @@ tasks.register("upgrade-lib-version") {
             println("Upload BoM")
             ByteArrayOutputStream().use { os ->
                 val result = exec {
-                    commandLine("./gradlew", "bom:publishAllBom")
+                    if(publishThirdParty.toBoolean()?: false) {
+                        commandLine("./gradlew", "bom:publishAllBom")
+                    } else {
+                        commandLine("./gradlew", "bom:publishAllBomNoThirdParty")
+                    }
                     standardOutput = os
                 }
                 println(os.toString())
