@@ -92,7 +92,7 @@ triplet-play = "3.10.1"
 turbine = "1.2.1"
 zxing = "3.4.1"
 rootbeer = "0.1.1"
-urbi-bom = "2025.10.28"
+urbi-bom = "2025.10.30"
 
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
