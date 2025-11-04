@@ -1,4 +1,5 @@
 kotlinter {
-    ignoreFailures = false
-    reporters = ['checkstyle', 'plain','html']
+    // Kotlinter 5.x simplified configuration
+    // Most configuration is now done via .editorconfig
+    reporters = ['checkstyle', 'plain', 'html']
 }

@@ -41,28 +41,28 @@ ext {
     telepassLibId = 'telepasslib'
 
 //---Module Version---//
-    utilityVersion = '2.9.6'
-    designsystemVersion = '1.5.7'
-    modelVersion = '2.14.13hotfix'
-    coreVersion = '2.17.10'
-    payVersion = '1.14.5'
-    ticketVersion = '0.11.2'
-    searchVersion = '1.2.3'
-    taxiVersion = '1.2.5'
-    scanVersion = '1.4.3'
-    transpoVersion = '1.10.9'
-    evchargingVersion = '1.9.6'
-    tripoVersion = '1.9.11'
-    mobilitySharingVersion = '2.18.11hotfix2'
-    commonStateVersion = '0.3.8hotfix'
-    commonViewVersion = '0.4.8'
-    composeNavigationVersion = '0.5.1'
-    composeDsVersion = '0.4.4'
+    utilityVersion = '3.0.0'
+    designsystemVersion = '2.0.0'
+    modelVersion = '3.0.0'
+    coreVersion = '3.0.0'
+    payVersion = '2.0.0'
+    ticketVersion = '1.0.0'
+    searchVersion = '2.0.0'
+    taxiVersion = '2.0.0'
+    scanVersion = '2.0.0'
+    transpoVersion = '2.0.0'
+    evchargingVersion = '2.0.0'
+    tripoVersion = '2.0.0'
+    mobilitySharingVersion = '3.0.0'
+    commonStateVersion = '1.0.0'
+    commonViewVersion = '1.0.0'
+    composeNavigationVersion = '1.0.0'
+    composeDsVersion = '1.0.0'
     historyVersion = '0.4.0'
     mapVersion = '0.4.0'
     profileVersion = '0.4.0'
     shopVersion = '0.4.0'
-    loginVersion = '0.4.3'
+    loginVersion = '1.0.0'
 
     telepassModelVersion = '2.7.0'
     telepassNetworkVersion = '2.10.0'
@@ -80,9 +80,10 @@ ext {
     android_version_array = ["utility", utilityVersion, "designsystem", designsystemVersion, "modelVersion", modelVersion, "coreVersion", coreVersion, "pay", payVersion, "ticket", ticketVersion, "search", searchVersion, "taxi", taxiVersion,
                              "taxi", taxiVersion, "scan", scanVersion, "transpo", transpoVersion, "evcharging", evchargingVersion, "tripo", tripoVersion, "mobilitySharing", mobilitySharingVersion, "commonState", commonStateVersion, "commonView", commonViewVersion,
                              "composeNavigation", composeNavigationVersion, "composeDs", composeDsVersion, "login", loginVersion]
-    min_sdk_version = 24
-    compile_sdk_version = 35
+    min_sdk_version = 26
+    compile_sdk_version = 36
     target_sdk_version = 35
+    ndk_version = '28.2.13676358'
 
 
     //ATAC
