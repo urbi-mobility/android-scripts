@@ -66,7 +66,7 @@ jwt = "0.11.3"
 kotlin = "2.2.20"
 kotlinx-coroutines = "1.10.2"
 kotlinter = "5.2.0"
-kustomer = "4.0.0"
+kustomer = "4.2.1"
 ksp-plugin = "2.2.20-2.0.4"
 landscapist-glide = "1.5.2"
 lottie = "6.4.1"
@@ -92,7 +92,7 @@ triplet-play = "3.10.1"
 turbine = "1.2.1"
 zxing = "3.4.1"
 rootbeer = "0.1.1"
-urbi-bom = "2025.11.04"
+urbi-bom = "2025.11.10"
 
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
