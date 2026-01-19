@@ -35,6 +35,7 @@ androidx-web-kit = "1.12.1"
 commons-codec = "1.15"
 dagger = "2.57.2"
 dependencyGuard = "0.5.0"
+dokka = "1.9.20"
 facebook = "latest.release"
 firebase-bom = "34.3.0"
 firebase-app-distribution-plugin = "5.1.1"
@@ -97,6 +98,7 @@ androidx-datastore = "1.2.0"
 detekt = "1.23.8"
 timber = "5.0.1"
 tink = "1.20.0"
+sonatype-central-portal = "1.2.4"
 
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
@@ -409,3 +411,6 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+sonatype-central-portal = { id = "net.thebugmc.gradle.sonatype-central-portal-publisher", version.ref = "sonatype-central-portal" }
+
