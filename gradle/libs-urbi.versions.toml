@@ -93,6 +93,10 @@ turbine = "1.2.1"
 zxing = "3.4.1"
 rootbeer = "0.1.1"
 urbi-bom = "2025.12.24"
+androidx-datastore = "1.2.0"
+detekt = "1.23.8"
+timber = "5.0.1"
+tink = "1.20.0"
 
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
@@ -222,6 +226,13 @@ subsampling-sample-image = { group = "com.davemorrissey.labs", name = "subsampli
 true-time = { group = "com.github.instacart", name = "truetime-android", version.ref = "true-time" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 rootbeer = { group = "com.scottyab", name = "rootbeer-lib", version.ref = "rootbeer" }
+androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
+androidx-datastore = { group = "androidx.datastore", name = "datastore", version.ref = "androidx-datastore" }
+androidx-datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "androidx-datastore" }
+jetbrains-kotlin-seralization = { group = "org.jetbrains.kotlin", name = "kotlin-serialization", version.ref = "kotlin" }
+jetbrains-kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version = "1.9.0" }
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+tink = { group = "com.google.crypto.tink", name = "tink-android", version.ref = "tink" }
 
 urbi-bom = { group = "co.urbi.android", name = "bom", version.ref = "urbi-bom" }
 urbi-bom-third = { group = "co.urbi.third", name = "bomthird", version.ref = "urbi-bom" }
@@ -396,3 +407,5 @@ kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
 triplet-play = { id = "com.github.triplet.play", version.ref = "triplet-play" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
