@@ -19,7 +19,7 @@ androidx-gridlayout = "1.0.0"
 androidx-hilt-navigation-compose = "1.3.0"
 androidx-legacy-support = "1.0.0"
 androidx-lifecycle = "2.8.7"
-androidx-navigation = "2.7.7"
+androidx-navigation = "2.9.0"
 androidx-preference = "1.2.1"
 androidx-security-crypto = "1.1.0-alpha07"
 androidx-splashscreen = "1.0.1"
@@ -35,6 +35,7 @@ androidx-web-kit = "1.12.1"
 commons-codec = "1.15"
 dagger = "2.57.2"
 dependencyGuard = "0.5.0"
+dokka = "1.9.20"
 facebook = "latest.release"
 firebase-bom = "34.3.0"
 firebase-app-distribution-plugin = "5.1.1"
@@ -66,7 +67,7 @@ jwt = "0.11.3"
 kotlin = "2.2.20"
 kotlinx-coroutines = "1.10.2"
 kotlinter = "5.2.0"
-kustomer = "4.0.0"
+kustomer = "4.2.1"
 ksp-plugin = "2.2.20-2.0.4"
 landscapist-glide = "1.5.2"
 lottie = "6.4.1"
@@ -79,20 +80,24 @@ onfido = "23.1.0"
 photoview = "2.3.0"
 retrofit = "2.11.0"
 rx-android = "2.1.1"
-rx-binding = "3.0.0"
+rx-binding = "3.1.0"
 rx-redux = "1.0.1"
-rx-relay = "2.1.0"
+rx-relay = "2.1.1"
 scuba = "0.0.20"
 shared-preferences-mock = "1.2.4"
 sql-cipher = "4.9.0"
-stripe-android = "20.51.0"
+stripe-android = "21.3.2"
 subsampling-scale-image = "3.10.0"
 true-time = "4.0.0.alpha"
 triplet-play = "3.10.1"
 turbine = "1.2.1"
 zxing = "3.4.1"
 rootbeer = "0.1.1"
-urbi-bom = "2025.10.291"
+androidx-datastore = "1.2.0"
+detekt = "1.23.8"
+timber = "5.0.1"
+tink = "1.20.0"
+urbi-bom = "2026.01.273"
 
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
@@ -222,6 +227,13 @@ subsampling-sample-image = { group = "com.davemorrissey.labs", name = "subsampli
 true-time = { group = "com.github.instacart", name = "truetime-android", version.ref = "true-time" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 rootbeer = { group = "com.scottyab", name = "rootbeer-lib", version.ref = "rootbeer" }
+androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
+androidx-datastore = { group = "androidx.datastore", name = "datastore", version.ref = "androidx-datastore" }
+androidx-datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "androidx-datastore" }
+jetbrains-kotlin-seralization = { group = "org.jetbrains.kotlin", name = "kotlin-serialization", version.ref = "kotlin" }
+jetbrains-kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version = "1.9.0" }
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+tink = { group = "com.google.crypto.tink", name = "tink-android", version.ref = "tink" }
 
 urbi-bom = { group = "co.urbi.android", name = "bom", version.ref = "urbi-bom" }
 urbi-bom-third = { group = "co.urbi.third", name = "bomthird", version.ref = "urbi-bom" }
@@ -396,3 +408,6 @@ kotlinter = { id = "org.jmailen.kotlinter", version.ref = "kotlinter" }
 triplet-play = { id = "com.github.triplet.play", version.ref = "triplet-play" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
+detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
+jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
+dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }

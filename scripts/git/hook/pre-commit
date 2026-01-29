@@ -221,8 +221,21 @@ if [ -n "$CHANGED_FILES" ]; then
     echo "📁 Checking changed files for module updates..."
     echo "  📋 Found $(echo "$CHANGED_FILES" | wc -l | tr -d ' ') files to process"
     
-    # Track which modules have been processed to avoid duplicates
-    PROCESSED_MODULES=""
+    # Check if ALL changed files are only changelog files
+    ALL_CHANGELOG_FILES=true
+    for file in $CHANGED_FILES; do
+        if [[ ! "$file" =~ [Cc][Hh][Aa][Nn][Gg][Ee][Ll][Oo][Gg]\.md$ ]]; then
+            ALL_CHANGELOG_FILES=false
+            break
+        fi
+    done
+    
+    if [ "$ALL_CHANGELOG_FILES" = true ]; then
+        echo "  📝 All changed files are changelog files only, skipping auto-update"
+        echo "✅ Changelog auto-update skipped"
+    else
+        # Track which modules have been processed to avoid duplicates
+        PROCESSED_MODULES=""
     
     # Check each changed file
     for file in $CHANGED_FILES; do
@@ -282,6 +295,7 @@ if [ -n "$CHANGED_FILES" ]; then
     done
     
     echo "✅ Changelog auto-update complete"
+    fi
 else
     echo "ℹ️  No changes detected"
     echo "  🔍 Debug: git diff --cached result was empty"
