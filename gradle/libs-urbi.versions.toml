@@ -97,6 +97,7 @@ androidx-datastore = "1.2.0"
 detekt = "1.23.8"
 timber = "5.0.1"
 tink = "1.20.0"
+urbi-kit = "1.0.0"
 urbi-bom = "2026.01.29"
 
 [libraries]
@@ -233,6 +234,7 @@ jetbrains-kotlin-seralization = { group = "org.jetbrains.kotlin", name = "kotlin
 jetbrains-kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version = "1.9.0" }
 timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
 tink = { group = "com.google.crypto.tink", name = "tink-android", version.ref = "tink" }
+urbi-kit = { group = "co.urbi.android.kit", name = "datastore", version.ref = "urbi-kit" }
 
 urbi-bom = { group = "co.urbi.android", name = "bom", version.ref = "urbi-bom" }
 urbi-bom-third = { group = "co.urbi.third", name = "bomthird", version.ref = "urbi-bom" }
