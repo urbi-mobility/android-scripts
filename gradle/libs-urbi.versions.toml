@@ -97,6 +97,7 @@ androidx-datastore = "1.2.0"
 detekt = "1.23.8"
 timber = "5.0.1"
 tink = "1.20.0"
+sonatype-central-portal = "1.2.4"
 urbi-bom = "2026.02.03"
 
 [libraries]
@@ -410,3 +411,5 @@ dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependen
 detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
 jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
+sonatype-central-portal = { id = "net.thebugmc.gradle.sonatype-central-portal-publisher", version.ref = "sonatype-central-portal" }
+
