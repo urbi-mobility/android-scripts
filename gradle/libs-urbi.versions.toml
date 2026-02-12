@@ -98,7 +98,7 @@ detekt = "1.23.8"
 timber = "5.0.1"
 tink = "1.20.0"
 sonatype-central-portal = "1.2.4"
-urbi-bom = "2026.02.03"
+urbi-bom = "2026.02.12"
 
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
