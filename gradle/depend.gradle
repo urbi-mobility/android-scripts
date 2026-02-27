@@ -43,7 +43,7 @@ ext {
 //---Module Version---//
     utilityVersion = '4.1.0'
     designsystemVersion = '3.1.0'
-    modelVersion = '4.1.0'
+    modelVersion = '4.1.1'
     coreVersion = '4.1.0'
     payVersion = '3.1.0'
     ticketVersion = '1.0.3'
@@ -52,7 +52,7 @@ ext {
     scanVersion = '2.1.0'
     transpoVersion = '3.1.0'
     evchargingVersion = '3.1.0'
-    tripoVersion = '3.1.0'
+    tripoVersion = '3.1.1'
     mobilitySharingVersion = '4.1.0'
     commonStateVersion = '2.1.0'
     commonViewVersion = '2.1.0'
