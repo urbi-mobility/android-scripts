@@ -284,45 +284,6 @@ fun writeChangelog(
     val publishThirdParty = project.properties["publishThirdParty"].toString()
     if (haveToWriteFile) {
         println("Update lib $key..........")
-        if(avoidPublishTpay.toBoolean()){
-            ByteArrayOutputStream().use { os ->
-                val result = exec {
-                    commandLine(
-                        "./gradlew",
-                        "$key:clean",
-                        "$key:publishReleasePublicationToGitHubPackagesRepository",
-                    )
-                    standardOutput = os
-                }
-                println(os.toString())
-            }
-        }
-        else if(haveModuleTPay(key)){
-            ByteArrayOutputStream().use { os ->
-                val result = exec {
-                    commandLine(
-                        "./gradlew",
-                        "$key:clean",
-                        "$key:publishReleasePublicationToGitHubPackagesRepository",
-                        "$key:publishReleasePublicationToGitHubPackages2Repository"
-                    )
-                    standardOutput = os
-                }
-                println(os.toString())
-            }
-        } else {
-            ByteArrayOutputStream().use { os ->
-                val result = exec {
-                    commandLine(
-                        "./gradlew",
-                        "$key:clean",
-                        "$key:publishReleasePublicationToGitHubPackagesRepository",
-                    )
-                    standardOutput = os
-                }
-                println(os.toString())
-            }
-        }
         if(haveModuleThird(key) && (publishThirdParty.toBoolean()?: false))
             ByteArrayOutputStream().use { os ->
             val result = exec {
