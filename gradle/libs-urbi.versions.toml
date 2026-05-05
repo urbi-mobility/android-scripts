@@ -93,6 +93,8 @@ triplet-play = "3.10.1"
 turbine = "1.2.1"
 zxing = "3.4.1"
 rootbeer = "0.1.1"
+androidx-credentials = "1.3.0"
+google-identity-googleid = "1.1.1"
 androidx-datastore = "1.2.0"
 detekt = "1.23.8"
 timber = "5.0.1"
@@ -228,6 +230,9 @@ subsampling-sample-image = { group = "com.davemorrissey.labs", name = "subsampli
 true-time = { group = "com.github.instacart", name = "truetime-android", version.ref = "true-time" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 rootbeer = { group = "com.scottyab", name = "rootbeer-lib", version.ref = "rootbeer" }
+androidx-credentials = { group = "androidx.credentials", name = "credentials", version.ref = "androidx-credentials" }
+androidx-credentials-play-services-auth = { group = "androidx.credentials", name = "credentials-play-services-auth", version.ref = "androidx-credentials" }
+google-identity-googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "google-identity-googleid" }
 androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 androidx-datastore = { group = "androidx.datastore", name = "datastore", version.ref = "androidx-datastore" }
 androidx-datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "androidx-datastore" }
