@@ -11,7 +11,7 @@ is_valid_module() {
         "utilitylib"|"urbimodel"|"urbicore"|"designsystem"|"urbiscan"|"urbisearch"|\
         "urbipay"|"ticketlib"|"urbitaxi"|"evcharging"|"transpo"|"tripo"|\
         "mobilitylib"|"composeds"|"composenavigation"|"common-state"|"login"|\
-        "commonview"|"history"|"profile"|"map"|"shop")
+        "commonview"|"history"|"profile"|"map"|"shop"|"ticketing")
             return 0
             ;;
         *)
@@ -55,7 +55,7 @@ get_changelog_path() {
     if [ -d "android-urbi-framework" ]; then
         # Running from main repo
         case "$module" in
-            "history"|"profile"|"map"|"shop")
+            "history"|"profile"|"map"|"shop"|"ticketing")
                 echo "$module/changelog.md"
                 ;;
             *)
@@ -65,7 +65,7 @@ get_changelog_path() {
     else
         # Running from within android-urbi-framework submodule
         case "$module" in
-            "history"|"profile"|"map"|"shop")
+            "history"|"profile"|"map"|"shop"|"ticketing")
                 echo "../$module/changelog.md"
                 ;;
             *)
