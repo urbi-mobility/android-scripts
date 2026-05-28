@@ -632,8 +632,8 @@ tasks.register("upgrade-lib-version") {
             val bomVersion = getBomVersionFromToml()
             val currentVersions = createMapVersion()
             val releaseNotes = writeBomChangelog(keyToChangeVersion, mapVersionUrbi, currentVersions, dataNow, bomVersion)
-            val createRelease = project.properties["createRelease"]?.toString().toBoolean()
-            if (createRelease) createGithubRelease(bomVersion, releaseNotes)
+            val skipRelease = project.properties["skipRelease"]?.toString().toBoolean()
+            if (!skipRelease) createGithubRelease(bomVersion, releaseNotes)
 
             println("Upload BoM")
             ByteArrayOutputStream().use { os ->
