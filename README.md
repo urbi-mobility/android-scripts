@@ -60,6 +60,23 @@ For each module: replaces the `[Unreleased]` section with the new versioned entr
 
 ---
 
+### `release-bom`
+**Standalone BoM release — no lib upload required.**
+
+For each module, looks up its current version in `depend.gradle` and reads the matching versioned section in its `changelog.md` (e.g. `## [UTL_6.26.6]`). Writes `bom/CHANGELOG.md`, publishes the BoM to GitHub Packages, and creates a GitHub Release.
+
+Use this when:
+- You uploaded one or more libraries via `uploadlib` (or any other flow) and want to cut a new BoM release.
+- You want to publish a new BoM snapshot from the current state of all library versions without running a full upload cycle.
+
+```bash
+./gradlew release-bom                                  # all modules with versioned entries
+./gradlew release-bom -Pmodules=utilitylib,composeds   # explicit subset
+./gradlew release-bom -PskipRelease=true               # skip GitHub Release creation
+```
+
+---
+
 ### `update-version-lib`
 Lighter version of `upgrade-lib-version`: bumps versions and uploads libs, but does **not** update the BoM version, write the BoM changelog, or create a GitHub Release.
 
