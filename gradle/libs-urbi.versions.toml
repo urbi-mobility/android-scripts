@@ -1,7 +1,7 @@
 [versions]
 accompanist_compose = "0.37.3"
 adapter-delegates4 = "4.3.2"
-android-gradle-plugin = "8.11.2"
+android-gradle-plugin = "8.13.2"
 android-material = "1.13.0"
 androidx-activity = "1.11.0"
 androidx-camera = "1.4.2"
