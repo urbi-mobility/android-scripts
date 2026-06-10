@@ -216,6 +216,134 @@ fun haveModuleTPay(key: String): Boolean {
     return list.contains(key)
 }
 
+fun getBomVersionFromToml(): String {
+    val tomlFile = if (File("android-scripts/gradle/libs-urbi.versions.toml").exists())
+        File("android-scripts/gradle/libs-urbi.versions.toml")
+    else
+        File("$rootDir/android-urbi-framework/android-scripts/gradle/libs-urbi.versions.toml")
+    return try {
+        tomlFile.readLines()
+            .firstOrNull { it.trimStart().startsWith("urbi-bom") }
+            ?.split("=")?.getOrNull(1)
+            ?.trim()?.removeSurrounding("\"") ?: "unknown"
+    } catch (e: Exception) {
+        println("Warning: cannot read BOM version from TOML: ${e.message}")
+        "unknown"
+    }
+}
+
+/**
+ * Reads [Unreleased] entries from each changed module's changelog and writes a new entry
+ * to bom/CHANGELOG.md. Returns the generated entry text (used for GitHub Release notes).
+ */
+fun writeBomChangelog(
+    changedModules: Set<String>,
+    moduleToVersionKey: Map<String, String>,
+    currentVersions: Map<String, String>,
+    dataNow: String,
+    bomVersion: String
+): String {
+    val sb = StringBuilder()
+    sb.appendLine("## [$bomVersion] $dataNow")
+    sb.appendLine()
+
+    changedModules.sorted().forEach { module ->
+        val versionKey = moduleToVersionKey[module] ?: return@forEach
+        val moduleVersion = currentVersions[versionKey] ?: "unknown"
+        val changelogFile = when {
+            File("$module/changelog.md").exists() -> File("$module/changelog.md")
+            File("$rootDir/android-urbi-framework/$module/changelog.md").exists() ->
+                File("$rootDir/android-urbi-framework/$module/changelog.md")
+            else -> null
+        }
+
+        val entries = mutableListOf<String>()
+        if (changelogFile != null) {
+            var inUnreleased = false
+            run breaking@{
+                changelogFile.readLines().forEach { line ->
+                    when {
+                        line.startsWith("## [Unreleased]", ignoreCase = true) -> inUnreleased = true
+                        inUnreleased && line.startsWith("##") -> return@breaking
+                        inUnreleased && line.startsWith("-") -> entries.add(line)
+                    }
+                }
+            }
+        }
+
+        if (entries.isNotEmpty()) {
+            sb.appendLine("### $module — $moduleVersion")
+            entries.forEach { sb.appendLine(it) }
+            sb.appendLine()
+        }
+    }
+
+    val newEntry = sb.toString().trimEnd()
+    val bomChangelogFile = if (File("bom").exists())
+        File("bom/CHANGELOG.md")
+    else
+        File("$rootDir/android-urbi-framework/bom/CHANGELOG.md")
+
+    val existing = if (bomChangelogFile.exists()) "\n\n${bomChangelogFile.readText()}" else ""
+    bomChangelogFile.writeText("$newEntry$existing")
+    println("BOM changelog updated: ${bomChangelogFile.path}")
+    return newEntry
+}
+
+/**
+ * Finds the versioned changelog section matching [versionTag] (e.g. "UTL_6.26.6")
+ * and returns its bullet-point entries.
+ */
+fun readModuleChangesForVersion(module: String, versionTag: String): List<String> {
+    val pathFile = "$module/changelog.md"
+    val changelogFile = when {
+        File(pathFile).exists() -> File(pathFile)
+        File("$rootDir/android-urbi-framework/$pathFile").exists() ->
+            File("$rootDir/android-urbi-framework/$pathFile")
+        else -> return emptyList()
+    }
+    val entries = mutableListOf<String>()
+    var inSection = false
+    run breaking@{
+        changelogFile.readLines().forEach { line ->
+            when {
+                !inSection && line.startsWith("## [") && line.contains(versionTag) -> inSection = true
+                inSection && line.startsWith("##") -> return@breaking
+                inSection && line.startsWith("-") -> entries.add(line)
+            }
+        }
+    }
+    return entries
+}
+
+/**
+ * Creates a GitHub Release for the given BOM version using the gh CLI.
+ * Skip with -PskipRelease=true.
+ */
+fun createGithubRelease(bomVersion: String, releaseNotes: String) {
+    val tempFile = File.createTempFile("bom-release-notes", ".md")
+    try {
+        tempFile.writeText(releaseNotes)
+        ByteArrayOutputStream().use { os ->
+            exec {
+                commandLine(
+                    "gh", "release", "create", "bom-$bomVersion",
+                    "--repo", "urbi-mobility/android-urbi-framework",
+                    "--title", "BoM $bomVersion",
+                    "--notes-file", tempFile.absolutePath
+                )
+                standardOutput = os
+            }
+            println(os.toString())
+        }
+        println("GitHub Release created: bom-$bomVersion")
+    } catch (e: Exception) {
+        println("Warning: GitHub Release creation failed: ${e.message}")
+    } finally {
+        tempFile.delete()
+    }
+}
+
 fun createMapVersion(): HashMap<String, String> {
     val tpaylib = "telepassLibVersion"
     // Read Version on Gradle file
@@ -524,6 +652,15 @@ tasks.register("upgrade-lib-version") {
                     out.println(it)
                 }
             }
+
+            val format = SimpleDateFormat("yyyy-MM-dd")
+            val dataNow = format.format(Date())
+            val bomVersion = getBomVersionFromToml()
+            val currentVersions = createMapVersion()
+            val releaseNotes = writeBomChangelog(keyToChangeVersion, mapVersionUrbi, currentVersions, dataNow, bomVersion)
+            val skipRelease = project.properties["skipRelease"]?.toString()?.toBoolean() ?: false
+            if (!skipRelease) createGithubRelease(bomVersion, releaseNotes)
+
             println("Upload BoM")
             ByteArrayOutputStream().use { os ->
                 val result = exec {
@@ -548,6 +685,88 @@ tasks.register("upgrade-lib-version") {
         }
         else
             println("No Version have updated")
+    }
+}
+
+/**
+ * Standalone BoM release — no lib upload required.
+ *
+ * For each module, reads the changelog section that matches the module's current version
+ * in depend.gradle (e.g. ## [UTL_6.26.6]). Writes bom/CHANGELOG.md, publishes the BoM to
+ * GitHub Packages, and creates a GitHub Release.
+ *
+ * Usage:
+ *   ./gradlew release-bom                                  # all modules with versioned entries
+ *   ./gradlew release-bom -Pmodules=utilitylib,composeds   # explicit subset
+ *   ./gradlew release-bom -PskipRelease=true               # skip GitHub Release creation
+ */
+tasks.register("release-bom") {
+    doLast {
+        val format = SimpleDateFormat("yyyy-MM-dd")
+        val dataNow = format.format(Date())
+        val bomVersion = getBomVersionFromToml()
+        val changelogPrefixes = getChangelogMap()       // module -> tag prefix, e.g. "UTL_"
+        val versionKeys = getVersionKeyFromModule()     // module -> version key, e.g. "utilityVersion"
+        val currentVersions = createMapVersion()        // version key -> version string
+
+        val modulesParam = project.properties["modules"]?.toString()
+        val candidateModules: Set<String> = if (!modulesParam.isNullOrBlank()) {
+            modulesParam.split(",").map { it.trim() }.filter { it.isNotEmpty() }.toSet()
+        } else {
+            changelogPrefixes.keys.toSet()
+        }
+
+        val sb = StringBuilder()
+        sb.appendLine("## [$bomVersion] $dataNow")
+        sb.appendLine()
+
+        var hasEntries = false
+        candidateModules.sorted().forEach { module ->
+            val prefix = changelogPrefixes[module] ?: return@forEach
+            val versionKey = versionKeys[module] ?: return@forEach
+            val version = currentVersions[versionKey] ?: return@forEach
+            val versionTag = "$prefix$version"
+            val entries = readModuleChangesForVersion(module, versionTag)
+            if (entries.isNotEmpty()) {
+                hasEntries = true
+                sb.appendLine("### $module — $version")
+                entries.forEach { sb.appendLine(it) }
+                sb.appendLine()
+            }
+        }
+
+        if (!hasEntries) {
+            println("No versioned changelog entries found for current library versions. Nothing to release.")
+            return@doLast
+        }
+
+        val releaseNotes = sb.toString().trimEnd()
+
+        val bomChangelogFile = if (File("bom").exists())
+            File("bom/CHANGELOG.md")
+        else
+            File("$rootDir/android-urbi-framework/bom/CHANGELOG.md")
+        val existing = if (bomChangelogFile.exists()) "\n\n${bomChangelogFile.readText()}" else ""
+        bomChangelogFile.writeText("$releaseNotes$existing")
+        println("BoM changelog updated: ${bomChangelogFile.path}")
+
+        val publishThirdParty = project.properties["publishThirdParty"]?.toString()?.toBoolean() ?: false
+        println("Publishing BoM to GitHub Packages...")
+        ByteArrayOutputStream().use { os ->
+            val result = exec {
+                if (publishThirdParty) {
+                    commandLine("./gradlew", "bom:publishAllBom")
+                } else {
+                    commandLine("./gradlew", "bom:publishAllBomNoThirdParty")
+                }
+                standardOutput = os
+            }
+            println(os.toString())
+            println("Publish BoM: $result")
+        }
+
+        val skipRelease = project.properties["skipRelease"]?.toString()?.toBoolean() ?: false
+        if (!skipRelease) createGithubRelease(bomVersion, releaseNotes)
     }
 }
 
