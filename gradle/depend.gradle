@@ -22,7 +22,6 @@ ext {
     taxiId = 'taxi'
     scanId = 'scan'
     transpoId = 'transpo'
-    atacId = 'atac'
     evchargingId = 'evcharging'
     tripoId = 'tripo'
     mobilitySharingId = 'mobilitysharing'
@@ -69,7 +68,6 @@ ext {
     telepassLibCode = '7'
     telepassLibVersion = '2.13.' + telepassLibCode
 //---End---//
-    atacVersion = '2.2.2'
     urbiBomId = 'bom'
     urbiBomThirdId = 'bomthird'
     // BOM versions unified from libs-urbi.versions.toml
@@ -84,10 +82,6 @@ ext {
     compile_sdk_version = 36
     target_sdk_version = 35
     ndk_version = '28.2.13676358'
-
-
-    //ATAC
-    atac = "$urbiGroupId:$atacId:$atacVersion@aar"
 
 //  URBI
 
