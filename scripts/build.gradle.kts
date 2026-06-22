@@ -132,9 +132,9 @@ fun getChangelogMap(): LinkedHashMap<String, String> = linkedMapOf(
     "composenavigation" to "COMPOSENAVIGATION_",
     "composeds" to "COMPOSEDS_",
     "common-state" to "COMMON-STATE_",
+    "urbiscan" to "SCN_",
     "commonview" to "COMMONVIEW_",
     "login" to "LOGIN_",
-    "urbiscan" to "SCN_",
     "urbisearch" to "SRC_",
     "urbipay" to "PAY_",
     "ticketlib" to "TCK_",
@@ -345,7 +345,6 @@ fun createGithubRelease(bomVersion: String, releaseNotes: String) {
 }
 
 fun createMapVersion(): HashMap<String, String> {
-    val tpaylib = "telepassLibVersion"
     // Read Version on Gradle file
     val mapVersion: HashMap<String, String> = hashMapOf()
     val gradle = if(File("android-scripts/gradle/depend.gradle").exists()) File("android-scripts/gradle/depend.gradle") else File("$rootDir/android-urbi-framework/android-scripts/gradle/depend.gradle")
@@ -359,14 +358,7 @@ fun createMapVersion(): HashMap<String, String> {
             line.replace("\\s".toRegex(), "").let { lineW ->
                 lineW.split("=").let {
                     if(it.size > 1) {
-                        if (it[0].equals(tpaylib, true)) {
-                            mapVersion[it[0]] =
-                                it[1].replace("\'".toRegex(), "").replace("\\+".toRegex(), "")
-                                    .replace(
-                                        "telepassLibCode".toRegex(), mapVersion["telepassLibCode"]
-                                            ?: ""
-                                    )
-                        } else mapVersion[it[0]] = it[1].replace("\'".toRegex(), "")
+                        mapVersion[it[0]] = it[1].replace("\'".toRegex(), "")
                     }
                 }
             }
