@@ -77,29 +77,28 @@ get_changelog_path() {
 
 # Function to get commit message
 get_commit_message() {
-    # Try to get commit message from command line arguments
+    # NOTE: never read .git/COMMIT_EDITMSG here: at pre-commit time it still contains
+    # the PREVIOUS commit's message (git writes the current one only after this hook),
+    # which used to leak stale messages like "Merge remote-tracking branch ..." into changelogs.
     local commit_msg=""
-    
-    # Method 1: Check if git commit is in progress and get message from .git/COMMIT_EDITMSG
-    if [ -f ".git/COMMIT_EDITMSG" ]; then
-        commit_msg=$(head -n 1 ".git/COMMIT_EDITMSG" 2>/dev/null | sed 's/^[[:space:]]*//;s/[[:space:]]*$//')
+
+    # Parse the -m/--message flag from the parent `git commit` process command line.
+    # ps shows arguments unquoted, so capture everything after the flag.
+    local parent_cmd=$(ps -o args= $PPID 2>/dev/null || echo "")
+    if [[ "$parent_cmd" =~ --message=(.+)$ ]]; then
+        commit_msg="${BASH_REMATCH[1]}"
+    elif [[ "$parent_cmd" =~ [[:space:]]-[a-zA-Z]*m[[:space:]]+(.+)$ ]]; then
+        commit_msg="${BASH_REMATCH[1]}"
     fi
-    
-    # Method 2: Check parent process command line for -m flag
-    if [ -z "$commit_msg" ]; then
-        local parent_cmd=$(ps -o args= $PPID 2>/dev/null || echo "")
-        if [[ "$parent_cmd" =~ -m[[:space:]]+\"([^\"]+)\" ]]; then
-            commit_msg="${BASH_REMATCH[1]}"
-        elif [[ "$parent_cmd" =~ -m[[:space:]]+([^[:space:]]+) ]]; then
-            commit_msg="${BASH_REMATCH[1]}"
-        fi
-    fi
-    
-    # Fallback to generic message if we can't extract it
+
+    # Strip surrounding whitespace and quotes
+    commit_msg=$(echo "$commit_msg" | sed 's/^[[:space:]]*//;s/[[:space:]]*$//;s/^"//;s/"$//')
+
+    # Fallback to generic message if we can't extract it (e.g. editor-based commits)
     if [ -z "$commit_msg" ] || [ "$commit_msg" = "#" ]; then
         commit_msg="Updated module implementation"
     fi
-    
+
     echo "$commit_msg"
 }
 
@@ -191,31 +190,23 @@ EOF
     git add "$changelog_file"
 }
 
-# Get list of changed files in this commit
-# During pre-commit hook execution, git provides the file list via the index
+# Get list of changed files in this commit (staged files only).
+# NOTE: intentionally no fallback on `git status --porcelain` or `git ls-files --stage`:
+# the latter lists the WHOLE index (not just staged changes) and used to add a changelog
+# line to every module (e.g. on `git commit --amend` where the cached diff is empty).
 CHANGED_FILES=""
 
-# Primary method: Get files from git diff --cached
-CHANGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR 2>/dev/null || true)
+# Use `git rev-parse --git-dir` instead of a hardcoded .git path: in submodules
+# .git is a gitdir pointer file, not a directory.
+GIT_DIR=$(git rev-parse --git-dir 2>/dev/null || echo ".git")
 
-# Alternative method 1: Use git diff-index if cached fails
-if [ -z "$CHANGED_FILES" ]; then
-    CHANGED_FILES=$(git diff-index --cached --name-only --diff-filter=ACMR HEAD 2>/dev/null || true)
+if [ -f "$GIT_DIR/MERGE_HEAD" ] || [ -f "$GIT_DIR/CHERRY_PICK_HEAD" ] || [ -f "$GIT_DIR/REBASE_HEAD" ]; then
+    # Merge/cherry-pick/rebase in progress: incoming changes are already documented
+    # in their original commits, adding entries here would duplicate them
+    echo "⏭️  Merge/cherry-pick/rebase in progress, skipping changelog auto-update"
+else
+    CHANGED_FILES=$(git diff --cached --name-only --diff-filter=ACMR 2>/dev/null || true)
 fi
-
-# Alternative method 2: Parse git status for staged files
-if [ -z "$CHANGED_FILES" ]; then
-    CHANGED_FILES=$(git status --porcelain 2>/dev/null | grep "^[AMRC]" | sed 's/^...//' || true)
-fi
-
-# Alternative method 3: Get from GIT_INDEX_FILE if available
-if [ -z "$CHANGED_FILES" ] && [ -n "$GIT_INDEX_FILE" ]; then
-    CHANGED_FILES=$(git ls-files --stage | cut -f2 2>/dev/null || true)
-fi
-
-# Debug output to understand what's happening
-echo "  🔍 Debug: Primary diff result: '$(git diff --cached --name-only --diff-filter=ACMR 2>/dev/null | wc -l | tr -d ' ')' files"
-echo "  🔍 Debug: Status result: '$(git status --porcelain 2>/dev/null | wc -l | tr -d ' ')' lines"
 
 if [ -n "$CHANGED_FILES" ]; then
     echo "📁 Checking changed files for module updates..."
@@ -241,7 +232,14 @@ if [ -n "$CHANGED_FILES" ]; then
     for file in $CHANGED_FILES; do
         echo "  🔍 Checking file: $file"
         module=""
-        
+
+        # Skip submodule pointers (gitlinks, staged mode 160000): bumping a submodule
+        # reference is not a module change
+        if git ls-files --stage -- "$file" 2>/dev/null | grep -q "^160000"; then
+            echo "  ⏭️  Submodule pointer, skipping"
+            continue
+        fi
+
         # Detect module type and extract module name
         if [[ "$file" =~ ^android-urbi-framework/([^/]+)/ ]]; then
             # Framework module: android-urbi-framework/MODULE/... (when run from main repo)
@@ -297,9 +295,7 @@ if [ -n "$CHANGED_FILES" ]; then
     echo "✅ Changelog auto-update complete"
     fi
 else
-    echo "ℹ️  No changes detected"
-    echo "  🔍 Debug: git diff --cached result was empty"
-    echo "  🔍 Debug: git status result: $(git status --porcelain | wc -l | tr -d ' ') lines"
+    echo "ℹ️  No staged changes detected, skipping changelog auto-update"
 fi
 ##### CHANGELOG AUTO-UPDATE END #####
 
