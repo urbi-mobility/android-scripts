@@ -41,10 +41,10 @@ ext {
     payVersion = '3.1.7'
     ticketVersion = '1.0.5'
     searchVersion = '2.0.11'
-    taxiVersion = '3.1.9'
-    scanVersion = '2.1.3'
+    taxiVersion = '3.1.10'
+    scanVersion = '2.1.4'
     transpoVersion = '3.1.7'
-    evchargingVersion = '3.1.6'
+    evchargingVersion = '3.1.7'
     tripoVersion = '3.1.11'
     mobilitySharingVersion = '4.1.8'
     commonStateVersion = '2.1.13'
@@ -55,7 +55,7 @@ ext {
     mapVersion = '0.4.0'
     profileVersion = '0.4.0'
     shopVersion = '0.4.0'
-    loginVersion = '2.1.12'
+    loginVersion = '2.1.13'
 
 //---End---//
     urbiBomId = 'bom'
