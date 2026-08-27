@@ -49,7 +49,7 @@ ext {
     mobilitySharingVersion = '4.1.10'
     commonStateVersion = '2.1.15'
     commonViewVersion = '2.1.15'
-    composeNavigationVersion = '1.0.8'
+    composeNavigationVersion = '1.0.9'
     composeDsVersion = '2.1.10'
     historyVersion = '0.4.0'
     mapVersion = '0.4.0'
