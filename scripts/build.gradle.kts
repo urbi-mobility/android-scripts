@@ -561,6 +561,72 @@ fun updateMajorVersion(versionToUpgrade: List<String>): String {
 }
 
 /**
+ * Given the modules directly flagged for a version bump via their changelog, computes every
+ * other framework module that references one of them as a published artifact
+ * (`libsUrbi.urbi.<alias>` in its build.gradle/build.gradle.kts `release*Api`/`thirdApi` block),
+ * repeating until no more modules are added (transitive closure). Returns a map of
+ * newly-included module -> the bumped module(s) that triggered its inclusion.
+ *
+ * Without this, a module whose own changelog has no entry keeps shipping bytecode compiled
+ * against the *old* shape of a shared class from a module that just got bumped — e.g. urbicore
+ * calling `Ride(provider = provider)` with Kotlin default args after urbimodel's `Ride` gained a
+ * field, causing a NoSuchMethodError at runtime (Crashlytics c91ebbc6ccaeb94ca34a016f0c115e7e).
+ */
+fun findDependentModulesToRebuild(
+    bumpedModules: Set<String>,
+    mapVersionUrbi: Map<String, String>
+): Map<String, Set<String>> {
+    val moduleToken = mapVersionUrbi.mapValues { (_, versionKey) -> versionKey.removeSuffix("Version").lowercase() }
+    val included = HashSet(bumpedModules)
+    val triggeredBy = HashMap<String, MutableSet<String>>()
+    var changed = true
+    while (changed) {
+        changed = false
+        mapVersionUrbi.keys.forEach { candidate ->
+            if (candidate in included) return@forEach
+            val buildFile = listOf("$candidate/build.gradle", "$candidate/build.gradle.kts")
+                .map { path -> if (File(path).exists()) File(path) else File("$rootDir/android-urbi-framework/$path") }
+                .firstOrNull { it.exists() } ?: return@forEach
+            val normalizedContent = buildFile.readText().replace("[^a-zA-Z]".toRegex(), "").lowercase()
+            included.forEach innerLoop@{ bumpedModule ->
+                val token = moduleToken[bumpedModule] ?: return@innerLoop
+                if (normalizedContent.contains("libsurbiurbi$token")) {
+                    triggeredBy.getOrPut(candidate) { HashSet() }.add(bumpedModule)
+                }
+            }
+            if (triggeredBy.containsKey(candidate)) {
+                included.add(candidate)
+                changed = true
+            }
+        }
+    }
+    return triggeredBy
+}
+
+/**
+ * Appends an auto-generated bullet under `## [Unreleased]` in [module]'s changelog.md so the
+ * later `uploadlib` task (which independently re-reads each module's own changelog) also picks
+ * it up and republishes it, keeping `depend.gradle`'s bumped version in sync with what actually
+ * gets published.
+ */
+fun appendAutoRebuildChangelogEntry(module: String, becauseOf: Set<String>) {
+    val path = "$module/changelog.md"
+    val changelogFile = if (File(path).exists()) File(path) else File("$rootDir/android-urbi-framework/$path")
+    if (!changelogFile.exists()) return
+    val lines = changelogFile.readLines().toMutableList()
+    val entry = "- chore: rebuild — dependency ${becauseOf.joinToString(", ")} updated (auto-added to avoid stale binary consumer)"
+    val unreleasedIndex = lines.indexOfFirst { it.startsWith("## [Unreleased]", true) }
+    if (unreleasedIndex >= 0) {
+        lines.add(unreleasedIndex + 1, entry)
+    } else {
+        lines.add(0, entry)
+        lines.add(0, "## [Unreleased]")
+    }
+    changelogFile.printWriter().use { out -> lines.forEach { out.println(it) } }
+    println("Auto-added rebuild entry to $path: $entry")
+}
+
+/**
  * This script reads the `depend.gradle` file, where library versions are defined, and upgrades
  * the desired version if there are changes in its changelog.
  *
@@ -605,6 +671,18 @@ tasks.register("upgrade-lib-version") {
                 println("Error for file $pathFile ${e.message}")
             }
         }
+
+        // Pull in any module that publicly depends on one of the modules above via
+        // `libsUrbi.urbi.<alias>`, so it gets rebuilt+republished in the same run instead of
+        // shipping stale bytecode against the changed shared artifact (see NoSuchMethodError
+        // postmortem, Crashlytics c91ebbc6ccaeb94ca34a016f0c115e7e).
+        val dependentModules = findDependentModulesToRebuild(keyToChangeVersion, mapVersionUrbi)
+        if (dependentModules.isNotEmpty()) {
+            println("Auto-including modules that depend on a bumped module, to avoid stale binary consumers: ${dependentModules.keys}")
+            dependentModules.forEach { (module, becauseOf) -> appendAutoRebuildChangelogEntry(module, becauseOf) }
+            keyToChangeVersion.addAll(dependentModules.keys)
+        }
+
         if(keyToChangeVersion.isNotEmpty()){
             val newGradleDeep = arrayListOf<String>()
             val gradle = if(File("android-scripts/gradle/depend.gradle").exists()) File("android-scripts/gradle/depend.gradle") else File("$rootDir/android-urbi-framework/android-scripts/gradle/depend.gradle")
