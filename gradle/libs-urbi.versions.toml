@@ -1,7 +1,7 @@
 [versions]
 accompanist_compose = "0.37.3"
 adapter-delegates4 = "4.3.2"
-android-gradle-plugin = "8.11.2"
+android-gradle-plugin = "8.13.2"
 android-material = "1.13.0"
 androidx-activity = "1.11.0"
 androidx-camera = "1.4.2"
@@ -33,7 +33,7 @@ androidx-test-runner = "1.6.2"
 androidx-work-manager = "2.8.1"
 androidx-web-kit = "1.12.1"
 commons-codec = "1.15"
-dagger = "2.57.2"
+dagger = "2.58"
 dependencyGuard = "0.5.0"
 dokka = "1.9.20"
 facebook = "latest.release"
@@ -64,11 +64,11 @@ json-test = "20250107"
 jmrtd = "0.7.18"
 junit = "4.13.2"
 jwt-decode = "2.0.2"
-kotlin = "2.2.20"
+kotlin = "2.3.21"
 kotlinx-coroutines = "1.10.2"
 kotlinter = "5.2.0"
 kustomer = "4.2.1"
-ksp-plugin = "2.2.20-2.0.4"
+ksp-plugin = "2.3.9"
 landscapist-glide = "1.5.2"
 lottie = "6.4.1"
 material-datetime-picker = "4.2.3"
@@ -93,13 +93,15 @@ triplet-play = "3.10.1"
 turbine = "1.2.1"
 zxing = "3.4.1"
 rootbeer = "0.1.1"
+androidx-credentials = "1.3.0"
+google-identity-googleid = "1.1.1"
 androidx-datastore = "1.2.0"
 detekt = "1.23.8"
 timber = "5.0.1"
 tink = "1.20.0"
 urbi-kit = "1.0.0"
 sonatype-central-portal = "1.2.4"
-urbi-bom = "2026.05.283"
+urbi-bom = "2026.09.11"
 
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
@@ -228,6 +230,9 @@ subsampling-sample-image = { group = "com.davemorrissey.labs", name = "subsampli
 true-time = { group = "com.github.instacart", name = "truetime-android", version.ref = "true-time" }
 turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 rootbeer = { group = "com.scottyab", name = "rootbeer-lib", version.ref = "rootbeer" }
+androidx-credentials = { group = "androidx.credentials", name = "credentials", version.ref = "androidx-credentials" }
+androidx-credentials-play-services-auth = { group = "androidx.credentials", name = "credentials-play-services-auth", version.ref = "androidx-credentials" }
+google-identity-googleid = { group = "com.google.android.libraries.identity.googleid", name = "googleid", version.ref = "google-identity-googleid" }
 androidx-compose-material-icons-extended = { group = "androidx.compose.material", name = "material-icons-extended" }
 androidx-datastore = { group = "androidx.datastore", name = "datastore", version.ref = "androidx-datastore" }
 androidx-datastore-preferences-core = { group = "androidx.datastore", name = "datastore-preferences-core", version.ref = "androidx-datastore" }
