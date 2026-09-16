@@ -143,6 +143,7 @@ fun getChangelogMap(): LinkedHashMap<String, String> = linkedMapOf(
     "transpo" to "TRN_",
     "tripo" to "TRP_",
     "mobilitylib" to "MBL_",
+    "support" to "SUP_",
 )
 
 fun getVersionKeyFromModule(): LinkedHashMap<String, String> = linkedMapOf(
@@ -164,6 +165,7 @@ fun getVersionKeyFromModule(): LinkedHashMap<String, String> = linkedMapOf(
     "composenavigation" to "composeNavigationVersion",
     "composeds" to "composeDsVersion",
     "login"  to "loginVersion",
+    "support" to "supportVersion",
 )
 
 /**
@@ -211,7 +213,8 @@ fun haveModuleTPay(key: String): Boolean {
         "transpo",
         "urbiscan",
         "evcharging",
-        "urbisearch"
+        "urbisearch",
+        "support"
     )
     return list.contains(key)
 }

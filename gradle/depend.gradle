@@ -32,6 +32,7 @@ ext {
     profileId = 'profile'
     shopId = 'shop'
     loginId = 'login'
+    supportId = 'support'
 
 //---Module Version---//
     utilityVersion = '4.1.4'
@@ -56,6 +57,7 @@ ext {
     profileVersion = '0.4.0'
     shopVersion = '0.4.0'
     loginVersion = '2.1.13'
+    supportVersion = '1.0.0'
 
 //---End---//
     urbiBomId = 'bom'
@@ -260,5 +262,7 @@ ext {
         exclude module: "$designsystemId"
     })
 
+    support = "$urbiGroupId:$supportId"
+    supportdep = dependencies.create("$support:$supportVersion")
 
 }

@@ -257,6 +257,7 @@ urbi-model = { module = "co.urbi.android:model"}
 urbi-pay = { module = "co.urbi.android:pay"}
 urbi-scan = { module = "co.urbi.android:scan"}
 urbi-search = { module = "co.urbi.android:search"}
+urbi-support = { module = "co.urbi.android:support"}
 urbi-taxi = { module = "co.urbi.android:taxi"}
 urbi-ticket = { module = "co.urbi.android:ticket"}
 urbi-transpo = { module = "co.urbi.android:transpo"}
@@ -288,6 +289,7 @@ urbi = [
     "urbi-pay",
     "urbi-scan",
     "urbi-search",
+    "urbi-support",
     "urbi-taxi",
     "urbi-ticket",
     "urbi-transpo",
