@@ -57,7 +57,7 @@ ext {
     profileVersion = '0.4.0'
     shopVersion = '0.4.0'
     loginVersion = '2.1.13'
-    supportVersion = '1.0.0'
+    supportVersion = '0.1.0'
 
 //---End---//
     urbiBomId = 'bom'
