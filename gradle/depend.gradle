@@ -68,7 +68,7 @@ ext {
                              "taxi", taxiVersion, "scan", scanVersion, "transpo", transpoVersion, "evcharging", evchargingVersion, "tripo", tripoVersion, "mobilitySharing", mobilitySharingVersion, "commonState", commonStateVersion, "commonView", commonViewVersion,
                              "composeNavigation", composeNavigationVersion, "composeDs", composeDsVersion, "login", loginVersion]
     min_sdk_version = 26
-    compile_sdk_version = 36
+    compile_sdk_version = 37
     target_sdk_version = 36
     ndk_version = '28.2.13676358'
 

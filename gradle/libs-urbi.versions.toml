@@ -1,12 +1,12 @@
 [versions]
 accompanist_compose = "0.37.3"
 adapter-delegates4 = "4.3.2"
-android-gradle-plugin = "8.13.2"
+android-gradle-plugin = "9.3.0"
 android-material = "1.13.0"
 androidx-activity = "1.11.0"
 androidx-camera = "1.4.2"
 androidx-camera-view = "1.4.2"
-androidx-compose-bom = "2025.09.01"
+androidx-compose-bom = "2026.06.01"
 androidx-fragment = "1.8.9"
 androidx-appcompat = "1.7.1"
 androidx-biometric = "1.1.0"
@@ -33,9 +33,10 @@ androidx-test-runner = "1.6.2"
 androidx-work-manager = "2.9.1"
 androidx-web-kit = "1.12.1"
 commons-codec = "1.15"
-dagger = "2.58"
+dagger = "2.60.1"
 dependencyGuard = "0.5.0"
 dokka = "1.9.20"
+foojay-resolver = "1.0.0"
 facebook = "latest.release"
 firebase-bom = "34.12.0"
 firebase-app-distribution-plugin = "5.1.1"
@@ -420,3 +421,4 @@ jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin"
 dokka = { id = "org.jetbrains.dokka", version.ref = "dokka" }
 sonatype-central-portal = { id = "net.thebugmc.gradle.sonatype-central-portal-publisher", version.ref = "sonatype-central-portal" }
 
+foojay-resolver = { id = "org.gradle.toolchains.foojay-resolver-convention", version.ref = "foojay-resolver" }
