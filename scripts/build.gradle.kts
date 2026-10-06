@@ -1,7 +1,15 @@
 import java.io.ByteArrayOutputStream
 import java.text.SimpleDateFormat
 import java.util.*
-import kotlin.collections.*
+import org.gradle.api.Action
+import org.gradle.api.Project
+import org.gradle.kotlin.dsl.support.serviceOf
+import org.gradle.process.ExecOperations
+import org.gradle.process.ExecResult
+import org.gradle.process.ExecSpec
+
+// Gradle 9 removed Project.exec: delegate to ExecOperations
+fun Project.exec(action: Action<ExecSpec>): ExecResult = serviceOf<ExecOperations>().exec(action)
 
 tasks.register("uploadlib") {
     doLast {
