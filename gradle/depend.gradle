@@ -34,14 +34,14 @@ ext {
     loginId = 'login'
 
 //---Module Version---//
-    utilityVersion = '4.2.2'
+    utilityVersion = '4.2.3'
     designsystemVersion = '3.2.0'
     modelVersion = '4.2.2'
     coreVersion = '4.2.2'
     payVersion = '3.2.2'
     ticketVersion = '1.1.2'
     searchVersion = '2.1.2'
-    taxiVersion = '3.2.2'
+    taxiVersion = '3.2.3'
     scanVersion = '2.2.2'
     transpoVersion = '3.2.2'
     evchargingVersion = '3.2.2'
