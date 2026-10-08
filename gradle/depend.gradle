@@ -34,23 +34,23 @@ ext {
     loginId = 'login'
 
 //---Module Version---//
-    utilityVersion = '4.1.4'
-    designsystemVersion = '3.1.8'
-    modelVersion = '4.1.11'
-    coreVersion = '4.1.12'
-    payVersion = '3.1.7'
-    ticketVersion = '1.0.5'
-    searchVersion = '2.0.11'
-    taxiVersion = '3.1.11'
-    scanVersion = '2.1.4'
-    transpoVersion = '3.1.8'
-    evchargingVersion = '3.1.7'
-    tripoVersion = '3.1.12'
-    mobilitySharingVersion = '4.1.9'
-    commonStateVersion = '2.1.14'
-    commonViewVersion = '2.1.14'
-    composeNavigationVersion = '1.0.8'
-    composeDsVersion = '2.1.9'
+    utilityVersion = '4.2.3'
+    designsystemVersion = '3.2.0'
+    modelVersion = '4.2.2'
+    coreVersion = '4.2.2'
+    payVersion = '3.2.2'
+    ticketVersion = '1.1.2'
+    searchVersion = '2.1.2'
+    taxiVersion = '3.2.3'
+    scanVersion = '2.2.2'
+    transpoVersion = '3.2.2'
+    evchargingVersion = '3.2.2'
+    tripoVersion = '3.2.2'
+    mobilitySharingVersion = '4.2.2'
+    commonStateVersion = '2.2.2'
+    commonViewVersion = '2.2.2'
+    composeNavigationVersion = '1.1.2'
+    composeDsVersion = '2.2.2'
     historyVersion = '0.4.0'
     mapVersion = '0.4.0'
     profileVersion = '0.4.0'
@@ -68,7 +68,7 @@ ext {
                              "taxi", taxiVersion, "scan", scanVersion, "transpo", transpoVersion, "evcharging", evchargingVersion, "tripo", tripoVersion, "mobilitySharing", mobilitySharingVersion, "commonState", commonStateVersion, "commonView", commonViewVersion,
                              "composeNavigation", composeNavigationVersion, "composeDs", composeDsVersion, "login", loginVersion]
     min_sdk_version = 26
-    compile_sdk_version = 36
+    compile_sdk_version = 37
     target_sdk_version = 36
     ndk_version = '28.2.13676358'
 
