@@ -47,7 +47,7 @@ ext {
     transpoVersion = '3.2.3'
     evchargingVersion = '3.2.2'
     tripoVersion = '3.2.3'
-    mobilitySharingVersion = '4.2.4'
+    mobilitySharingVersion = '4.2.5'
     commonStateVersion = '2.2.4'
     commonViewVersion = '2.2.3'
     composeNavigationVersion = '1.1.2'
