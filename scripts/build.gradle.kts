@@ -76,13 +76,16 @@ tasks.register("commitversions") {
             standardOutput = outputGit
         }
         var haveToPushTpayLib = false
+        // A module with several modified files shows up once per file in git status:
+        // commit/tag it only once, otherwise the second `git commit` has nothing to commit and fails
+        val committedModules = hashSetOf<String>()
         outputGit.toString().split("\n").reversed().forEach { line ->
             line.replace("\\s".toRegex(), "").let { newLine ->
                 if (newLine.startsWith("modified:") || newLine.startsWith("modificato:")) {
                     val italianClearLine = newLine.replace("modificato:".toRegex(), "")
                     val clearLine = italianClearLine.replace("modified:".toRegex(), "")
                     val arrayRow = clearLine.split("/")
-                    if (arrayRow.isNotEmpty() && mapVersion.containsKey(mapModuleName[arrayRow[0]])) {
+                    if (arrayRow.isNotEmpty() && mapVersion.containsKey(mapModuleName[arrayRow[0]]) && committedModules.add(arrayRow[0])) {
                         val key = arrayRow[0]
                         val tagVersionKey = mapVersion[mapModuleName[key]]
                         println("Analyze ${key} version ${tagVersionKey}..............")
@@ -146,6 +149,8 @@ fun getChangelogMap(): LinkedHashMap<String, String> = linkedMapOf(
     "urbisearch" to "SRC_",
     "urbipay" to "PAY_",
     "ticketlib" to "TCK_",
+    // Publish order matters: urbitaxi depends on support (via BoM), so support must be published first
+    "support" to "SUP_",
     "urbitaxi" to "TXI_",
     "evcharging" to "EVC_",
     "transpo" to "TRN_",
@@ -172,6 +177,7 @@ fun getVersionKeyFromModule(): LinkedHashMap<String, String> = linkedMapOf(
     "composenavigation" to "composeNavigationVersion",
     "composeds" to "composeDsVersion",
     "login"  to "loginVersion",
+    "support" to "supportVersion",
 )
 
 /**
@@ -219,7 +225,8 @@ fun haveModuleTPay(key: String): Boolean {
         "transpo",
         "urbiscan",
         "evcharging",
-        "urbisearch"
+        "urbisearch",
+        "support"
     )
     return list.contains(key)
 }
@@ -332,19 +339,34 @@ fun createGithubRelease(bomVersion: String, releaseNotes: String) {
     val tempFile = File.createTempFile("bom-release-notes", ".md")
     try {
         tempFile.writeText(releaseNotes)
+        // Same-day re-publish: the release already exists, so refresh its notes instead of failing with HTTP 422
+        val releaseExists = exec {
+            commandLine("gh", "release", "view", "bom-$bomVersion", "--repo", "urbi-mobility/android-urbi-framework")
+            standardOutput = ByteArrayOutputStream()
+            errorOutput = ByteArrayOutputStream()
+            isIgnoreExitValue = true
+        }.exitValue == 0
         ByteArrayOutputStream().use { os ->
             exec {
-                commandLine(
-                    "gh", "release", "create", "bom-$bomVersion",
-                    "--repo", "urbi-mobility/android-urbi-framework",
-                    "--title", "BoM $bomVersion",
-                    "--notes-file", tempFile.absolutePath
-                )
+                if (releaseExists) {
+                    commandLine(
+                        "gh", "release", "edit", "bom-$bomVersion",
+                        "--repo", "urbi-mobility/android-urbi-framework",
+                        "--notes-file", tempFile.absolutePath
+                    )
+                } else {
+                    commandLine(
+                        "gh", "release", "create", "bom-$bomVersion",
+                        "--repo", "urbi-mobility/android-urbi-framework",
+                        "--title", "BoM $bomVersion",
+                        "--notes-file", tempFile.absolutePath
+                    )
+                }
                 standardOutput = os
             }
             println(os.toString())
         }
-        println("GitHub Release created: bom-$bomVersion")
+        println("GitHub Release ${if (releaseExists) "updated" else "created"}: bom-$bomVersion")
     } catch (e: Exception) {
         println("Warning: GitHub Release creation failed: ${e.message}")
     } finally {

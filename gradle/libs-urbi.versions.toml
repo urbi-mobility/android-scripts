@@ -102,7 +102,7 @@ timber = "5.0.1"
 tink = "1.20.0"
 urbi-kit = "1.0.0"
 sonatype-central-portal = "1.2.4"
-urbi-bom = "2026.10.06"
+urbi-bom = "2026.10.09"
 
 [libraries]
 adapterdelegates4-kotlin = { group = "com.hannesdorfmann", name = "adapterdelegates4-kotlin-dsl", version.ref = "adapter-delegates4" }
@@ -258,6 +258,7 @@ urbi-model = { module = "co.urbi.android:model"}
 urbi-pay = { module = "co.urbi.android:pay"}
 urbi-scan = { module = "co.urbi.android:scan"}
 urbi-search = { module = "co.urbi.android:search"}
+urbi-support = { module = "co.urbi.android:support"}
 urbi-taxi = { module = "co.urbi.android:taxi"}
 urbi-ticket = { module = "co.urbi.android:ticket"}
 urbi-transpo = { module = "co.urbi.android:transpo"}
@@ -289,6 +290,7 @@ urbi = [
     "urbi-pay",
     "urbi-scan",
     "urbi-search",
+    "urbi-support",
     "urbi-taxi",
     "urbi-ticket",
     "urbi-transpo",
