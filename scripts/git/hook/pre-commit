@@ -154,7 +154,14 @@ add_unreleased_entry() {
     
     # Get commit message
     local commit_message=$(get_commit_message)
-    
+
+    # Release commits from `commitversions` close the [Unreleased] section: re-opening it
+    # would trigger a needless version bump on the next publish
+    if [[ "$commit_message" =~ ^\"?Version\ bump ]]; then
+        echo "  📝 $module: release commit, skipping auto-update"
+        return 0
+    fi
+
     echo "  📝 Adding unreleased entry to $module/changelog.md: $commit_message"
     
     # Create changelog if it doesn't exist
